@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Streams - GA4 UI Kit</title>
+    <!-- Tailwind CSS CDN v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800 font-sans">
+
+    <!-- ================= SIDEBAR MENU BÊN TRÁI ================= -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+        <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+            <div
+                class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+                📊
+            </div>
+            <div>
+                <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+                <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+            </div>
+        </div>
+
+        <div class="p-3 overflow-y-auto flex-1">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+            <nav class="space-y-1">
+                <a href="index.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏠</span> Tổng quan UI Kit
+                </a>
+                <a href="accordion.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📂</span> Accordion Tasks
+                </a>
+                <a href="popup-picker.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🪟</span> Popup / Modal Picker
+                </a>
+                <a href="sidebar.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📑</span> Sidebar GA4
+                </a>
+                <a href="exploration-carousel.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🎠</span> Carousel Khám phá
+                </a>
+                <a href="account-settings.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚙️</span> Cài đặt Quản trị
+                </a>
+                <a href="data-streams.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+                    <span>🌊</span> Luồng Dữ Liệu
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- ================= KHU VỰC CHÍNH ================= -->
+    <main class="flex-1 p-8 max-w-6xl overflow-y-auto space-y-12">
+        <div class="flex items-center gap-3">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 6</span>
+            <h2 class="text-xl font-bold text-slate-800">GA4 Data Streams & Stream Details (Luồng dữ liệu & Chi tiết
+                luồng ứng dụng)</h2>
+        </div>
+
+        <!-- ================= KHỐI GIAO DIỆN XEM TRƯỚC TƯƠNG TÁC ================= -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước (Bấm
+                    "Thêm luồng" hoặc bấm vào dòng bất kỳ để mở Drawer trượt)
+                </span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+            </div>
+
+            <div class="p-8 bg-slate-100/60 relative overflow-hidden">
+
+                <!-- VÙNG BẢNG LUỒNG DỮ LIỆU GA4 -->
+                <div class="w-full font-sans select-none">
+                    <h1 class="text-2xl font-normal text-slate-800 tracking-tight mb-4">Luồng dữ liệu</h1>
+
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-2xs overflow-visible">
+
+                        <!-- Thanh Toolbar: Tabs lọc + Search + Nút Thêm luồng xổ xuống -->
+                        <div
+                            class="px-5 py-3 border-b border-slate-200 flex flex-wrap items-center justify-between gap-4">
+                            <!-- Tabs lọc -->
+                            <div class="flex items-center gap-6 text-sm font-medium">
+                                <button type="button"
+                                    class="stream-tab-btn text-blue-600 border-b-2 border-blue-600 pb-2 font-semibold cursor-pointer"
+                                    data-filter="all">Tất cả</button>
+                                <button type="button"
+                                    class="stream-tab-btn text-slate-600 hover:text-slate-800 pb-2 cursor-pointer transition-colors"
+                                    data-filter="ios">iOS</button>
+                                <button type="button"
+                                    class="stream-tab-btn text-slate-600 hover:text-slate-800 pb-2 cursor-pointer transition-colors"
+                                    data-filter="android">Android</button>
+                                <button type="button"
+                                    class="stream-tab-btn text-slate-600 hover:text-slate-800 pb-2 cursor-pointer transition-colors"
+                                    data-filter="web">Web</button>
+                            </div>
+
+                            <!-- Action bên phải: Search + Thêm luồng Dropdown -->
+                            <div class="flex items-center gap-3">
+                                <div class="relative w-64">
+                                    <span
+                                        class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </span>
+                                    <input type="text" id="streamSearchInput" placeholder="Tìm kiếm"
+                                        class="w-full bg-white border border-slate-300 rounded-lg pl-9 pr-3 py-1.5 text-xs text-slate-700 outline-none focus:border-blue-500">
+                                </div>
+
+                                <!-- CỤM DROPDOWN NÚT THÊM LUỒNG -->
+                                <div class="relative" id="addStreamDropdownContainer">
+                                    <button type="button" id="btnAddStream"
+                                        class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer shadow-xs transition-colors select-none">
+                                        <span>Thêm luồng</span>
+                                        <svg id="arrowAddStream"
+                                            class="w-3 h-3 text-white transition-transform duration-200"
+                                            fill="currentColor" viewBox="0 0 20 20">
+                                            <path
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                                        </svg>
+                                    </button>
+
+                                    <div id="addStreamDropdownMenu"
+                                        class="hidden absolute right-0 mt-1.5 w-48 bg-white border border-slate-200 rounded-xl shadow-xl py-2 z-30 font-sans select-none">
+                                        <button type="button"
+                                            class="add-stream-option w-full text-left px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 flex items-center gap-3 cursor-pointer transition-colors"
+                                            data-type="ios">
+                                            <div
+                                                class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-[10px] shrink-0">
+                                                iOS</div>
+                                            <span class="font-medium text-slate-800">Ứng dụng iOS</span>
+                                        </button>
+                                        <button type="button"
+                                            class="add-stream-option w-full text-left px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 flex items-center gap-3 cursor-pointer transition-colors"
+                                            data-type="android">
+                                            <div
+                                                class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs shrink-0">
+                                                🤖</div>
+                                            <span class="font-medium text-slate-800">Ứng dụng Android</span>
+                                        </button>
+                                        <button type="button"
+                                            class="add-stream-option w-full text-left px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 flex items-center gap-3 cursor-pointer transition-colors"
+                                            data-type="web">
+                                            <div
+                                                class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0">
+                                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="9" stroke-width="2" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M3.6 9h16.8M3.6 15h16.8M12 3a15.3 15.3 0 014 9 15.3 15.3 0 01-4 9 15.3 15.3 0 01-4-9 15.3 15.3 0 014-9z" />
+                                                </svg>
+                                            </div>
+                                            <span class="font-medium text-slate-800">Web</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Danh sách các dòng luồng dữ liệu -->
+                        <div class="divide-y divide-slate-100" id="streamRowsContainer">
+                            <!-- Dòng 1: iOS -->
+                            <div class="stream-row px-5 py-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition-colors group"
+                                data-type="ios" data-name="app_bai_11 (ios)" data-platform="iOS"
+                                data-package="com.example.appBai11" data-id="14903984681"
+                                data-firebase="1:288823190991:ios:f55acd9dffecb956315eba">
+                                <div class="flex items-center gap-4 w-1/3 min-w-[220px]">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs shrink-0 shadow-2xs">
+                                        iOS
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="text-xs font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                            app_bai_11 (ios)</h4>
+                                        <p class="text-[11px] text-slate-400">com.example.appBai11</p>
+                                    </div>
+                                </div>
+                                <div class="text-xs text-slate-600 font-mono w-1/4">14903984681</div>
+                                <div class="text-xs text-slate-500 w-1/3">Không nhận được dữ liệu nào trong 48 giờ qua.
+                                </div>
+                                <div class="text-slate-400 group-hover:text-slate-700 transition-colors pl-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Dòng 2: Android -->
+                            <div class="stream-row px-5 py-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition-colors group"
+                                data-type="android" data-name="app_bai_11 (android)" data-platform="Android"
+                                data-package="com.example.app_bai_11" data-id="14904037392"
+                                data-firebase="1:288823190991:android:e10bcd92ff8120">
+                                <div class="flex items-center gap-4 w-1/3 min-w-[220px]">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs shrink-0 shadow-2xs">
+                                        🤖
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="text-xs font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                            app_bai_11 (android)</h4>
+                                        <p class="text-[11px] text-slate-400">com.example.app_bai_11</p>
+                                    </div>
+                                </div>
+                                <div class="text-xs text-slate-600 font-mono w-1/4">14904037392</div>
+                                <div class="text-xs text-slate-500 w-1/3">Không nhận được dữ liệu nào trong 48 giờ qua.
+                                </div>
+                                <div class="text-slate-400 group-hover:text-slate-700 transition-colors pl-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Dòng 3: Windows -->
+                            <div class="stream-row px-5 py-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition-colors group"
+                                data-type="web" data-name="app_bai_11 (windows)" data-platform="Windows"
+                                data-package="windows.desktop.app" data-id="14903903664"
+                                data-firebase="1:288823190991:web:a98bf341209">
+                                <div class="flex items-center gap-4 w-1/3 min-w-[220px]">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-2xs">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="9" stroke-width="2" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3.6 9h16.8M3.6 15h16.8M12 3a15.3 15.3 0 014 9 15.3 15.3 0 01-4 9 15.3 15.3 0 01-4-9 15.3 15.3 0 014-9z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="text-xs font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                            app_bai_11 (windows)</h4>
+                                    </div>
+                                </div>
+                                <div class="text-xs text-slate-600 font-mono w-1/4">14903903664</div>
+                                <div class="text-xs text-slate-500 w-1/3">Không nhận được dữ liệu nào trong 48 giờ qua.
+                                </div>
+                                <div class="text-slate-400 group-hover:text-slate-700 transition-colors pl-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Dòng 4: Web -->
+                            <div class="stream-row px-5 py-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition-colors group"
+                                data-type="web" data-name="app_bai_11 (web)" data-platform="Web"
+                                data-package="https://myweb.app" data-id="14903947727"
+                                data-firebase="1:288823190991:web:77b1029da">
+                                <div class="flex items-center gap-4 w-1/3 min-w-[220px]">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-2xs">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="9" stroke-width="2" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3.6 9h16.8M3.6 15h16.8M12 3a15.3 15.3 0 014 9 15.3 15.3 0 01-4 9 15.3 15.3 0 01-4-9 15.3 15.3 0 014-9z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="text-xs font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                            app_bai_11 (web)</h4>
+                                    </div>
+                                </div>
+                                <div class="text-xs text-slate-600 font-mono w-1/4">14903947727</div>
+                                <div class="text-xs text-slate-500 w-1/3">Không nhận được dữ liệu nào trong 48 giờ qua.
+                                </div>
+                                <div class="text-slate-400 group-hover:text-slate-700 transition-colors pl-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= DRAWER SLIDE-OVER CHI TIẾT LUỒNG ================= -->
+                <div id="streamDrawerBackdrop"
+                    class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-[1px] z-50 flex justify-end transition-opacity duration-300">
+                    <div id="streamDrawer"
+                        class="w-full max-w-4xl bg-slate-50 h-full shadow-2xl flex flex-col font-sans overflow-hidden transform translate-x-full transition-transform duration-300">
+
+                        <!-- Header Drawer -->
+                        <div
+                            class="px-6 py-4 bg-white border-b border-slate-200 flex items-center justify-between shrink-0">
+                            <div class="flex items-center gap-3">
+                                <button type="button" id="btnCloseDrawer"
+                                    class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 cursor-pointer transition-colors"
+                                    title="Đóng">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </button>
+                                <h3 class="text-base font-normal text-slate-800">Thông tin chi tiết về luồng ứng dụng
+                                </h3>
+                            </div>
+                            <button type="button" class="text-slate-400 hover:text-slate-600 p-1 cursor-pointer">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Thân Drawer cuộn nội dung -->
+                        <div class="p-8 overflow-y-auto space-y-6 flex-1">
+
+                            <!-- CARD 1: THÔNG TIN ĐỊNH DANH ỨNG DỤNG -->
+                            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xs space-y-4">
+                                <div>
+                                    <p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-0.5">
+                                        TÊN ỨNG DỤNG</p>
+                                    <h4 id="detailAppName" class="text-sm font-semibold text-slate-800">app_bai_11 (ios)
+                                    </h4>
+                                </div>
+                                <div>
+                                    <p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-0.5">
+                                        NỀN</p>
+                                    <p id="detailPlatform" class="text-xs text-slate-700">iOS</p>
+                                </div>
+                                <div>
+                                    <p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-0.5">
+                                        MÃ GÓI</p>
+                                    <p id="detailPackage" class="text-xs text-slate-700 font-mono">com.example.appBai11
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-0.5">
+                                        MÃ LUỒNG</p>
+                                    <p id="detailStreamId" class="text-xs text-slate-700 font-mono">14903984681</p>
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-1.5 mb-0.5">
+                                        <p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">MÃ
+                                            ỨNG DỤNG FIREBASE</p>
+                                        <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                d="M9.5 9a2.5 2.5 0 015 0c0 1.5-2 2-2 3.5m0 3v.5" />
+                                        </svg>
+                                    </div>
+                                    <p id="detailFirebaseId" class="text-xs text-slate-700 font-mono">
+                                        1:288823190991:ios:f55acd9dffecb956315eba</p>
+                                </div>
+                            </div>
+
+                            <!-- CARD 2: CÀI ĐẶT SDK & TẢI FILE CONFIG -->
+                            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xs space-y-4">
+                                <h4 class="text-sm font-semibold text-slate-800 mb-1">Cài đặt</h4>
+
+                                <div class="divide-y divide-slate-100">
+                                    <div
+                                        class="py-3 flex items-center justify-between hover:bg-slate-50/70 p-2 rounded-lg cursor-pointer transition-colors group">
+                                        <div class="flex items-center gap-4">
+                                            <svg class="w-5 h-5 text-slate-600 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                            </svg>
+                                            <div>
+                                                <h5
+                                                    class="text-xs font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                                    Hướng dẫn thiết lập SDK</h5>
+                                                <p class="text-[11px] text-slate-500">Nhận trợ giúp trực tuyến để tích
+                                                    hợp SDK của Google vào ứng dụng.</p>
+                                            </div>
+                                        </div>
+                                        <svg class="w-4 h-4 text-slate-400 group-hover:text-slate-700" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+
+                                    <div class="py-4 p-2">
+                                        <div class="flex items-start gap-4">
+                                            <svg class="w-5 h-5 text-slate-600 shrink-0 mt-0.5" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                            </svg>
+                                            <div class="space-y-2.5">
+                                                <div>
+                                                    <h5 class="text-xs font-semibold text-slate-800">Tải cấu hình mới
+                                                        nhất xuống</h5>
+                                                    <p class="text-[11px] text-slate-500">Tải tệp chứa thông tin cấu
+                                                        hình xuống, chẳng hạn như khoá và giá trị nhận dạng của các dịch
+                                                        vụ đã bật.</p>
+                                                </div>
+                                                <button type="button"
+                                                    class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium px-4 py-2 rounded-lg cursor-pointer transition-colors shadow-2xs">
+                                                    Tải GoogleService-Info.plist xuống
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="py-3 flex items-center justify-between hover:bg-slate-50/70 p-2 rounded-lg cursor-pointer transition-colors group">
+                                        <div class="flex items-center gap-4">
+                                            <svg class="w-5 h-5 text-slate-600 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                            </svg>
+                                            <div>
+                                                <h5
+                                                    class="text-xs font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                                    Định cấu hình chế độ cài đặt SDK</h5>
+                                                <p class="text-[11px] text-slate-500">Định cấu hình hành vi đo lường bổ
+                                                    sung trong ứng dụng (bao gồm cả chế độ cài đặt mặc định về sự đồng
+                                                    ý) để thu thập dữ liệu.</p>
+                                            </div>
+                                        </div>
+                                        <svg class="w-4 h-4 text-slate-400 group-hover:text-slate-700" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CARD 3: SỰ KIỆN -->
+                            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xs space-y-4">
+                                <h4 class="text-sm font-semibold text-slate-800 mb-1">Sự kiện</h4>
+
+                                <div class="divide-y divide-slate-100">
+                                    <div
+                                        class="py-3 flex items-center justify-between hover:bg-slate-50/70 p-2 rounded-lg cursor-pointer transition-colors group">
+                                        <div class="flex items-center gap-4">
+                                            <svg class="w-5 h-5 text-slate-600 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                                            </svg>
+                                            <div>
+                                                <h5
+                                                    class="text-xs font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                                    Mã thông báo bí mật cho API Measurement Protocol</h5>
+                                                <p class="text-[11px] text-slate-500">Tạo một mã thông báo bí mật cho
+                                                    API để cho phép các sự kiện bổ sung được gửi tới luồng này thông qua
+                                                    Measurement Protocol. <a href="#"
+                                                        class="text-blue-600 underline">Tìm hiểu thêm</a></p>
+                                            </div>
+                                        </div>
+                                        <svg class="w-4 h-4 text-slate-400 group-hover:text-slate-700" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+
+                                    <div
+                                        class="py-3 flex items-center justify-between hover:bg-slate-50/70 p-2 rounded-lg cursor-pointer transition-colors group">
+                                        <div class="flex items-center gap-4">
+                                            <svg class="w-5 h-5 text-slate-600 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
+                                            </svg>
+                                            <div>
+                                                <h5
+                                                    class="text-xs font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                                    Sửa đổi sự kiện</h5>
+                                                <p class="text-[11px] text-slate-500">Sửa đổi các thông số và sự kiện
+                                                    sắp tới. <a href="#" class="text-blue-600 underline">Tìm hiểu
+                                                        thêm</a></p>
+                                            </div>
+                                        </div>
+                                        <svg class="w-4 h-4 text-slate-400 group-hover:text-slate-700" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+
+                                    <div
+                                        class="py-3 flex items-center justify-between hover:bg-slate-50/70 p-2 rounded-lg cursor-pointer transition-colors group">
+                                        <div class="flex items-center gap-4">
+                                            <svg class="w-5 h-5 text-slate-600 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                            </svg>
+                                            <div>
+                                                <h5
+                                                    class="text-xs font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                                    Tạo sự kiện tuỳ chỉnh</h5>
+                                                <p class="text-[11px] text-slate-500">Tạo sự kiện mới từ sự kiện hiện
+                                                    có. <a href="#" class="text-blue-600 underline">Tìm hiểu thêm</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <svg class="w-4 h-4 text-slate-400 group-hover:text-slate-700" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+
+                                    <div
+                                        class="py-3 flex items-center justify-between hover:bg-slate-50/70 p-2 rounded-lg cursor-pointer transition-colors group">
+                                        <div class="flex items-center gap-4">
+                                            <svg class="w-5 h-5 text-slate-600 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                            </svg>
+                                            <div>
+                                                <h5
+                                                    class="text-xs font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
+                                                    Định cấu hình giá trị lượt chuyển đổi SKAdNetwork</h5>
+                                                <p class="text-[11px] text-slate-500">Đặt giá trị lượt chuyển đổi cho
+                                                    lượt tương tác của người dùng để đo lường mức độ thành công của
+                                                    chiến dịch quảng cáo. <a href="#"
+                                                        class="text-blue-600 underline">Tìm hiểu thêm</a></p>
+                                            </div>
+                                        </div>
+                                        <svg class="w-4 h-4 text-slate-400 group-hover:text-slate-700" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= KHỐI COPY HTML 100% ĐẦY ĐỦ ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND (DATA STREAMS &
+                    DRAWER)</span>
+                <button id="btnCopyHtml"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyHtml">Copy HTML</span>
+                </button>
+            </div>
+            <pre class="p-5 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-[700px]"
+                id="codeHtml">&lt;!-- Yêu cầu có CDN Tailwind CSS trong thẻ &lt;head&gt;:
+&lt;script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"&gt;&lt;/script&gt;
+--&gt;
+
+&lt;!-- 1. BẢNG DANH SÁCH LUỒNG DỮ LIỆU --&gt;
+&lt;div class="w-full font-sans select-none"&gt;
+  &lt;h1 class="text-2xl font-normal text-slate-800 tracking-tight mb-4"&gt;Luồng dữ liệu&lt;/h1&gt;
+
+  &lt;div class="bg-white border border-slate-200 rounded-xl shadow-2xs overflow-visible"&gt;
+    &lt;!-- Toolbar: Tabs + Search + Dropdown Thêm luồng --&gt;
+    &lt;div class="px-5 py-3 border-b border-slate-200 flex flex-wrap items-center justify-between gap-4"&gt;
+      &lt;div class="flex items-center gap-6 text-sm font-medium"&gt;
+        &lt;button type="button" class="stream-tab-btn text-blue-600 border-b-2 border-blue-600 pb-2 font-semibold cursor-pointer" data-filter="all"&gt;Tất cả&lt;/button&gt;
+        &lt;button type="button" class="stream-tab-btn text-slate-600 hover:text-slate-800 pb-2 cursor-pointer transition-colors" data-filter="ios"&gt;iOS&lt;/button&gt;
+        &lt;button type="button" class="stream-tab-btn text-slate-600 hover:text-slate-800 pb-2 cursor-pointer transition-colors" data-filter="android"&gt;Android&lt;/button&gt;
+        &lt;button type="button" class="stream-tab-btn text-slate-600 hover:text-slate-800 pb-2 cursor-pointer transition-colors" data-filter="web"&gt;Web&lt;/button&gt;
+      &lt;/div&gt;
+
+      &lt;div class="flex items-center gap-3"&gt;
+        &lt;div class="relative w-64"&gt;
+          &lt;span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400"&gt;
+            &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"&gt;&lt;/path&gt;&lt;/svg&gt;
+          &lt;/span&gt;
+          &lt;input type="text" id="streamSearchInput" placeholder="Tìm kiếm" class="w-full bg-white border border-slate-300 rounded-lg pl-9 pr-3 py-1.5 text-xs text-slate-700 outline-none"&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Nút Thêm luồng xổ xuống --&gt;
+        &lt;div class="relative" id="addStreamDropdownContainer"&gt;
+          &lt;button type="button" id="btnAddStream" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-lg flex items-center gap-2 cursor-pointer shadow-xs transition-colors"&gt;
+            &lt;span&gt;Thêm luồng&lt;/span&gt;
+            &lt;svg id="arrowAddStream" class="w-3 h-3 text-white transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20"&gt;
+              &lt;path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/&gt;
+            &lt;/svg&gt;
+          &lt;/button&gt;
+
+          &lt;div id="addStreamDropdownMenu" class="hidden absolute right-0 mt-1.5 w-48 bg-white border border-slate-200 rounded-xl shadow-xl py-2 z-40 font-sans"&gt;
+            &lt;button type="button" class="add-stream-option w-full text-left px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 flex items-center gap-3 cursor-pointer transition-colors" data-type="ios"&gt;
+              &lt;div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-[10px] shrink-0"&gt;iOS&lt;/div&gt;
+              &lt;span class="font-medium text-slate-800"&gt;Ứng dụng iOS&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button type="button" class="add-stream-option w-full text-left px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 flex items-center gap-3 cursor-pointer transition-colors" data-type="android"&gt;
+              &lt;div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs shrink-0"&gt;🤖&lt;/div&gt;
+              &lt;span class="font-medium text-slate-800"&gt;Ứng dụng Android&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button type="button" class="add-stream-option w-full text-left px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 flex items-center gap-3 cursor-pointer transition-colors" data-type="web"&gt;
+              &lt;div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0"&gt;🌐&lt;/div&gt;
+              &lt;span class="font-medium text-slate-800"&gt;Web&lt;/span&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Danh sách các dòng luồng dữ liệu --&gt;
+    &lt;div class="divide-y divide-slate-100" id="streamRowsContainer"&gt;
+      &lt;div class="stream-row px-5 py-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition-colors group" data-type="ios" data-name="app_bai_11 (ios)" data-platform="iOS" data-package="com.example.appBai11" data-id="14903984681" data-firebase="1:288823190991:ios:f55acd9dffecb956315eba"&gt;
+        &lt;div class="flex items-center gap-4 w-1/3 min-w-[220px]"&gt;
+          &lt;div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs shrink-0"&gt;iOS&lt;/div&gt;
+          &lt;div&gt;&lt;h4 class="text-xs font-semibold text-slate-800 group-hover:text-blue-600"&gt;app_bai_11 (ios)&lt;/h4&gt;&lt;p class="text-[11px] text-slate-400"&gt;com.example.appBai11&lt;/p&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="text-xs text-slate-600 font-mono w-1/4"&gt;14903984681&lt;/div&gt;
+        &lt;div class="text-xs text-slate-500 w-1/3"&gt;Không nhận được dữ liệu nào trong 48 giờ qua.&lt;/div&gt;
+        &lt;div class="text-slate-400 pl-2"&gt;&lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="stream-row px-5 py-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition-colors group" data-type="android" data-name="app_bai_11 (android)" data-platform="Android" data-package="com.example.app_bai_11" data-id="14904037392" data-firebase="1:288823190991:android:e10bcd92ff8120"&gt;
+        &lt;div class="flex items-center gap-4 w-1/3 min-w-[220px]"&gt;
+          &lt;div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs shrink-0"&gt;🤖&lt;/div&gt;
+          &lt;div&gt;&lt;h4 class="text-xs font-semibold text-slate-800 group-hover:text-blue-600"&gt;app_bai_11 (android)&lt;/h4&gt;&lt;p class="text-[11px] text-slate-400"&gt;com.example.app_bai_11&lt;/p&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="text-xs text-slate-600 font-mono w-1/4"&gt;14904037392&lt;/div&gt;
+        &lt;div class="text-xs text-slate-500 w-1/3"&gt;Không nhận được dữ liệu nào trong 48 giờ qua.&lt;/div&gt;
+        &lt;div class="text-slate-400 pl-2"&gt;&lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="stream-row px-5 py-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition-colors group" data-type="web" data-name="app_bai_11 (windows)" data-platform="Windows" data-package="windows.desktop.app" data-id="14903903664" data-firebase="1:288823190991:web:a98bf341209"&gt;
+        &lt;div class="flex items-center gap-4 w-1/3 min-w-[220px]"&gt;
+          &lt;div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0"&gt;🌐&lt;/div&gt;
+          &lt;div&gt;&lt;h4 class="text-xs font-semibold text-slate-800 group-hover:text-blue-600"&gt;app_bai_11 (windows)&lt;/h4&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="text-xs text-slate-600 font-mono w-1/4"&gt;14903903664&lt;/div&gt;
+        &lt;div class="text-xs text-slate-500 w-1/3"&gt;Không nhận được dữ liệu nào trong 48 giờ qua.&lt;/div&gt;
+        &lt;div class="text-slate-400 pl-2"&gt;&lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="stream-row px-5 py-4 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition-colors group" data-type="web" data-name="app_bai_11 (web)" data-platform="Web" data-package="https://myweb.app" data-id="14903947727" data-firebase="1:288823190991:web:77b1029da"&gt;
+        &lt;div class="flex items-center gap-4 w-1/3 min-w-[220px]"&gt;
+          &lt;div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0"&gt;🌐&lt;/div&gt;
+          &lt;div&gt;&lt;h4 class="text-xs font-semibold text-slate-800 group-hover:text-blue-600"&gt;app_bai_11 (web)&lt;/h4&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="text-xs text-slate-600 font-mono w-1/4"&gt;14903947727&lt;/div&gt;
+        &lt;div class="text-xs text-slate-500 w-1/3"&gt;Không nhận được dữ liệu nào trong 48 giờ qua.&lt;/div&gt;
+        &lt;div class="text-slate-400 pl-2"&gt;&lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 2. DRAWER TRƯỢT CHI TIẾT LUỒNG ỨNG DỤNG --&gt;
+&lt;div id="streamDrawerBackdrop" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-[1px] z-50 flex justify-end transition-opacity duration-300"&gt;
+  &lt;div id="streamDrawer" class="w-full max-w-4xl bg-slate-50 h-full shadow-2xl flex flex-col font-sans overflow-hidden transform translate-x-full transition-transform duration-300"&gt;
+    
+    &lt;div class="px-6 py-4 bg-white border-b border-slate-200 flex items-center justify-between shrink-0"&gt;
+      &lt;div class="flex items-center gap-3"&gt;
+        &lt;button type="button" id="btnCloseDrawer" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 cursor-pointer"&gt;✕&lt;/button&gt;
+        &lt;h3 class="text-base font-normal text-slate-800"&gt;Thông tin chi tiết về luồng ứng dụng&lt;/h3&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="p-8 overflow-y-auto space-y-6 flex-1"&gt;
+      &lt;!-- Card Định Danh --&gt;
+      &lt;div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xs space-y-4"&gt;
+        &lt;div&gt;&lt;p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-0.5"&gt;TÊN ỨNG DỤNG&lt;/p&gt;&lt;h4 id="detailAppName" class="text-sm font-semibold text-slate-800"&gt;app_bai_11 (ios)&lt;/h4&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-0.5"&gt;NỀN&lt;/p&gt;&lt;p id="detailPlatform" class="text-xs text-slate-700"&gt;iOS&lt;/p&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-0.5"&gt;MÃ GÓI&lt;/p&gt;&lt;p id="detailPackage" class="text-xs text-slate-700 font-mono"&gt;com.example.appBai11&lt;/p&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-0.5"&gt;MÃ LUỒNG&lt;/p&gt;&lt;p id="detailStreamId" class="text-xs text-slate-700 font-mono"&gt;14903984681&lt;/p&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-0.5"&gt;MÃ ỨNG DỤNG FIREBASE&lt;/p&gt;&lt;p id="detailFirebaseId" class="text-xs text-slate-700 font-mono"&gt;1:288823190991:ios:f55acd9dffecb956315eba&lt;/p&gt;&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Card Cài Đặt --&gt;
+      &lt;div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xs space-y-4"&gt;
+        &lt;h4 class="text-sm font-semibold text-slate-800 mb-1"&gt;Cài đặt&lt;/h4&gt;
+        &lt;div class="divide-y divide-slate-100"&gt;
+          &lt;div class="py-3 flex items-center justify-between hover:bg-slate-50 p-2 rounded-lg cursor-pointer"&gt;
+            &lt;div&gt;&lt;h5 class="text-xs font-semibold text-slate-800"&gt;Hướng dẫn thiết lập SDK&lt;/h5&gt;&lt;p class="text-[11px] text-slate-500"&gt;Nhận trợ giúp trực tuyến để tích hợp SDK.&lt;/p&gt;&lt;/div&gt;
+            &lt;span&gt;&gt;&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class="py-3 p-2"&gt;
+            &lt;button type="button" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium px-4 py-2 rounded-lg"&gt;Tải GoogleService-Info.plist xuống&lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div class="py-3 flex items-center justify-between hover:bg-slate-50 p-2 rounded-lg cursor-pointer"&gt;
+            &lt;div&gt;&lt;h5 class="text-xs font-semibold text-slate-800"&gt;Định cấu hình chế độ cài đặt SDK&lt;/h5&gt;&lt;p class="text-[11px] text-slate-500"&gt;Cấu hình hành vi đo lường bổ sung.&lt;/p&gt;&lt;/div&gt;
+            &lt;span&gt;&gt;&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Card Sự Kiện --&gt;
+      &lt;div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-2xs space-y-4"&gt;
+        &lt;h4 class="text-sm font-semibold text-slate-800 mb-1"&gt;Sự kiện&lt;/h4&gt;
+        &lt;div class="divide-y divide-slate-100"&gt;
+          &lt;div class="py-3 flex items-center justify-between hover:bg-slate-50 p-2 rounded-lg cursor-pointer"&gt;
+            &lt;div&gt;&lt;h5 class="text-xs font-semibold text-slate-800"&gt;Mã thông báo bí mật cho API Measurement Protocol&lt;/h5&gt;&lt;/div&gt;
+            &lt;span&gt;&gt;&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class="py-3 flex items-center justify-between hover:bg-slate-50 p-2 rounded-lg cursor-pointer"&gt;
+            &lt;div&gt;&lt;h5 class="text-xs font-semibold text-slate-800"&gt;Sửa đổi sự kiện&lt;/h5&gt;&lt;/div&gt;
+            &lt;span&gt;&gt;&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class="py-3 flex items-center justify-between hover:bg-slate-50 p-2 rounded-lg cursor-pointer"&gt;
+            &lt;div&gt;&lt;h5 class="text-xs font-semibold text-slate-800"&gt;Tạo sự kiện tuỳ chỉnh&lt;/h5&gt;&lt;/div&gt;
+            &lt;span&gt;&gt;&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class="py-3 flex items-center justify-between hover:bg-slate-50 p-2 rounded-lg cursor-pointer"&gt;
+            &lt;div&gt;&lt;h5 class="text-xs font-semibold text-slate-800"&gt;Định cấu hình giá trị lượt chuyển đổi SKAdNetwork&lt;/h5&gt;&lt;/div&gt;
+            &lt;span&gt;&gt;&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- ================= KHỐI COPY JS 100% ĐẦY ĐỦ ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM)</span>
+                <button id="btnCopyJs"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyJs">Copy JS</span>
+                </button>
+            </div>
+            <pre class="p-5 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-[600px]" id="codeJs">// 1. Khai báo các phần tử DOM
+const streamRows = document.querySelectorAll(".stream-row");
+const streamDrawerBackdrop = document.querySelector("#streamDrawerBackdrop");
+const streamDrawer = document.querySelector("#streamDrawer");
+const btnCloseDrawer = document.querySelector("#btnCloseDrawer");
+
+const detailAppName = document.querySelector("#detailAppName");
+const detailPlatform = document.querySelector("#detailPlatform");
+const detailPackage = document.querySelector("#detailPackage");
+const detailStreamId = document.querySelector("#detailStreamId");
+const detailFirebaseId = document.querySelector("#detailFirebaseId");
+
+// 2. Mở Drawer khi click vào từng dòng luồng dữ liệu
+streamRows.forEach(row => {
+  row.addEventListener("click", function () {
+    detailAppName.innerText = this.getAttribute("data-name");
+    detailPlatform.innerText = this.getAttribute("data-platform");
+    detailPackage.innerText = this.getAttribute("data-package");
+    detailStreamId.innerText = this.getAttribute("data-id");
+    detailFirebaseId.innerText = this.getAttribute("data-firebase");
+
+    streamDrawerBackdrop.classList.remove("hidden");
+    setTimeout(() => {
+      streamDrawer.classList.remove("translate-x-full");
+    }, 10);
+  });
+});
+
+// 3. Hàm đóng Drawer trượt
+function closeDrawer() {
+  streamDrawer.classList.add("translate-x-full");
+  setTimeout(() => {
+    streamDrawerBackdrop.classList.add("hidden");
+  }, 300);
+}
+
+btnCloseDrawer.addEventListener("click", closeDrawer);
+streamDrawerBackdrop.addEventListener("click", (e) => {
+  if (e.target === streamDrawerBackdrop) closeDrawer();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !streamDrawerBackdrop.classList.contains("hidden")) {
+    closeDrawer();
+  }
+});
+
+// 4. Dropdown "Thêm luồng" xổ xuống
+const btnAddStream = document.querySelector("#btnAddStream");
+const addStreamDropdownMenu = document.querySelector("#addStreamDropdownMenu");
+const arrowAddStream = document.querySelector("#arrowAddStream");
+const addStreamDropdownContainer = document.querySelector("#addStreamDropdownContainer");
+
+btnAddStream.addEventListener("click", (e) => {
+  e.stopPropagation();
+  const isHidden = addStreamDropdownMenu.classList.toggle("hidden");
+  if (arrowAddStream) arrowAddStream.classList.toggle("rotate-180", !isHidden);
+});
+
+document.querySelectorAll(".add-stream-option").forEach(option => {
+  option.addEventListener("click", function (e) {
+    e.stopPropagation();
+    addStreamDropdownMenu.classList.add("hidden");
+    if (arrowAddStream) arrowAddStream.classList.remove("rotate-180");
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (addStreamDropdownContainer && !addStreamDropdownContainer.contains(e.target)) {
+    addStreamDropdownMenu.classList.add("hidden");
+    if (arrowAddStream) arrowAddStream.classList.remove("rotate-180");
+  }
+});
+
+// 5. Tabs lọc nền tảng (Tất cả, iOS, Android, Web)
+const streamTabs = document.querySelectorAll(".stream-tab-btn");
+streamTabs.forEach(tab => {
+  tab.addEventListener("click", function () {
+    streamTabs.forEach(t => {
+      t.classList.remove("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
+      t.classList.add("text-slate-600");
+    });
+    this.classList.add("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
+    this.classList.remove("text-slate-600");
+
+    const filter = this.getAttribute("data-filter");
+    streamRows.forEach(row => {
+      if (filter === "all" || row.getAttribute("data-type") === filter) {
+        row.classList.remove("hidden");
+      } else {
+        row.classList.add("hidden");
+      }
+    });
+  });
+});
+
+// 6. Tìm kiếm luồng
+const streamSearchInput = document.querySelector("#streamSearchInput");
+streamSearchInput.addEventListener("input", function () {
+  const query = this.value.toLowerCase().trim();
+  streamRows.forEach(row => {
+    const text = row.innerText.toLowerCase();
+    row.classList.toggle("hidden", !text.includes(query));
+  });
+});</pre>
+        </div>
+
+    </main>
+
+    <!-- ================= SCRIPT THỰC THI TRANG ================= -->
+    <script src="script.js"></script>
+    <script>
+        // Logic thực thi Drawer và Filter trên trang
+        const streamRows = document.querySelectorAll(".stream-row");
+        const streamDrawerBackdrop = document.querySelector("#streamDrawerBackdrop");
+        const streamDrawer = document.querySelector("#streamDrawer");
+        const btnCloseDrawer = document.querySelector("#btnCloseDrawer");
+
+        const detailAppName = document.querySelector("#detailAppName");
+        const detailPlatform = document.querySelector("#detailPlatform");
+        const detailPackage = document.querySelector("#detailPackage");
+        const detailStreamId = document.querySelector("#detailStreamId");
+        const detailFirebaseId = document.querySelector("#detailFirebaseId");
+
+        streamRows.forEach(row => {
+            row.addEventListener("click", function () {
+                detailAppName.innerText = this.getAttribute("data-name");
+                detailPlatform.innerText = this.getAttribute("data-platform");
+                detailPackage.innerText = this.getAttribute("data-package");
+                detailStreamId.innerText = this.getAttribute("data-id");
+                detailFirebaseId.innerText = this.getAttribute("data-firebase");
+
+                streamDrawerBackdrop.classList.remove("hidden");
+                setTimeout(() => {
+                    streamDrawer.classList.remove("translate-x-full");
+                }, 10);
+            });
+        });
+
+        function closeDrawer() {
+            streamDrawer.classList.add("translate-x-full");
+            setTimeout(() => {
+                streamDrawerBackdrop.classList.add("hidden");
+            }, 300);
+        }
+
+        btnCloseDrawer.addEventListener("click", closeDrawer);
+        streamDrawerBackdrop.addEventListener("click", (e) => {
+            if (e.target === streamDrawerBackdrop) closeDrawer();
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && !streamDrawerBackdrop.classList.contains("hidden")) {
+                closeDrawer();
+            }
+        });
+
+        // Dropdown Thêm luồng
+        const btnAddStream = document.querySelector("#btnAddStream");
+        const addStreamDropdownMenu = document.querySelector("#addStreamDropdownMenu");
+        const arrowAddStream = document.querySelector("#arrowAddStream");
+        const addStreamDropdownContainer = document.querySelector("#addStreamDropdownContainer");
+
+        btnAddStream.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const isHidden = addStreamDropdownMenu.classList.toggle("hidden");
+            if (arrowAddStream) arrowAddStream.classList.toggle("rotate-180", !isHidden);
+        });
+
+        document.querySelectorAll(".add-stream-option").forEach(option => {
+            option.addEventListener("click", function (e) {
+                e.stopPropagation();
+                addStreamDropdownMenu.classList.add("hidden");
+                if (arrowAddStream) arrowAddStream.classList.remove("rotate-180");
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (addStreamDropdownContainer && !addStreamDropdownContainer.contains(e.target)) {
+                addStreamDropdownMenu.classList.add("hidden");
+                if (arrowAddStream) arrowAddStream.classList.remove("rotate-180");
+            }
+        });
+
+        // Tabs lọc
+        const streamTabs = document.querySelectorAll(".stream-tab-btn");
+        streamTabs.forEach(tab => {
+            tab.addEventListener("click", function () {
+                streamTabs.forEach(t => {
+                    t.classList.remove("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
+                    t.classList.add("text-slate-600");
+                });
+                this.classList.add("text-blue-600", "border-b-2", "border-blue-600", "font-semibold");
+                this.classList.remove("text-slate-600");
+
+                const filter = this.getAttribute("data-filter");
+                streamRows.forEach(row => {
+                    if (filter === "all" || row.getAttribute("data-type") === filter) {
+                        row.classList.remove("hidden");
+                    } else {
+                        row.classList.add("hidden");
+                    }
+                });
+            });
+        });
+
+        // Ô tìm kiếm
+        const streamSearchInput = document.querySelector("#streamSearchInput");
+        streamSearchInput.addEventListener("input", function () {
+            const query = this.value.toLowerCase().trim();
+            streamRows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                row.classList.toggle("hidden", !text.includes(query));
+            });
+        });
+
+        // Nút copy clipboard
+        const btnCopyHtml = document.querySelector("#btnCopyHtml");
+        const txtCopyHtml = document.querySelector("#txtCopyHtml");
+        const codeHtml = document.querySelector("#codeHtml");
+
+        btnCopyHtml.addEventListener("click", () => {
+            navigator.clipboard.writeText(codeHtml.innerText).then(() => {
+                txtCopyHtml.innerText = "Đã Copy!";
+                btnCopyHtml.classList.replace("bg-slate-800", "bg-emerald-600");
+                setTimeout(() => {
+                    txtCopyHtml.innerText = "Copy HTML";
+                    btnCopyHtml.classList.replace("bg-emerald-600", "bg-slate-800");
+                }, 1800);
+            });
+        });
+
+        const btnCopyJs = document.querySelector("#btnCopyJs");
+        const txtCopyJs = document.querySelector("#txtCopyJs");
+        const codeJs = document.querySelector("#codeJs");
+
+        btnCopyJs.addEventListener("click", () => {
+            navigator.clipboard.writeText(codeJs.innerText).then(() => {
+                txtCopyJs.innerText = "Đã Copy!";
+                btnCopyJs.classList.replace("bg-slate-800", "bg-emerald-600");
+                setTimeout(() => {
+                    txtCopyJs.innerText = "Copy JS";
+                    btnCopyJs.classList.replace("bg-emerald-600", "bg-slate-800");
+                }, 1800);
+            });
+        });
+    </script>
+</body>
+
+</html>

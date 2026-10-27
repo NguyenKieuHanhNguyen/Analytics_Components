@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar GA4 - GA4 UI Kit</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800">
+
+    <!-- SIDEBAR MENU BÊN TRÁI -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+        <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+            <div
+                class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+                📊
+            </div>
+            <div>
+                <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+                <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+            </div>
+        </div>
+
+        <div class="p-3 overflow-y-auto flex-1">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+            <nav class="space-y-1">
+                <a href="index.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏠</span> Tổng quan UI Kit
+                </a>
+                <a href="accordion.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📂</span> Accordion Tasks
+                </a>
+                <a href="popup-picker.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🪟</span> Popup / Modal Picker
+                </a>
+                <a href="sidebar.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+                    <span>📑</span> Sidebar GA4
+                </a>
+                <a href="exploration-carousel.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🎠</span> Carousel Khám phá
+                </a>
+                <a href="account-settings.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚙️</span> Cài đặt Tài khoản
+                </a>
+                <a href="data-streams.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🌊</span> Luồng Dữ Liệu
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <main class="flex-1 p-8 max-w-5xl overflow-y-auto">
+        <div class="flex items-center gap-3 mb-6">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 3</span>
+            <h2 class="text-xl font-bold text-slate-800">GA4 Collapsible Sidebar (Thanh điều hướng bên trái thu gọn/bung
+                ra)</h2>
+        </div>
+
+        <!-- KHỐI XEM TRƯỚC TƯƠNG TÁC -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước (Rê
+                    chuột hoặc bấm nút thu gọn ở góc dưới)
+                </span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+            </div>
+
+            <div class="p-6 bg-slate-100/60 flex h-96 rounded-b-2xl overflow-hidden">
+                <!-- Khung Sidebar Demo GA4 -->
+                <aside id="demoSidebar"
+                    class="w-60 bg-white border border-slate-200 rounded-xl flex flex-col justify-between transition-all duration-300 shadow-sm select-none">
+                    <div>
+                        <div class="h-14 flex items-center px-4 gap-3 border-b border-slate-100">
+                            <div class="flex items-end gap-1 h-5 w-5 shrink-0 justify-center">
+                                <span class="w-1 h-2.5 bg-amber-500 rounded-xs"></span>
+                                <span class="w-1 h-4 bg-amber-600 rounded-xs"></span>
+                                <span class="w-1 h-5 bg-amber-700 rounded-xs"></span>
+                            </div>
+                            <span
+                                class="sidebar-label text-sm font-bold text-slate-800 whitespace-nowrap">Analytics</span>
+                        </div>
+
+                        <nav class="p-2 space-y-1">
+                            <a href="javascript:void(0)"
+                                class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">
+                                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                    </path>
+                                </svg>
+                                <span class="sidebar-label text-xs font-medium whitespace-nowrap">Trang chủ</span>
+                            </a>
+                            <a href="javascript:void(0)"
+                                class="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-600 text-white transition-colors shadow-2xs">
+                                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                    </path>
+                                </svg>
+                                <span class="sidebar-label text-xs font-medium whitespace-nowrap">Báo cáo</span>
+                            </a>
+                            <a href="javascript:void(0)"
+                                class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">
+                                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                                <span class="sidebar-label text-xs font-medium whitespace-nowrap">Khám phá</span>
+                            </a>
+                            <a href="javascript:void(0)"
+                                class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">
+                                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                                </svg>
+                                <span class="sidebar-label text-xs font-medium whitespace-nowrap">Quảng cáo</span>
+                            </a>
+                        </nav>
+                    </div>
+
+                    <div class="p-2 border-t border-slate-100 space-y-1">
+                        <a href="javascript:void(0)"
+                            class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">
+                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                                </path>
+                            </svg>
+                            <span class="sidebar-label text-xs font-medium whitespace-nowrap">Quản trị</span>
+                        </a>
+                        <button id="btnToggleSidebar"
+                            class="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 cursor-pointer transition-colors">
+                            <svg id="sidebarArrow" class="w-5 h-5 shrink-0 transition-transform duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path>
+                            </svg>
+                            <span class="sidebar-label text-xs font-medium whitespace-nowrap">Thu gọn</span>
+                        </button>
+                    </div>
+                </aside>
+
+                <div class="flex-1 p-6 flex items-center justify-center text-slate-400 text-sm">
+                    Vùng nội dung ứng dụng (Bấm nút "Thu gọn" để xem sidebar co hẹp thành icon)
+                </div>
+            </div>
+        </div>
+
+        <!-- KHỐI COPY HTML 100% -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND (SIDEBAR GA4)</span>
+                <button id="btnCopyHtml"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyHtml">Copy HTML</span>
+                </button>
+            </div>
+            <pre class="p-4 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-96" id="codeHtml">&lt;!-- Yêu cầu có CDN Tailwind trong thẻ &lt;head&gt; --&gt;
+&lt;aside id="sidebar" class="w-60 bg-white border-r border-slate-200 flex flex-col justify-between transition-all duration-300 h-screen select-none"&gt;
+  &lt;div&gt;
+    &lt;div class="h-14 flex items-center px-4 gap-3 border-b border-slate-100"&gt;
+      &lt;div class="flex items-end gap-1 h-5 w-5 shrink-0 justify-center"&gt;
+        &lt;span class="w-1 h-2.5 bg-amber-500 rounded-xs"&gt;&lt;/span&gt;
+        &lt;span class="w-1 h-4 bg-amber-600 rounded-xs"&gt;&lt;/span&gt;
+        &lt;span class="w-1 h-5 bg-amber-700 rounded-xs"&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;span class="sidebar-label text-sm font-bold text-slate-800 whitespace-nowrap"&gt;Analytics&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;nav class="p-2 space-y-1"&gt;
+      &lt;a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100"&gt;
+        &lt;svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"&gt;&lt;/path&gt;&lt;/svg&gt;
+        &lt;span class="sidebar-label text-xs font-medium whitespace-nowrap"&gt;Trang chủ&lt;/span&gt;
+      &lt;/a&gt;
+      &lt;a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-600 text-white"&gt;
+        &lt;svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"&gt;&lt;/path&gt;&lt;/svg&gt;
+        &lt;span class="sidebar-label text-xs font-medium whitespace-nowrap"&gt;Báo cáo&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+
+  &lt;div class="p-2 border-t border-slate-100"&gt;
+    &lt;button id="btnToggleSidebar" class="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 cursor-pointer"&gt;
+      &lt;svg id="sidebarArrow" class="w-5 h-5 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"&gt;&lt;/path&gt;&lt;/svg&gt;
+      &lt;span class="sidebar-label text-xs font-medium whitespace-nowrap"&gt;Thu gọn&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/aside&gt;</pre>
+        </div>
+
+        <!-- KHỐI COPY JS 100% -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM)</span>
+                <button id="btnCopyJs"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyJs">Copy JS</span>
+                </button>
+            </div>
+            <pre class="p-4 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-80" id="codeJs">const sidebar = document.querySelector("#sidebar");
+const btnToggle = document.querySelector("#btnToggleSidebar");
+const arrow = document.querySelector("#sidebarArrow");
+const labels = document.querySelectorAll(".sidebar-label");
+
+btnToggle.addEventListener("click", function () {
+  sidebar.classList.toggle("w-60");
+  sidebar.classList.toggle("w-16");
+  arrow.classList.toggle("rotate-180");
+  labels.forEach(l => l.classList.toggle("hidden"));
+});</pre>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        const demoSidebar = document.querySelector("#demoSidebar");
+        const btnToggleSidebar = document.querySelector("#btnToggleSidebar");
+        const sidebarArrow = document.querySelector("#sidebarArrow");
+        const labels = document.querySelectorAll(".sidebar-label");
+
+        btnToggleSidebar.addEventListener("click", () => {
+            demoSidebar.classList.toggle("w-60");
+            demoSidebar.classList.toggle("w-16");
+            sidebarArrow.classList.toggle("rotate-180");
+            labels.forEach(l => l.classList.toggle("hidden"));
+        });
+    </script>
+</body>
+
+</html>

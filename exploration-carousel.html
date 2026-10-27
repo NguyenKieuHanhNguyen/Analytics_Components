@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploration Carousel - GA4 UI Kit</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800 font-sans">
+
+    <!-- ================= SIDEBAR MENU BÊN TRÁI ================= -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+        <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+            <div
+                class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+                📊
+            </div>
+            <div>
+                <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+                <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+            </div>
+        </div>
+
+        <div class="p-3 overflow-y-auto flex-1">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+            <nav class="space-y-1">
+                <a href="index.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏠</span> Tổng quan UI Kit
+                </a>
+                <a href="accordion.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📂</span> Accordion Tasks
+                </a>
+                <a href="popup-picker.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🪟</span> Popup / Modal Picker
+                </a>
+                <a href="sidebar.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📑</span> Sidebar GA4
+                </a>
+                <a href="exploration-carousel.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+                    <span>🎠</span> Carousel Khám phá
+                </a>
+                <a href="account-settings.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚙️</span> Cài đặt Tài khoản
+                </a>
+                <a href="data-streams.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🌊</span> Luồng Dữ Liệu
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- ================= KHU VỰC CHÍNH ================= -->
+    <main class="flex-1 p-8 max-w-6xl overflow-y-auto">
+        <div class="flex items-center gap-3 mb-6">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 4</span>
+            <h2 class="text-xl font-bold text-slate-800">GA4 Exploration Template Carousel (Băng chuyền Mẫu Khám phá)
+            </h2>
+        </div>
+
+        <!-- ================= KHỐI GIAO DIỆN XEM TRƯỚC ================= -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước (Bấm mũi
+                    tên tròn để cuộn mượt các thẻ)
+                </span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+            </div>
+
+            <div class="p-8 bg-slate-50/50">
+
+                <!-- VÙNG CAROUSEL GA4 -->
+                <div class="w-full font-sans select-none relative">
+
+                    <!-- Tiêu đề + Phụ đề + Link Thư viện mẫu -->
+                    <div class="flex items-baseline justify-between mb-4">
+                        <div>
+                            <h1 class="text-2xl font-normal text-slate-900 tracking-tight">Khám phá</h1>
+                            <p class="text-xs text-slate-600 mt-1">Bắt đầu một bản dữ liệu khám phá mới</p>
+                        </div>
+                        <a href="javascript:void(0)"
+                            class="text-xs font-medium text-blue-600 hover:text-blue-800 transition-colors">
+                            Thư viện mẫu
+                        </a>
+                    </div>
+
+                    <!-- KHUNG CHỨA BĂNG CHUYỀN VÀ 2 NÚT ĐIỀU HƯỚNG TRÒN -->
+                    <div class="relative group">
+
+                        <!-- Nút cuộn Trái (<) -->
+                        <button id="previewBtnPrev"
+                            class="hidden absolute -left-3 top-1/3 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-600 hover:text-blue-600 hover:bg-slate-50 cursor-pointer transition-all"
+                            title="Cuộn sang trái">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+
+                        <!-- Băng cuộn ngang ẩn thanh cuộn -->
+                        <div id="previewCarouselSlider"
+                            class="flex gap-4 overflow-x-auto scroll-smooth scrollbar-none py-2 px-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+
+                            <!-- CARD 1: Trống (Dấu cộng 4 màu Google) -->
+                            <div class="min-w-[230px] max-w-[230px] flex flex-col cursor-pointer group/card">
+                                <div
+                                    class="h-36 bg-white border border-slate-200 rounded-lg flex items-center justify-center transition-all group-hover/card:border-slate-300 group-hover/card:shadow-sm">
+                                    <!-- Biểu tượng dấu cộng 4 màu Google -->
+                                    <svg class="w-10 h-10" viewBox="0 0 36 36">
+                                        <path fill="#4285F4" d="M16 4h4v12h-4z" />
+                                        <path fill="#34A853" d="M16 20h4v12h-4z" />
+                                        <path fill="#EA4335" d="M4 16h12v4H4z" />
+                                        <path fill="#FBBC05" d="M20 16h12v4H20z" />
+                                    </svg>
+                                </div>
+                                <div class="mt-3">
+                                    <h3 class="text-xs font-medium text-slate-800 group-hover/card:text-blue-600">Trống
+                                    </h3>
+                                    <p class="text-[11px] text-slate-500 mt-1 leading-snug">Tạo một bản khám phá mới</p>
+                                </div>
+                            </div>
+
+                            <!-- CARD 2: Biểu mẫu tùy ý -->
+                            <div class="min-w-[230px] max-w-[230px] flex flex-col cursor-pointer group/card">
+                                <div
+                                    class="h-36 bg-white border border-slate-200 rounded-lg p-3 flex flex-col justify-center transition-all group-hover/card:border-slate-300 group-hover/card:shadow-sm">
+                                    <!-- SVG mô phỏng bảng Free-form heatmap -->
+                                    <svg class="w-full h-24" viewBox="0 0 160 80" fill="none">
+                                        <line x1="10" y1="8" x2="25" y2="8" stroke="#94A3B8" stroke-width="2" />
+                                        <line x1="60" y1="8" x2="75" y2="8" stroke="#94A3B8" stroke-width="2" />
+                                        <line x1="110" y1="8" x2="125" y2="8" stroke="#94A3B8" stroke-width="2" />
+                                        <line x1="10" y1="16" x2="150" y2="16" stroke="#E2E8F0" stroke-width="1" />
+
+                                        <rect x="10" y="22" width="20" height="12" fill="#E2E8F0" rx="1" />
+                                        <rect x="35" y="22" width="20" height="12" fill="#BFDBFE" rx="1" />
+                                        <rect x="60" y="22" width="25" height="12" fill="#93C5FD" rx="1" />
+                                        <rect x="90" y="22" width="30" height="12" fill="#DBEAFE" rx="1" />
+
+                                        <rect x="10" y="38" width="20" height="12" fill="#BFDBFE" rx="1" />
+                                        <rect x="35" y="38" width="20" height="12" fill="#3B82F6" rx="1" />
+                                        <rect x="60" y="38" width="25" height="12" fill="#60A5FA" rx="1" />
+                                        <rect x="90" y="38" width="30" height="12" fill="#93C5FD" rx="1" />
+
+                                        <rect x="10" y="54" width="20" height="12" fill="#EFF6FF" rx="1" />
+                                        <rect x="35" y="54" width="20" height="12" fill="#BFDBFE" rx="1" />
+                                        <rect x="60" y="54" width="25" height="12" fill="#DBEAFE" rx="1" />
+                                        <rect x="90" y="54" width="30" height="12" fill="#EFF6FF" rx="1" />
+                                    </svg>
+                                </div>
+                                <div class="mt-3">
+                                    <h3 class="text-xs font-medium text-slate-800 group-hover/card:text-blue-600">Biểu
+                                        mẫu tùy ý</h3>
+                                    <p class="text-[11px] text-slate-500 mt-1 leading-snug">Bạn có thể khám phá những
+                                        thông tin chi tiết nào thông qua các bảng và biểu đồ tùy chỉnh?</p>
+                                </div>
+                            </div>
+
+                            <!-- CARD 3: Khám phá phễu -->
+                            <div class="min-w-[230px] max-w-[230px] flex flex-col cursor-pointer group/card">
+                                <div
+                                    class="h-36 bg-white border border-slate-200 rounded-lg p-3 flex flex-col justify-center transition-all group-hover/card:border-slate-300 group-hover/card:shadow-sm">
+                                    <!-- SVG mô phỏng Funnel bar chart -->
+                                    <svg class="w-full h-24" viewBox="0 0 160 80" fill="none">
+                                        <line x1="10" y1="72" x2="150" y2="72" stroke="#CBD5E1" stroke-width="1.5" />
+                                        <line x1="10" y1="76" x2="30" y2="76" stroke="#94A3B8" stroke-width="2" />
+                                        <line x1="45" y1="76" x2="65" y2="76" stroke="#94A3B8" stroke-width="2" />
+                                        <line x1="80" y1="76" x2="100" y2="76" stroke="#94A3B8" stroke-width="2" />
+                                        <line x1="115" y1="76" x2="135" y2="76" stroke="#94A3B8" stroke-width="2" />
+
+                                        <rect x="15" y="10" width="16" height="62" fill="#60A5FA" rx="1" />
+                                        <rect x="42" y="24" width="16" height="48" fill="#60A5FA" rx="1" />
+                                        <rect x="69" y="36" width="16" height="36" fill="#60A5FA" rx="1" />
+                                        <rect x="96" y="46" width="16" height="26" fill="#60A5FA" rx="1" />
+                                        <rect x="123" y="55" width="16" height="17" fill="#60A5FA" rx="1" />
+                                    </svg>
+                                </div>
+                                <div class="mt-3">
+                                    <h3 class="text-xs font-medium text-slate-800 group-hover/card:text-blue-600">Khám
+                                        phá phễu</h3>
+                                    <p class="text-[11px] text-slate-500 mt-1 leading-snug">Bạn có thể phân tích, phân
+                                        đoạn và chia nhỏ các hành trình nào của người dùng thông qua phễu nhiều bước?
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- CARD 4: Khám phá lộ trình -->
+                            <div class="min-w-[230px] max-w-[230px] flex flex-col cursor-pointer group/card">
+                                <div
+                                    class="h-36 bg-white border border-slate-200 rounded-lg p-3 flex flex-col justify-center transition-all group-hover/card:border-slate-300 group-hover/card:shadow-sm">
+                                    <!-- SVG mô phỏng Path Sankey Flow -->
+                                    <svg class="w-full h-24" viewBox="0 0 160 80" fill="none">
+                                        <line x1="10" y1="8" x2="35" y2="8" stroke="#94A3B8" stroke-width="2" />
+                                        <line x1="55" y1="8" x2="80" y2="8" stroke="#94A3B8" stroke-width="2" />
+                                        <line x1="100" y1="8" x2="125" y2="8" stroke="#94A3B8" stroke-width="2" />
+
+                                        <rect x="15" y="15" width="8" height="55" fill="#3B82F6" />
+                                        <path d="M23 15 C 40 15, 45 18, 60 18 L 60 48 C 45 48, 40 45, 23 45 Z"
+                                            fill="#93C5FD" opacity="0.8" />
+                                        <path d="M23 48 C 40 48, 45 52, 60 52 L 60 70 C 45 70, 40 68, 23 68 Z"
+                                            fill="#BFDBFE" opacity="0.8" />
+
+                                        <rect x="60" y="18" width="8" height="30" fill="#3B82F6" />
+                                        <rect x="60" y="52" width="8" height="18" fill="#3B82F6" />
+
+                                        <path d="M68 20 C 85 20, 90 25, 110 25 L 110 35 C 90 35, 85 30, 68 30 Z"
+                                            fill="#BFDBFE" opacity="0.9" />
+                                        <path d="M68 35 C 85 35, 90 42, 110 42 L 110 48 C 90 48, 85 45, 68 45 Z"
+                                            fill="#DBEAFE" opacity="0.9" />
+                                        <rect x="110" y="25" width="8" height="10" fill="#3B82F6" />
+                                        <rect x="110" y="42" width="8" height="6" fill="#3B82F6" />
+                                    </svg>
+                                </div>
+                                <div class="mt-3">
+                                    <h3 class="text-xs font-medium text-slate-800 group-hover/card:text-blue-600">Khám
+                                        phá lộ trình</h3>
+                                    <p class="text-[11px] text-slate-500 mt-1 leading-snug">Bạn có thể khám phá những
+                                        hành trình nào của người dùng thông qua biểu đồ cây?</p>
+                                </div>
+                            </div>
+
+                            <!-- CARD 5: Chồng chéo phân khúc -->
+                            <div class="min-w-[230px] max-w-[230px] flex flex-col cursor-pointer group/card">
+                                <div
+                                    class="h-36 bg-white border border-slate-200 rounded-lg p-3 flex flex-col justify-center items-center transition-all group-hover/card:border-slate-300 group-hover/card:shadow-sm">
+                                    <!-- SVG mô phỏng Venn diagram -->
+                                    <svg class="w-full h-24" viewBox="0 0 160 80" fill="none">
+                                        <line x1="15" y1="18" x2="30" y2="18" stroke="#CBD5E1" stroke-width="2" />
+                                        <line x1="130" y1="18" x2="145" y2="18" stroke="#CBD5E1" stroke-width="2" />
+                                        <circle cx="68" cy="45" r="28" fill="#60A5FA" fill-opacity="0.5"
+                                            stroke="#3B82F6" stroke-width="1.5" />
+                                        <circle cx="95" cy="48" r="22" fill="#93C5FD" fill-opacity="0.6"
+                                            stroke="#2563EB" stroke-width="1.5" />
+                                    </svg>
+                                </div>
+                                <div class="mt-3">
+                                    <h3 class="text-xs font-medium text-slate-800 group-hover/card:text-blue-600">Chồng
+                                        chéo phân khúc</h3>
+                                    <p class="text-[11px] text-slate-500 mt-1 leading-snug">Điểm chung nào về phân đoạn
+                                        người dùng cho bạn biết về hành vi của họ?</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Nút cuộn Phải (>) -->
+                        <button id="previewBtnNext"
+                            class="absolute -right-3 top-1/3 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-600 hover:text-blue-600 hover:bg-slate-50 cursor-pointer transition-all"
+                            title="Cuộn sang phải">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= KHỐI 100% CODE HTML & TAILWIND ĐỂ COPY ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND</span>
+                <button id="btnCopyHtml"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyHtml">Copy HTML</span>
+                </button>
+            </div>
+            <pre class="p-4 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-96" id="codeHtml">&lt;!-- Yêu cầu có CDN Tailwind CSS trong thẻ &lt;head&gt;:
+&lt;script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"&gt;&lt;/script&gt;
+--&gt;
+
+&lt;div class="w-full font-sans select-none relative"&gt;
+  
+  &lt;!-- 1. TIÊU ĐỀ &amp; LIÊN KẾT THƯ VIỆN MẪU --&gt;
+  &lt;div class="flex items-baseline justify-between mb-4"&gt;
+    &lt;div&gt;
+      &lt;h1 class="text-2xl font-normal text-slate-900 tracking-tight"&gt;Khám phá&lt;/h1&gt;
+      &lt;p class="text-xs text-slate-600 mt-1"&gt;Bắt đầu một bản dữ liệu khám phá mới&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;a href="#" class="text-xs font-medium text-blue-600 hover:text-blue-800"&gt;Thư viện mẫu&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;!-- 2. BĂNG CHUYỀN SLIDER + 2 NÚT CUỘN TRÒN --&gt;
+  &lt;div class="relative group"&gt;
+    
+    &lt;!-- Nút cuộn trái --&gt;
+    &lt;button id="btnPrev" class="hidden absolute -left-3 top-1/3 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-600 hover:text-blue-600 cursor-pointer transition-all"&gt;
+      &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"&gt;&lt;/path&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+
+    &lt;!-- Container cuộn ngang mượt --&gt;
+    &lt;div id="carouselSlider" class="flex gap-4 overflow-x-auto scroll-smooth py-2 px-1 [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden"&gt;
+      
+      &lt;!-- MẪU 1: TRỐNG --&gt;
+      &lt;div class="min-w-[230px] max-w-[230px] flex flex-col cursor-pointer group/card"&gt;
+        &lt;div class="h-36 bg-white border border-slate-200 rounded-lg flex items-center justify-center group-hover/card:border-slate-300 group-hover/card:shadow-sm"&gt;
+          &lt;svg class="w-10 h-10" viewBox="0 0 36 36"&gt;
+            &lt;path fill="#4285F4" d="M16 4h4v12h-4z"/&gt;&lt;path fill="#34A853" d="M16 20h4v12h-4z"/&gt;&lt;path fill="#EA4335" d="M4 16h12v4H4z"/&gt;&lt;path fill="#FBBC05" d="M20 16h12v4H20z"/&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;div class="mt-3"&gt;
+          &lt;h3 class="text-xs font-medium text-slate-800 group-hover/card:text-blue-600"&gt;Trống&lt;/h3&gt;
+          &lt;p class="text-[11px] text-slate-500 mt-1 leading-snug"&gt;Tạo một bản khám phá mới&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- MẪU 2: BIỂU MẪU TÙY Ý --&gt;
+      &lt;div class="min-w-[230px] max-w-[230px] flex flex-col cursor-pointer group/card"&gt;
+        &lt;div class="h-36 bg-white border border-slate-200 rounded-lg p-3 flex flex-col justify-center group-hover/card:border-slate-300 group-hover/card:shadow-sm"&gt;
+          &lt;svg class="w-full h-24" viewBox="0 0 160 80" fill="none"&gt;
+            &lt;line x1="10" y1="8" x2="25" y2="8" stroke="#94A3B8" stroke-width="2"/&gt;
+            &lt;line x1="60" y1="8" x2="75" y2="8" stroke="#94A3B8" stroke-width="2"/&gt;
+            &lt;line x1="110" y1="8" x2="125" y2="8" stroke="#94A3B8" stroke-width="2"/&gt;
+            &lt;line x1="10" y1="16" x2="150" y2="16" stroke="#E2E8F0" stroke-width="1"/&gt;
+            &lt;rect x="10" y="22" width="20" height="12" fill="#E2E8F0" rx="1"/&gt;
+            &lt;rect x="35" y="22" width="20" height="12" fill="#BFDBFE" rx="1"/&gt;
+            &lt;rect x="60" y="22" width="25" height="12" fill="#93C5FD" rx="1"/&gt;
+            &lt;rect x="90" y="22" width="30" height="12" fill="#DBEAFE" rx="1"/&gt;
+            &lt;rect x="10" y="38" width="20" height="12" fill="#BFDBFE" rx="1"/&gt;
+            &lt;rect x="35" y="38" width="20" height="12" fill="#3B82F6" rx="1"/&gt;
+            &lt;rect x="60" y="38" width="25" height="12" fill="#60A5FA" rx="1"/&gt;
+            &lt;rect x="90" y="38" width="30" height="12" fill="#93C5FD" rx="1"/&gt;
+            &lt;rect x="10" y="54" width="20" height="12" fill="#EFF6FF" rx="1"/&gt;
+            &lt;rect x="35" y="54" width="20" height="12" fill="#BFDBFE" rx="1"/&gt;
+            &lt;rect x="60" y="54" width="25" height="12" fill="#DBEAFE" rx="1"/&gt;
+            &lt;rect x="90" y="54" width="30" height="12" fill="#EFF6FF" rx="1"/&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;div class="mt-3"&gt;
+          &lt;h3 class="text-xs font-medium text-slate-800 group-hover/card:text-blue-600"&gt;Biểu mẫu tùy ý&lt;/h3&gt;
+          &lt;p class="text-[11px] text-slate-500 mt-1 leading-snug"&gt;Bạn có thể khám phá những thông tin chi tiết nào thông qua các bảng và biểu đồ tùy chỉnh?&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- MẪU 3: KHÁM PHÁ PHỄU --&gt;
+      &lt;div class="min-w-[230px] max-w-[230px] flex flex-col cursor-pointer group/card"&gt;
+        &lt;div class="h-36 bg-white border border-slate-200 rounded-lg p-3 flex flex-col justify-center group-hover/card:border-slate-300 group-hover/card:shadow-sm"&gt;
+          &lt;svg class="w-full h-24" viewBox="0 0 160 80" fill="none"&gt;
+            &lt;line x1="10" y1="72" x2="150" y2="72" stroke="#CBD5E1" stroke-width="1.5"/&gt;
+            &lt;line x1="10" y1="76" x2="30" y2="76" stroke="#94A3B8" stroke-width="2"/&gt;
+            &lt;line x1="45" y1="76" x2="65" y2="76" stroke="#94A3B8" stroke-width="2"/&gt;
+            &lt;line x1="80" y1="76" x2="100" y2="76" stroke="#94A3B8" stroke-width="2"/&gt;
+            &lt;line x1="115" y1="76" x2="135" y2="76" stroke="#94A3B8" stroke-width="2"/&gt;
+            &lt;rect x="15" y="10" width="16" height="62" fill="#60A5FA" rx="1"/&gt;
+            &lt;rect x="42" y="24" width="16" height="48" fill="#60A5FA" rx="1"/&gt;
+            &lt;rect x="69" y="36" width="16" height="36" fill="#60A5FA" rx="1"/&gt;
+            &lt;rect x="96" y="46" width="16" height="26" fill="#60A5FA" rx="1"/&gt;
+            &lt;rect x="123" y="55" width="16" height="17" fill="#60A5FA" rx="1"/&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;div class="mt-3"&gt;
+          &lt;h3 class="text-xs font-medium text-slate-800 group-hover/card:text-blue-600"&gt;Khám phá phễu&lt;/h3&gt;
+          &lt;p class="text-[11px] text-slate-500 mt-1 leading-snug"&gt;Bạn có thể phân tích, phân đoạn và chia nhỏ các hành trình nào của người dùng thông qua phễu nhiều bước?&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- MẪU 4: KHÁM PHÁ LỘ TRÌNH --&gt;
+      &lt;div class="min-w-[230px] max-w-[230px] flex flex-col cursor-pointer group/card"&gt;
+        &lt;div class="h-36 bg-white border border-slate-200 rounded-lg p-3 flex flex-col justify-center group-hover/card:border-slate-300 group-hover/card:shadow-sm"&gt;
+          &lt;svg class="w-full h-24" viewBox="0 0 160 80" fill="none"&gt;
+            &lt;line x1="10" y1="8" x2="35" y2="8" stroke="#94A3B8" stroke-width="2"/&gt;
+            &lt;line x1="55" y1="8" x2="80" y2="8" stroke="#94A3B8" stroke-width="2"/&gt;
+            &lt;line x1="100" y1="8" x2="125" y2="8" stroke="#94A3B8" stroke-width="2"/&gt;
+            &lt;rect x="15" y="15" width="8" height="55" fill="#3B82F6"/&gt;
+            &lt;path d="M23 15 C 40 15, 45 18, 60 18 L 60 48 C 45 48, 40 45, 23 45 Z" fill="#93C5FD" opacity="0.8"/&gt;
+            &lt;path d="M23 48 C 40 48, 45 52, 60 52 L 60 70 C 45 70, 40 68, 23 68 Z" fill="#BFDBFE" opacity="0.8"/&gt;
+            &lt;rect x="60" y="18" width="8" height="30" fill="#3B82F6"/&gt;
+            &lt;rect x="60" y="52" width="8" height="18" fill="#3B82F6"/&gt;
+            &lt;path d="M68 20 C 85 20, 90 25, 110 25 L 110 35 C 90 35, 85 30, 68 30 Z" fill="#BFDBFE" opacity="0.9"/&gt;
+            &lt;path d="M68 35 C 85 35, 90 42, 110 42 L 110 48 C 90 48, 85 45, 68 45 Z" fill="#DBEAFE" opacity="0.9"/&gt;
+            &lt;rect x="110" y="25" width="8" height="10" fill="#3B82F6"/&gt;
+            &lt;rect x="110" y="42" width="8" height="6" fill="#3B82F6"/&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;div class="mt-3"&gt;
+          &lt;h3 class="text-xs font-medium text-slate-800 group-hover/card:text-blue-600"&gt;Khám phá lộ trình&lt;/h3&gt;
+          &lt;p class="text-[11px] text-slate-500 mt-1 leading-snug"&gt;Bạn có thể khám phá những hành trình nào của người dùng thông qua biểu đồ cây?&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- MẪU 5: CHỒNG CHÉO PHÂN KHÚC --&gt;
+      &lt;div class="min-w-[230px] max-w-[230px] flex flex-col cursor-pointer group/card"&gt;
+        &lt;div class="h-36 bg-white border border-slate-200 rounded-lg p-3 flex flex-col justify-center items-center group-hover/card:border-slate-300 group-hover/card:shadow-sm"&gt;
+          &lt;svg class="w-full h-24" viewBox="0 0 160 80" fill="none"&gt;
+            &lt;line x1="15" y1="18" x2="30" y2="18" stroke="#CBD5E1" stroke-width="2"/&gt;
+            &lt;line x1="130" y1="18" x2="145" y2="18" stroke="#CBD5E1" stroke-width="2"/&gt;
+            &lt;circle cx="68" cy="45" r="28" fill="#60A5FA" fill-opacity="0.5" stroke="#3B82F6" stroke-width="1.5"/&gt;
+            &lt;circle cx="95" cy="48" r="22" fill="#93C5FD" fill-opacity="0.6" stroke="#2563EB" stroke-width="1.5"/&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;div class="mt-3"&gt;
+          &lt;h3 class="text-xs font-medium text-slate-800 group-hover/card:text-blue-600"&gt;Chồng chéo phân khúc&lt;/h3&gt;
+          &lt;p class="text-[11px] text-slate-500 mt-1 leading-snug"&gt;Điểm chung nào về phân đoạn người dùng cho bạn biết về hành vi của họ?&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;!-- Nút cuộn phải --&gt;
+    &lt;button id="btnNext" class="absolute -right-3 top-1/3 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-600 hover:text-blue-600 cursor-pointer transition-all"&gt;
+      &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"&gt;&lt;/path&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- ================= KHỐI 100% CODE JAVASCRIPT ĐỂ COPY ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM)</span>
+                <button id="btnCopyJs"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyJs">Copy JS</span>
+                </button>
+            </div>
+            <pre class="p-4 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-80" id="codeJs">// 1. Khai báo container carousel và 2 nút bấm
+const carouselSlider = document.querySelector("#carouselSlider");
+const btnPrev = document.querySelector("#btnPrev");
+const btnNext = document.querySelector("#btnNext");
+
+// Khoảng cách cuộn mỗi lần bấm (khoảng 1-2 thẻ: 260px)
+const SCROLL_AMOUNT = 260;
+
+// 2. Hàm kiểm tra vị trí cuộn để ẩn/hiện nút điều hướng
+function updateButtonVisibility() {
+  const scrollLeft = carouselSlider.scrollLeft;
+  const maxScrollLeft = carouselSlider.scrollWidth - carouselSlider.clientWidth;
+
+  // Nếu đã ở đầu danh sách -> Ẩn nút Trái (<)
+  if (scrollLeft <= 10) {
+    btnPrev.classList.add("hidden");
+  } else {
+    btnPrev.classList.remove("hidden");
+  }
+
+  // Nếu đã ở cuối danh sách -> Ẩn nút Phải (>)
+  if (scrollLeft >= maxScrollLeft - 10) {
+    btnNext.classList.add("hidden");
+  } else {
+    btnNext.classList.remove("hidden");
+  }
+}
+
+// 3. Sự kiện bấm nút Next & Prev
+btnNext.addEventListener("click", () => {
+  carouselSlider.scrollBy({ left: SCROLL_AMOUNT, behavior: "smooth" });
+});
+
+btnPrev.addEventListener("click", () => {
+  carouselSlider.scrollBy({ left: -SCROLL_AMOUNT, behavior: "smooth" });
+});
+
+// 4. Lắng nghe sự kiện cuộn để cập nhật trạng thái nút liên tục
+carouselSlider.addEventListener("scroll", updateButtonVisibility);
+
+// Khởi tạo trạng thái ban đầu
+updateButtonVisibility();</pre>
+        </div>
+
+    </main>
+
+    <!-- ================= SCRIPT THỰC THI TRANG ================= -->
+    <script src="script.js"></script>
+    <script>
+        // Logic điều khiển Carousel bản xem trước
+        const slider = document.querySelector("#previewCarouselSlider");
+        const prevBtn = document.querySelector("#previewBtnPrev");
+        const nextBtn = document.querySelector("#previewBtnNext");
+        const STEP = 260;
+
+        function checkButtons() {
+            const left = slider.scrollLeft;
+            const maxLeft = slider.scrollWidth - slider.clientWidth;
+
+            if (left <= 10) {
+                prevBtn.classList.add("hidden");
+            } else {
+                prevBtn.classList.remove("hidden");
+            }
+
+            if (left >= maxLeft - 10) {
+                nextBtn.classList.add("hidden");
+            } else {
+                nextBtn.classList.remove("hidden");
+            }
+        }
+
+        nextBtn.addEventListener("click", () => {
+            slider.scrollBy({ left: STEP, behavior: "smooth" });
+        });
+
+        prevBtn.addEventListener("click", () => {
+            slider.scrollBy({ left: -STEP, behavior: "smooth" });
+        });
+
+        slider.addEventListener("scroll", checkButtons);
+        checkButtons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup & Metric Picker - GA4 UI Kit</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800 font-sans">
+
+  <!-- ================= SIDEBAR MENU BÊN TRÁI ================= -->
+  <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+    <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+      <div
+        class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+        📊
+      </div>
+      <div>
+        <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+        <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+      </div>
+    </div>
+
+    <div class="p-3 overflow-y-auto flex-1">
+      <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+      <nav class="space-y-1">
+        <a href="index.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>🏠</span> Tổng quan UI Kit
+        </a>
+        <a href="accordion.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>📂</span> Accordion Tasks
+        </a>
+        <a href="popup-picker.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+          <span>🪟</span> Popup / Modal Picker
+        </a>
+        <a href="sidebar.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>📑</span> Sidebar GA4
+        </a>
+        <a href="exploration-carousel.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>🎠</span> Carousel Khám phá
+        </a>
+        <a href="account-settings.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>⚙️</span> Cài đặt Tài khoản
+        </a>
+        <a href="data-streams.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>🌊</span> Luồng Dữ Liệu
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ================= NỘI DUNG CHÍNH ================= -->
+  <main class="flex-1 p-8 max-w-5xl overflow-y-auto space-y-16">
+
+    <!-- ====================================================================== -->
+    <!-- PHẦN 1: MẪU 2.1 - POPUP CHỌN TÀI KHOẢN & THUỘC TÍNH GA4               -->
+    <!-- (XEM TRƯỚC -> NỘI DUNG CODE HTML/JS)                                   -->
+    <!-- ====================================================================== -->
+    <section class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 2.1</span>
+        <h2 class="text-xl font-bold text-slate-800">GA4 Account & Property Picker Popup (Hộp thoại chọn tài
+          khoản Analytics)</h2>
+      </div>
+
+      <!-- 1. Giao diện xem trước Mẫu 2.1 -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+          <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước
+            (Nhấp vào khung để mở Modal)
+          </span>
+          <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+        </div>
+
+        <div class="p-8 bg-slate-100/60 flex flex-col items-center justify-center min-h-[260px] relative">
+          <div id="btnOpenAccountModal"
+            class="bg-white border border-slate-200 rounded-lg p-3 hover:bg-slate-50 cursor-pointer shadow-xs transition-all max-w-sm w-full select-none">
+            <div class="text-[11px] text-slate-500 flex items-center gap-1.5 mb-0.5">
+              <span>Tất cả tài khoản</span>
+              <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                </path>
+              </svg>
+              <span id="currentAccountText" class="truncate">Default Account for Firebase</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <h3 id="currentPropertyText" class="text-xl font-semibold text-slate-800 tracking-tight">
+                ltddbuoi11-2bdbb</h3>
+              <svg class="w-4 h-4 text-slate-600 fill-slate-600" viewBox="0 0 20 20">
+                <path
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+              </svg>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 mt-3">Nhấp vào khung trên để bật popup chọn tài khoản GA4</p>
+
+          <!-- MODAL POPUP GA4 -->
+          <div id="gaModalBackdrop"
+            class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-[1px] z-50 flex items-center justify-center p-4">
+            <div
+              class="bg-white rounded-lg shadow-2xl border border-slate-200 w-full max-w-3xl flex flex-col max-h-[85vh] font-sans">
+              <div class="px-5 pt-3 border-b border-slate-200 flex items-center justify-between gap-4">
+                <div class="flex items-center gap-6 text-sm font-medium">
+                  <button class="text-blue-600 border-b-2 border-blue-600 pb-3 pt-1 font-semibold cursor-pointer">Tất
+                    cả</button>
+                  <button class="text-slate-600 hover:text-slate-800 pb-3 pt-1 cursor-pointer transition-colors">Ưa
+                    thích</button>
+                  <button class="text-slate-600 hover:text-slate-800 pb-3 pt-1 cursor-pointer transition-colors">Gần
+                    đây</button>
+                </div>
+                <div class="relative flex-1 max-w-xs pb-2">
+                  <span
+                    class="absolute inset-y-0 left-0 pb-2 pl-3 flex items-center pointer-events-none text-slate-400">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                  </span>
+                  <input type="text" placeholder="Tìm kiếm"
+                    class="w-full bg-slate-50 border border-slate-300 rounded-lg pl-8 pr-3 py-1.5 text-xs text-slate-700 outline-none focus:bg-white focus:border-blue-500">
+                </div>
+                <a href="#" class="text-xs text-blue-600 hover:underline font-medium pb-2 shrink-0">Truy
+                  cập vào Trang chủ Platform</a>
+              </div>
+
+              <!-- Hàng 2: Dropdown Tất cả tài khoản xổ xuống -->
+              <div
+                class="px-5 py-2.5 border-b border-slate-200 flex items-center justify-between bg-slate-50/50 relative z-20">
+                <div class="flex items-center gap-3">
+                  <div class="flex items-end gap-0.5 h-4 w-4 shrink-0">
+                    <span class="w-1 h-2 bg-amber-500 rounded-xs"></span>
+                    <span class="w-1 h-3 bg-amber-600 rounded-xs"></span>
+                    <span class="w-1 h-4 bg-amber-700 rounded-xs"></span>
+                  </div>
+                  <svg class="w-4 h-4 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L3 7l9 5 9-5-9-5zm0 8.5L5.5 8 12 4.5 18.5 8 12 10.5zM3 9v6l9 5 9-5V9l-9 5-9-5z" />
+                  </svg>
+                </div>
+
+                <div class="relative" id="accountDropdownContainer">
+                  <button id="btnAccountDropdown" type="button"
+                    class="border border-slate-200 hover:border-slate-300 rounded px-3 py-1 bg-white text-xs text-slate-700 flex items-center gap-3 shadow-2xs cursor-pointer select-none transition-colors">
+                    <span id="selectedAccountLabel">Tất cả tài khoản</span>
+                    <svg id="dropdownArrow" class="w-3 h-3 text-slate-500 transition-transform duration-200" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </button>
+                  <div id="accountDropdownMenu"
+                    class="hidden absolute right-0 mt-1 w-64 bg-white border border-slate-200 rounded-lg shadow-xl py-1.5 z-30 font-sans">
+                    <div class="px-3 py-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                      Lọc theo tài khoản</div>
+                    <button type="button"
+                      class="dropdown-account-item w-full text-left px-3 py-2 text-xs text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center justify-between transition-colors cursor-pointer"
+                      data-account-name="Tất cả tài khoản">
+                      <span class="font-medium">Tất cả tài khoản</span>
+                      <span class="item-check font-bold text-blue-600">✓</span>
+                    </button>
+                    <button type="button"
+                      class="dropdown-account-item w-full text-left px-3 py-2 text-xs text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center justify-between transition-colors cursor-pointer"
+                      data-account-name="Default Account for Firebase">
+                      <div>
+                        <p class="font-medium">Default Account for Firebase</p>
+                        <p class="text-[10px] text-slate-400">ID: 395183895</p>
+                      </div>
+                      <span class="item-check font-bold text-blue-600 hidden">✓</span>
+                    </button>
+                    <button type="button"
+                      class="dropdown-account-item w-full text-left px-3 py-2 text-xs text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center justify-between transition-colors cursor-pointer"
+                      data-account-name="Cửa hàng trực tuyến Brand Shop">
+                      <div>
+                        <p class="font-medium">Cửa hàng trực tuyến Brand Shop</p>
+                        <p class="text-[10px] text-slate-400">ID: 412890123</p>
+                      </div>
+                      <span class="item-check font-bold text-blue-600 hidden">✓</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hàng 3: Tiêu đề 2 cột -->
+              <div
+                class="grid grid-cols-2 text-xs font-medium text-slate-500 border-b border-slate-200 bg-slate-50/80 px-5 py-2">
+                <div>Tài khoản Analytics</div>
+                <div class="pl-4">Thuộc tính và ứng dụng</div>
+              </div>
+
+              <!-- Hàng 4: Danh sách 2 cột -->
+              <div class="grid grid-cols-2 divide-x divide-slate-200 h-64 overflow-y-auto">
+                <div class="p-2 space-y-1">
+                  <div class="p-3 rounded bg-slate-100 flex items-center justify-between cursor-pointer">
+                    <div>
+                      <h4 class="text-xs font-semibold text-slate-800">Default Account for
+                        Firebase</h4>
+                      <p class="text-[11px] text-slate-500">395183895</p>
+                    </div>
+                    <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                  <div
+                    class="p-3 rounded hover:bg-slate-50 flex items-center justify-between cursor-pointer transition-colors">
+                    <div>
+                      <h4 class="text-xs font-semibold text-slate-800">Cửa hàng trực tuyến Brand
+                        Shop</h4>
+                      <p class="text-[11px] text-slate-500">412890123</p>
+                    </div>
+                    <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="p-2 space-y-1">
+                  <div
+                    class="property-select-item p-3 rounded hover:bg-slate-100 flex items-center justify-between cursor-pointer transition-colors group"
+                    data-account="Default Account for Firebase" data-property="ltddbuoi11-2bdbb">
+                    <div>
+                      <h4 class="text-xs font-semibold text-slate-800">ltddbuoi11-2bdbb</h4>
+                      <p class="text-[11px] text-slate-500">538222707</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span class="text-slate-700 font-bold text-xs">✓</span>
+                      <button class="btn-star text-amber-400 hover:text-amber-500 cursor-pointer"
+                        title="Ưa thích">★</button>
+                    </div>
+                  </div>
+                  <div
+                    class="property-select-item p-3 rounded hover:bg-slate-100 flex items-center justify-between cursor-pointer transition-colors group"
+                    data-account="Default Account for Firebase" data-property="production-web-app">
+                    <div>
+                      <h4 class="text-xs font-semibold text-slate-800">production-web-app</h4>
+                      <p class="text-[11px] text-slate-500">601928412</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span class="text-slate-700 font-bold text-xs opacity-0 group-hover:opacity-100">✓</span>
+                      <button class="btn-star text-slate-300 hover:text-amber-400 cursor-pointer"
+                        title="Ưa thích">★</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hàng 5: Nút Đóng -->
+              <div class="px-5 py-3 border-t border-slate-200 flex justify-end bg-slate-50/50">
+                <button id="btnCloseModal"
+                  class="px-4 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-200 rounded cursor-pointer transition-colors">Đóng</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 2. Khung Copy HTML Mẫu 2.1 -->
+      <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+        <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+          <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND (MẪU 2.1 - MODAL
+            PICKER)</span>
+          <button id="btnCopyHtml"
+            class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+            <span>📋</span> <span id="txtCopyHtml">Copy HTML</span>
+          </button>
+        </div>
+        <pre class="p-4 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-80" id="codeHtml">&lt;!-- Nút kích hoạt Modal trên Navbar --&gt;
+&lt;!-- Yêu cầu có CDN Tailwind CSS trong thẻ &lt;head&gt;:
+&lt;script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"&gt;&lt;/script&gt;
+--&gt;
+
+&lt;!-- Nút kích hoạt Modal trên Navbar --&gt;
+&lt;div id="btnOpenAccountModal" class="bg-white border border-slate-200 rounded-lg p-3 hover:bg-slate-50 cursor-pointer select-none max-w-sm shadow-xs transition-all"&gt;
+  &lt;div class="text-[11px] text-slate-500 flex items-center gap-1.5 mb-0.5"&gt;
+    &lt;span&gt;Tất cả tài khoản&lt;/span&gt;
+    &lt;svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+      &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"&gt;&lt;/path&gt;
+    &lt;/svg&gt;
+    &lt;span id="currentAccountText" class="truncate"&gt;Default Account for Firebase&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="flex items-center justify-between"&gt;
+    &lt;h3 id="currentPropertyText" class="text-xl font-semibold text-slate-800 tracking-tight"&gt;ltddbuoi11-2bdbb&lt;/h3&gt;
+    &lt;svg class="w-4 h-4 text-slate-600 fill-slate-600" viewBox="0 0 20 20"&gt;
+      &lt;path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modal Popup GA4 Hoàn Chỉnh --&gt;
+&lt;div id="gaModalBackdrop" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-[1px] z-50 flex items-center justify-center p-4"&gt;
+  &lt;div class="bg-white rounded-lg shadow-2xl border border-slate-200 w-full max-w-3xl flex flex-col max-h-[85vh] font-sans"&gt;
+    
+    &lt;!-- Hàng 1: Tabs + Tìm kiếm + Link Trang chủ --&gt;
+    &lt;div class="px-5 pt-3 border-b border-slate-200 flex items-center justify-between gap-4"&gt;
+      &lt;div class="flex items-center gap-6 text-sm font-medium"&gt;
+        &lt;button class="text-blue-600 border-b-2 border-blue-600 pb-3 pt-1 font-semibold cursor-pointer"&gt;Tất cả&lt;/button&gt;
+        &lt;button class="text-slate-600 hover:text-slate-800 pb-3 pt-1 cursor-pointer transition-colors"&gt;Ưa thích&lt;/button&gt;
+        &lt;button class="text-slate-600 hover:text-slate-800 pb-3 pt-1 cursor-pointer transition-colors"&gt;Gần đây&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="relative flex-1 max-w-xs pb-2"&gt;
+        &lt;span class="absolute inset-y-0 left-0 pb-2 pl-3 flex items-center pointer-events-none text-slate-400"&gt;
+          &lt;svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+        &lt;input type="text" placeholder="Tìm kiếm" class="w-full bg-slate-50 border border-slate-300 rounded-lg pl-8 pr-3 py-1.5 text-xs text-slate-700 outline-none focus:bg-white focus:border-blue-500"&gt;
+      &lt;/div&gt;
+      &lt;a href="#" class="text-xs text-blue-600 hover:underline font-medium pb-2 shrink-0"&gt;Truy cập vào Trang chủ Platform&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Hàng 2: Dropdown Tất cả tài khoản xổ xuống --&gt;
+    &lt;div class="px-5 py-2.5 border-b border-slate-200 flex items-center justify-between bg-slate-50/50 relative z-20"&gt;
+      &lt;div class="flex items-center gap-3"&gt;
+        &lt;div class="flex items-end gap-0.5 h-4 w-4 shrink-0"&gt;
+          &lt;span class="w-1 h-2 bg-amber-500 rounded-xs"&gt;&lt;/span&gt;
+          &lt;span class="w-1 h-3 bg-amber-600 rounded-xs"&gt;&lt;/span&gt;
+          &lt;span class="w-1 h-4 bg-amber-700 rounded-xs"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;svg class="w-4 h-4 text-blue-500" viewBox="0 0 24 24" fill="currentColor"&gt;
+          &lt;path d="M12 2L3 7l9 5 9-5-9-5zm0 8.5L5.5 8 12 4.5 18.5 8 12 10.5zM3 9v6l9 5 9-5V9l-9 5-9-5z"/&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+
+      &lt;div class="relative" id="accountDropdownContainer"&gt;
+        &lt;button id="btnAccountDropdown" type="button" class="border border-slate-200 hover:border-slate-300 rounded px-3 py-1 bg-white text-xs text-slate-700 flex items-center gap-3 shadow-2xs cursor-pointer select-none transition-colors"&gt;
+          &lt;span id="selectedAccountLabel"&gt;Tất cả tài khoản&lt;/span&gt;
+          &lt;svg id="dropdownArrow" class="w-3 h-3 text-slate-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+
+        &lt;div id="accountDropdownMenu" class="hidden absolute right-0 mt-1 w-64 bg-white border border-slate-200 rounded-lg shadow-xl py-1.5 z-30 font-sans"&gt;
+          &lt;div class="px-3 py-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider"&gt;Lọc theo tài khoản&lt;/div&gt;
+          &lt;button type="button" class="dropdown-account-item w-full text-left px-3 py-2 text-xs text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center justify-between transition-colors cursor-pointer" data-account-name="Tất cả tài khoản"&gt;
+            &lt;span class="font-medium"&gt;Tất cả tài khoản&lt;/span&gt;
+            &lt;span class="item-check font-bold text-blue-600"&gt;✓&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;button type="button" class="dropdown-account-item w-full text-left px-3 py-2 text-xs text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center justify-between transition-colors cursor-pointer" data-account-name="Default Account for Firebase"&gt;
+            &lt;div&gt;
+              &lt;p class="font-medium"&gt;Default Account for Firebase&lt;/p&gt;
+              &lt;p class="text-[10px] text-slate-400"&gt;ID: 395183895&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;span class="item-check font-bold text-blue-600 hidden"&gt;✓&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;button type="button" class="dropdown-account-item w-full text-left px-3 py-2 text-xs text-slate-700 hover:bg-blue-50 hover:text-blue-600 flex items-center justify-between transition-colors cursor-pointer" data-account-name="Cửa hàng trực tuyến Brand Shop"&gt;
+            &lt;div&gt;
+              &lt;p class="font-medium"&gt;Cửa hàng trực tuyến Brand Shop&lt;/p&gt;
+              &lt;p class="text-[10px] text-slate-400"&gt;ID: 412890123&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;span class="item-check font-bold text-blue-600 hidden"&gt;✓&lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Hàng 3: Tiêu đề 2 cột --&gt;
+    &lt;div class="grid grid-cols-2 text-xs font-medium text-slate-500 border-b border-slate-200 bg-slate-50/80 px-5 py-2"&gt;
+      &lt;div&gt;Tài khoản Analytics&lt;/div&gt;
+      &lt;div class="pl-4"&gt;Thuộc tính và ứng dụng&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Hàng 4: Danh sách 2 cột phân cấp ĐẦY ĐỦ --&gt;
+    &lt;div class="grid grid-cols-2 divide-x divide-slate-200 h-64 overflow-y-auto"&gt;
+      
+      &lt;!-- Cột trái: Danh sách Tài khoản --&gt;
+      &lt;div class="p-2 space-y-1"&gt;
+        &lt;div class="p-3 rounded bg-slate-100 flex items-center justify-between cursor-pointer"&gt;
+          &lt;div&gt;
+            &lt;h4 class="text-xs font-semibold text-slate-800"&gt;Default Account for Firebase&lt;/h4&gt;
+            &lt;p class="text-[11px] text-slate-500"&gt;395183895&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;div class="p-3 rounded hover:bg-slate-50 flex items-center justify-between cursor-pointer transition-colors"&gt;
+          &lt;div&gt;
+            &lt;h4 class="text-xs font-semibold text-slate-800"&gt;Cửa hàng trực tuyến Brand Shop&lt;/h4&gt;
+            &lt;p class="text-[11px] text-slate-500"&gt;412890123&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Cột phải: Danh sách Thuộc tính con có dấu sao ⭐ --&gt;
+      &lt;div class="p-2 space-y-1"&gt;
+        &lt;div class="property-select-item p-3 rounded hover:bg-slate-100 flex items-center justify-between cursor-pointer transition-colors group" data-account="Default Account for Firebase" data-property="ltddbuoi11-2bdbb"&gt;
+          &lt;div&gt;
+            &lt;h4 class="text-xs font-semibold text-slate-800"&gt;ltddbuoi11-2bdbb&lt;/h4&gt;
+            &lt;p class="text-[11px] text-slate-500"&gt;538222707&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="flex items-center gap-3"&gt;
+            &lt;span class="text-slate-700 font-bold text-xs"&gt;✓&lt;/span&gt;
+            &lt;button type="button" class="btn-star text-amber-400 hover:text-amber-500 cursor-pointer" title="Ưa thích"&gt;★&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="property-select-item p-3 rounded hover:bg-slate-100 flex items-center justify-between cursor-pointer transition-colors group" data-account="Default Account for Firebase" data-property="production-web-app"&gt;
+          &lt;div&gt;
+            &lt;h4 class="text-xs font-semibold text-slate-800"&gt;production-web-app&lt;/h4&gt;
+            &lt;p class="text-[11px] text-slate-500"&gt;601928412&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="flex items-center gap-3"&gt;
+            &lt;span class="text-slate-700 font-bold text-xs opacity-0 group-hover:opacity-100"&gt;✓&lt;/span&gt;
+            &lt;button type="button" class="btn-star text-slate-300 hover:text-amber-400 cursor-pointer" title="Ưa thích"&gt;★&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;!-- Hàng 5: Nút Đóng --&gt;
+    &lt;div class="px-5 py-3 border-t border-slate-200 flex justify-end bg-slate-50/50"&gt;
+      &lt;button id="btnCloseModal" class="px-4 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-200 rounded cursor-pointer transition-colors"&gt;Đóng&lt;/button&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+
+            <!-- 3. Khung Copy JS Mẫu 2.1 -->
+            <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+                <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                    <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM) (MẪU 2.1)</span>
+                    <button id="btnCopyJs"
+                        class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                        <span>📋</span> <span id="txtCopyJs">Copy JS</span>
+                    </button>
+                </div>
+                <pre class="p-4 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-72" id="codeJs">const btnOpenAccountModal = document.querySelector("#btnOpenAccountModal");
+const gaModalBackdrop = document.querySelector("#gaModalBackdrop");
+const btnCloseModal = document.querySelector("#btnCloseModal");
+const currentAccountText = document.querySelector("#currentAccountText");
+const currentPropertyText = document.querySelector("#currentPropertyText");
+
+const btnAccountDropdown = document.querySelector("#btnAccountDropdown");
+const accountDropdownMenu = document.querySelector("#accountDropdownMenu");
+const dropdownArrow = document.querySelector("#dropdownArrow");
+const selectedAccountLabel = document.querySelector("#selectedAccountLabel");
+const accountDropdownContainer = document.querySelector("#accountDropdownContainer");
+
+// 1. Mở / Đóng Modal
+btnOpenAccountModal.addEventListener("click", () => gaModalBackdrop.classList.remove("hidden"));
+btnCloseModal.addEventListener("click", () => gaModalBackdrop.classList.add("hidden"));
+
+// Đóng khi click ra ngoài backdrop
+gaModalBackdrop.addEventListener("click", (e) => {
+  if (e.target === gaModalBackdrop) gaModalBackdrop.classList.add("hidden");
+});
+
+// Đóng bằng phím Escape (ESC) trên bàn phím
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !gaModalBackdrop.classList.contains("hidden")) {
+    gaModalBackdrop.classList.add("hidden");
+  }
+});
+
+// 2. Dropdown "Tất cả tài khoản" xổ xuống
+btnAccountDropdown.addEventListener("click", (e) => {
+  e.stopPropagation();
+  const isHidden = accountDropdownMenu.classList.toggle("hidden");
+  dropdownArrow.classList.toggle("rotate-180", !isHidden);
+});
+
+// Chọn tài khoản từ danh sách xổ xuống
+document.querySelectorAll(".dropdown-account-item").forEach(item => {
+  item.addEventListener("click", function (e) {
+    e.stopPropagation();
+    selectedAccountLabel.innerText = this.getAttribute("data-account-name");
+    document.querySelectorAll(".dropdown-account-item .item-check").forEach(c => c.classList.add("hidden"));
+    this.querySelector(".item-check").classList.remove("hidden");
+    accountDropdownMenu.classList.add("hidden");
+    dropdownArrow.classList.remove("rotate-180");
+  });
+});
+
+// Click ra ngoài bất kỳ đâu thì tự đóng Dropdown tài khoản
+document.addEventListener("click", (e) => {
+  if (accountDropdownContainer && !accountDropdownContainer.contains(e.target)) {
+    accountDropdownMenu.classList.add("hidden");
+    dropdownArrow.classList.remove("rotate-180");
+  }
+});
+
+// 3. Chọn thuộc tính con -> Cập nhật Header và đóng Popup
+document.querySelectorAll(".property-select-item").forEach(item => {
+  item.addEventListener("click", function () {
+    currentPropertyText.innerText = this.getAttribute("data-property");
+    currentAccountText.innerText = this.getAttribute("data-account");
+    gaModalBackdrop.classList.add("hidden");
+  });
+});
+
+// 4. Bật / Tắt đánh dấu sao yêu thích ⭐
+document.querySelectorAll(".btn-star").forEach(star => {
+  star.addEventListener("click", function (e) {
+    e.stopPropagation(); // Không kích hoạt chọn dòng
+    this.classList.toggle("text-amber-400");
+    this.classList.toggle("text-slate-300");
+  });
+});</pre>
+      </div>
+    </section>
+
+    <!-- ====================================================================== -->
+    <!-- PHẦN 2: MẪU 2.2 - GA4 METRIC PICKER DROPDOWN                          -->
+    <!-- (XEM TRƯỚC -> NỘI DUNG CODE HTML/JS)                                   -->
+    <!-- ====================================================================== -->
+    <!-- ====================================================================== -->
+    <!-- MẪU 2.2: GA4 METRIC PICKER DROPDOWN (CO GIÃN FLEXIBLE THEO PHẦN TỬ)   -->
+    <!-- ====================================================================== -->
+    <section class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 2.2</span>
+        <h2 class="text-xl font-bold text-slate-800">GA4 Metric Picker Dropdown (Hộp chọn chỉ số báo cáo GA4)
+        </h2>
+      </div>
+
+      <!-- 1. Giao diện xem trước Mẫu 2.2 (Co giãn tự động không set cứng chiều cao) -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all duration-300">
+        <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+          <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước (Bấm
+            vào thẻ để xem khung tự dãn nở theo popup)
+          </span>
+          <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Flexible</span>
+        </div>
+
+        <!-- Khung bao bọc co giãn tự nhiên theo nội dung bên trong -->
+        <div class="p-8 bg-slate-100/60 flex flex-col items-center justify-center transition-all duration-300">
+
+          <div class="flex flex-col items-center w-full max-w-md" id="metricCardWrapper">
+            <!-- Thẻ Card Chỉ Số Kích Hoạt -->
+            <div id="btnOpenMetricPicker"
+              class="w-64 bg-slate-50/90 border-t-2 border-t-blue-600 border-x border-b border-slate-200 rounded-lg p-3 hover:bg-slate-100/80 cursor-pointer shadow-xs transition-all select-none">
+              <div class="flex items-center justify-between text-blue-600 font-medium text-xs mb-1">
+                <span id="activeMetricTitle" class="truncate pr-1">Số người dùng đang hoạt động</span>
+                <svg id="metricCardArrow" class="w-3.5 h-3.5 shrink-0 text-blue-600 transition-transform duration-200"
+                  fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                </svg>
+              </div>
+              <div class="text-2xl font-normal text-slate-800">0</div>
+            </div>
+
+            <!-- Popup Bộ Chọn Chỉ Số 2 Cột GA4 (Co dãn trực tiếp trong luồng phần tử) -->
+            <div id="metricPickerDropdown"
+              class="hidden mt-3 w-full bg-white border border-slate-200 rounded-xl shadow-xl z-20 overflow-hidden font-sans select-none animate-in fade-in slide-in-from-top-2 duration-200">
+              <div class="p-3 border-b border-slate-100 flex items-center gap-2.5 bg-slate-50/40">
+                <svg class="w-4 h-4 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <input type="text" id="metricSearchInput" placeholder="Tìm kiếm mục"
+                  class="w-full text-xs text-slate-700 outline-none bg-transparent placeholder-slate-400">
+              </div>
+
+              <div class="grid grid-cols-5 divide-x divide-slate-100 h-72">
+                <!-- Cột trái: Nhóm chỉ số -->
+                <div class="col-span-2 py-1.5 overflow-y-auto space-y-0.5 text-xs">
+                  <button type="button"
+                    class="metric-category-btn w-full px-3 py-2 text-left flex items-center justify-between text-blue-700 bg-blue-50/70 font-semibold cursor-pointer"
+                    data-category="suggested">
+                    <span>Đề xuất</span><span class="text-[9px] text-slate-400">▶</span>
+                  </button>
+                  <button type="button"
+                    class="metric-category-btn w-full px-3 py-2 text-left flex items-center justify-between text-slate-600 hover:bg-slate-50 cursor-pointer transition-colors"
+                    data-category="revenue">
+                    <span>Doanh thu</span><span class="text-[9px] text-slate-400">▶</span>
+                  </button>
+                  <button type="button"
+                    class="metric-category-btn w-full px-3 py-2 text-left flex items-center justify-between text-slate-600 hover:bg-slate-50 cursor-pointer transition-colors"
+                    data-category="users">
+                    <span>Người dùng</span><span class="text-[9px] text-slate-400">▶</span>
+                  </button>
+                  <button type="button"
+                    class="metric-category-btn w-full px-3 py-2 text-left flex items-center justify-between text-slate-600 hover:bg-slate-50 cursor-pointer transition-colors"
+                    data-category="sessions">
+                    <span>Phiên hoạt động</span><span class="text-[9px] text-slate-400">▶</span>
+                  </button>
+                  <button type="button"
+                    class="metric-category-btn w-full px-3 py-2 text-left flex items-center justify-between text-slate-600 hover:bg-slate-50 cursor-pointer transition-colors"
+                    data-category="events">
+                    <span>Sự kiện</span><span class="text-[9px] text-slate-400">▶</span>
+                  </button>
+                  <button type="button"
+                    class="metric-category-btn w-full px-3 py-2 text-left flex items-center justify-between text-slate-600 hover:bg-slate-50 cursor-pointer transition-colors"
+                    data-category="ecommerce">
+                    <span>Thương mại điện tử</span><span class="text-[9px] text-slate-400">▶</span>
+                  </button>
+                  <button type="button"
+                    class="metric-category-btn w-full px-3 py-2 text-left flex items-center justify-between text-slate-600 hover:bg-slate-50 cursor-pointer transition-colors"
+                    data-category="screens">
+                    <span>Trang/màn hình</span><span class="text-[9px] text-slate-400">▶</span>
+                  </button>
+                </div>
+
+                <!-- Cột phải: Danh sách chi tiết -->
+                <div id="metricSublist" class="col-span-3 py-1.5 overflow-y-auto space-y-0.5 text-xs pr-1">
+                  <button type="button"
+                    class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 flex items-center gap-1.5 cursor-pointer group">
+                    <span class="border-b border-dashed border-slate-300 group-hover:border-slate-500 font-medium">Chọn
+                      giúp tôi</span>
+                    <span class="text-amber-500 text-xs">✨</span>
+                  </button>
+                  <button type="button"
+                    class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group"
+                    data-metric-name="Phiên">
+                    <span class="border-b border-dashed border-slate-300 group-hover:border-slate-500">Phiên</span>
+                  </button>
+                  <button type="button"
+                    class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group"
+                    data-metric-name="Số lượng sự kiện">
+                    <span class="border-b border-dashed border-slate-300 group-hover:border-slate-500">Số
+                      lượng sự kiện</span>
+                  </button>
+                  <button type="button"
+                    class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group"
+                    data-metric-name="Số lượt xem">
+                    <span class="border-b border-dashed border-slate-300 group-hover:border-slate-500">Số
+                      lượt xem</span>
+                  </button>
+                  <button type="button"
+                    class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group"
+                    data-metric-name="Số lượt xem trên mỗi người dùng đang hoạt động">
+                    <span class="border-b border-dashed border-slate-300 group-hover:border-slate-500">Số
+                      lượt xem trên mỗi người dùng đang hoạt động</span>
+                  </button>
+                  <button type="button"
+                    class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group"
+                    data-metric-name="Số người dùng đang hoạt động">
+                    <span class="border-b border-dashed border-slate-300 group-hover:border-slate-500">Số
+                      người dùng đang hoạt động</span>
+                  </button>
+                  <button type="button"
+                    class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group"
+                    data-metric-name="Số người dùng mới">
+                    <span class="border-b border-dashed border-slate-300 group-hover:border-slate-500">Số
+                      người dùng mới</span>
+                  </button>
+                  <button type="button"
+                    class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group"
+                    data-metric-name="Số phiên tương tác">
+                    <span class="border-b border-dashed border-slate-300 group-hover:border-slate-500">Số
+                      phiên tương tác</span>
+                  </button>
+                  <button type="button"
+                    class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group"
+                    data-metric-name="Sự kiện quan trọng">
+                    <span class="border-b border-dashed border-slate-300 group-hover:border-slate-500">Sự
+                      kiện quan trọng</span>
+                  </button>
+                  <button type="button"
+                    class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group"
+                    data-metric-name="Thời gian tương tác trung bình trên mỗi người dùng đang hoạt động">
+                    <span class="border-b border-dashed border-slate-300 group-hover:border-slate-500">Thời
+                      gian tương tác trung bình trên mỗi người dùng đang hoạt động</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-400 mt-4">Nhấp vào thẻ để mở hoặc đóng bộ chọn chỉ số</p>
+        </div>
+      </div>
+
+      <!-- 2. Khung Copy HTML Mẫu 2.2 -->
+      <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+        <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+          <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND (MẪU 2.2 - METRIC
+            PICKER)</span>
+          <button id="btnCopyMetricHtml"
+            class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+            <span>📋</span> <span id="txtCopyMetricHtml">Copy HTML</span>
+          </button>
+        </div>
+        <pre class="p-5 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-[700px]"
+          id="codeMetricHtml">&lt;!-- Wrapper chứa thẻ chỉ số và dropdown (Co giãn theo luồng) --&gt;
+&lt;div class="relative font-sans select-none inline-block w-full max-w-md" id="metricCardWrapper"&gt;
+  
+  &lt;!-- Thẻ Card Chỉ Số Kích Hoạt --&gt;
+  &lt;div id="btnOpenMetricPicker" class="w-64 bg-slate-50/90 border-t-2 border-t-blue-600 border-x border-b border-slate-200 rounded-lg p-3 hover:bg-slate-100/80 cursor-pointer shadow-xs transition-all mx-auto"&gt;
+    &lt;div class="flex items-center justify-between text-blue-600 font-medium text-xs mb-1"&gt;
+      &lt;span id="activeMetricTitle" class="truncate pr-1"&gt;Số người dùng đang hoạt động&lt;/span&gt;
+      &lt;svg id="metricCardArrow" class="w-3.5 h-3.5 shrink-0 text-blue-600 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20"&gt;
+        &lt;path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="text-2xl font-normal text-slate-800"&gt;0&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Popup Bộ Chọn Chỉ Số 2 Cột GA4 --&gt;
+  &lt;div id="metricPickerDropdown" class="hidden mt-3 w-full bg-white border border-slate-200 rounded-xl shadow-xl z-20 overflow-hidden font-sans"&gt;
+    
+    &lt;!-- 1. Ô tìm kiếm --&gt;
+    &lt;div class="p-3 border-b border-slate-100 flex items-center gap-2.5 bg-slate-50/40"&gt;
+      &lt;svg class="w-4 h-4 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+      &lt;input type="text" id="metricSearchInput" placeholder="Tìm kiếm mục" class="w-full text-xs text-slate-700 outline-none bg-transparent placeholder-slate-400"&gt;
+    &lt;/div&gt;
+
+    &lt;!-- 2. Bảng 2 Cột --&gt;
+    &lt;div class="grid grid-cols-5 divide-x divide-slate-100 h-72"&gt;
+      
+      &lt;!-- Cột Trái: Danh mục --&gt;
+      &lt;div class="col-span-2 py-1.5 overflow-y-auto space-y-0.5 text-xs"&gt;
+        &lt;button type="button" class="metric-category-btn w-full px-3 py-2 text-left flex items-center justify-between text-blue-700 bg-blue-50/70 font-semibold cursor-pointer" data-category="suggested"&gt;
+          &lt;span&gt;Đề xuất&lt;/span&gt;&lt;span class="text-[9px] text-slate-400"&gt;▶&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-category-btn w-full px-3 py-2 text-left flex items-center justify-between text-slate-600 hover:bg-slate-50 cursor-pointer" data-category="revenue"&gt;
+          &lt;span&gt;Doanh thu&lt;/span&gt;&lt;span class="text-[9px] text-slate-400"&gt;▶&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-category-btn w-full px-3 py-2 text-left flex items-center justify-between text-slate-600 hover:bg-slate-50 cursor-pointer" data-category="users"&gt;
+          &lt;span&gt;Người dùng&lt;/span&gt;&lt;span class="text-[9px] text-slate-400"&gt;▶&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-category-btn w-full px-3 py-2 text-left flex items-center justify-between text-slate-600 hover:bg-slate-50 cursor-pointer" data-category="sessions"&gt;
+          &lt;span&gt;Phiên hoạt động&lt;/span&gt;&lt;span class="text-[9px] text-slate-400"&gt;▶&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-category-btn w-full px-3 py-2 text-left flex items-center justify-between text-slate-600 hover:bg-slate-50 cursor-pointer" data-category="events"&gt;
+          &lt;span&gt;Sự kiện&lt;/span&gt;&lt;span class="text-[9px] text-slate-400"&gt;▶&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-category-btn w-full px-3 py-2 text-left flex items-center justify-between text-slate-600 hover:bg-slate-50 cursor-pointer" data-category="ecommerce"&gt;
+          &lt;span&gt;Thương mại điện tử&lt;/span&gt;&lt;span class="text-[9px] text-slate-400"&gt;▶&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-category-btn w-full px-3 py-2 text-left flex items-center justify-between text-slate-600 hover:bg-slate-50 cursor-pointer" data-category="screens"&gt;
+          &lt;span&gt;Trang/màn hình&lt;/span&gt;&lt;span class="text-[9px] text-slate-400"&gt;▶&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Cột Phải: Các chỉ số con --&gt;
+      &lt;div id="metricSublist" class="col-span-3 py-1.5 overflow-y-auto space-y-0.5 text-xs pr-1"&gt;
+        &lt;button type="button" class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group"&gt;
+          &lt;span class="border-b border-dashed border-slate-300 group-hover:border-slate-500 font-medium"&gt;Chọn giúp tôi&lt;/span&gt;
+          &lt;span class="text-amber-500 text-xs"&gt;✨&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group" data-metric-name="Phiên"&gt;
+          &lt;span class="border-b border-dashed border-slate-300 group-hover:border-slate-500"&gt;Phiên&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group" data-metric-name="Số lượng sự kiện"&gt;
+          &lt;span class="border-b border-dashed border-slate-300 group-hover:border-slate-500"&gt;Số lượng sự kiện&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group" data-metric-name="Số lượt xem"&gt;
+          &lt;span class="border-b border-dashed border-slate-300 group-hover:border-slate-500"&gt;Số lượt xem&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group" data-metric-name="Số lượt xem trên mỗi người dùng đang hoạt động"&gt;
+          &lt;span class="border-b border-dashed border-slate-300 group-hover:border-slate-500"&gt;Số lượt xem trên mỗi người dùng đang hoạt động&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group" data-metric-name="Số người dùng đang hoạt động"&gt;
+          &lt;span class="border-b border-dashed border-slate-300 group-hover:border-slate-500"&gt;Số người dùng đang hoạt động&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group" data-metric-name="Số người dùng mới"&gt;
+          &lt;span class="border-b border-dashed border-slate-300 group-hover:border-slate-500"&gt;Số người dùng mới&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group" data-metric-name="Số phiên tương tác"&gt;
+          &lt;span class="border-b border-dashed border-slate-300 group-hover:border-slate-500"&gt;Số phiên tương tác&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group" data-metric-name="Sự kiện quan trọng"&gt;
+          &lt;span class="border-b border-dashed border-slate-300 group-hover:border-slate-500"&gt;Sự kiện quan trọng&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button type="button" class="metric-item-btn w-full px-3.5 py-1.5 text-left text-slate-700 hover:bg-slate-50 cursor-pointer group" data-metric-name="Thời gian tương tác trung bình trên mỗi người dùng đang hoạt động"&gt;
+          &lt;span class="border-b border-dashed border-slate-300 group-hover:border-slate-500"&gt;Thời gian tương tác trung bình trên mỗi người dùng đang hoạt động&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</pre>
+      </div>
+
+      <!-- 3. Khung Copy JS Mẫu 2.2 -->
+      <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+        <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+          <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM) (MẪU 2.2)</span>
+          <button id="btnCopyMetricJs"
+            class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+            <span>📋</span> <span id="txtCopyMetricJs">Copy JS</span>
+          </button>
+        </div>
+        <pre class="p-5 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-[600px]"
+          id="codeMetricJs">const btnOpenMetricPicker = document.querySelector("#btnOpenMetricPicker");
+const metricPickerDropdown = document.querySelector("#metricPickerDropdown");
+const metricCardArrow = document.querySelector("#metricCardArrow");
+const activeMetricTitle = document.querySelector("#activeMetricTitle");
+const metricCardWrapper = document.querySelector("#metricCardWrapper");
+
+// 1. Mở / Đóng Dropdown chọn chỉ số
+btnOpenMetricPicker.addEventListener("click", (e) => {
+  e.stopPropagation();
+  const isHidden = metricPickerDropdown.classList.toggle("hidden");
+  metricCardArrow.classList.toggle("rotate-180", !isHidden);
+});
+
+// 2. Đổi danh mục cột trái
+const metricCategoryBtns = document.querySelectorAll(".metric-category-btn");
+metricCategoryBtns.forEach(btn => {
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    metricCategoryBtns.forEach(b => {
+      b.classList.remove("bg-blue-50/70", "text-blue-700", "font-semibold");
+      b.classList.add("text-slate-600");
+    });
+    this.classList.add("bg-blue-50/70", "text-blue-700", "font-semibold");
+    this.classList.remove("text-slate-600");
+  });
+});
+
+// 3. Chọn chỉ số cột phải -> Cập nhật lên Card và đóng Dropdown
+document.querySelectorAll(".metric-item-btn[data-metric-name]").forEach(item => {
+  item.addEventListener("click", function (e) {
+    e.stopPropagation();
+    const metricName = this.getAttribute("data-metric-name");
+    activeMetricTitle.innerText = metricName;
+    metricPickerDropdown.classList.add("hidden");
+    metricCardArrow.classList.remove("rotate-180");
+  });
+});
+
+// 4. Click ra ngoài vùng Card thì tự động đóng Popup
+document.addEventListener("click", (e) => {
+  if (metricCardWrapper && !metricCardWrapper.contains(e.target)) {
+    metricPickerDropdown.classList.add("hidden");
+    metricCardArrow.classList.remove("rotate-180");
+  }
+});</pre>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= SCRIPT THỰC THI TOÀN TRANG ================= -->
+  <script src="script.js"></script>
+  <script>
+    // --- LOGIC MẪU 2.1 (ACCOUNT MODAL) ---
+    const btnOpenAccountModal = document.querySelector("#btnOpenAccountModal");
+    const gaModalBackdrop = document.querySelector("#gaModalBackdrop");
+    const btnCloseModal = document.querySelector("#btnCloseModal");
+    const currentAccountText = document.querySelector("#currentAccountText");
+    const currentPropertyText = document.querySelector("#currentPropertyText");
+
+    btnOpenAccountModal.addEventListener("click", () => gaModalBackdrop.classList.remove("hidden"));
+    btnCloseModal.addEventListener("click", () => gaModalBackdrop.classList.add("hidden"));
+    gaModalBackdrop.addEventListener("click", (e) => {
+      if (e.target === gaModalBackdrop) gaModalBackdrop.classList.add("hidden");
+    });
+
+    const btnAccountDropdown = document.querySelector("#btnAccountDropdown");
+    const accountDropdownMenu = document.querySelector("#accountDropdownMenu");
+    const dropdownArrow = document.querySelector("#dropdownArrow");
+    const selectedAccountLabel = document.querySelector("#selectedAccountLabel");
+    const accountDropdownContainer = document.querySelector("#accountDropdownContainer");
+
+    btnAccountDropdown.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isHidden = accountDropdownMenu.classList.toggle("hidden");
+      dropdownArrow.classList.toggle("rotate-180", !isHidden);
+    });
+
+    document.querySelectorAll(".dropdown-account-item").forEach(item => {
+      item.addEventListener("click", function (e) {
+        e.stopPropagation();
+        selectedAccountLabel.innerText = this.getAttribute("data-account-name");
+        document.querySelectorAll(".dropdown-account-item .item-check").forEach(c => c.classList.add("hidden"));
+        this.querySelector(".item-check").classList.remove("hidden");
+        accountDropdownMenu.classList.add("hidden");
+        dropdownArrow.classList.remove("rotate-180");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (accountDropdownContainer && !accountDropdownContainer.contains(e.target)) {
+        accountDropdownMenu.classList.add("hidden");
+        dropdownArrow.classList.remove("rotate-180");
+      }
+    });
+
+    document.querySelectorAll(".property-select-item").forEach(item => {
+      item.addEventListener("click", function () {
+        currentPropertyText.innerText = this.getAttribute("data-property");
+        currentAccountText.innerText = this.getAttribute("data-account");
+        gaModalBackdrop.classList.add("hidden");
+      });
+    });
+
+    document.querySelectorAll(".btn-star").forEach(star => {
+      star.addEventListener("click", function (e) {
+        e.stopPropagation();
+        this.classList.toggle("text-amber-400");
+        this.classList.toggle("text-slate-300");
+      });
+    });
+
+    // --- LOGIC MẪU 2.2 (METRIC PICKER DROPDOWN) ---
+    const btnOpenMetricPicker = document.querySelector("#btnOpenMetricPicker");
+    const metricPickerDropdown = document.querySelector("#metricPickerDropdown");
+    const metricCardArrow = document.querySelector("#metricCardArrow");
+    const activeMetricTitle = document.querySelector("#activeMetricTitle");
+    const metricCardWrapper = document.querySelector("#metricCardWrapper");
+
+    btnOpenMetricPicker.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isHidden = metricPickerDropdown.classList.toggle("hidden");
+      metricCardArrow.classList.toggle("rotate-180", !isHidden);
+    });
+
+    const metricCategoryBtns = document.querySelectorAll(".metric-category-btn");
+    metricCategoryBtns.forEach(btn => {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        metricCategoryBtns.forEach(b => {
+          b.classList.remove("bg-blue-50/70", "text-blue-700", "font-semibold");
+          b.classList.add("text-slate-600");
+        });
+        this.classList.add("bg-blue-50/70", "text-blue-700", "font-semibold");
+        this.classList.remove("text-slate-600");
+      });
+    });
+
+    document.querySelectorAll(".metric-item-btn[data-metric-name]").forEach(item => {
+      item.addEventListener("click", function (e) {
+        e.stopPropagation();
+        const metricName = this.getAttribute("data-metric-name");
+        activeMetricTitle.innerText = metricName;
+        metricPickerDropdown.classList.add("hidden");
+        metricCardArrow.classList.remove("rotate-180");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (metricCardWrapper && !metricCardWrapper.contains(e.target)) {
+        metricPickerDropdown.classList.add("hidden");
+        metricCardArrow.classList.remove("rotate-180");
+      }
+    });
+
+    // --- XỬ LÝ NÚT COPY CLIPBOARD MẪU 2.2 ---
+    const btnCopyMetricHtml = document.querySelector("#btnCopyMetricHtml");
+    const txtCopyMetricHtml = document.querySelector("#txtCopyMetricHtml");
+    const codeMetricHtml = document.querySelector("#codeMetricHtml");
+
+    btnCopyMetricHtml.addEventListener("click", () => {
+      navigator.clipboard.writeText(codeMetricHtml.innerText).then(() => {
+        txtCopyMetricHtml.innerText = "Đã Copy!";
+        btnCopyMetricHtml.classList.replace("bg-slate-800", "bg-emerald-600");
+        setTimeout(() => {
+          txtCopyMetricHtml.innerText = "Copy HTML";
+          btnCopyMetricHtml.classList.replace("bg-emerald-600", "bg-slate-800");
+        }, 1800);
+      });
+    });
+
+    const btnCopyMetricJs = document.querySelector("#btnCopyMetricJs");
+    const txtCopyMetricJs = document.querySelector("#txtCopyMetricJs");
+    const codeMetricJs = document.querySelector("#codeMetricJs");
+
+    btnCopyMetricJs.addEventListener("click", () => {
+      navigator.clipboard.writeText(codeMetricJs.innerText).then(() => {
+        txtCopyMetricJs.innerText = "Đã Copy!";
+        btnCopyMetricJs.classList.replace("bg-slate-800", "bg-emerald-600");
+        setTimeout(() => {
+          txtCopyMetricJs.innerText = "Copy JS";
+          btnCopyMetricJs.classList.replace("bg-emerald-600", "bg-slate-800");
+        }, 1800);
+      });
+    });
+  </script>
+</body>
+
+</html>

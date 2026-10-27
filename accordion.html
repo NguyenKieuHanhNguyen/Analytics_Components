@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion Tasks - GA4 UI Kit</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800 font-sans">
+
+  <!-- ================= SIDEBAR MENU BÊN TRÁI ================= -->
+  <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+    <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+      <div
+        class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+        📊
+      </div>
+      <div>
+        <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+        <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+      </div>
+    </div>
+
+    <div class="p-3 overflow-y-auto flex-1">
+      <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+      <nav class="space-y-1">
+        <a href="index.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>🏠</span> Tổng quan UI Kit
+        </a>
+        <a href="accordion.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+          <span>📂</span> Accordion Tasks
+        </a>
+        <a href="popup-picker.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>🪟</span> Popup / Modal Picker
+        </a>
+        <a href="sidebar.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>📑</span> Sidebar GA4
+        </a>
+        <a href="exploration-carousel.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>🎠</span> Carousel Khám phá
+        </a>
+        <a href="account-settings.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>⚙️</span> Cài đặt Tài khoản
+        </a>
+        <a href="data-streams.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>🌊</span> Luồng Dữ Liệu
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ================= KHU VỰC CHÍNH ================= -->
+  <main class="flex-1 p-8 max-w-5xl overflow-y-auto">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 1</span>
+      <h2 class="text-xl font-bold text-slate-800">Analytics Tasks Accordion (Bắt đầu nhiệm vụ Google Analytics)
+      </h2>
+    </div>
+
+    <!-- ================= KHỐI GIAO DIỆN XEM TRƯỚC ================= -->
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm mb-6 overflow-hidden">
+      <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+        <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước (Thao
+          tác trực tiếp bên dưới)
+        </span>
+        <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+      </div>
+
+      <div class="p-8 bg-slate-100/60 flex justify-center">
+        <!-- Vùng tương tác thật -->
+        <div class="w-full max-w-2xl bg-white border border-slate-200 rounded-lg shadow-xs overflow-hidden select-none">
+          <!-- Header -->
+          <div id="accHeader"
+            class="p-5 flex items-center justify-between cursor-pointer hover:bg-slate-50/70 transition-colors">
+            <h2 class="text-base font-semibold text-slate-800">Bắt đầu</h2>
+            <div class="flex items-center gap-3">
+              <span id="taskCount" class="text-xs font-medium text-blue-700 bg-blue-50 px-2.5 py-1 rounded">
+                Còn 4 / 6 nhiệm vụ
+              </span>
+              <!-- Mũi tên quay lên xuống -->
+              <svg id="accArrow" class="w-5 h-5 text-slate-600 transition-transform duration-300" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div id="accBody" class="px-5 pb-6 pt-0 space-y-4">
+            <p class="text-xs text-slate-500">
+              Bắt đầu sử dụng Analytics bằng cách thu thập dữ liệu và quyết định cách dữ liệu xuất hiện
+              trong báo cáo
+            </p>
+
+            <!-- Card task đang làm -->
+            <div class="bg-slate-50/70 border border-slate-200/80 rounded-lg p-5 space-y-3.5">
+              <div class="flex items-center gap-3">
+                <button id="btnCheckTask"
+                  class="w-5 h-5 rounded-full border-2 border-slate-700 hover:border-blue-600 flex items-center justify-center shrink-0 cursor-pointer transition-colors"
+                  title="Bấm để đánh dấu hoàn thành">
+                  <span id="checkIcon" class="hidden text-xs text-blue-600 font-black">✓</span>
+                </button>
+                <h3 id="taskTitle" class="text-sm font-semibold text-slate-800">Thiết lập tính năng thu
+                  thập dữ liệu</h3>
+              </div>
+
+              <div class="pl-8 text-xs text-slate-600 leading-relaxed">
+                Thiết lập kết nối với Google Analytics bằng cách thêm mã hoặc SDK vào trang web hoặc ứng
+                dụng của bạn để các báo cáo có thể bắt đầu điền sẵn dữ liệu.
+                <a href="#" class="text-blue-600 underline hover:text-blue-700 ml-1 inline-flex items-center gap-1">
+                  Tìm hiểu thêm
+                  <svg class="w-3.5 h-3.5 inline text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+
+              <div class="pl-8 pt-1 flex flex-wrap items-center justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <button
+                    class="bg-blue-600 hover:bg-blue-700 active:scale-95 text-white text-xs font-medium px-4 py-2 rounded flex items-center gap-1.5 cursor-pointer transition-all shadow-xs">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Hành động
+                  </button>
+                  <button
+                    class="border border-slate-300 hover:bg-slate-100 active:scale-95 text-blue-600 text-xs font-medium px-3.5 py-2 rounded flex items-center gap-1.5 cursor-pointer transition-all bg-white">
+                    <svg class="w-3.5 h-3.5 fill-blue-600 text-blue-600" viewBox="0 0 24 24">
+                      <path
+                        d="M4 6.5C4 5.12 5.12 4 6.5 4h11C18.88 4 20 5.12 20 6.5v11c0 1.38-1.12 2.5-2.5 2.5h-11C5.12 20 4 18.88 4 17.5v-11zM10 8.5v7l5-3.5-5-3.5z" />
+                    </svg>
+                    Xem video
+                  </button>
+                </div>
+
+                <div class="flex items-center gap-3 text-xs text-slate-500">
+                  <span>Is this helpful?</span>
+                  <button id="btnLike" class="hover:text-blue-600 p-1 cursor-pointer transition-colors" title="Hữu ích">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                        d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017a2 2 0 01-2-2v-7a2 2 0 01.586-1.414l5-5a2 2 0 013.414 1.414v2.586zM9 10v11H5a2 2 0 01-2-2v-7a2 2 0 012-2h4z">
+                      </path>
+                    </svg>
+                  </button>
+                  <button id="btnDislike" class="hover:text-red-600 p-1 cursor-pointer transition-colors"
+                    title="Không hữu ích">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                        d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 012 2v7a2 2 0 01-.586 1.414l-5 5a2 2 0 01-3.414-1.414V14zM15 14v-11h4a2 2 0 012 2v7a2 2 0 01-2 2h-4z">
+                      </path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tasks bị khóa -->
+            <div class="space-y-3 pt-1">
+              <div class="flex items-center gap-3 text-slate-400 px-2 cursor-not-allowed">
+                <svg class="w-4 h-4 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                  </path>
+                </svg>
+                <span class="text-xs">Bật tín hiệu của Google</span>
+              </div>
+              <div class="flex items-center gap-3 text-slate-400 px-2 cursor-not-allowed">
+                <svg class="w-4 h-4 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                  </path>
+                </svg>
+                <span class="text-xs">Tạo đối tượng</span>
+              </div>
+            </div>
+
+            <!-- Việc cần làm đã hoàn thành -->
+            <div class="pt-2 border-t border-slate-100">
+              <button id="btnCompletedToggle"
+                class="flex items-center gap-2 text-xs text-slate-600 hover:text-slate-800 font-medium py-1 cursor-pointer">
+                <svg id="completedArrow" class="w-3.5 h-3.5 text-slate-500 transition-transform duration-200"
+                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+                <span class="underline decoration-slate-300 underline-offset-2">Việc cần làm đã hoàn
+                  thành</span>
+                <span class="text-slate-400">(2)</span>
+              </button>
+              <div id="completedList" class="hidden pl-6 pt-2.5 space-y-2 text-xs text-slate-500">
+                <div class="flex items-center gap-2">
+                  <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="line-through">Tạo thuộc tính Google Analytics 4</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="line-through">Cài đặt múi giờ và đơn vị tiền tệ báo cáo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= KHỐI 100% CODE HTML & TAILWIND ĐỂ COPY ================= -->
+    <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+      <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+        <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND</span>
+        <button id="btnCopyHtml"
+          class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+          <span>📋</span> <span id="txtCopyHtml">Copy HTML</span>
+        </button>
+      </div>
+      <pre class="p-4 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-96" id="codeHtml">&lt;!-- Yêu cầu có CDN Tailwind CSS trong thẻ &lt;head&gt;:
+&lt;script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"&gt;&lt;/script&gt;
+--&gt;
+
+&lt;div class="w-full max-w-2xl bg-white border border-slate-200 rounded-lg shadow-xs overflow-hidden font-sans select-none"&gt;
+  
+  &lt;!-- 1. HEADER ACCORDION --&gt;
+  &lt;div id="accHeader" class="p-5 flex items-center justify-between cursor-pointer hover:bg-slate-50/70 transition-colors"&gt;
+    &lt;h2 class="text-base font-semibold text-slate-800"&gt;Bắt đầu&lt;/h2&gt;
+    &lt;div class="flex items-center gap-3"&gt;
+      &lt;span id="taskCount" class="text-xs font-medium text-blue-700 bg-blue-50 px-2.5 py-1 rounded"&gt;
+        Còn 4 / 6 nhiệm vụ
+      &lt;/span&gt;
+      &lt;svg id="accArrow" class="w-5 h-5 text-slate-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- 2. THÂN ACCORDION --&gt;
+  &lt;div id="accBody" class="px-5 pb-6 pt-0 space-y-4"&gt;
+    &lt;p class="text-xs text-slate-500"&gt;
+      Bắt đầu sử dụng Analytics bằng cách thu thập dữ liệu và quyết định cách dữ liệu xuất hiện trong báo cáo
+    &lt;/p&gt;
+
+    &lt;!-- Card nhiệm vụ đang hoạt động --&gt;
+    &lt;div class="bg-slate-50/70 border border-slate-200/80 rounded-lg p-5 space-y-3.5"&gt;
+      &lt;div class="flex items-center gap-3"&gt;
+        &lt;button id="btnCheckTask" class="w-5 h-5 rounded-full border-2 border-slate-700 hover:border-blue-600 flex items-center justify-center shrink-0 cursor-pointer transition-colors" title="Bấm để đánh dấu hoàn thành"&gt;
+          &lt;span id="checkIcon" class="hidden text-xs text-blue-600 font-black"&gt;✓&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;h3 id="taskTitle" class="text-sm font-semibold text-slate-800"&gt;Thiết lập tính năng thu thập dữ liệu&lt;/h3&gt;
+      &lt;/div&gt;
+
+      &lt;div class="pl-8 text-xs text-slate-600 leading-relaxed"&gt;
+        Thiết lập kết nối với Google Analytics bằng cách thêm mã hoặc SDK vào trang web hoặc ứng dụng của bạn để các báo cáo có thể bắt đầu điền sẵn dữ liệu.
+        &lt;a href="#" class="text-blue-600 underline hover:text-blue-700 ml-1 inline-flex items-center gap-1"&gt;
+          Tìm hiểu thêm
+          &lt;svg class="w-3.5 h-3.5 inline text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+
+      &lt;div class="pl-8 pt-1 flex flex-wrap items-center justify-between gap-3"&gt;
+        &lt;div class="flex items-center gap-2"&gt;
+          &lt;button class="bg-blue-600 hover:bg-blue-700 active:scale-95 text-white text-xs font-medium px-4 py-2 rounded flex items-center gap-1.5 cursor-pointer transition-all shadow-xs"&gt;
+            &lt;svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+              &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+            Hành động
+          &lt;/button&gt;
+          &lt;button class="border border-slate-300 hover:bg-slate-100 active:scale-95 text-blue-600 text-xs font-medium px-3.5 py-2 rounded flex items-center gap-1.5 cursor-pointer transition-all bg-white"&gt;
+            &lt;svg class="w-3.5 h-3.5 fill-blue-600 text-blue-600" viewBox="0 0 24 24"&gt;
+              &lt;path d="M4 6.5C4 5.12 5.12 4 6.5 4h11C18.88 4 20 5.12 20 6.5v11c0 1.38-1.12 2.5-2.5 2.5h-11C5.12 20 4 18.88 4 17.5v-11zM10 8.5v7l5-3.5-5-3.5z"/&gt;
+            &lt;/svg&gt;
+            Xem video
+          &lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class="flex items-center gap-3 text-xs text-slate-500"&gt;
+          &lt;span&gt;Is this helpful?&lt;/span&gt;
+          &lt;button id="btnLike" class="hover:text-blue-600 p-1 cursor-pointer transition-colors" title="Hữu ích"&gt;
+            &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+              &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017a2 2 0 01-2-2v-7a2 2 0 01.586-1.414l5-5a2 2 0 013.414 1.414v2.586zM9 10v11H5a2 2 0 01-2-2v-7a2 2 0 012-2h4z"&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/button&gt;
+          &lt;button id="btnDislike" class="hover:text-red-600 p-1 cursor-pointer transition-colors" title="Không hữu ích"&gt;
+            &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+              &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 012 2v7a2 2 0 01-.586 1.414l-5 5a2 2 0 01-3.414-1.414V14zM15 14v-11h4a2 2 0 012 2v7a2 2 0 01-2 2h-4z"&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Các nhiệm vụ bị khóa --&gt;
+    &lt;div class="space-y-3 pt-1"&gt;
+      &lt;div class="flex items-center gap-3 text-slate-400 px-2 cursor-not-allowed"&gt;
+        &lt;svg class="w-4 h-4 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+          &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;span class="text-xs"&gt;Bật tín hiệu của Google&lt;/span&gt;
+      &lt;/div&gt;
+
+      &lt;div class="flex items-center gap-3 text-slate-400 px-2 cursor-not-allowed"&gt;
+        &lt;svg class="w-4 h-4 shrink-0 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+          &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;span class="text-xs"&gt;Tạo đối tượng&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Mục sổ xuống: Việc đã hoàn thành --&gt;
+    &lt;div class="pt-2 border-t border-slate-100"&gt;
+      &lt;button id="btnCompletedToggle" class="flex items-center gap-2 text-xs text-slate-600 hover:text-slate-800 font-medium py-1 cursor-pointer"&gt;
+        &lt;svg id="completedArrow" class="w-3.5 h-3.5 text-slate-500 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+          &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+        &lt;span class="underline decoration-slate-300 underline-offset-2"&gt;Việc cần làm đã hoàn thành&lt;/span&gt;
+        &lt;span class="text-slate-400"&gt;(2)&lt;/span&gt;
+      &lt;/button&gt;
+
+      &lt;div id="completedList" class="hidden pl-6 pt-2.5 space-y-2 text-xs text-slate-500"&gt;
+        &lt;div class="flex items-center gap-2"&gt;
+          &lt;svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+          &lt;span class="line-through"&gt;Tạo thuộc tính Google Analytics 4&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="flex items-center gap-2"&gt;
+          &lt;svg class="w-3.5 h-3.5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+          &lt;span class="line-through"&gt;Cài đặt múi giờ và đơn vị tiền tệ báo cáo&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+    </div>
+
+    <!-- ================= KHỐI 100% CODE JAVASCRIPT ĐỂ COPY ================= -->
+    <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+      <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+        <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM)</span>
+        <button id="btnCopyJs"
+          class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+          <span>📋</span> <span id="txtCopyJs">Copy JS</span>
+        </button>
+      </div>
+      <pre class="p-4 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-80" id="codeJs">// 1. Đóng/Mở toàn bộ Accordion
+const accHeader = document.querySelector("#accHeader");
+const accBody = document.querySelector("#accBody");
+const accArrow = document.querySelector("#accArrow");
+
+accHeader.addEventListener("click", function () {
+  accBody.classList.toggle("hidden");
+  accArrow.classList.toggle("rotate-180");
+});
+
+// 2. Đóng/Mở danh sách "Việc cần làm đã hoàn thành"
+const btnCompletedToggle = document.querySelector("#btnCompletedToggle");
+const completedList = document.querySelector("#completedList");
+const completedArrow = document.querySelector("#completedArrow");
+
+btnCompletedToggle.addEventListener("click", function () {
+  completedList.classList.toggle("hidden");
+  completedArrow.classList.toggle("rotate-180");
+});
+
+// 3. Đánh dấu hoàn thành nhiệm vụ & Cập nhật số đếm
+const btnCheckTask = document.querySelector("#btnCheckTask");
+const checkIcon = document.querySelector("#checkIcon");
+const taskTitle = document.querySelector("#taskTitle");
+const taskCount = document.querySelector("#taskCount");
+
+let isDone = false;
+btnCheckTask.addEventListener("click", function () {
+  isDone = !isDone;
+  if (isDone) {
+    checkIcon.classList.remove("hidden");
+    btnCheckTask.classList.add("border-blue-600", "bg-blue-50");
+    taskTitle.classList.add("line-through", "text-slate-400");
+    taskCount.innerText = "Còn 3 / 6 nhiệm vụ";
+  } else {
+    checkIcon.classList.add("hidden");
+    btnCheckTask.classList.remove("border-blue-600", "bg-blue-50");
+    taskTitle.classList.remove("line-through", "text-slate-400");
+    taskCount.innerText = "Còn 4 / 6 nhiệm vụ";
+  }
+});
+
+// 4. Tương tác Like / Dislike
+const btnLike = document.querySelector("#btnLike");
+const btnDislike = document.querySelector("#btnDislike");
+
+btnLike.addEventListener("click", function () {
+  btnLike.classList.toggle("text-blue-600");
+  btnDislike.classList.remove("text-red-600");
+});
+
+btnDislike.addEventListener("click", function () {
+  btnDislike.classList.toggle("text-red-600");
+  btnLike.classList.remove("text-blue-600");
+});</pre>
+    </div>
+
+  </main>
+
+  <!-- ================= LOGIC TRANG ================= -->
+  <script src="script.js"></script>
+  <script>
+    // 1. Tương tác đóng/mở Accordion trên bản xem trước
+    const accHeader = document.querySelector("#accHeader");
+    const accBody = document.querySelector("#accBody");
+    const accArrow = document.querySelector("#accArrow");
+
+    accHeader.addEventListener("click", () => {
+      accBody.classList.toggle("hidden");
+      accArrow.classList.toggle("rotate-180");
+    });
+
+    // 2. Tương tác đóng/mở danh sách hoàn thành
+    const btnCompletedToggle = document.querySelector("#btnCompletedToggle");
+    const completedList = document.querySelector("#completedList");
+    const completedArrow = document.querySelector("#completedArrow");
+
+    btnCompletedToggle.addEventListener("click", () => {
+      completedList.classList.toggle("hidden");
+      completedArrow.classList.toggle("rotate-180");
+    });
+
+    // 3. Tương tác nút check hoàn thành task
+    const btnCheckTask = document.querySelector("#btnCheckTask");
+    const checkIcon = document.querySelector("#checkIcon");
+    const taskTitle = document.querySelector("#taskTitle");
+    const taskCount = document.querySelector("#taskCount");
+
+    let isDone = false;
+    btnCheckTask.addEventListener("click", () => {
+      isDone = !isDone;
+      if (isDone) {
+        checkIcon.classList.remove("hidden");
+        btnCheckTask.classList.add("border-blue-600", "bg-blue-50");
+        taskTitle.classList.add("line-through", "text-slate-400");
+        taskCount.innerText = "Còn 3 / 6 nhiệm vụ";
+      } else {
+        checkIcon.classList.add("hidden");
+        btnCheckTask.classList.remove("border-blue-600", "bg-blue-50");
+        taskTitle.classList.remove("line-through", "text-slate-400");
+        taskCount.innerText = "Còn 4 / 6 nhiệm vụ";
+      }
+    });
+
+    // 4. Nút like / dislike
+    const btnLike = document.querySelector("#btnLike");
+    const btnDislike = document.querySelector("#btnDislike");
+
+    btnLike.addEventListener("click", () => {
+      btnLike.classList.toggle("text-blue-600");
+      btnDislike.classList.remove("text-red-600");
+    });
+
+    btnDislike.addEventListener("click", () => {
+      btnDislike.classList.toggle("text-red-600");
+      btnLike.classList.remove("text-blue-600");
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Analytics UI Kit - Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800 font-sans">
+
+  <!-- SIDEBAR MENU BÊN TRÁI -->
+  <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+    <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+      <div
+        class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+        📊
+      </div>
+      <div>
+        <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+        <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+      </div>
+    </div>
+
+    <div class="p-3 overflow-y-auto flex-1">
+      <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+      <nav class="space-y-1">
+        <a href="index.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+          <span>🏠</span> Tổng quan UI Kit
+        </a>
+        <a href="accordion.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>📂</span> Accordion Tasks
+        </a>
+        <a href="popup-picker.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>🪟</span> Popup / Modal Picker
+        </a>
+        <a href="sidebar.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>📑</span> Sidebar GA4
+        </a>
+        <a href="exploration-carousel.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>🎠</span> Carousel Khám phá
+        </a>
+        <a href="account-settings.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>⚙️</span> Cài đặt Tài khoản
+        </a>
+        <a href="data-streams.html"
+          class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+          <span>🌊</span> Luồng Dữ Liệu
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- NỘI DUNG TỔNG QUAN -->
+  <main class="flex-1 p-8 max-w-5xl overflow-y-auto">
+    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm mb-8">
+      <div class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">Thư viện UI
+        cá nhân</div>
+      <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-3">Google Analytics 4 UI Components Kit</h1>
+      <p class="text-slate-600 max-w-2xl leading-relaxed text-sm">
+        Bộ sưu tập các thành phần giao diện chuẩn Google Analytics được xây dựng bằng <strong>Tailwind CSS</strong> và
+        <strong>JavaScript DOM thuần túy</strong>. Mỗi component đều có bản xem trước tương tác thực tế và mã nguồn hoàn
+        chỉnh sẵn sàng sao chép sử dụng.
+      </p>
+    </div>
+
+    <h2 class="text-lg font-bold text-slate-800 mb-4">Các Components Hiện Có</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <!-- Card 1 -->
+      <a href="accordion.html"
+        class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md hover:border-blue-400 transition-all flex flex-col justify-between group">
+        <div>
+          <span class="text-3xl mb-3 block">📂</span>
+          <h3 class="font-bold text-slate-800 text-sm group-hover:text-blue-600 transition-colors">Accordion Tasks</h3>
+          <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Khung danh sách nhiệm vụ bắt đầu của GA4 với tính
+            năng đánh dấu hoàn thành và gập mở.</p>
+        </div>
+        <span class="text-xs text-blue-600 font-semibold mt-4 inline-flex items-center gap-1">Xem chi tiết &rarr;</span>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="popup-picker.html"
+        class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md hover:border-blue-400 transition-all flex flex-col justify-between group">
+        <div>
+          <span class="text-3xl mb-3 block">🪟</span>
+          <h3 class="font-bold text-slate-800 text-sm group-hover:text-blue-600 transition-colors">Popup / Modal Picker
+          </h3>
+          <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Hộp thoại chuyển đổi tài khoản và thuộc tính GA4 phân
+            cấp 2 cột chuẩn thiết kế Google.</p>
+        </div>
+        <span class="text-xs text-blue-600 font-semibold mt-4 inline-flex items-center gap-1">Xem chi tiết &rarr;</span>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="sidebar.html"
+        class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md hover:border-blue-400 transition-all flex flex-col justify-between group">
+        <div>
+          <span class="text-3xl mb-3 block">📑</span>
+          <h3 class="font-bold text-slate-800 text-sm group-hover:text-blue-600 transition-colors">Collapsible Sidebar
+          </h3>
+          <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Thanh điều hướng bên trái có khả năng thu gọn chỉ còn
+            icon hoặc bung mở rộng.</p>
+        </div>
+        <span class="text-xs text-blue-600 font-semibold mt-4 inline-flex items-center gap-1">Xem chi tiết &rarr;</span>
+      </a>
+
+      <!-- Card 4: Carousel Khám phá -->
+      <a href="exploration-carousel.html"
+        class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md hover:border-blue-400 transition-all flex flex-col justify-between group">
+        <div>
+          <span class="text-3xl mb-3 block">🎠</span>
+          <h3 class="font-bold text-slate-800 text-sm group-hover:text-blue-600 transition-colors">
+            Carousel Khám phá
+          </h3>
+          <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">
+            Băng chuyền hiển thị danh sách các mẫu phân tích khám phá GA4, hỗ trợ cuộn mượt bằng nút tròn điều hướng.
+          </p>
+        </div>
+        <span class="text-xs text-blue-600 font-semibold mt-4 inline-flex items-center gap-1">
+          Xem chi tiết &rarr;
+        </span>
+      </a>
+      <!-- Card 5: Cài đặt Tài khoản -->
+      <a href="account-settings.html"
+        class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md hover:border-blue-400 transition-all flex flex-col justify-between group">
+        <div>
+          <span class="text-3xl mb-3 block">⚙️</span>
+          <h3 class="font-bold text-slate-800 text-sm group-hover:text-blue-600 transition-colors">
+            Cài đặt Tài khoản
+          </h3>
+          <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">
+            Khung quản trị cài đặt tài khoản GA4 chia 2 cột với các mục quyền truy cập, nhật ký thay đổi và thùng rác.
+          </p>
+        </div>
+        <span class="text-xs text-blue-600 font-semibold mt-4 inline-flex items-center gap-1">
+          Xem chi tiết &rarr;
+        </span>
+      </a>
+    </div>
+  </main>
+
+</body>
+
+</html>
