@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Communications - GA4 UI Kit</title>
+    <!-- Tailwind CSS CDN v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800 font-sans">
+
+    <!-- ================= SIDEBAR MENU BÊN TRÁI ================= -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+        <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+            <div
+                class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+                📊
+            </div>
+            <div>
+                <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+                <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+            </div>
+        </div>
+
+        <div class="p-3 overflow-y-auto flex-1">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+            <nav class="space-y-1">
+                <a href="index.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏠</span> Tổng quan UI Kit
+                </a>
+                <a href="accordion.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📂</span> Accordion Tasks
+                </a>
+                <a href="popup-picker.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🪟</span> Popup / Modal Picker
+                </a>
+                <a href="sidebar.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📑</span> Sidebar GA4
+                </a>
+                <a href="exploration-carousel.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🎠</span> Carousel Khám phá
+                </a>
+                <a href="account-settings.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚙️</span> Cài đặt Quản trị
+                </a>
+                <a href="data-streams.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🌊</span> Luồng Dữ Liệu
+                </a>
+                <a href="realtime-overview.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⏱️</span> Thời Gian Thực
+                </a>
+                <a href="email-communications.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+                    <span>✉️</span> Liên Lạc Qua Email
+                </a>
+                <a href="user-account-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>👤</span> Thông Tin Tài Khoản
+                </a>
+                <a href="property-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏢</span> Thông Tin Tài Sản
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- ================= KHU VỰC CHÍNH ================= -->
+    <main class="flex-1 p-8 max-w-6xl overflow-y-auto space-y-12">
+        <div class="flex items-center gap-3">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 8</span>
+            <h2 class="text-xl font-bold text-slate-800">GA4 Email Communications Preferences (Tuỳ chọn liên lạc qua
+                email)</h2>
+        </div>
+
+        <!-- ================= KHỐI GIAO DIỆN XEM TRƯỚC ================= -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước tương
+                    tác thực tế
+                </span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+            </div>
+
+            <div class="p-8 bg-slate-100/60">
+
+                <!-- VÙNG FORM CÀI ĐẶT EMAIL LIÊN LẠC -->
+                <div class="w-full max-w-5xl mx-auto font-sans select-none space-y-6">
+
+                    <!-- KHUNG CHÍNH (CARD LỚN) -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-8 shadow-2xs space-y-6">
+
+                        <!-- Phần tiêu đề và mô tả chính sách -->
+                        <div class="space-y-3">
+                            <h2 class="text-xl font-normal text-slate-900 tracking-tight">
+                                Thông tin liên lạc qua email từ Google Analytics
+                            </h2>
+                            <p class="text-sm text-slate-700 leading-relaxed font-normal">
+                                Thỉnh thoảng, chúng tôi gửi email để cho bạn biết thông tin mới về Google Analytics. Tuy
+                                nhiên, bạn luôn có quyền lựa chọn loại thông tin liên lạc mà bạn muốn nhận từ Google. Vì
+                                vậy, vui lòng cho chúng tôi biết lựa chọn ưu tiên của bạn bên dưới.
+                            </p>
+                            <p class="text-sm text-slate-700 leading-relaxed font-normal">
+                                Bất kể lựa chọn của bạn là gì, chúng tôi vẫn phải gửi cho bạn những thông tin cập nhật
+                                quan trọng về sản phẩm ảnh hưởng đến tài khoản của bạn, nhưng đó là tất cả thông tin mà
+                                bạn sẽ nhận được từ Google. Chúng tôi tôn trọng quyền riêng tư của bạn và sẽ không chia
+                                sẻ thông tin cá nhân của bạn với các bên thứ ba hoặc đối tác.
+                            </p>
+                        </div>
+
+                        <!-- DANH SÁCH 4 HỘP CHECKBOX -->
+                        <div class="space-y-3.5 pt-2">
+
+                            <!-- Hộp 1: Thông tin cập nhật và nội dung đề xuất -->
+                            <label
+                                class="flex items-start gap-4 p-5 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50/50 cursor-pointer transition-all group">
+                                <input type="checkbox" name="email_pref"
+                                    class="mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300 cursor-pointer accent-blue-600 shrink-0"
+                                    checked>
+                                <div>
+                                    <h3
+                                        class="text-sm font-medium text-slate-800 group-hover:text-blue-600 transition-colors">
+                                        Thông tin cập nhật và nội dung đề xuất về hiệu quả hoạt động
+                                    </h3>
+                                    <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                                        Nhận thông tin cập nhật và mẹo giúp bạn khai thác tối đa tài khoản Google
+                                        Analytics.
+                                    </p>
+                                </div>
+                            </label>
+
+                            <!-- Hộp 2: Thông báo về tính năng -->
+                            <label
+                                class="flex items-start gap-4 p-5 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50/50 cursor-pointer transition-all group">
+                                <input type="checkbox" name="email_pref"
+                                    class="mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300 cursor-pointer accent-blue-600 shrink-0"
+                                    checked>
+                                <div>
+                                    <h3
+                                        class="text-sm font-medium text-slate-800 group-hover:text-blue-600 transition-colors">
+                                        Thông báo về tính năng
+                                    </h3>
+                                    <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                                        Tìm hiểu về các thay đổi, cải tiến mới nhất và các tính năng mới trong Google
+                                        Analytics.
+                                    </p>
+                                </div>
+                            </label>
+
+                            <!-- Hộp 3: Cơ hội phản hồi và thử nghiệm -->
+                            <label
+                                class="flex items-start gap-4 p-5 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50/50 cursor-pointer transition-all group">
+                                <input type="checkbox" name="email_pref"
+                                    class="mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300 cursor-pointer accent-blue-600 shrink-0"
+                                    checked>
+                                <div>
+                                    <h3
+                                        class="text-sm font-medium text-slate-800 group-hover:text-blue-600 transition-colors">
+                                        Cơ hội phản hồi và thử nghiệm
+                                    </h3>
+                                    <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                                        Tham gia các cuộc khảo sát và chương trình thí điểm của Google để giúp cải thiện
+                                        Google Analytics.
+                                    </p>
+                                </div>
+                            </label>
+
+                            <!-- Hộp 4: Chương trình ưu đãi của Google -->
+                            <label
+                                class="flex items-start gap-4 p-5 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50/50 cursor-pointer transition-all group">
+                                <input type="checkbox" name="email_pref"
+                                    class="mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-slate-300 cursor-pointer accent-blue-600 shrink-0"
+                                    checked>
+                                <div>
+                                    <h3
+                                        class="text-sm font-medium text-slate-800 group-hover:text-blue-600 transition-colors">
+                                        Chương trình ưu đãi của Google
+                                    </h3>
+                                    <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                                        Tìm hiểu về các sản phẩm, dịch vụ, sự kiện và chương trình khuyến mại đặc biệt
+                                        có liên quan của Google.
+                                    </p>
+                                </div>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- 2 NÚT THAO TÁC BÊN DƯỚI -->
+                    <div class="flex items-center gap-6 pt-1">
+                        <button type="button" id="btnSaveEmailPref"
+                            class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-5 py-2.5 rounded-lg cursor-pointer shadow-xs transition-colors">
+                            Lưu thay đổi
+                        </button>
+                        <button type="button" id="btnCancelEmailPref"
+                            class="text-xs font-semibold text-blue-600 hover:text-blue-800 cursor-pointer transition-colors">
+                            Huỷ
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= KHỐI COPY HTML 100% ĐẦY ĐỦ ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND (EMAIL
+                    PREFERENCES)</span>
+                <button id="btnCopyHtml"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyHtml">Copy HTML</span>
+                </button>
+            </div>
+            <pre class="p-5 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-[700px]"
+                id="codeHtml">&lt;!-- Yêu cầu có CDN Tailwind CSS trong thẻ &lt;head&gt;:
+&lt;!-- Yêu cầu có CDN Tailwind CSS trong thẻ &lt;head&gt;: 
+&lt;script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"&gt;&lt;/script&gt;
+--&gt;
+
+&lt;div class="w-full max-w-5xl font-sans select-none space-y-6"&gt;
+  
+  &lt;!-- KHUNG CHÍNH (CARD LỚN) --&gt;
+  &lt;div class="bg-white border border-slate-200 rounded-xl p-8 shadow-2xs space-y-6"&gt;
+    
+    &lt;!-- Phần tiêu đề & mô tả chính sách --&gt;
+    &lt;div class="space-y-3"&gt;
+      &lt;h2 class="text-xl font-normal text-slate-900 tracking-tight"&gt;
+        Thông tin liên lạc qua email từ Google Analytics
+      &lt;/h2&gt;
+      &lt;p class="text-sm text-slate-700 leading-relaxed font-normal"&gt;
+        Thỉnh thoảng, chúng tôi gửi email để cho bạn biết thông tin mới về Google Analytics. Tuy nhiên, bạn luôn có quyền lựa chọn loại thông tin liên lạc mà bạn muốn nhận từ Google. Vì vậy, vui lòng cho chúng tôi biết lựa chọn ưu tiên của bạn bên dưới.
+      &lt;/p&gt;
+      &lt;p class="text-sm text-slate-700 leading-relaxed font-normal"&gt;
+        Bất kể lựa chọn của bạn là gì, chúng tôi vẫn phải gửi cho bạn những thông tin cập nhật quan trọng về sản phẩm ảnh hưởng đến tài khoản của bạn, nhưng đó là tất cả thông tin mà bạn sẽ nhận được từ Google. Chúng tôi tôn trọng quyền riêng tư của bạn và sẽ không chia sẻ thông tin cá nhân của bạn với các bên thứ ba hoặc đối tác.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- DANH SÁCH 4 HỘP CHECKBOX VỚI CUSTOM CHECKMARK CHUẨN GOOGLE --&gt;
+    &lt;div class="space-y-3.5 pt-2"&gt;
+      
+      &lt;!-- Mục 1: Thông tin cập nhật và nội dung đề xuất --&gt;
+      &lt;label class="flex items-start gap-4 p-5 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50/50 cursor-pointer transition-all group"&gt;
+        &lt;div class="relative flex items-center justify-center mt-0.5 shrink-0"&gt;
+          &lt;input type="checkbox" name="email_pref" class="peer appearance-none w-5 h-5 rounded border-2 border-slate-400 checked:bg-blue-600 checked:border-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-100 cursor-pointer transition-all" checked&gt;
+          &lt;svg class="w-3.5 h-3.5 text-white absolute pointer-events-none hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.5"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;h3 class="text-sm font-medium text-slate-800 group-hover:text-blue-600 transition-colors"&gt;
+            Thông tin cập nhật và nội dung đề xuất về hiệu quả hoạt động
+          &lt;/h3&gt;
+          &lt;p class="text-xs text-slate-500 mt-1 leading-relaxed"&gt;
+            Nhận thông tin cập nhật và mẹo giúp bạn khai thác tối đa tài khoản Google Analytics.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/label&gt;
+
+      &lt;!-- Mục 2: Thông báo về tính năng --&gt;
+      &lt;label class="flex items-start gap-4 p-5 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50/50 cursor-pointer transition-all group"&gt;
+        &lt;div class="relative flex items-center justify-center mt-0.5 shrink-0"&gt;
+          &lt;input type="checkbox" name="email_pref" class="peer appearance-none w-5 h-5 rounded border-2 border-slate-400 checked:bg-blue-600 checked:border-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-100 cursor-pointer transition-all" checked&gt;
+          &lt;svg class="w-3.5 h-3.5 text-white absolute pointer-events-none hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.5"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;h3 class="text-sm font-medium text-slate-800 group-hover:text-blue-600 transition-colors"&gt;
+            Thông báo về tính năng
+          &lt;/h3&gt;
+          &lt;p class="text-xs text-slate-500 mt-1 leading-relaxed"&gt;
+            Tìm hiểu về các thay đổi, cải tiến mới nhất và các tính năng mới trong Google Analytics.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/label&gt;
+
+      &lt;!-- Mục 3: Cơ hội phản hồi và thử nghiệm --&gt;
+      &lt;label class="flex items-start gap-4 p-5 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50/50 cursor-pointer transition-all group"&gt;
+        &lt;div class="relative flex items-center justify-center mt-0.5 shrink-0"&gt;
+          &lt;input type="checkbox" name="email_pref" class="peer appearance-none w-5 h-5 rounded border-2 border-slate-400 checked:bg-blue-600 checked:border-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-100 cursor-pointer transition-all" checked&gt;
+          &lt;svg class="w-3.5 h-3.5 text-white absolute pointer-events-none hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.5"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;h3 class="text-sm font-medium text-slate-800 group-hover:text-blue-600 transition-colors"&gt;
+            Cơ hội phản hồi và thử nghiệm
+          &lt;/h3&gt;
+          &lt;p class="text-xs text-slate-500 mt-1 leading-relaxed"&gt;
+            Tham gia các cuộc khảo sát và chương trình thí điểm của Google để giúp cải thiện Google Analytics.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/label&gt;
+
+      &lt;!-- Mục 4: Chương trình ưu đãi của Google (với hiệu ứng halo xanh nhạt) --&gt;
+      &lt;label class="flex items-start gap-4 p-5 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50/50 cursor-pointer transition-all group"&gt;
+        &lt;div class="relative flex items-center justify-center mt-0.5 shrink-0"&gt;
+          &lt;input type="checkbox" name="email_pref" class="peer appearance-none w-5 h-5 rounded border-2 border-slate-400 checked:bg-blue-600 checked:border-blue-600 ring-8 ring-blue-50 focus:outline-none focus:ring-8 focus:ring-blue-100 cursor-pointer transition-all" checked&gt;
+          &lt;svg class="w-3.5 h-3.5 text-white absolute pointer-events-none hidden peer-checked:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.5"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"&gt;&lt;/path&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;h3 class="text-sm font-medium text-slate-800 group-hover:text-blue-600 transition-colors"&gt;
+            Chương trình ưu đãi của Google
+          &lt;/h3&gt;
+          &lt;p class="text-xs text-slate-500 mt-1 leading-relaxed"&gt;
+            Tìm hiểu về các sản phẩm, dịch vụ, sự kiện và chương trình khuyến mại đặc biệt có liên quan của Google.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/label&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+  &lt;!-- 2 NÚT THAO TÁC BÊN DƯỚI (LƯU & HUỶ) --&gt;
+  &lt;div class="flex items-center gap-6 pt-1"&gt;
+    &lt;button type="button" id="btnSaveEmailPref" class="bg-blue-600 hover:bg-blue-700 disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed text-white text-xs font-semibold px-5 py-2.5 rounded-lg cursor-pointer shadow-xs transition-colors" disabled&gt;
+      Lưu thay đổi
+    &lt;/button&gt;
+    &lt;button type="button" id="btnCancelEmailPref" class="text-xs font-semibold text-blue-600 hover:text-blue-800 disabled:text-slate-400 disabled:cursor-not-allowed cursor-pointer transition-colors" disabled&gt;
+      Huỷ
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- ================= KHỐI COPY JS 100% ĐẦY ĐỦ ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM)</span>
+                <button id="btnCopyJs"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyJs">Copy JS</span>
+                </button>
+            </div>
+            <pre class="p-5 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-[400px]" id="codeJs">const btnSaveEmailPref = document.querySelector("#btnSaveEmailPref");
+// 1. Khai báo các phần tử DOM
+const btnSaveEmailPref = document.querySelector("#btnSaveEmailPref");
+const btnCancelEmailPref = document.querySelector("#btnCancelEmailPref");
+const emailCheckboxes = document.querySelectorAll('input[name="email_pref"]');
+
+// 2. Lưu lại trạng thái ban đầu của các checkbox
+const initialStates = Array.from(emailCheckboxes).map(cb => cb.checked);
+
+// 3. Hàm kiểm tra xem người dùng có thay đổi lựa chọn hay không
+function checkDirtyState() {
+  const isChanged = Array.from(emailCheckboxes).some((cb, index) => cb.checked !== initialStates[index]);
+  
+  btnSaveEmailPref.disabled = !isChanged;
+  btnCancelEmailPref.disabled = !isChanged;
+
+  if (isChanged) {
+    btnSaveEmailPref.classList.remove("disabled:bg-slate-200", "disabled:text-slate-400");
+  }
+}
+
+// Lắng nghe sự kiện change trên từng checkbox
+emailCheckboxes.forEach(cb => {
+  cb.addEventListener("change", checkDirtyState);
+});
+
+// 4. Xử lý nút "Lưu thay đổi"
+btnSaveEmailPref.addEventListener("click", () => {
+  if (btnSaveEmailPref.disabled) return;
+
+  const currentValues = Array.from(emailCheckboxes).map(cb => cb.checked);
+  console.log("Đã cập nhật cài đặt email:", currentValues);
+
+  // Cập nhật lại mốc trạng thái ban đầu sau khi lưu
+  currentValues.forEach((val, idx) => { initialStates[idx] = val; });
+  
+  // Hiệu ứng thông báo lưu thành công
+  const originText = btnSaveEmailPref.innerText;
+  btnSaveEmailPref.innerText = "Đã lưu thành công!";
+  btnSaveEmailPref.classList.replace("bg-blue-600", "bg-emerald-600");
+
+  setTimeout(() => {
+    btnSaveEmailPref.innerText = originText;
+    btnSaveEmailPref.classList.replace("bg-emerald-600", "bg-blue-600");
+    checkDirtyState();
+  }, 1500);
+});
+
+// 5. Xử lý nút "Huỷ" -> Phục hồi lại trạng thái trước khi chỉnh sửa
+btnCancelEmailPref.addEventListener("click", () => {
+  if (btnCancelEmailPref.disabled) return;
+
+  emailCheckboxes.forEach((cb, index) => {
+    cb.checked = initialStates[index];
+  });
+  checkDirtyState();
+});</pre>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Logic nút Save & Cancel trong bản xem trước
+        const btnSaveEmailPref = document.querySelector("#btnSaveEmailPref");
+        const btnCancelEmailPref = document.querySelector("#btnCancelEmailPref");
+        const emailCheckboxes = document.querySelectorAll('input[name="email_pref"]');
+
+        btnSaveEmailPref.addEventListener("click", () => {
+            const originText = btnSaveEmailPref.innerText;
+            btnSaveEmailPref.innerText = "Đã lưu thành công!";
+            btnSaveEmailPref.classList.replace("bg-blue-600", "bg-emerald-600");
+            setTimeout(() => {
+                btnSaveEmailPref.innerText = originText;
+                btnSaveEmailPref.classList.replace("bg-emerald-600", "bg-blue-600");
+            }, 1800);
+        });
+
+        btnCancelEmailPref.addEventListener("click", () => {
+            emailCheckboxes.forEach(cb => cb.checked = true);
+        });
+
+        // Logic nút copy clipboard
+        const btnCopyHtml = document.querySelector("#btnCopyHtml");
+        const txtCopyHtml = document.querySelector("#txtCopyHtml");
+        const codeHtml = document.querySelector("#codeHtml");
+
+        btnCopyHtml.addEventListener("click", () => {
+            navigator.clipboard.writeText(codeHtml.innerText).then(() => {
+                txtCopyHtml.innerText = "Đã Copy!";
+                btnCopyHtml.classList.replace("bg-slate-800", "bg-emerald-600");
+                setTimeout(() => {
+                    txtCopyHtml.innerText = "Copy HTML";
+                    btnCopyHtml.classList.replace("bg-emerald-600", "bg-slate-800");
+                }, 1800);
+            });
+        });
+
+        const btnCopyJs = document.querySelector("#btnCopyJs");
+        const txtCopyJs = document.querySelector("#txtCopyJs");
+        const codeJs = document.querySelector("#codeJs");
+
+        btnCopyJs.addEventListener("click", () => {
+            navigator.clipboard.writeText(codeJs.innerText).then(() => {
+                txtCopyJs.innerText = "Đã Copy!";
+                btnCopyJs.classList.replace("bg-slate-800", "bg-emerald-600");
+                setTimeout(() => {
+                    txtCopyJs.innerText = "Copy JS";
+                    btnCopyJs.classList.replace("bg-emerald-600", "bg-slate-800");
+                }, 1800);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details - GA4 UI Kit</title>
+    <!-- Tailwind CSS CDN v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800 font-sans">
+
+    <!-- ================= SIDEBAR MENU BÊN TRÁI ================= -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+        <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+            <div
+                class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+                📊
+            </div>
+            <div>
+                <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+                <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+            </div>
+        </div>
+
+        <div class="p-3 overflow-y-auto flex-1">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+            <nav class="space-y-1">
+                <a href="index.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏠</span> Tổng quan UI Kit
+                </a>
+                <a href="accordion.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📂</span> Accordion Tasks
+                </a>
+                <a href="popup-picker.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🪟</span> Popup / Modal Picker
+                </a>
+                <a href="sidebar.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📑</span> Sidebar GA4
+                </a>
+                <a href="exploration-carousel.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🎠</span> Carousel Khám phá
+                </a>
+                <a href="account-settings.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚙️</span> Cài đặt Quản trị
+                </a>
+                <a href="data-streams.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🌊</span> Luồng Dữ Liệu
+                </a>
+                <a href="realtime-overview.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⏱️</span> Thời Gian Thực
+                </a>
+                <a href="email-communications.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>✉️</span> Liên Lạc Qua Email
+                </a>
+                <a href="user-account-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>👤</span> Thông Tin Tài Khoản
+                </a>
+                <a href="property-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+                    <span>🏢</span> Thông Tin Tài Sản
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- ================= KHU VỰC CHÍNH ================= -->
+    <main class="flex-1 p-8 max-w-6xl overflow-y-auto space-y-12">
+        <div class="flex items-center gap-3">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 10</span>
+            <h2 class="text-xl font-bold text-slate-800">GA4 Property Details Settings (Thông tin về tài sản)</h2>
+        </div>
+
+        <!-- ================= KHỐI GIAO DIỆN XEM TRƯỚC ================= -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước tương
+                    tác (Sửa đổi giá trị để nút Lưu bật sáng)
+                </span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+            </div>
+
+            <div class="p-8 bg-slate-100/60">
+
+                <!-- VÙNG BIỂU MẪU CÀI ĐẶT THÔNG TIN TÀI SẢN -->
+                <div class="w-full max-w-5xl mx-auto font-sans select-none space-y-6">
+
+                    <!-- THANH HEADER: TIÊU ĐỀ & NÚT HÀNH ĐỘNG GÓC PHẢI -->
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <h1 class="text-xl font-normal text-slate-900 tracking-tight">Thông tin về tài sản</h1>
+                        <div class="flex items-center gap-3">
+                            <button type="button"
+                                class="px-4 py-1.5 border border-slate-300 hover:bg-slate-50 text-blue-600 text-xs font-medium rounded cursor-pointer transition-colors">
+                                Di chuyển tài sản
+                            </button>
+                            <button type="button"
+                                class="px-4 py-1.5 border border-slate-300 hover:bg-slate-50 text-blue-600 text-xs font-medium rounded cursor-pointer transition-colors">
+                                Chuyển vào thùng rác
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- CARD 1: THÔNG TIN CHI TIẾT TÀI SẢN -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-2xs space-y-5">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                            <h3 class="text-sm font-medium text-slate-800">Thông tin về tài sản</h3>
+                            <div class="flex items-center gap-1.5 text-xs text-slate-600 font-mono">
+                                <span class="text-slate-500">MÃ TÀI SẢN:</span>
+                                <span id="propertyIdText">538222707</span>
+                                <button type="button" id="btnCopyPropertyId"
+                                    class="text-slate-400 hover:text-slate-700 p-0.5 cursor-pointer"
+                                    title="Sao chép mã tài sản">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" stroke-width="1.8" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                            d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Tên tài sản -->
+                        <div class="space-y-1.5">
+                            <label for="propertyNameInput" class="block text-xs text-slate-600 font-normal">
+                                Tên tài sản (Bắt buộc)
+                            </label>
+                            <input type="text" id="propertyNameInput" value="ltddbuoi11-2bdbb"
+                                class="form-control w-full bg-white border border-slate-300 focus:border-blue-500 rounded-md px-3.5 py-2 text-xs text-slate-800 outline-none transition-colors">
+                        </div>
+
+                        <!-- Múi giờ báo cáo: 2 cột ngang -->
+                        <div class="space-y-1.5">
+                            <label class="block text-xs text-slate-600 font-normal">
+                                Múi giờ báo cáo
+                            </label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <!-- Chọn Quốc gia -->
+                                <div class="relative">
+                                    <select
+                                        class="form-control w-full bg-white border border-slate-300 focus:border-blue-500 rounded-md px-3 py-2 text-xs text-slate-800 outline-none cursor-pointer appearance-none">
+                                        <option value="UK">🇬🇧 Vương quốc Anh</option>
+                                        <option value="VN">🇻🇳 Việt Nam</option>
+                                        <option value="US">🇺🇸 Hoa Kỳ</option>
+                                    </select>
+                                    <span
+                                        class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-500 text-[10px]">▼</span>
+                                </div>
+
+                                <!-- Chọn GMT -->
+                                <div class="relative">
+                                    <select
+                                        class="form-control w-full bg-white border border-slate-300 focus:border-blue-500 rounded-md px-3 py-2 text-xs text-slate-800 outline-none cursor-pointer appearance-none">
+                                        <option value="GMT+07">(GMT+07:00) GMT+07:00</option>
+                                        <option value="GMT+00">(GMT+00:00) Giờ Luân Đôn</option>
+                                        <option value="GMT-05">(GMT-05:00) Giờ New York</option>
+                                    </select>
+                                    <span
+                                        class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-500 text-[10px]">▼</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Đơn vị tiền tệ -->
+                        <div class="space-y-1.5">
+                            <label class="block text-xs text-slate-600 font-normal">
+                                Đơn vị tiền tệ được hiển thị dưới dạng
+                            </label>
+                            <div class="relative">
+                                <select
+                                    class="form-control w-full bg-white border border-slate-300 focus:border-blue-500 rounded-md px-3 py-2 text-xs text-slate-800 outline-none cursor-pointer appearance-none">
+                                    <option value="USD">Đô la Mỹ ($)</option>
+                                    <option value="VND">Đồng Việt Nam (₫)</option>
+                                    <option value="EUR">Euro (€)</option>
+                                </select>
+                                <span
+                                    class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-500 text-[10px]">▼</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- CARD 2: CHI TIẾT KINH DOANH -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-2xs space-y-5">
+                        <h3 class="text-sm font-medium text-slate-800 border-b border-slate-100 pb-4">
+                            Chi tiết kinh doanh
+                        </h3>
+
+                        <!-- Ngành (bắt buộc) -->
+                        <div class="space-y-1.5">
+                            <label class="block text-xs text-slate-600 font-normal">
+                                Ngành (bắt buộc)
+                            </label>
+                            <div class="relative">
+                                <select
+                                    class="form-control w-full bg-white border border-slate-300 focus:border-blue-500 rounded-md px-3 py-2 text-xs text-slate-800 outline-none cursor-pointer appearance-none">
+                                    <option value="" disabled selected>Chọn một ngành</option>
+                                    <option value="tech">Công nghệ và Máy tính</option>
+                                    <option value="ecommerce">Thương mại điện tử & Mua sắm</option>
+                                    <option value="education">Giáo dục & Đào tạo</option>
+                                    <option value="finance">Tài chính & Ngân hàng</option>
+                                </select>
+                                <span
+                                    class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-500 text-[10px]">▼</span>
+                            </div>
+                        </div>
+
+                        <!-- Quy mô doanh nghiệp (bắt buộc) -->
+                        <div class="space-y-1.5">
+                            <label class="block text-xs text-slate-600 font-normal">
+                                Quy mô doanh nghiệp (bắt buộc)
+                            </label>
+                            <div class="relative">
+                                <select
+                                    class="form-control w-full bg-white border border-slate-300 focus:border-blue-500 rounded-md px-3 py-2 text-xs text-slate-800 outline-none cursor-pointer appearance-none">
+                                    <option value="" disabled selected>Chọn quy mô</option>
+                                    <option value="small">Nhỏ (1 - 10 nhân viên)</option>
+                                    <option value="medium">Trung bình (11 - 100 nhân viên)</option>
+                                    <option value="large">Lớn (101 - 500 nhân viên)</option>
+                                    <option value="enterprise">Doanh nghiệp lớn (Hơn 500 nhân viên)</option>
+                                </select>
+                                <span
+                                    class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-500 text-[10px]">▼</span>
+                            </div>
+                        </div>
+
+                        <!-- Mục tiêu kinh doanh (bắt buộc) kèm Tooltip ? -->
+                        <div class="space-y-1.5">
+                            <div class="flex items-center gap-1.5">
+                                <label class="block text-xs text-slate-600 font-normal">
+                                    Mục tiêu kinh doanh (bắt buộc)
+                                </label>
+                                <div class="relative group/tip">
+                                    <button type="button" class="text-slate-400 hover:text-slate-600 cursor-pointer">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                d="M9.5 9a2.5 2.5 0 015 0c0 1.5-2 2-2 3.5m0 3v.5" />
+                                        </svg>
+                                    </button>
+                                    <div
+                                        class="hidden group-hover/tip:block absolute left-full top-1/2 -translate-y-1/2 ml-2 w-52 bg-slate-800 text-white text-[11px] p-2 rounded shadow-lg z-30">
+                                        Chọn các mục tiêu bạn muốn tối ưu hoá báo cáo trong Google Analytics.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <select
+                                    class="form-control w-full bg-white border border-slate-300 focus:border-blue-500 rounded-md px-3 py-2 text-xs text-slate-800 outline-none cursor-pointer appearance-none">
+                                    <option value="" disabled selected>Chọn một hoặc nhiều mục tiêu kinh doanh</option>
+                                    <option value="leads">Tạo khách hàng tiềm năng</option>
+                                    <option value="sales">Thúc đẩy doanh số bán hàng trực tuyến</option>
+                                    <option value="brand">Nâng cao mức độ nhận biết thương hiệu</option>
+                                    <option value="behavior">Kiểm tra hành vi của người dùng</option>
+                                </select>
+                                <span
+                                    class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-500 text-[10px]">▼</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- THANH DƯỚI CÙNG: 2 NÚT THAO TÁC LƯU & HUỶ -->
+                    <div class="flex items-center gap-6 pt-2 border-t border-slate-200">
+                        <button type="button" id="btnSaveProperty"
+                            class="bg-slate-200 text-slate-400 text-xs font-semibold px-5 py-2.5 rounded cursor-not-allowed transition-all select-none"
+                            disabled>
+                            Lưu
+                        </button>
+                        <button type="button" id="btnCancelProperty"
+                            class="text-xs font-semibold text-blue-600 hover:text-blue-800 cursor-pointer transition-colors">
+                            Huỷ
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= KHỐI COPY HTML 100% ĐẦY ĐỦ ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND (PROPERTY
+                    DETAILS)</span>
+                <button id="btnCopyHtml"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyHtml">Copy HTML</span>
+                </button>
+            </div>
+            <pre class="p-5 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-[700px]"
+                id="codeHtml">&lt;!-- Yêu cầu có CDN Tailwind CSS trong thẻ &lt;head&gt;:
+&lt;script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"&gt;&lt;/script&gt;
+--&gt;
+
+&lt;div class="w-full max-w-5xl font-sans select-none space-y-6"&gt;
+  
+  &lt;!-- THANH HEADER --&gt;
+  &lt;div class="flex flex-wrap items-center justify-between gap-4"&gt;
+    &lt;h1 class="text-xl font-normal text-slate-900 tracking-tight"&gt;Thông tin về tài sản&lt;/h1&gt;
+    &lt;div class="flex items-center gap-3"&gt;
+      &lt;button type="button" class="px-4 py-1.5 border border-slate-300 hover:bg-slate-50 text-blue-600 text-xs font-medium rounded cursor-pointer"&gt;
+        Di chuyển tài sản
+      &lt;/button&gt;
+      &lt;button type="button" class="px-4 py-1.5 border border-slate-300 hover:bg-slate-50 text-blue-600 text-xs font-medium rounded cursor-pointer"&gt;
+        Chuyển vào thùng rác
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- CARD 1: THÔNG TIN CHI TIẾT TÀI SẢN --&gt;
+  &lt;div class="bg-white border border-slate-200 rounded-xl p-6 shadow-2xs space-y-5"&gt;
+    &lt;div class="flex items-center justify-between border-b border-slate-100 pb-4"&gt;
+      &lt;h3 class="text-sm font-medium text-slate-800"&gt;Thông tin về tài sản&lt;/h3&gt;
+      &lt;div class="flex items-center gap-1.5 text-xs text-slate-600 font-mono"&gt;
+        &lt;span class="text-slate-500"&gt;MÃ TÀI SẢN:&lt;/span&gt;
+        &lt;span id="propertyIdText"&gt;538222707&lt;/span&gt;
+        &lt;button type="button" id="btnCopyPropertyId" class="text-slate-400 hover:text-slate-700 p-0.5 cursor-pointer"&gt;
+          &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;rect x="9" y="9" width="13" height="13" rx="2" stroke-width="1.8"/&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Tên tài sản --&gt;
+    &lt;div class="space-y-1.5"&gt;
+      &lt;label class="block text-xs text-slate-600 font-normal"&gt;Tên tài sản (Bắt buộc)&lt;/label&gt;
+      &lt;input type="text" id="propertyNameInput" value="ltddbuoi11-2bdbb" class="form-control w-full bg-white border border-slate-300 focus:border-blue-500 rounded-md px-3.5 py-2 text-xs text-slate-800 outline-none"&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Múi giờ báo cáo --&gt;
+    &lt;div class="space-y-1.5"&gt;
+      &lt;label class="block text-xs text-slate-600 font-normal"&gt;Múi giờ báo cáo&lt;/label&gt;
+      &lt;div class="grid grid-cols-1 md:grid-cols-2 gap-4"&gt;
+        &lt;div class="relative"&gt;
+          &lt;select class="form-control w-full bg-white border border-slate-300 focus:border-blue-500 rounded-md px-3 py-2 text-xs text-slate-800 outline-none cursor-pointer appearance-none"&gt;
+            &lt;option value="UK"&gt;🇬🇧 Vương quốc Anh&lt;/option&gt;
+            &lt;option value="VN"&gt;🇻🇳 Việt Nam&lt;/option&gt;
+            &lt;option value="US"&gt;🇺🇸 Hoa Kỳ&lt;/option&gt;
+          &lt;/select&gt;
+          &lt;span class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-500 text-[10px]"&gt;▼&lt;/span&gt;
+        &lt;/div&gt;
+
+        &lt;div class="relative"&gt;
+          &lt;select class="form-control w-full bg-white border border-slate-300 focus:border-blue-500 rounded-md px-3 py-2 text-xs text-slate-800 outline-none cursor-pointer appearance-none"&gt;
+            &lt;option value="GMT+07"&gt;(GMT+07:00) GMT+07:00&lt;/option&gt;
+            &lt;option value="GMT+00"&gt;(GMT+00:00) Giờ Luân Đôn&lt;/option&gt;
+          &lt;/select&gt;
+          &lt;span class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-500 text-[10px]"&gt;▼&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Đơn vị tiền tệ --&gt;
+    &lt;div class="space-y-1.5"&gt;
+      &lt;label class="block text-xs text-slate-600 font-normal"&gt;Đơn vị tiền tệ được hiển thị dưới dạng&lt;/label&gt;
+      &lt;div class="relative"&gt;
+        &lt;select class="form-control w-full bg-white border border-slate-300 focus:border-blue-500 rounded-md px-3 py-2 text-xs text-slate-800 outline-none cursor-pointer appearance-none"&gt;
+          &lt;option value="USD"&gt;Đô la Mỹ ($)&lt;/option&gt;
+          &lt;option value="VND"&gt;Đồng Việt Nam (₫)&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;span class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-500 text-[10px]"&gt;▼&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- CARD 2: CHI TIẾT KINH DOANH --&gt;
+  &lt;div class="bg-white border border-slate-200 rounded-xl p-6 shadow-2xs space-y-5"&gt;
+    &lt;h3 class="text-sm font-medium text-slate-800 border-b border-slate-100 pb-4"&gt;Chi tiết kinh doanh&lt;/h3&gt;
+
+    &lt;!-- Ngành --&gt;
+    &lt;div class="space-y-1.5"&gt;
+      &lt;label class="block text-xs text-slate-600 font-normal"&gt;Ngành (bắt buộc)&lt;/label&gt;
+      &lt;div class="relative"&gt;
+        &lt;select class="form-control w-full bg-white border border-slate-300 focus:border-blue-500 rounded-md px-3 py-2 text-xs text-slate-800 outline-none cursor-pointer appearance-none"&gt;
+          &lt;option value="" disabled selected&gt;Chọn một ngành&lt;/option&gt;
+          &lt;option value="tech"&gt;Công nghệ và Máy tính&lt;/option&gt;
+          &lt;option value="ecommerce"&gt;Thương mại điện tử &amp; Mua sắm&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;span class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-500 text-[10px]"&gt;▼&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Quy mô doanh nghiệp --&gt;
+    &lt;div class="space-y-1.5"&gt;
+      &lt;label class="block text-xs text-slate-600 font-normal"&gt;Quy mô doanh nghiệp (bắt buộc)&lt;/label&gt;
+      &lt;div class="relative"&gt;
+        &lt;select class="form-control w-full bg-white border border-slate-300 focus:border-blue-500 rounded-md px-3 py-2 text-xs text-slate-800 outline-none cursor-pointer appearance-none"&gt;
+          &lt;option value="" disabled selected&gt;Chọn quy mô&lt;/option&gt;
+          &lt;option value="small"&gt;Nhỏ (1 - 10 nhân viên)&lt;/option&gt;
+          &lt;option value="medium"&gt;Trung bình (11 - 100 nhân viên)&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;span class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-500 text-[10px]"&gt;▼&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Mục tiêu kinh doanh --&gt;
+    &lt;div class="space-y-1.5"&gt;
+      &lt;label class="block text-xs text-slate-600 font-normal"&gt;Mục tiêu kinh doanh (bắt buộc)&lt;/label&gt;
+      &lt;div class="relative"&gt;
+        &lt;select class="form-control w-full bg-white border border-slate-300 focus:border-blue-500 rounded-md px-3 py-2 text-xs text-slate-800 outline-none cursor-pointer appearance-none"&gt;
+          &lt;option value="" disabled selected&gt;Chọn một hoặc nhiều mục tiêu kinh doanh&lt;/option&gt;
+          &lt;option value="leads"&gt;Tạo khách hàng tiềm năng&lt;/option&gt;
+          &lt;option value="sales"&gt;Thúc đẩy doanh số bán hàng trực tuyến&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;span class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-slate-500 text-[10px]"&gt;▼&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- THANH BOTTOM ACTIONS --&gt;
+  &lt;div class="flex items-center gap-6 pt-2 border-t border-slate-200"&gt;
+    &lt;button type="button" id="btnSaveProperty" class="bg-slate-200 text-slate-400 text-xs font-semibold px-5 py-2.5 rounded cursor-not-allowed transition-all" disabled&gt;
+      Lưu
+    &lt;/button&gt;
+    &lt;button type="button" id="btnCancelProperty" class="text-xs font-semibold text-blue-600 hover:text-blue-800 cursor-pointer"&gt;
+      Huỷ
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- ================= KHỐI COPY JS 100% ĐẦY ĐỦ ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM)</span>
+                <button id="btnCopyJs"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyJs">Copy JS</span>
+                </button>
+            </div>
+            <pre class="p-5 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-[500px]" id="codeJs">const btnSaveProperty = document.querySelector("#btnSaveProperty");
+const btnCancelProperty = document.querySelector("#btnCancelProperty");
+const formControls = document.querySelectorAll(".form-control");
+const btnCopyPropertyId = document.querySelector("#btnCopyPropertyId");
+const propertyIdText = document.querySelector("#propertyIdText");
+
+// 1. Lưu giá trị khởi tạo ban đầu để so sánh thay đổi
+const initialValues = Array.from(formControls).map(input => input.value);
+
+function checkDirtyState() {
+  const isChanged = Array.from(formControls).some((input, idx) => input.value !== initialValues[idx]);
+  
+  btnSaveProperty.disabled = !isChanged;
+  if (isChanged) {
+    btnSaveProperty.classList.remove("bg-slate-200", "text-slate-400", "cursor-not-allowed");
+    btnSaveProperty.classList.add("bg-blue-600", "text-white", "hover:bg-blue-700", "cursor-pointer");
+  } else {
+    btnSaveProperty.classList.add("bg-slate-200", "text-slate-400", "cursor-not-allowed");
+    btnSaveProperty.classList.remove("bg-blue-600", "text-white", "hover:bg-blue-700", "cursor-pointer");
+  }
+}
+
+// Bắt sự kiện thay đổi trên các input và selectbox
+formControls.forEach(ctrl => {
+  ctrl.addEventListener("input", checkDirtyState);
+  ctrl.addEventListener("change", checkDirtyState);
+});
+
+// 2. Nút Lưu
+btnSaveProperty.addEventListener("click", () => {
+  if (btnSaveProperty.disabled) return;
+  console.log("Đã cập nhật cấu hình tài sản!");
+
+  // Cập nhật lại mốc ban đầu
+  formControls.forEach((input, idx) => initialValues[idx] = input.value);
+  
+  const originText = btnSaveProperty.innerText;
+  btnSaveProperty.innerText = "Đã lưu!";
+  btnSaveProperty.classList.replace("bg-blue-600", "bg-emerald-600");
+
+  setTimeout(() => {
+    btnSaveProperty.innerText = originText;
+    btnSaveProperty.classList.replace("bg-emerald-600", "bg-blue-600");
+    checkDirtyState();
+  }, 1400);
+});
+
+// 3. Nút Huỷ: Khôi phục lại toàn bộ dữ liệu ban đầu
+btnCancelProperty.addEventListener("click", () => {
+  formControls.forEach((input, idx) => {
+    input.value = initialValues[idx];
+  });
+  checkDirtyState();
+});
+
+// 4. Nút Sao chép Mã Tài Sản
+btnCopyPropertyId.addEventListener("click", () => {
+  navigator.clipboard.writeText(propertyIdText.innerText).then(() => {
+    alert("Đã sao chép mã tài sản: " + propertyIdText.innerText);
+  });
+});</pre>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Logic thực thi tương tác trên trang xem trước
+        const btnSaveProperty = document.querySelector("#btnSaveProperty");
+        const btnCancelProperty = document.querySelector("#btnCancelProperty");
+        const formControls = document.querySelectorAll(".form-control");
+        const btnCopyPropertyId = document.querySelector("#btnCopyPropertyId");
+        const propertyIdText = document.querySelector("#propertyIdText");
+
+        const initialValues = Array.from(formControls).map(input => input.value);
+
+        function checkDirtyState() {
+            const isChanged = Array.from(formControls).some((input, idx) => input.value !== initialValues[idx]);
+
+            btnSaveProperty.disabled = !isChanged;
+            if (isChanged) {
+                btnSaveProperty.classList.remove("bg-slate-200", "text-slate-400", "cursor-not-allowed");
+                btnSaveProperty.classList.add("bg-blue-600", "text-white", "hover:bg-blue-700", "cursor-pointer");
+            } else {
+                btnSaveProperty.classList.add("bg-slate-200", "text-slate-400", "cursor-not-allowed");
+                btnSaveProperty.classList.remove("bg-blue-600", "text-white", "hover:bg-blue-700", "cursor-pointer");
+            }
+        }
+
+        formControls.forEach(ctrl => {
+            ctrl.addEventListener("input", checkDirtyState);
+            ctrl.addEventListener("change", checkDirtyState);
+        });
+
+        btnSaveProperty.addEventListener("click", () => {
+            if (btnSaveProperty.disabled) return;
+            formControls.forEach((input, idx) => initialValues[idx] = input.value);
+
+            const originText = btnSaveProperty.innerText;
+            btnSaveProperty.innerText = "Đã lưu!";
+            btnSaveProperty.classList.replace("bg-blue-600", "bg-emerald-600");
+
+            setTimeout(() => {
+                btnSaveProperty.innerText = originText;
+                btnSaveProperty.classList.replace("bg-emerald-600", "bg-blue-600");
+                checkDirtyState();
+            }, 1400);
+        });
+
+        btnCancelProperty.addEventListener("click", () => {
+            formControls.forEach((input, idx) => {
+                input.value = initialValues[idx];
+            });
+            checkDirtyState();
+        });
+
+        btnCopyPropertyId.addEventListener("click", () => {
+            navigator.clipboard.writeText(propertyIdText.innerText);
+        });
+
+        // Nút copy clipboard
+        const btnCopyHtml = document.querySelector("#btnCopyHtml");
+        const txtCopyHtml = document.querySelector("#txtCopyHtml");
+        const codeHtml = document.querySelector("#codeHtml");
+
+        btnCopyHtml.addEventListener("click", () => {
+            navigator.clipboard.writeText(codeHtml.innerText).then(() => {
+                txtCopyHtml.innerText = "Đã Copy!";
+                btnCopyHtml.classList.replace("bg-slate-800", "bg-emerald-600");
+                setTimeout(() => {
+                    txtCopyHtml.innerText = "Copy HTML";
+                    btnCopyHtml.classList.replace("bg-emerald-600", "bg-slate-800");
+                }, 1800);
+            });
+        });
+
+        const btnCopyJs = document.querySelector("#btnCopyJs");
+        const txtCopyJs = document.querySelector("#txtCopyJs");
+        const codeJs = document.querySelector("#codeJs");
+
+        btnCopyJs.addEventListener("click", () => {
+            navigator.clipboard.writeText(codeJs.innerText).then(() => {
+                txtCopyJs.innerText = "Đã Copy!";
+                btnCopyJs.classList.replace("bg-slate-800", "bg-emerald-600");
+                setTimeout(() => {
+                    txtCopyJs.innerText = "Copy JS";
+                    btnCopyJs.classList.replace("bg-emerald-600", "bg-slate-800");
+                }, 1800);
+            });
+        });
+    </script>
+</body>
+
+</html>
