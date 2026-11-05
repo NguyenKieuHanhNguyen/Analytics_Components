@@ -67,6 +67,10 @@
                     class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
                     <span>🏢</span> Thông Tin Tài Sản
                 </a>
+                <a href="reports-library.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📋</span> Thư Viện Báo Cáo
+                </a>
             </nav>
         </div>
     </aside>
@@ -74,7 +78,7 @@
     <!-- ================= KHU VỰC CHÍNH ================= -->
     <main class="flex-1 p-8 max-w-6xl overflow-y-auto">
         <div class="flex items-center gap-3 mb-6">
-            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 4</span>
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 4.1</span>
             <h2 class="text-xl font-bold text-slate-800">GA4 Exploration Template Carousel (Băng chuyền Mẫu Khám phá)
             </h2>
         </div>
@@ -482,45 +486,1927 @@ carouselSlider.addEventListener("scroll", updateButtonVisibility);
 // Khởi tạo trạng thái ban đầu
 updateButtonVisibility();</pre>
         </div>
+        <!-- ====================================================================== -->
+        <!-- PHẦN 2: MẪU 4.2 - TẠO BÁO CÁO TỔNG QUAN NHANH                          -->
+        <!-- ====================================================================== -->
+        <div class="flex items-center gap-3 mb-6 mt-12">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 4.2</span>
+            <h2 class="text-xl font-bold text-slate-800">GA4 Quick Overview Report Templates (Tạo báo cáo tổng quan
+                nhanh)</h2>
+        </div>
 
+        <!-- =================== KHỐI GIAO DIỆN XEM TRƯỚC =================== -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước tương
+                    tác thực tế
+                </span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+            </div>
+
+            <div class="p-8 bg-slate-50/50">
+                <!-- VÙNG TẠO BÁO CÁO TỔNG QUAN NHANH -->
+                <div class="w-full font-sans select-none space-y-8">
+
+                    <!-- Tiêu đề và hướng dẫn trên cùng -->
+                    <div class="text-center space-y-2">
+                        <h1 class="text-2xl font-normal text-slate-900 tracking-tight">Tạo báo cáo tổng quan nhanh</h1>
+                        <p class="text-sm text-slate-600">Chọn một mẫu cho thấy các chỉ số hiệu suất mà bạn muốn xem</p>
+                    </div>
+
+                    <!-- Lưới 3 Cards mẫu báo cáo -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                        <!-- CARD 1: Hành vi của người dùng -->
+                        <div
+                            class="bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-6 shadow-2xs flex flex-col justify-between transition-all group">
+                            <div class="space-y-3">
+                                <h3
+                                    class="text-base font-normal text-slate-900 group-hover:text-blue-600 transition-colors">
+                                    Hành vi của người dùng
+                                </h3>
+                                <p class="text-xs text-slate-600 leading-relaxed min-h-[48px]">
+                                    Xem nhanh thông tin tổng quan về các màn hình hàng đầu, số lượng người dùng và chỉ
+                                    số tương tác của trang web và ứng dụng của bạn
+                                </p>
+                            </div>
+
+                            <!-- Hình minh họa thiết bị Desktop + Mobile -->
+                            <div class="my-6 h-36 flex items-center justify-center">
+                                <svg class="w-48 h-32" viewBox="0 0 200 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Màn hình máy tính -->
+                                    <rect x="25" y="20" width="105" height="65" rx="3" stroke="#475569"
+                                        stroke-width="1.8" fill="#FFFFFF" />
+                                    <line x1="25" y1="28" x2="130" y2="28" stroke="#E2E8F0" stroke-width="1.5" />
+                                    <circle cx="31" cy="24" r="1.5" fill="#94A3B8" />
+                                    <circle cx="36" cy="24" r="1.5" fill="#94A3B8" />
+                                    <!-- Chân đế màn hình -->
+                                    <path d="M72 85L65 105H90L83 85" stroke="#475569" stroke-width="1.8"
+                                        stroke-linejoin="round" />
+                                    <line x1="60" y1="105" x2="95" y2="105" stroke="#475569" stroke-width="1.8"
+                                        stroke-linecap="round" />
+                                    <circle cx="77" cy="53" r="16" stroke="#0284C7" stroke-width="1.8" />
+
+                                    <!-- Thiết bị điện thoại di động -->
+                                    <rect x="120" y="45" width="28" height="50" rx="3" stroke="#475569"
+                                        stroke-width="1.8" fill="#FFFFFF" />
+                                    <circle cx="134" cy="90" r="1.5" fill="#94A3B8" />
+                                    <circle cx="134" cy="65" r="5" stroke="#16A34A" stroke-width="1.8" />
+                                </svg>
+                            </div>
+
+                            <!-- 2 Nút hành động -->
+                            <div class="space-y-2.5 pt-2">
+                                <button type="button"
+                                    class="btn-select-report w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold py-2.5 rounded-lg cursor-pointer transition-colors shadow-2xs"
+                                    data-template="Hành vi của người dùng">
+                                    Chọn mẫu này
+                                </button>
+                                <button type="button"
+                                    class="btn-preview-report w-full bg-white hover:bg-slate-50 border border-slate-200 text-blue-600 text-xs font-semibold py-2.5 rounded-lg cursor-pointer transition-colors"
+                                    data-template="Hành vi của người dùng">
+                                    Xem trước mẫu
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- CARD 2: Doanh số và doanh thu -->
+                        <div
+                            class="bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-6 shadow-2xs flex flex-col justify-between transition-all group">
+                            <div class="space-y-3">
+                                <h3
+                                    class="text-base font-normal text-slate-900 group-hover:text-blue-600 transition-colors">
+                                    Doanh số và doanh thu
+                                </h3>
+                                <p class="text-xs text-slate-600 leading-relaxed min-h-[48px]">
+                                    Xác định những sản phẩm có hiệu suất cao nhất và những yếu tố mang lại doanh thu
+                                    nhiều nhất
+                                </p>
+                            </div>
+
+                            <!-- Hình minh họa Trình duyệt + Giỏ hàng + Đồng tiền vàng -->
+                            <div class="my-6 h-36 flex items-center justify-center">
+                                <svg class="w-48 h-32" viewBox="0 0 200 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Cửa sổ trình duyệt -->
+                                    <rect x="35" y="22" width="100" height="70" rx="3" stroke="#475569"
+                                        stroke-width="1.8" fill="#FFFFFF" />
+                                    <line x1="35" y1="32" x2="135" y2="32" stroke="#CBD5E1" stroke-width="1.5" />
+                                    <circle cx="42" cy="27" r="1.5" fill="#94A3B8" />
+                                    <circle cx="47" cy="27" r="1.5" fill="#94A3B8" />
+
+                                    <!-- Ô tìm kiếm trong trang -->
+                                    <rect x="42" y="38" width="22" height="18" rx="2" fill="#DBEAFE" />
+                                    <circle cx="50" cy="46" r="3" stroke="#3B82F6" stroke-width="1.5" />
+                                    <line x1="52.5" y1="48.5" x2="56" y2="52" stroke="#3B82F6" stroke-width="1.5" />
+                                    <rect x="42" y="60" width="22" height="6" rx="1" fill="#E2E8F0" />
+                                    <rect x="42" y="70" width="22" height="6" rx="1" fill="#E2E8F0" />
+
+                                    <!-- Đồng xu vàng -->
+                                    <circle cx="115" cy="58" r="18" fill="#FBBF24" />
+
+                                    <!-- Xe đẩy hàng -->
+                                    <path d="M90 62H96L102 78H122L128 65H100" stroke="#475569" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round" fill="#FFFFFF" />
+                                    <circle cx="104" cy="84" r="3.5" fill="#2563EB" />
+                                    <circle cx="120" cy="84" r="3.5" fill="#2563EB" />
+                                </svg>
+                            </div>
+
+                            <!-- 2 Nút hành động -->
+                            <div class="space-y-2.5 pt-2">
+                                <button type="button"
+                                    class="btn-select-report w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold py-2.5 rounded-lg cursor-pointer transition-colors shadow-2xs"
+                                    data-template="Doanh số và doanh thu">
+                                    Chọn mẫu này
+                                </button>
+                                <button type="button"
+                                    class="btn-preview-report w-full bg-white hover:bg-slate-50 border border-slate-200 text-blue-600 text-xs font-semibold py-2.5 rounded-lg cursor-pointer transition-colors"
+                                    data-template="Doanh số và doanh thu">
+                                    Xem trước mẫu
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- CARD 3: Hiệu suất tiếp thị -->
+                        <div
+                            class="bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-6 shadow-2xs flex flex-col justify-between transition-all group">
+                            <div class="space-y-3">
+                                <h3
+                                    class="text-base font-normal text-slate-900 group-hover:text-blue-600 transition-colors">
+                                    Hiệu suất tiếp thị
+                                </h3>
+                                <p class="text-xs text-slate-600 leading-relaxed min-h-[48px]">
+                                    Đo lường hiệu suất của kênh tiếp thị và phân bổ lượt chuyển đổi
+                                </p>
+                            </div>
+
+                            <!-- Hình minh họa Khung Ad + Hình ảnh + Con trỏ chuột -->
+                            <div class="my-6 h-36 flex items-center justify-center">
+                                <svg class="w-48 h-32" viewBox="0 0 200 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Khung ảnh lớn -->
+                                    <rect x="75" y="24" width="75" height="58" rx="2" stroke="#475569"
+                                        stroke-width="1.8" fill="#FFFFFF" />
+                                    <line x1="75" y1="20" x2="75" y2="24" stroke="#475569" stroke-width="1.5" />
+                                    <line x1="150" y1="20" x2="150" y2="24" stroke="#475569" stroke-width="1.5" />
+                                    <line x1="75" y1="82" x2="75" y2="86" stroke="#475569" stroke-width="1.5" />
+                                    <line x1="150" y1="82" x2="150" y2="86" stroke="#475569" stroke-width="1.5" />
+
+                                    <rect x="83" y="32" width="46" height="38" rx="2" fill="#2563EB" />
+                                    <path d="M88 56L96 46L104 56L112 48L122 60H88V56Z" fill="#FFFFFF" />
+                                    <circle cx="118" cy="40" r="2.5" fill="#FFFFFF" />
+
+                                    <!-- Nhãn Ad -->
+                                    <rect x="52" y="40" width="30" height="20" rx="1.5" stroke="#475569"
+                                        stroke-width="1.8" fill="#FFFFFF" />
+                                    <text x="67" y="54" font-family="sans-serif" font-size="10" font-weight="bold"
+                                        fill="#475569" text-anchor="middle">Ad</text>
+
+                                    <!-- Vệt click chuột -->
+                                    <line x1="68" y1="72" x2="68" y2="67" stroke="#94A3B8" stroke-width="1.5" />
+                                    <line x1="62" y1="75" x2="58" y2="72" stroke="#94A3B8" stroke-width="1.5" />
+                                    <line x1="64" y1="82" x2="59" y2="84" stroke="#94A3B8" stroke-width="1.5" />
+
+                                    <!-- Mũi tên con trỏ -->
+                                    <path d="M72 72L86 85L80 87L84 96L80 98L76 89L70 94L72 72Z" fill="#FFFFFF"
+                                        stroke="#475569" stroke-width="1.8" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+                            <!-- 2 Nút hành động -->
+                            <div class="space-y-2.5 pt-2">
+                                <button type="button"
+                                    class="btn-select-report w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold py-2.5 rounded-lg cursor-pointer transition-colors shadow-2xs"
+                                    data-template="Hiệu suất tiếp thị">
+                                    Chọn mẫu này
+                                </button>
+                                <button type="button"
+                                    class="btn-preview-report w-full bg-white hover:bg-slate-50 border border-slate-200 text-blue-600 text-xs font-semibold py-2.5 rounded-lg cursor-pointer transition-colors"
+                                    data-template="Hiệu suất tiếp thị">
+                                    Xem trước mẫu
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= KHỐI COPY HTML (MẪU 4.2) ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND (MẪU 4.2 - REPORT
+                    TEMPLATES)</span>
+                <button id="btnCopyReportHtml"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyReportHtml">Copy HTML</span>
+                </button>
+            </div>
+            <pre class="p-5 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-[600px]"
+                id="codeReportHtml">&lt;div class="w-full font-sans select-none space-y-8"&gt;
+  &lt;!-- Tiêu đề và hướng dẫn trên cùng --&gt;
+  &lt;div class="text-center space-y-2"&gt;
+    &lt;h1 class="text-2xl font-normal text-slate-900 tracking-tight"&gt;Tạo báo cáo tổng quan nhanh&lt;/h1&gt;
+    &lt;p class="text-sm text-slate-600"&gt;Chọn một mẫu cho thấy các chỉ số hiệu suất mà bạn muốn xem&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Lưới 3 Cards --&gt;
+  &lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"&gt;
+    &lt;!-- CARD 1: Hành vi của người dùng --&gt;
+    &lt;div class="bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-6 shadow-2xs flex flex-col justify-between transition-all group"&gt;
+      &lt;div class="space-y-3"&gt;
+        &lt;h3 class="text-base font-normal text-slate-900 group-hover:text-blue-600 transition-colors"&gt;Hành vi của người dùng&lt;/h3&gt;
+        &lt;p class="text-xs text-slate-600 leading-relaxed min-h-[48px]"&gt;
+          Xem nhanh thông tin tổng quan về các màn hình hàng đầu, số lượng người dùng và chỉ số tương tác của trang web và ứng dụng của bạn
+        &lt;/p&gt;
+      &lt;/div&gt;
+
+      &lt;div class="my-6 h-36 flex items-center justify-center"&gt;
+        &lt;svg class="w-48 h-32" viewBox="0 0 200 120" fill="none"&gt;
+          &lt;rect x="25" y="20" width="105" height="65" rx="3" stroke="#475569" stroke-width="1.8" fill="#FFFFFF"/&gt;
+          &lt;line x1="25" y1="28" x2="130" y2="28" stroke="#E2E8F0" stroke-width="1.5"/&gt;
+          &lt;circle cx="31" cy="24" r="1.5" fill="#94A3B8"/&gt;&lt;circle cx="36" cy="24" r="1.5" fill="#94A3B8"/&gt;
+          &lt;path d="M72 85L65 105H90L83 85" stroke="#475569" stroke-width="1.8" stroke-linejoin="round"/&gt;
+          &lt;line x1="60" y1="105" x2="95" y2="105" stroke="#475569" stroke-width="1.8" stroke-linecap="round"/&gt;
+          &lt;circle cx="77" cy="53" r="16" stroke="#0284C7" stroke-width="1.8"/&gt;
+          &lt;rect x="120" y="45" width="28" height="50" rx="3" stroke="#475569" stroke-width="1.8" fill="#FFFFFF"/&gt;
+          &lt;circle cx="134" cy="90" r="1.5" fill="#94A3B8"/&gt;&lt;circle cx="134" cy="65" r="5" stroke="#16A34A" stroke-width="1.8"/&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+
+      &lt;div class="space-y-2.5 pt-2"&gt;
+        &lt;button type="button" class="btn-select-report w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold py-2.5 rounded-lg cursor-pointer shadow-2xs" data-template="Hành vi của người dùng"&gt;Chọn mẫu này&lt;/button&gt;
+        &lt;button type="button" class="btn-preview-report w-full bg-white hover:bg-slate-50 border border-slate-200 text-blue-600 text-xs font-semibold py-2.5 rounded-lg cursor-pointer" data-template="Hành vi của người dùng"&gt;Xem trước mẫu&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- CARD 2: Doanh số và doanh thu --&gt;
+    &lt;div class="bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-6 shadow-2xs flex flex-col justify-between transition-all group"&gt;
+      &lt;div class="space-y-3"&gt;
+        &lt;h3 class="text-base font-normal text-slate-900 group-hover:text-blue-600 transition-colors"&gt;Doanh số và doanh thu&lt;/h3&gt;
+        &lt;p class="text-xs text-slate-600 leading-relaxed min-h-[48px]"&gt;
+          Xác định những sản phẩm có hiệu suất cao nhất và những yếu tố mang lại doanh thu nhiều nhất
+        &lt;/p&gt;
+      &lt;/div&gt;
+
+      &lt;div class="my-6 h-36 flex items-center justify-center"&gt;
+        &lt;svg class="w-48 h-32" viewBox="0 0 200 120" fill="none"&gt;
+          &lt;rect x="35" y="22" width="100" height="70" rx="3" stroke="#475569" stroke-width="1.8" fill="#FFFFFF"/&gt;
+          &lt;line x1="35" y1="32" x2="135" y2="32" stroke="#CBD5E1" stroke-width="1.5"/&gt;
+          &lt;circle cx="42" cy="27" r="1.5" fill="#94A3B8"/&gt;&lt;circle cx="47" cy="27" r="1.5" fill="#94A3B8"/&gt;
+          &lt;rect x="42" y="38" width="22" height="18" rx="2" fill="#DBEAFE"/&gt;
+          &lt;circle cx="50" cy="46" r="3" stroke="#3B82F6" stroke-width="1.5"/&gt;
+          &lt;line x1="52.5" y1="48.5" x2="56" y2="52" stroke="#3B82F6" stroke-width="1.5"/&gt;
+          &lt;rect x="42" y="60" width="22" height="6" rx="1" fill="#E2E8F0"/&gt;&lt;rect x="42" y="70" width="22" height="6" rx="1" fill="#E2E8F0"/&gt;
+          &lt;circle cx="115" cy="58" r="18" fill="#FBBF24"/&gt;
+          &lt;path d="M90 62H96L102 78H122L128 65H100" stroke="#475569" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="#FFFFFF"/&gt;
+          &lt;circle cx="104" cy="84" r="3.5" fill="#2563EB"/&gt;&lt;circle cx="120" cy="84" r="3.5" fill="#2563EB"/&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+
+      &lt;div class="space-y-2.5 pt-2"&gt;
+        &lt;button type="button" class="btn-select-report w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold py-2.5 rounded-lg cursor-pointer shadow-2xs" data-template="Doanh số và doanh thu"&gt;Chọn mẫu này&lt;/button&gt;
+        &lt;button type="button" class="btn-preview-report w-full bg-white hover:bg-slate-50 border border-slate-200 text-blue-600 text-xs font-semibold py-2.5 rounded-lg cursor-pointer" data-template="Doanh số và doanh thu"&gt;Xem trước mẫu&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- CARD 3: Hiệu suất tiếp thị --&gt;
+    &lt;div class="bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-6 shadow-2xs flex flex-col justify-between transition-all group"&gt;
+      &lt;div class="space-y-3"&gt;
+        &lt;h3 class="text-base font-normal text-slate-900 group-hover:text-blue-600 transition-colors"&gt;Hiệu suất tiếp thị&lt;/h3&gt;
+        &lt;p class="text-xs text-slate-600 leading-relaxed min-h-[48px]"&gt;
+          Đo lường hiệu suất của kênh tiếp thị và phân bổ lượt chuyển đổi
+        &lt;/p&gt;
+      &lt;/div&gt;
+
+      &lt;div class="my-6 h-36 flex items-center justify-center"&gt;
+        &lt;svg class="w-48 h-32" viewBox="0 0 200 120" fill="none"&gt;
+          &lt;rect x="75" y="24" width="75" height="58" rx="2" stroke="#475569" stroke-width="1.8" fill="#FFFFFF"/&gt;
+          &lt;line x1="75" y1="20" x2="75" y2="24" stroke="#475569" stroke-width="1.5"/&gt;&lt;line x1="150" y1="20" x2="150" y2="24" stroke="#475569" stroke-width="1.5"/&gt;
+          &lt;line x1="75" y1="82" x2="75" y2="86" stroke="#475569" stroke-width="1.5"/&gt;&lt;line x1="150" y1="82" x2="150" y2="86" stroke="#475569" stroke-width="1.5"/&gt;
+          &lt;rect x="83" y="32" width="46" height="38" rx="2" fill="#2563EB"/&gt;
+          &lt;path d="M88 56L96 46L104 56L112 48L122 60H88V56Z" fill="#FFFFFF"/&gt;
+          &lt;circle cx="118" cy="40" r="2.5" fill="#FFFFFF"/&gt;
+          &lt;rect x="52" y="40" width="30" height="20" rx="1.5" stroke="#475569" stroke-width="1.8" fill="#FFFFFF"/&gt;
+          &lt;text x="67" y="54" font-family="sans-serif" font-size="10" font-weight="bold" fill="#475569" text-anchor="middle"&gt;Ad&lt;/text&gt;
+          &lt;line x1="68" y1="72" x2="68" y2="67" stroke="#94A3B8" stroke-width="1.5"/&gt;
+          &lt;line x1="62" y1="75" x2="58" y2="72" stroke="#94A3B8" stroke-width="1.5"/&gt;
+          &lt;line x1="64" y1="82" x2="59" y2="84" stroke="#94A3B8" stroke-width="1.5"/&gt;
+          &lt;path d="M72 72L86 85L80 87L84 96L80 98L76 89L70 94L72 72Z" fill="#FFFFFF" stroke="#475569" stroke-width="1.8" stroke-linejoin="round"/&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+
+      &lt;div class="space-y-2.5 pt-2"&gt;
+        &lt;button type="button" class="btn-select-report w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold py-2.5 rounded-lg cursor-pointer shadow-2xs" data-template="Hiệu suất tiếp thị"&gt;Chọn mẫu này&lt;/button&gt;
+        &lt;button type="button" class="btn-preview-report w-full bg-white hover:bg-slate-50 border border-slate-200 text-blue-600 text-xs font-semibold py-2.5 rounded-lg cursor-pointer" data-template="Hiệu suất tiếp thị"&gt;Xem trước mẫu&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- ================= KHỐI COPY JAVASCRIPT (MẪU 4.2) ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM) (MẪU 4.2)</span>
+                <button id="btnCopyReportJs"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyReportJs">Copy JS</span>
+                </button>
+            </div>
+            <pre class="p-5 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-[300px]"
+                id="codeReportJs">// Xử lý các nút Chọn mẫu và Xem trước mẫu
+document.querySelectorAll(".btn-select-report").forEach(btn => {
+  btn.addEventListener("click", function () {
+    const tpl = this.getAttribute("data-template");
+    console.log(`Đang khởi tạo báo cáo: ${tpl}`);
+  });
+});
+
+document.querySelectorAll(".btn-preview-report").forEach(btn => {
+  btn.addEventListener("click", function () {
+    const tpl = this.getAttribute("data-template");
+    console.log(`Đang xem trước mẫu: ${tpl}`);
+  });
+});</pre>
+        </div>
+        <!-- ====================================================================== -->
+        <!-- PHẦN 3: MẪU 4.3 - BỘ SƯU TẬP GA4 (REPORT COLLECTIONS CAROUSEL)         -->
+        <!-- ====================================================================== -->
+        <div class="flex items-center gap-3 mb-6 mt-12">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 4.3</span>
+            <h2 class="text-xl font-bold text-slate-800">GA4 Report Collections Carousel (Bộ sưu tập báo cáo)</h2>
+        </div>
+
+        <!-- =================== KHỐI GIAO DIỆN XEM TRƯỚC =================== -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước (Bấm nút
+                    tròn &lt; / &gt; hoặc kéo rê chuột để cuộn mượt các thẻ)
+                </span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+            </div>
+
+            <div class="p-8 bg-slate-50/50">
+                <!-- VÙNG BỘ SƯU TẬP -->
+                <div class="w-full font-sans select-none space-y-4">
+                    <!-- Tiêu đề & Tooltip -->
+                    <div class="flex items-center gap-1.5 text-slate-800">
+                        <h3 class="text-base font-normal tracking-tight">Bộ sưu tập</h3>
+                        <div class="relative group/tip cursor-pointer">
+                            <svg class="w-4 h-4 text-slate-400 hover:text-slate-600" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    d="M9.5 9a2.5 2.5 0 015 0c0 1.5-2 2-2 3.5m0 3v.5" />
+                            </svg>
+                            <div
+                                class="hidden group-hover/tip:block absolute left-full top-1/2 -translate-y-1/2 ml-2 w-56 bg-slate-800 text-white text-[11px] p-2.5 rounded shadow-lg z-30 leading-relaxed">
+                                Bộ sưu tập là một tập hợp các chủ đề và báo cáo xuất hiện trên thanh điều hướng bên
+                                trái.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Container -->
+                    <div class="relative group/colCarousel">
+                        <!-- Nút cuộn trái -->
+                        <button type="button" id="btnPrevCollection"
+                            class="hidden absolute -left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-blue-600 hover:bg-slate-50 z-20 cursor-pointer transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <!-- Nút cuộn phải -->
+                        <button type="button" id="btnNextCollection"
+                            class="absolute -right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-blue-600 hover:bg-slate-50 z-20 cursor-pointer transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+
+                        <!-- Vùng cuộn ngang các thẻ bộ sưu tập -->
+                        <div id="collectionTrack"
+                            class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar py-2 cursor-grab select-none">
+
+                            <!-- THẺ 1: Tạo bộ sưu tập mới -->
+                            <div id="btnCreateCollection"
+                                class="min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-6 cursor-pointer transition-all group flex flex-col items-center justify-center text-center shadow-2xs">
+                                <div class="w-12 h-12 flex items-center justify-center mb-4">
+                                    <svg class="w-10 h-10" viewBox="0 0 24 24">
+                                        <path fill="#4285F4" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2h6z" />
+                                        <path fill="#34A853" d="M11 13v6h2v-6h-2z" />
+                                        <path fill="#FBBC05" d="M5 11h6v2H5z" />
+                                        <path fill="#EA4335" d="M11 5h2v6h-2z" />
+                                    </svg>
+                                </div>
+                                <p
+                                    class="text-xs font-medium text-slate-700 group-hover:text-blue-600 transition-colors">
+                                    Tạo bộ sưu tập mới
+                                </p>
+                            </div>
+
+                            <!-- THẺ 2: Mục tiêu kinh doanh -->
+                            <div
+                                class="collection-card-item min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-2xs">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="collection-title text-xs font-semibold text-slate-800 truncate pr-1">
+                                            Mục tiêu kinh doanh</h4>
+                                        <div class="flex items-center gap-1 shrink-0 text-slate-400">
+                                            <button type="button" class="hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                    class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.8" d="M12 8v4m0 4h.01" />
+                                                </svg></button>
+                                            <div class="relative collection-dropdown-container">
+                                                <button type="button"
+                                                    class="btn-collection-more hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                        class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                                        <circle cx="12" cy="5" r="1.5" />
+                                                        <circle cx="12" cy="12" r="1.5" />
+                                                        <circle cx="12" cy="19" r="1.5" />
+                                                    </svg></button>
+                                                <div
+                                                    class="collection-dropdown-menu hidden absolute right-0 top-full mt-1 w-44 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                        sửa</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                        bản sao</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Hủy
+                                                        xuất bản</button>
+                                                    <div class="border-t border-slate-100 my-1"></div>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-[11px] text-slate-500 truncate">
+                                        <span
+                                            class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-medium text-[11px] shrink-0">
+                                            <svg class="w-3 h-3 text-emerald-700" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                            Đã xuất bản cho tất cả
+                                        </span>
+                                        <span class="text-slate-300">•</span>
+                                        <span class="truncate text-[10px]">Mục tiêu ...</span>
+                                    </div>
+
+                                    <div class="space-y-2 pt-2 text-xs text-slate-700">
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Tạo khách hàng tiềm năng</span></div>
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Tăng doanh số</span></div>
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Tìm hiểu lưu lượng truy cập web...</span></div>
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Xem mức độ tương tác và tỷ lệ giữ...</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-100 flex items-center text-slate-400">
+                                    <div
+                                        class="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center">
+                                        <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- THẺ 3: Người dùng -->
+                            <div
+                                class="collection-card-item min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-2xs">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="collection-title text-xs font-semibold text-slate-800 truncate pr-1">
+                                            Người dùng</h4>
+                                        <div class="flex items-center gap-1 shrink-0 text-slate-400">
+                                            <button type="button" class="hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                    class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.8" d="M12 8v4m0 4h.01" />
+                                                </svg></button>
+                                            <div class="relative collection-dropdown-container">
+                                                <button type="button"
+                                                    class="btn-collection-more hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                        class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                                        <circle cx="12" cy="5" r="1.5" />
+                                                        <circle cx="12" cy="12" r="1.5" />
+                                                        <circle cx="12" cy="19" r="1.5" />
+                                                    </svg></button>
+                                                <div
+                                                    class="collection-dropdown-menu hidden absolute right-0 top-full mt-1 w-44 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                        sửa</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                        bản sao</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Hủy
+                                                        xuất bản</button>
+                                                    <div class="border-t border-slate-100 my-1"></div>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-[11px] text-slate-500 truncate">
+                                        <span
+                                            class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-medium text-[11px] shrink-0">
+                                            <svg class="w-3 h-3 text-emerald-700" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                            Đã xuất bản cho tất cả
+                                        </span>
+                                        <span class="text-slate-300">•</span>
+                                        <span class="truncate text-[10px]">Người dù...</span>
+                                    </div>
+
+                                    <div class="space-y-2 pt-2 text-xs text-slate-700">
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Thuộc tính người dùng</span></div>
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Công nghệ</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-100 flex items-center text-slate-400">
+                                    <div
+                                        class="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center">
+                                        <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- THẺ 4: Nhà phát triển ứng dụng -->
+                            <div
+                                class="collection-card-item min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-2xs">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="collection-title text-xs font-semibold text-slate-800 truncate pr-1">
+                                            Nhà phát triển ứng dụng</h4>
+                                        <div class="flex items-center gap-1 shrink-0 text-slate-400">
+                                            <button type="button" class="hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                    class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.8" d="M12 8v4m0 4h.01" />
+                                                </svg></button>
+                                            <div class="relative collection-dropdown-container">
+                                                <button type="button"
+                                                    class="btn-collection-more hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                        class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                                        <circle cx="12" cy="5" r="1.5" />
+                                                        <circle cx="12" cy="12" r="1.5" />
+                                                        <circle cx="12" cy="19" r="1.5" />
+                                                    </svg></button>
+                                                <div
+                                                    class="collection-dropdown-menu hidden absolute right-0 top-full mt-1 w-44 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                        sửa</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                        bản sao</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Hủy
+                                                        xuất bản</button>
+                                                    <div class="border-t border-slate-100 my-1"></div>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-[11px] text-slate-500 truncate">
+                                        <span
+                                            class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-medium text-[11px] shrink-0">
+                                            <svg class="w-3 h-3 text-emerald-700" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                            Đã xuất bản cho tất cả
+                                        </span>
+                                        <span class="text-slate-300">•</span>
+                                        <span class="truncate text-[10px]">Nhà phát...</span>
+                                    </div>
+
+                                    <div class="space-y-2 pt-2 text-xs text-slate-700">
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Firebase</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-100 flex items-center text-slate-400">
+                                    <div
+                                        class="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center">
+                                        <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- THẺ 5: Nhập dữ liệu -->
+                            <div
+                                class="collection-card-item min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-2xs">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="collection-title text-xs font-semibold text-slate-800 truncate pr-1">
+                                            Nhập dữ liệu</h4>
+                                        <div class="flex items-center gap-1 shrink-0 text-slate-400">
+                                            <button type="button" class="hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                    class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.8" d="M12 8v4m0 4h.01" />
+                                                </svg></button>
+                                            <div class="relative collection-dropdown-container">
+                                                <button type="button"
+                                                    class="btn-collection-more hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                        class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                                        <circle cx="12" cy="5" r="1.5" />
+                                                        <circle cx="12" cy="12" r="1.5" />
+                                                        <circle cx="12" cy="19" r="1.5" />
+                                                    </svg></button>
+                                                <div
+                                                    class="collection-dropdown-menu hidden absolute right-0 top-full mt-1 w-44 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                        sửa</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                        bản sao</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Hủy
+                                                        xuất bản</button>
+                                                    <div class="border-t border-slate-100 my-1"></div>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-[11px] text-slate-500 truncate">
+                                        <span
+                                            class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-medium text-[11px] shrink-0">
+                                            <svg class="w-3 h-3 text-emerald-700" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                            Đã xuất bản cho tất cả
+                                        </span>
+                                        <span class="text-slate-300">•</span>
+                                        <span class="truncate text-[10px]">Nhập dữ ...</span>
+                                    </div>
+
+                                    <div class="space-y-2 pt-2 text-xs text-slate-700">
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Xác thực việc nhập dữ liệu chiến dịch</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-100 flex items-center text-slate-400">
+                                    <div
+                                        class="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center">
+                                        <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- THẺ 6: Vòng đời (Chưa xuất bản) -->
+                            <div
+                                class="collection-card-item min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-2xs">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="collection-title text-xs font-semibold text-slate-800 truncate pr-1">
+                                            Vòng đời</h4>
+                                        <div class="flex items-center gap-1 shrink-0 text-slate-400">
+                                            <button type="button" class="hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                    class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.8" d="M12 8v4m0 4h.01" />
+                                                </svg></button>
+                                            <div class="relative collection-dropdown-container">
+                                                <button type="button"
+                                                    class="btn-collection-more hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                        class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                                        <circle cx="12" cy="5" r="1.5" />
+                                                        <circle cx="12" cy="12" r="1.5" />
+                                                        <circle cx="12" cy="19" r="1.5" />
+                                                    </svg></button>
+                                                <div
+                                                    class="collection-dropdown-menu hidden absolute right-0 top-full mt-1 w-44 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                        sửa</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                        bản sao</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Xuất
+                                                        bản</button>
+                                                    <div class="border-t border-slate-100 my-1"></div>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-[11px] text-slate-500 truncate">
+                                        <span
+                                            class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 font-medium text-[11px] shrink-0">
+                                            <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
+                                            </svg>
+                                            Chưa được xuất bản
+                                        </span>
+                                        <span class="text-slate-300">•</span>
+                                        <span class="truncate text-[10px]">Vòng đời</span>
+                                    </div>
+
+                                    <div class="space-y-2 pt-2 text-xs text-slate-700">
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Thu nạp</span></div>
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Mức độ tương tác</span></div>
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Kiếm tiền</span></div>
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Tỷ lệ giữ chân</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-100 flex items-center text-slate-400">
+                                    <div
+                                        class="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center">
+                                        <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= KHỐI COPY HTML (MẪU 4.3) ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND (MẪU 4.3 - REPORT
+                    COLLECTIONS)</span>
+                <button id="btnCopyCollectionHtml"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyCollectionHtml">Copy HTML</span>
+                </button>
+            </div>
+            <pre class="p-5 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-[500px]"
+                id="codeCollectionHtml">&lt;div class="w-full font-sans select-none space-y-4"&gt;
+  &lt;div class="flex items-center gap-1.5 text-slate-800"&gt;
+    &lt;h3 class="text-base font-normal tracking-tight"&gt;Bộ sưu tập&lt;/h3&gt;
+  &lt;/div&gt;
+
+  &lt;div class="relative group/colCarousel"&gt;
+    &lt;button type="button" id="btnPrevCollection" class="hidden absolute -left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-blue-600 z-20 cursor-pointer"&gt;&amp;lt;&lt;/button&gt;
+    &lt;button type="button" id="btnNextCollection" class="absolute -right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-blue-600 z-20 cursor-pointer"&gt;&amp;gt;&lt;/button&gt;
+
+    &lt;div id="collectionTrack" class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar py-2 cursor-grab"&gt;
+      &lt;!-- Card Tạo mới --&gt;
+      &lt;div id="btnCreateCollection" class="min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-6 cursor-pointer flex flex-col items-center justify-center text-center shadow-2xs group"&gt;
+        &lt;div class="w-12 h-12 flex items-center justify-center mb-4"&gt;
+          &lt;svg class="w-10 h-10" viewBox="0 0 24 24"&gt;
+            &lt;path fill="#4285F4" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/&gt;
+            &lt;path fill="#34A853" d="M11 13v6h2v-6h-2z"/&gt;
+            &lt;path fill="#FBBC05" d="M5 11h6v2H5z"/&gt;
+            &lt;path fill="#EA4335" d="M11 5h2v6h-2z"/&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;p class="text-xs font-medium text-slate-700 group-hover:text-blue-600"&gt;Tạo bộ sưu tập mới&lt;/p&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Card Mục tiêu kinh doanh --&gt;
+      &lt;div class="collection-card-item min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-2xs"&gt;
+        &lt;div class="space-y-3"&gt;
+          &lt;div class="flex items-center justify-between"&gt;
+            &lt;h4 class="collection-title text-xs font-semibold text-slate-800 truncate"&gt;Mục tiêu kinh doanh&lt;/h4&gt;
+            &lt;div class="relative collection-dropdown-container"&gt;
+              &lt;button type="button" class="btn-collection-more hover:text-slate-600 p-0.5"&gt;⋮&lt;/button&gt;
+              &lt;div class="collection-dropdown-menu hidden absolute right-0 top-full mt-1 w-44 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs"&gt;
+                &lt;button type="button" class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50"&gt;Chỉnh sửa&lt;/button&gt;
+                &lt;button type="button" class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50"&gt;Tạo bản sao&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="flex items-center gap-1.5 text-[11px] text-slate-500"&gt;
+            &lt;span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-medium"&gt;Đã xuất bản cho tất cả&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class="space-y-2 pt-2 text-xs text-slate-700"&gt;
+            &lt;div class="flex items-center gap-2"&gt;&lt;span&gt;📁&lt;/span&gt;&lt;span class="truncate"&gt;Tạo khách hàng tiềm năng&lt;/span&gt;&lt;/div&gt;
+            &lt;div class="flex items-center gap-2"&gt;&lt;span&gt;📁&lt;/span&gt;&lt;span class="truncate"&gt;Tăng doanh số&lt;/span&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- Khung Copy JS Mẫu 4.3 (ĐẦY ĐỦ 100%) -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM) (MẪU 4.3 - ĐẦY ĐỦ
+                    LOGIC)</span>
+                <button id="btnCopyCollectionJs"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyCollectionJs">Copy JS</span>
+                </button>
+            </div>
+            <pre class="p-5 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-[500px]"
+                id="codeCollectionJs">// 1. KHAI BÁO CÁC PHẦN TỬ DOM
+const collectionTrack = document.querySelector("#collectionTrack");
+const btnPrevCollection = document.querySelector("#btnPrevCollection");
+const btnNextCollection = document.querySelector("#btnNextCollection");
+const btnCreateCollection = document.querySelector("#btnCreateCollection");
+
+// 2. LOGIC CUỘN MƯỢT VÀ ẨN/HIỆN NÚT ĐIỀU HƯỚNG TRÁI / PHẢI
+const scrollStep = 280; // Độ rộng 1 card + khoảng cách gap
+
+function updateScrollButtons() {
+  if (!collectionTrack || !btnPrevCollection || !btnNextCollection) return;
+  
+  const currentScroll = collectionTrack.scrollLeft;
+  const maxScroll = collectionTrack.scrollWidth - collectionTrack.clientWidth;
+  
+  btnPrevCollection.classList.toggle("hidden", currentScroll <= 5);
+  btnNextCollection.classList.toggle("hidden", currentScroll >= maxScroll - 5);
+}
+
+if (collectionTrack && btnPrevCollection && btnNextCollection) {
+  btnNextCollection.addEventListener("click", () => {
+    collectionTrack.scrollBy({ left: scrollStep, behavior: "smooth" });
+  });
+
+  btnPrevCollection.addEventListener("click", () => {
+    collectionTrack.scrollBy({ left: -scrollStep, behavior: "smooth" });
+  });
+
+  collectionTrack.addEventListener("scroll", updateScrollButtons);
+  window.addEventListener("resize", updateScrollButtons);
+  updateScrollButtons();
+}
+
+// 3. TÍNH NĂNG KÉO RÊ CHUỘT ĐỂ CUỘN (DRAG-TO-SCROLL CHO DESKTOP)
+let isDragging = false;
+let startX = 0;
+let scrollStart = 0;
+
+if (collectionTrack) {
+  collectionTrack.addEventListener("mousedown", (e) => {
+    if (e.target.closest("button") || e.target.closest(".collection-dropdown-container")) return;
+    
+    isDragging = true;
+    collectionTrack.classList.add("cursor-grabbing");
+    startX = e.pageX - collectionTrack.offsetLeft;
+    scrollStart = collectionTrack.scrollLeft;
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - collectionTrack.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    collectionTrack.scrollLeft = scrollStart - walk;
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (!isDragging) return;
+    isDragging = false;
+    collectionTrack.classList.remove("cursor-grabbing");
+  });
+}
+
+// 4. XỬ LÝ MENU TÙY CHỌN 3 CHẤM (⋮) TRÊN TỪNG THẺ
+const collectionMoreBtns = document.querySelectorAll(".btn-collection-more");
+
+collectionMoreBtns.forEach(btn => {
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    const currentMenu = this.nextElementSibling;
+    
+    document.querySelectorAll(".collection-dropdown-menu").forEach(menu => {
+      if (menu !== currentMenu) menu.classList.add("hidden");
+    });
+    
+    if (currentMenu) {
+      currentMenu.classList.toggle("hidden");
+    }
+  });
+});
+
+// 5. ĐÓNG MENU KHI CLICK RA NGOÀI HOẶC BẤM ESCAPE
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".collection-dropdown-container")) {
+    document.querySelectorAll(".collection-dropdown-menu").forEach(menu => {
+      menu.classList.add("hidden");
+    });
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    document.querySelectorAll(".collection-dropdown-menu").forEach(menu => {
+      menu.classList.add("hidden");
+    });
+  }
+});
+
+// 6. SỰ KIỆN NÚT "TẠO BỘ SƯU TẬP MỚI" VÀ CÁC THẺ CON
+if (btnCreateCollection) {
+  btnCreateCollection.addEventListener("click", () => {
+    console.log("Khởi chạy luồng tạo bộ sưu tập mới (Open Collection Modal)");
+    alert("Đang mở trình tạo bộ sưu tập mới!");
+  });
+}
+
+document.querySelectorAll(".collection-card-item").forEach(card => {
+  card.addEventListener("click", function (e) {
+    if (e.target.closest(".btn-collection-more") || e.target.closest(".collection-dropdown-menu")) return;
+    const title = this.querySelector(".collection-title")?.innerText || "Bộ sưu tập";
+    console.log(`Đang mở chi tiết bộ sưu tập: ${title}`);
+  });
+});</pre>
+        </div>
+        <!-- ====================================================================== -->
+        <!-- PHẦN 3: MẪU 4.3 - BỘ SƯU TẬP GA4 (REPORT COLLECTIONS CAROUSEL)         -->
+        <!-- ====================================================================== -->
+        <div class="flex items-center gap-3 mb-6 mt-12">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 4.3</span>
+            <h2 class="text-xl font-bold text-slate-800">GA4 Report Collections Carousel (Bộ sưu tập báo cáo)</h2>
+        </div>
+
+        <!-- =================== KHỐI GIAO DIỆN XEM TRƯỚC =================== -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước (Bấm nút
+                    tròn &lt; / &gt; hoặc kéo rê chuột để cuộn mượt các thẻ)
+                </span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+            </div>
+
+            <div class="p-8 bg-slate-50/50">
+                <!-- VÙNG BỘ SƯU TẬP -->
+                <div class="w-full font-sans select-none space-y-4">
+                    <!-- Tiêu đề & Tooltip -->
+                    <div class="flex items-center gap-1.5 text-slate-800">
+                        <h3 class="text-base font-normal tracking-tight">Bộ sưu tập</h3>
+                        <div class="relative group/tip cursor-pointer">
+                            <svg class="w-4 h-4 text-slate-400 hover:text-slate-600" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    d="M9.5 9a2.5 2.5 0 015 0c0 1.5-2 2-2 3.5m0 3v.5" />
+                            </svg>
+                            <div
+                                class="hidden group-hover/tip:block absolute left-full top-1/2 -translate-y-1/2 ml-2 w-56 bg-slate-800 text-white text-[11px] p-2.5 rounded shadow-lg z-30 leading-relaxed">
+                                Bộ sưu tập là một tập hợp các chủ đề và báo cáo xuất hiện trên thanh điều hướng bên
+                                trái.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Container -->
+                    <div class="relative group/colCarousel">
+                        <!-- Nút cuộn trái -->
+                        <button type="button" id="btnPrevCollection"
+                            class="hidden absolute -left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-blue-600 hover:bg-slate-50 z-20 cursor-pointer transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <!-- Nút cuộn phải -->
+                        <button type="button" id="btnNextCollection"
+                            class="absolute -right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-blue-600 hover:bg-slate-50 z-20 cursor-pointer transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+
+                        <!-- Vùng cuộn ngang các thẻ bộ sưu tập -->
+                        <div id="collectionTrack"
+                            class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar py-2 cursor-grab select-none">
+
+                            <!-- THẺ 1: Tạo bộ sưu tập mới -->
+                            <div id="btnCreateCollection"
+                                class="min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-6 cursor-pointer transition-all group flex flex-col items-center justify-center text-center shadow-2xs">
+                                <div class="w-12 h-12 flex items-center justify-center mb-4">
+                                    <svg class="w-10 h-10" viewBox="0 0 24 24">
+                                        <path fill="#4285F4" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2h6z" />
+                                        <path fill="#34A853" d="M11 13v6h2v-6h-2z" />
+                                        <path fill="#FBBC05" d="M5 11h6v2H5z" />
+                                        <path fill="#EA4335" d="M11 5h2v6h-2z" />
+                                    </svg>
+                                </div>
+                                <p
+                                    class="text-xs font-medium text-slate-700 group-hover:text-blue-600 transition-colors">
+                                    Tạo bộ sưu tập mới
+                                </p>
+                            </div>
+
+                            <!-- THẺ 2: Mục tiêu kinh doanh -->
+                            <div
+                                class="collection-card-item min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-2xs">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="collection-title text-xs font-semibold text-slate-800 truncate pr-1">
+                                            Mục tiêu kinh doanh</h4>
+                                        <div class="flex items-center gap-1 shrink-0 text-slate-400">
+                                            <button type="button" class="hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                    class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.8" d="M12 8v4m0 4h.01" />
+                                                </svg></button>
+                                            <div class="relative collection-dropdown-container">
+                                                <button type="button"
+                                                    class="btn-collection-more hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                        class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                                        <circle cx="12" cy="5" r="1.5" />
+                                                        <circle cx="12" cy="12" r="1.5" />
+                                                        <circle cx="12" cy="19" r="1.5" />
+                                                    </svg></button>
+                                                <div
+                                                    class="collection-dropdown-menu hidden absolute right-0 top-full mt-1 w-44 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                        sửa</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                        bản sao</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Hủy
+                                                        xuất bản</button>
+                                                    <div class="border-t border-slate-100 my-1"></div>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-[11px] text-slate-500 truncate">
+                                        <span
+                                            class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-medium text-[11px] shrink-0">
+                                            <svg class="w-3 h-3 text-emerald-700" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                            Đã xuất bản cho tất cả
+                                        </span>
+                                        <span class="text-slate-300">•</span>
+                                        <span class="truncate text-[10px]">Mục tiêu ...</span>
+                                    </div>
+
+                                    <div class="space-y-2 pt-2 text-xs text-slate-700">
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Tạo khách hàng tiềm năng</span></div>
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Tăng doanh số</span></div>
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Tìm hiểu lưu lượng truy cập web...</span></div>
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Xem mức độ tương tác và tỷ lệ giữ...</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-100 flex items-center text-slate-400">
+                                    <div
+                                        class="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center">
+                                        <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- THẺ 3: Người dùng -->
+                            <div
+                                class="collection-card-item min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-2xs">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="collection-title text-xs font-semibold text-slate-800 truncate pr-1">
+                                            Người dùng</h4>
+                                        <div class="flex items-center gap-1 shrink-0 text-slate-400">
+                                            <button type="button" class="hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                    class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.8" d="M12 8v4m0 4h.01" />
+                                                </svg></button>
+                                            <div class="relative collection-dropdown-container">
+                                                <button type="button"
+                                                    class="btn-collection-more hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                        class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                                        <circle cx="12" cy="5" r="1.5" />
+                                                        <circle cx="12" cy="12" r="1.5" />
+                                                        <circle cx="12" cy="19" r="1.5" />
+                                                    </svg></button>
+                                                <div
+                                                    class="collection-dropdown-menu hidden absolute right-0 top-full mt-1 w-44 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                        sửa</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                        bản sao</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Hủy
+                                                        xuất bản</button>
+                                                    <div class="border-t border-slate-100 my-1"></div>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-[11px] text-slate-500 truncate">
+                                        <span
+                                            class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-medium text-[11px] shrink-0">
+                                            <svg class="w-3 h-3 text-emerald-700" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                            Đã xuất bản cho tất cả
+                                        </span>
+                                        <span class="text-slate-300">•</span>
+                                        <span class="truncate text-[10px]">Người dù...</span>
+                                    </div>
+
+                                    <div class="space-y-2 pt-2 text-xs text-slate-700">
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Thuộc tính người dùng</span></div>
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Công nghệ</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-100 flex items-center text-slate-400">
+                                    <div
+                                        class="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center">
+                                        <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- THẺ 4: Nhà phát triển ứng dụng -->
+                            <div
+                                class="collection-card-item min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-2xs">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="collection-title text-xs font-semibold text-slate-800 truncate pr-1">
+                                            Nhà phát triển ứng dụng</h4>
+                                        <div class="flex items-center gap-1 shrink-0 text-slate-400">
+                                            <button type="button" class="hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                    class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.8" d="M12 8v4m0 4h.01" />
+                                                </svg></button>
+                                            <div class="relative collection-dropdown-container">
+                                                <button type="button"
+                                                    class="btn-collection-more hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                        class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                                        <circle cx="12" cy="5" r="1.5" />
+                                                        <circle cx="12" cy="12" r="1.5" />
+                                                        <circle cx="12" cy="19" r="1.5" />
+                                                    </svg></button>
+                                                <div
+                                                    class="collection-dropdown-menu hidden absolute right-0 top-full mt-1 w-44 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                        sửa</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                        bản sao</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Hủy
+                                                        xuất bản</button>
+                                                    <div class="border-t border-slate-100 my-1"></div>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-[11px] text-slate-500 truncate">
+                                        <span
+                                            class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-medium text-[11px] shrink-0">
+                                            <svg class="w-3 h-3 text-emerald-700" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                            Đã xuất bản cho tất cả
+                                        </span>
+                                        <span class="text-slate-300">•</span>
+                                        <span class="truncate text-[10px]">Nhà phát...</span>
+                                    </div>
+
+                                    <div class="space-y-2 pt-2 text-xs text-slate-700">
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Firebase</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-100 flex items-center text-slate-400">
+                                    <div
+                                        class="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center">
+                                        <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- THẺ 5: Nhập dữ liệu -->
+                            <div
+                                class="collection-card-item min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-2xs">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="collection-title text-xs font-semibold text-slate-800 truncate pr-1">
+                                            Nhập dữ liệu</h4>
+                                        <div class="flex items-center gap-1 shrink-0 text-slate-400">
+                                            <button type="button" class="hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                    class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.8" d="M12 8v4m0 4h.01" />
+                                                </svg></button>
+                                            <div class="relative collection-dropdown-container">
+                                                <button type="button"
+                                                    class="btn-collection-more hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                        class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                                        <circle cx="12" cy="5" r="1.5" />
+                                                        <circle cx="12" cy="12" r="1.5" />
+                                                        <circle cx="12" cy="19" r="1.5" />
+                                                    </svg></button>
+                                                <div
+                                                    class="collection-dropdown-menu hidden absolute right-0 top-full mt-1 w-44 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                        sửa</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                        bản sao</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Hủy
+                                                        xuất bản</button>
+                                                    <div class="border-t border-slate-100 my-1"></div>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-[11px] text-slate-500 truncate">
+                                        <span
+                                            class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-medium text-[11px] shrink-0">
+                                            <svg class="w-3 h-3 text-emerald-700" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                            Đã xuất bản cho tất cả
+                                        </span>
+                                        <span class="text-slate-300">•</span>
+                                        <span class="truncate text-[10px]">Nhập dữ ...</span>
+                                    </div>
+
+                                    <div class="space-y-2 pt-2 text-xs text-slate-700">
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Xác thực việc nhập dữ liệu chiến dịch</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-100 flex items-center text-slate-400">
+                                    <div
+                                        class="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center">
+                                        <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- THẺ 6: Vòng đời (Chưa xuất bản) -->
+                            <div
+                                class="collection-card-item min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-2xs">
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="collection-title text-xs font-semibold text-slate-800 truncate pr-1">
+                                            Vòng đời</h4>
+                                        <div class="flex items-center gap-1 shrink-0 text-slate-400">
+                                            <button type="button" class="hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                    class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.8" d="M12 8v4m0 4h.01" />
+                                                </svg></button>
+                                            <div class="relative collection-dropdown-container">
+                                                <button type="button"
+                                                    class="btn-collection-more hover:text-slate-600 p-0.5 cursor-pointer"><svg
+                                                        class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                                        <circle cx="12" cy="5" r="1.5" />
+                                                        <circle cx="12" cy="12" r="1.5" />
+                                                        <circle cx="12" cy="19" r="1.5" />
+                                                    </svg></button>
+                                                <div
+                                                    class="collection-dropdown-menu hidden absolute right-0 top-full mt-1 w-44 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                        sửa</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                        bản sao</button>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Xuất
+                                                        bản</button>
+                                                    <div class="border-t border-slate-100 my-1"></div>
+                                                    <button type="button"
+                                                        class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-1.5 text-[11px] text-slate-500 truncate">
+                                        <span
+                                            class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 font-medium text-[11px] shrink-0">
+                                            <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" />
+                                            </svg>
+                                            Chưa được xuất bản
+                                        </span>
+                                        <span class="text-slate-300">•</span>
+                                        <span class="truncate text-[10px]">Vòng đời</span>
+                                    </div>
+
+                                    <div class="space-y-2 pt-2 text-xs text-slate-700">
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Thu nạp</span></div>
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Mức độ tương tác</span></div>
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Kiếm tiền</span></div>
+                                        <div class="flex items-center gap-2"><svg
+                                                class="w-3.5 h-3.5 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                    d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                            </svg><span class="truncate">Tỷ lệ giữ chân</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-slate-100 flex items-center text-slate-400">
+                                    <div
+                                        class="w-6 h-6 rounded-full border border-slate-200 flex items-center justify-center">
+                                        <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= KHỐI COPY HTML (MẪU 4.3) ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND (MẪU 4.3)</span>
+                <button id="btnCopyCollectionHtml"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyCollectionHtml">Copy HTML</span>
+                </button>
+            </div>
+            <pre class="p-5 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-[500px]"
+                id="codeCollectionHtml">&lt;div class="w-full font-sans select-none space-y-4"&gt;
+  &lt;div class="flex items-center gap-1.5 text-slate-800"&gt;
+    &lt;h3 class="text-base font-normal tracking-tight"&gt;Bộ sưu tập&lt;/h3&gt;
+  &lt;/div&gt;
+
+  &lt;div class="relative group/colCarousel"&gt;
+    &lt;button type="button" id="btnPrevCollection" class="hidden absolute -left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-blue-600 z-20 cursor-pointer"&gt;&amp;lt;&lt;/button&gt;
+    &lt;button type="button" id="btnNextCollection" class="absolute -right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-blue-600 z-20 cursor-pointer"&gt;&amp;gt;&lt;/button&gt;
+
+    &lt;div id="collectionTrack" class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar py-2 cursor-grab"&gt;
+      &lt;!-- Card Tạo mới --&gt;
+      &lt;div id="btnCreateCollection" class="min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 hover:border-blue-400 rounded-xl p-6 cursor-pointer flex flex-col items-center justify-center text-center shadow-2xs group"&gt;
+        &lt;div class="w-12 h-12 flex items-center justify-center mb-4"&gt;
+          &lt;svg class="w-10 h-10" viewBox="0 0 24 24"&gt;
+            &lt;path fill="#4285F4" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/&gt;
+            &lt;path fill="#34A853" d="M11 13v6h2v-6h-2z"/&gt;
+            &lt;path fill="#FBBC05" d="M5 11h6v2H5z"/&gt;
+            &lt;path fill="#EA4335" d="M11 5h2v6h-2z"/&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;p class="text-xs font-medium text-slate-700 group-hover:text-blue-600"&gt;Tạo bộ sưu tập mới&lt;/p&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Card Mục tiêu kinh doanh --&gt;
+      &lt;div class="collection-card-item min-w-[260px] max-w-[260px] h-[340px] shrink-0 bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between shadow-2xs"&gt;
+        &lt;div class="space-y-3"&gt;
+          &lt;div class="flex items-center justify-between"&gt;
+            &lt;h4 class="collection-title text-xs font-semibold text-slate-800 truncate"&gt;Mục tiêu kinh doanh&lt;/h4&gt;
+            &lt;div class="relative collection-dropdown-container"&gt;
+              &lt;button type="button" class="btn-collection-more hover:text-slate-600 p-0.5"&gt;⋮&lt;/button&gt;
+              &lt;div class="collection-dropdown-menu hidden absolute right-0 top-full mt-1 w-44 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs"&gt;
+                &lt;button type="button" class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50"&gt;Chỉnh sửa&lt;/button&gt;
+                &lt;button type="button" class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50"&gt;Tạo bản sao&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="flex items-center gap-1.5 text-[11px] text-slate-500"&gt;
+            &lt;span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-medium"&gt;Đã xuất bản cho tất cả&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class="space-y-2 pt-2 text-xs text-slate-700"&gt;
+            &lt;div class="flex items-center gap-2"&gt;&lt;span&gt;📁&lt;/span&gt;&lt;span class="truncate"&gt;Tạo khách hàng tiềm năng&lt;/span&gt;&lt;/div&gt;
+            &lt;div class="flex items-center gap-2"&gt;&lt;span&gt;📁&lt;/span&gt;&lt;span class="truncate"&gt;Tăng doanh số&lt;/span&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- Khung Copy JS Mẫu 4.3 (ĐẦY ĐỦ 100%) -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM) (MẪU 4.3)</span>
+                <button id="btnCopyCollectionJs"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyCollectionJs">Copy JS</span>
+                </button>
+            </div>
+            <pre class="p-5 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-[500px]"
+                id="codeCollectionJs">// 1. KHAI BÁO CÁC PHẦN TỬ DOM
+const collectionTrack = document.querySelector("#collectionTrack");
+const btnPrevCollection = document.querySelector("#btnPrevCollection");
+const btnNextCollection = document.querySelector("#btnNextCollection");
+const btnCreateCollection = document.querySelector("#btnCreateCollection");
+
+// 2. LOGIC CUỘN MƯỢT VÀ ẨN/HIỆN NÚT ĐIỀU HƯỚNG TRÁI / PHẢI
+const scrollStep = 280; // Độ rộng 1 card + khoảng cách gap
+
+function updateScrollButtons() {
+  if (!collectionTrack || !btnPrevCollection || !btnNextCollection) return;
+  
+  const currentScroll = collectionTrack.scrollLeft;
+  const maxScroll = collectionTrack.scrollWidth - collectionTrack.clientWidth;
+  
+  btnPrevCollection.classList.toggle("hidden", currentScroll <= 5);
+  btnNextCollection.classList.toggle("hidden", currentScroll >= maxScroll - 5);
+}
+
+if (collectionTrack && btnPrevCollection && btnNextCollection) {
+  btnNextCollection.addEventListener("click", () => {
+    collectionTrack.scrollBy({ left: scrollStep, behavior: "smooth" });
+  });
+
+  btnPrevCollection.addEventListener("click", () => {
+    collectionTrack.scrollBy({ left: -scrollStep, behavior: "smooth" });
+  });
+
+  collectionTrack.addEventListener("scroll", updateScrollButtons);
+  window.addEventListener("resize", updateScrollButtons);
+  updateScrollButtons();
+}
+
+// 3. TÍNH NĂNG KÉO RÊ CHUỘT ĐỂ CUỘN (DRAG-TO-SCROLL CHO DESKTOP)
+let isDragging = false;
+let startX = 0;
+let scrollStart = 0;
+
+if (collectionTrack) {
+  collectionTrack.addEventListener("mousedown", (e) => {
+    if (e.target.closest("button") || e.target.closest(".collection-dropdown-container")) return;
+    
+    isDragging = true;
+    collectionTrack.classList.add("cursor-grabbing");
+    startX = e.pageX - collectionTrack.offsetLeft;
+    scrollStart = collectionTrack.scrollLeft;
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - collectionTrack.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    collectionTrack.scrollLeft = scrollStart - walk;
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (!isDragging) return;
+    isDragging = false;
+    collectionTrack.classList.remove("cursor-grabbing");
+  });
+}
+
+// 4. XỬ LÝ MENU TÙY CHỌN 3 CHẤM (⋮) TRÊN TỪNG THẺ
+const collectionMoreBtns = document.querySelectorAll(".btn-collection-more");
+
+collectionMoreBtns.forEach(btn => {
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    const currentMenu = this.nextElementSibling;
+    
+    document.querySelectorAll(".collection-dropdown-menu").forEach(menu => {
+      if (menu !== currentMenu) menu.classList.add("hidden");
+    });
+    
+    if (currentMenu) {
+      currentMenu.classList.toggle("hidden");
+    }
+  });
+});
+
+// 5. ĐÓNG MENU KHI CLICK RA NGOÀI HOẶC BẤM ESCAPE
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".collection-dropdown-container")) {
+    document.querySelectorAll(".collection-dropdown-menu").forEach(menu => {
+      menu.classList.add("hidden");
+    });
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    document.querySelectorAll(".collection-dropdown-menu").forEach(menu => {
+      menu.classList.add("hidden");
+    });
+  }
+});
+
+// 6. SỰ KIỆN NÚT "TẠO BỘ SƯU TẬP MỚI" VÀ CÁC THẺ CON
+if (btnCreateCollection) {
+  btnCreateCollection.addEventListener("click", () => {
+    console.log("Khởi chạy luồng tạo bộ sưu tập mới (Open Collection Modal)");
+    alert("Đang mở trình tạo bộ sưu tập mới!");
+  });
+}
+
+document.querySelectorAll(".collection-card-item").forEach(card => {
+  card.addEventListener("click", function (e) {
+    if (e.target.closest(".btn-collection-more") || e.target.closest(".collection-dropdown-menu")) return;
+    const title = this.querySelector(".collection-title")?.innerText || "Bộ sưu tập";
+    console.log(`Đang mở chi tiết bộ sưu tập: ${title}`);
+  });
+});</pre>
+        </div>
     </main>
 
     <!-- ================= SCRIPT THỰC THI TRANG ================= -->
     <script src="script.js"></script>
     <script>
-        // Logic điều khiển Carousel bản xem trước
-        const slider = document.querySelector("#previewCarouselSlider");
-        const prevBtn = document.querySelector("#previewBtnPrev");
-        const nextBtn = document.querySelector("#previewBtnNext");
-        const STEP = 260;
+        // ==========================================================================
+        // 1. HÀM DÙNG CHUNG ĐIỀU KHIỂN CAROUSEL (TÁI SỬ DỤNG CHO CẢ 4.1 VÀ 4.3)
+        // ==========================================================================
+        function setupCarousel(sliderId, prevBtnId, nextBtnId, step = 260) {
+            const slider = document.querySelector(sliderId);
+            const prevBtn = document.querySelector(prevBtnId);
+            const nextBtn = document.querySelector(nextBtnId);
 
-        function checkButtons() {
-            const left = slider.scrollLeft;
-            const maxLeft = slider.scrollWidth - slider.clientWidth;
+            if (!slider || !prevBtn || !nextBtn) return;
 
-            if (left <= 10) {
-                prevBtn.classList.add("hidden");
-            } else {
-                prevBtn.classList.remove("hidden");
+            function checkButtons() {
+                const left = slider.scrollLeft;
+                const maxLeft = slider.scrollWidth - slider.clientWidth; // Đã fix dấu trừ
+
+                // Ẩn/hiện nút lùi
+                if (left <= 10) {
+                    prevBtn.classList.add("hidden");
+                } else {
+                    prevBtn.classList.remove("hidden");
+                }
+
+                // Ẩn/hiện nút tới (Đã fix maxLeft - 10)
+                if (left >= maxLeft - 10) {
+                    nextBtn.classList.add("hidden");
+                } else {
+                    nextBtn.classList.remove("hidden");
+                }
             }
 
-            if (left >= maxLeft - 10) {
-                nextBtn.classList.add("hidden");
-            } else {
-                nextBtn.classList.remove("hidden");
-            }
+            nextBtn.addEventListener("click", () => {
+                slider.scrollBy({ left: step, behavior: "smooth" });
+            });
+
+            prevBtn.addEventListener("click", () => {
+                slider.scrollBy({ left: -step, behavior: "smooth" });
+            });
+
+            slider.addEventListener("scroll", checkButtons);
+            window.addEventListener("resize", checkButtons);
+            checkButtons();
         }
 
-        nextBtn.addEventListener("click", () => {
-            slider.scrollBy({ left: STEP, behavior: "smooth" });
+        // Khởi chạy cho Mẫu 4.1 có sẵn của bạn
+        setupCarousel("#previewCarouselSlider", "#previewBtnPrev", "#previewBtnNext", 260);
+
+        // Khởi chạy cho Mẫu 4.3 mới (bước cuộn rộng 280px theo kích thước thẻ bộ sưu tập)
+        setupCarousel("#collectionTrack", "#btnPrevCollection", "#btnNextCollection", 280);
+
+        // ==========================================================================
+        // 2. LOGIC BỔ SUNG CHO MỤC 4.3 (DRAG-TO-SCROLL, MENU 3 CHẤM, MODAL & COPY)
+        // ==========================================================================
+        const colTrack = document.querySelector("#collectionTrack");
+        const createColBtn = document.querySelector("#btnCreateCollection");
+
+        // A. Kéo rê chuột để cuộn mượt (Drag-to-Scroll)
+        if (colTrack) {
+            let isDragging = false;
+            let startX = 0;
+            let scrollStart = 0;
+
+            colTrack.addEventListener("mousedown", (e) => {
+                if (e.target.closest("button") || e.target.closest(".collection-dropdown-container")) return;
+                isDragging = true;
+                colTrack.classList.add("cursor-grabbing");
+                startX = e.pageX - colTrack.offsetLeft;
+                scrollStart = colTrack.scrollLeft;
+            });
+
+            document.addEventListener("mousemove", (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX - colTrack.offsetLeft;
+                const walk = (x - startX) * 1.5;
+                colTrack.scrollLeft = scrollStart - walk;
+            });
+
+            document.addEventListener("mouseup", () => {
+                if (!isDragging) return;
+                isDragging = false;
+                colTrack.classList.remove("cursor-grabbing");
+            });
+        }
+
+        // B. Menu 3 chấm (⋮) trên từng thẻ bộ sưu tập
+        document.querySelectorAll(".btn-collection-more").forEach((btn) => {
+            btn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                const currentMenu = this.nextElementSibling;
+
+                // Đóng các menu khác
+                document.querySelectorAll(".collection-dropdown-menu").forEach((menu) => {
+                    if (menu !== currentMenu) menu.classList.add("hidden");
+                });
+
+                if (currentMenu) currentMenu.classList.toggle("hidden");
+            });
         });
 
-        prevBtn.addEventListener("click", () => {
-            slider.scrollBy({ left: -STEP, behavior: "smooth" });
+        // Đóng menu khi click ra ngoài hoặc nhấn phím ESC
+        document.addEventListener("click", (e) => {
+            if (!e.target.closest(".collection-dropdown-container")) {
+                document.querySelectorAll(".collection-dropdown-menu").forEach((menu) => {
+                    menu.classList.add("hidden");
+                });
+            }
         });
 
-        slider.addEventListener("scroll", checkButtons);
-        checkButtons();
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                document.querySelectorAll(".collection-dropdown-menu").forEach((menu) => {
+                    menu.classList.add("hidden");
+                });
+            }
+        });
+
+        // C. Nút Tạo bộ sưu tập mới
+        if (createColBtn) {
+            createColBtn.addEventListener("click", () => {
+                alert("Đang mở trình tạo bộ sưu tập mới!");
+            });
+        }
+
+        // D. Nút Copy Code cho Mẫu 4.3 (HTML & JS)
+        function setupCopyButton(btnId, txtId, codeId, defaultText) {
+            const btn = document.querySelector(btnId);
+            const txt = document.querySelector(txtId);
+            const code = document.querySelector(codeId);
+
+            if (!btn || !code) return;
+
+            btn.addEventListener("click", () => {
+                navigator.clipboard.writeText(code.innerText).then(() => {
+                    txt.innerText = "Đã Copy!";
+                    btn.classList.replace("bg-slate-800", "bg-emerald-600");
+                    setTimeout(() => {
+                        txt.innerText = defaultText;
+                        btn.classList.replace("bg-emerald-600", "bg-slate-800");
+                    }, 1800);
+                });
+            });
+        }
+
+        setupCopyButton("#btnCopyCollectionHtml", "#txtCopyCollectionHtml", "#codeCollectionHtml", "Copy HTML");
+        setupCopyButton("#btnCopyCollectionJs", "#txtCopyCollectionJs", "#codeCollectionJs", "Copy JS");
     </script>
 </body>
 

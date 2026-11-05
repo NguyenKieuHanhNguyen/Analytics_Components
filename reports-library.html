@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports Library - GA4 UI Kit</title>
+    <!-- Tailwind CSS CDN v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800 font-sans">
+
+    <!-- ================= SIDEBAR MENU BÊN TRÁI ================= -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+        <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+            <div
+                class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+                📊
+            </div>
+            <div>
+                <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+                <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+            </div>
+        </div>
+
+        <div class="p-3 overflow-y-auto flex-1">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+            <nav class="space-y-1">
+                <a href="index.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏠</span> Tổng quan UI Kit
+                </a>
+                <a href="accordion.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📂</span> Accordion Tasks
+                </a>
+                <a href="popup-picker.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🪟</span> Popup / Modal Picker
+                </a>
+                <a href="sidebar.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📑</span> Sidebar GA4
+                </a>
+                <a href="exploration-carousel.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🎠</span> Carousel Khám phá
+                </a>
+                <a href="account-settings.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚙️</span> Cài đặt Quản trị
+                </a>
+                <a href="data-streams.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🌊</span> Luồng Dữ Liệu
+                </a>
+                <a href="realtime-overview.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⏱️</span> Thời Gian Thực
+                </a>
+                <a href="email-communications.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>✉️</span> Liên Lạc Qua Email
+                </a>
+                <a href="user-account-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>👤</span> Thông Tin Tài Khoản
+                </a>
+                <a href="property-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏢</span> Thông Tin Tài Sản
+                </a>
+                <a href="reports-library.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+                    <span>📋</span> Thư Viện Báo Cáo
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- ================= KHU VỰC CHÍNH ================= -->
+    <main class="flex-1 p-8 max-w-6xl overflow-y-auto space-y-12">
+        <div class="flex items-center gap-3">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 11</span>
+            <h2 class="text-xl font-bold text-slate-800">GA4 Reports Library Table (Bảng Thư viện Báo cáo)</h2>
+        </div>
+
+        <!-- ================= KHỐI GIAO DIỆN XEM TRƯỚC ================= -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước tương
+                    tác (Tìm kiếm báo cáo, chọn checkbox, menu 3 chấm & phân trang)
+                </span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+            </div>
+
+            <div class="p-8 bg-slate-100/60">
+
+                <!-- VÙNG BẢNG DANH SÁCH BÁO CÁO -->
+                <div
+                    class="w-full bg-white border border-slate-200 rounded-xl shadow-2xs font-sans select-none overflow-hidden">
+
+                    <!-- Toolbar trên bảng -->
+                    <div
+                        class="p-4 flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 bg-white">
+                        <div class="flex items-center gap-1.5 text-slate-800">
+                            <h3 class="text-base font-normal tracking-tight">Báo cáo</h3>
+                            <div class="relative group/tip cursor-pointer">
+                                <svg class="w-4 h-4 text-slate-400 hover:text-slate-600" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                        d="M9.5 9a2.5 2.5 0 015 0c0 1.5-2 2-2 3.5m0 3v.5" />
+                                </svg>
+                                <div
+                                    class="hidden group-hover/tip:block absolute left-full top-1/2 -translate-y-1/2 ml-2 w-56 bg-slate-800 text-white text-[11px] p-2.5 rounded shadow-lg z-30 leading-relaxed">
+                                    Quản lý và xuất bản tất cả các báo cáo chi tiết và tổng quan trong tài sản GA4 của
+                                    bạn.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nút tạo báo cáo + Ô tìm kiếm -->
+                        <div class="flex items-center gap-3">
+                            <button type="button" id="btnCreateReport"
+                                class="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-lg cursor-pointer transition-colors shadow-2xs">
+                                <span class="text-base leading-none font-bold">+</span>
+                                <span>Tạo báo cáo mới</span>
+                            </button>
+
+                            <div class="relative w-64">
+                                <span
+                                    class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </span>
+                                <input type="text" id="reportSearchInput" placeholder="Tìm kiếm"
+                                    class="w-full bg-white border border-slate-300 rounded-lg pl-9 pr-3 py-1.5 text-xs text-slate-700 outline-none focus:border-blue-500 transition-colors">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bảng danh sách Báo cáo -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs text-slate-700 border-collapse">
+                            <thead class="bg-white text-[11px] font-medium text-slate-500 border-b border-slate-200">
+                                <tr>
+                                    <th scope="col" class="p-3.5 w-12 text-center">
+                                        <input type="checkbox" id="selectAllReports"
+                                            class="w-4 h-4 rounded text-blue-600 border-slate-300 cursor-pointer accent-blue-600">
+                                    </th>
+                                    <th scope="col" class="py-3 px-3 w-14 font-medium">Loại</th>
+                                    <th scope="col" class="py-3 px-3 font-medium min-w-[200px]">Tên</th>
+                                    <th scope="col" class="py-3 px-3 font-medium w-24">Người tạo</th>
+                                    <th scope="col"
+                                        class="py-3 px-3 font-medium cursor-pointer hover:text-blue-600 w-40 whitespace-nowrap"
+                                        id="sortDate">
+                                        Sửa đổi lần gần đây nhất <span class="inline-block text-[11px]">↓</span>
+                                    </th>
+                                    <th scope="col" class="py-3 px-3 font-medium min-w-[170px]">Mẫu</th>
+                                    <th scope="col" class="py-3 px-3 font-medium min-w-[150px]">Bộ sưu tập</th>
+                                    <th scope="col" class="py-3 px-3 font-medium min-w-[240px]">Mô tả</th>
+                                    <th scope="col" class="p-3 w-10 text-center"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100" id="reportTableBody">
+
+                                <!-- Dòng 1 -->
+                                <tr class="hover:bg-slate-50/80 transition-colors cursor-pointer report-row">
+                                    <td class="p-3.5 text-center">
+                                        <input type="checkbox"
+                                            class="report-checkbox w-4 h-4 rounded text-blue-600 border-slate-300 cursor-pointer accent-blue-600">
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-600">
+                                        <svg class="w-4 h-4 text-slate-600" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm13 0h5v8h-5v-8z" />
+                                        </svg>
+                                    </td>
+                                    <td class="py-3 px-3 font-normal text-slate-900 report-title leading-relaxed">
+                                        Tổng quan về mục tiêu tạo khách hàng tiềm năng
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-500 font-mono">-</td>
+                                    <td class="py-3 px-3 text-slate-500 font-mono">-</td>
+                                    <td class="py-3 px-3 text-slate-700 leading-relaxed">
+                                        Tổng quan về mục tiêu tạo khách hàng tiềm năng
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-700 leading-relaxed">
+                                        Mục tiêu kinh doanh
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-600 truncate max-w-xs leading-relaxed">
+                                        Báo cáo này trình bày bản phân tích các chỉ số về...
+                                    </td>
+                                    <td class="p-3 text-center">
+                                        <div class="relative report-dropdown-container">
+                                            <button type="button"
+                                                class="btn-report-more text-slate-400 hover:text-slate-600 p-1 cursor-pointer">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="5" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="19" r="1.5" />
+                                                </svg>
+                                            </button>
+                                            <div
+                                                class="report-dropdown-menu hidden absolute right-0 top-full mt-1 w-40 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                    sửa</button>
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                    bản sao</button>
+                                                <div class="border-t border-slate-100 my-1"></div>
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Dòng 2 -->
+                                <tr class="hover:bg-slate-50/80 transition-colors cursor-pointer report-row">
+                                    <td class="p-3.5 text-center">
+                                        <input type="checkbox"
+                                            class="report-checkbox w-4 h-4 rounded text-blue-600 border-slate-300 cursor-pointer accent-blue-600">
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-600">
+                                        <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <rect x="3" y="4" width="18" height="16" rx="2" stroke-width="1.8" />
+                                            <line x1="3" y1="10" x2="21" y2="10" stroke-width="1.8" />
+                                            <line x1="10" y1="10" x2="10" y2="20" stroke-width="1.8" />
+                                        </svg>
+                                    </td>
+                                    <td class="py-3 px-3 font-normal text-slate-900 report-title leading-relaxed">
+                                        Đối tượng
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-500 font-mono">-</td>
+                                    <td class="py-3 px-3 text-slate-500 font-mono">-</td>
+                                    <td class="py-3 px-3 text-slate-700 leading-relaxed">
+                                        Đối tượng
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-700 leading-relaxed">
+                                        Mục tiêu kinh doanh,Người dùng
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-600 truncate max-w-xs leading-relaxed">
+                                        Báo cáo Đối tượng cho biết mức độ tương tác và quy...
+                                    </td>
+                                    <td class="p-3 text-center">
+                                        <div class="relative report-dropdown-container">
+                                            <button type="button"
+                                                class="btn-report-more text-slate-400 hover:text-slate-600 p-1 cursor-pointer">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="5" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="19" r="1.5" />
+                                                </svg>
+                                            </button>
+                                            <div
+                                                class="report-dropdown-menu hidden absolute right-0 top-full mt-1 w-40 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                    sửa</button>
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                    bản sao</button>
+                                                <div class="border-t border-slate-100 my-1"></div>
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Dòng 3 -->
+                                <tr class="hover:bg-slate-50/80 transition-colors cursor-pointer report-row">
+                                    <td class="p-3.5 text-center">
+                                        <input type="checkbox"
+                                            class="report-checkbox w-4 h-4 rounded text-blue-600 border-slate-300 cursor-pointer accent-blue-600">
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-600">
+                                        <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <rect x="3" y="4" width="18" height="16" rx="2" stroke-width="1.8" />
+                                            <line x1="3" y1="10" x2="21" y2="10" stroke-width="1.8" />
+                                            <line x1="10" y1="10" x2="10" y2="20" stroke-width="1.8" />
+                                        </svg>
+                                    </td>
+                                    <td class="py-3 px-3 font-normal text-slate-900 report-title leading-relaxed">
+                                        Thông tin thu nạp người dùng
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-500 font-mono">-</td>
+                                    <td class="py-3 px-3 text-slate-500 font-mono">-</td>
+                                    <td class="py-3 px-3 text-slate-700 leading-relaxed">
+                                        Thông tin thu nạp người dùng
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-700 leading-relaxed">
+                                        Mục tiêu kinh doanh,Vòng đời
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-600 truncate max-w-xs leading-relaxed">
+                                        Báo cáo Thu nạp người dùng cho thấy dữ liệu về lầ...
+                                    </td>
+                                    <td class="p-3 text-center">
+                                        <div class="relative report-dropdown-container">
+                                            <button type="button"
+                                                class="btn-report-more text-slate-400 hover:text-slate-600 p-1 cursor-pointer">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="5" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="19" r="1.5" />
+                                                </svg>
+                                            </button>
+                                            <div
+                                                class="report-dropdown-menu hidden absolute right-0 top-full mt-1 w-40 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                    sửa</button>
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                    bản sao</button>
+                                                <div class="border-t border-slate-100 my-1"></div>
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Dòng 4 -->
+                                <tr class="hover:bg-slate-50/80 transition-colors cursor-pointer report-row">
+                                    <td class="p-3.5 text-center">
+                                        <input type="checkbox"
+                                            class="report-checkbox w-4 h-4 rounded text-blue-600 border-slate-300 cursor-pointer accent-blue-600">
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-600">
+                                        <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <rect x="3" y="4" width="18" height="16" rx="2" stroke-width="1.8" />
+                                            <line x1="3" y1="10" x2="21" y2="10" stroke-width="1.8" />
+                                            <line x1="10" y1="10" x2="10" y2="20" stroke-width="1.8" />
+                                        </svg>
+                                    </td>
+                                    <td class="py-3 px-3 font-normal text-slate-900 report-title leading-relaxed">
+                                        Thu nạp qua lưu lượng truy cập
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-500 font-mono">-</td>
+                                    <td class="py-3 px-3 text-slate-500 font-mono">-</td>
+                                    <td class="py-3 px-3 text-slate-700 leading-relaxed">
+                                        Thu nạp qua lưu lượng truy cập
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-700 leading-relaxed">
+                                        Mục tiêu kinh doanh,Vòng đời
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-600 truncate max-w-xs leading-relaxed">
+                                        Báo cáo Thu nạp qua lượng truy cập cho biết người...
+                                    </td>
+                                    <td class="p-3 text-center">
+                                        <div class="relative report-dropdown-container">
+                                            <button type="button"
+                                                class="btn-report-more text-slate-400 hover:text-slate-600 p-1 cursor-pointer">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="5" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="19" r="1.5" />
+                                                </svg>
+                                            </button>
+                                            <div
+                                                class="report-dropdown-menu hidden absolute right-0 top-full mt-1 w-40 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                    sửa</button>
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                    bản sao</button>
+                                                <div class="border-t border-slate-100 my-1"></div>
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Dòng 5 -->
+                                <tr class="hover:bg-slate-50/80 transition-colors cursor-pointer report-row">
+                                    <td class="p-3.5 text-center">
+                                        <input type="checkbox"
+                                            class="report-checkbox w-4 h-4 rounded text-blue-600 border-slate-300 cursor-pointer accent-blue-600">
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-600">
+                                        <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <rect x="3" y="4" width="18" height="16" rx="2" stroke-width="1.8" />
+                                            <line x1="3" y1="10" x2="21" y2="10" stroke-width="1.8" />
+                                            <line x1="10" y1="10" x2="10" y2="20" stroke-width="1.8" />
+                                        </svg>
+                                    </td>
+                                    <td class="py-3 px-3 font-normal text-slate-900 report-title leading-relaxed">
+                                        Thu nạp khách hàng tiềm năng
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-500 font-mono">-</td>
+                                    <td class="py-3 px-3 text-slate-500 font-mono">-</td>
+                                    <td class="py-3 px-3 text-slate-700 leading-relaxed">
+                                        Thu nạp khách hàng tiềm năng
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-700 leading-relaxed">
+                                        Mục tiêu kinh doanh,Vòng đời
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-600 truncate max-w-xs leading-relaxed">
+                                        Báo cáo thu nạp khách hàng tiềm năng cho thấy d...
+                                    </td>
+                                    <td class="p-3 text-center">
+                                        <div class="relative report-dropdown-container">
+                                            <button type="button"
+                                                class="btn-report-more text-slate-400 hover:text-slate-600 p-1 cursor-pointer">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="5" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="19" r="1.5" />
+                                                </svg>
+                                            </button>
+                                            <div
+                                                class="report-dropdown-menu hidden absolute right-0 top-full mt-1 w-40 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                    sửa</button>
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                    bản sao</button>
+                                                <div class="border-t border-slate-100 my-1"></div>
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Dòng 6: Bổ sung theo ảnh thực tế -->
+                                <tr class="hover:bg-slate-50/80 transition-colors cursor-pointer report-row">
+                                    <td class="p-3.5 text-center">
+                                        <input type="checkbox"
+                                            class="report-checkbox w-4 h-4 rounded text-blue-600 border-slate-300 cursor-pointer accent-blue-600">
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-600">
+                                        <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <rect x="3" y="4" width="18" height="16" rx="2" stroke-width="1.8" />
+                                            <line x1="3" y1="10" x2="21" y2="10" stroke-width="1.8" />
+                                            <line x1="10" y1="10" x2="10" y2="20" stroke-width="1.8" />
+                                        </svg>
+                                    </td>
+                                    <td class="py-3 px-3 font-normal text-slate-900 report-title leading-relaxed">
+                                        Giao dịch mua hàng trong ứng dụng
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-500 font-mono">-</td>
+                                    <td class="py-3 px-3 text-slate-500 font-mono">-</td>
+                                    <td class="py-3 px-3 text-slate-700 leading-relaxed">
+                                        Giao dịch mua hàng trong ứng dụng
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-700 leading-relaxed">
+                                        Mục tiêu kinh doanh,Vòng đời
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-600 truncate max-w-xs leading-relaxed">
+                                        Báo cáo Giao dịch mua hàng trong ứng dụng cho biết các giao dịch mu...
+                                    </td>
+                                    <td class="p-3 text-center">
+                                        <div class="relative report-dropdown-container">
+                                            <button type="button"
+                                                class="btn-report-more text-slate-400 hover:text-slate-600 p-1 cursor-pointer">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="5" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="19" r="1.5" />
+                                                </svg>
+                                            </button>
+                                            <div
+                                                class="report-dropdown-menu hidden absolute right-0 top-full mt-1 w-40 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                    sửa</button>
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                    bản sao</button>
+                                                <div class="border-t border-slate-100 my-1"></div>
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Dòng 7: Bổ sung theo ảnh thực tế -->
+                                <tr class="hover:bg-slate-50/80 transition-colors cursor-pointer report-row">
+                                    <td class="p-3.5 text-center">
+                                        <input type="checkbox"
+                                            class="report-checkbox w-4 h-4 rounded text-blue-600 border-slate-300 cursor-pointer accent-blue-600">
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-600">
+                                        <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <rect x="3" y="4" width="18" height="16" rx="2" stroke-width="1.8" />
+                                            <line x1="3" y1="10" x2="21" y2="10" stroke-width="1.8" />
+                                            <line x1="10" y1="10" x2="10" y2="20" stroke-width="1.8" />
+                                        </svg>
+                                    </td>
+                                    <td class="py-3 px-3 font-normal text-slate-900 report-title leading-relaxed">
+                                        Giao dịch
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-500 font-mono">-</td>
+                                    <td class="py-3 px-3 text-slate-500 font-mono">-</td>
+                                    <td class="py-3 px-3 text-slate-700 leading-relaxed">
+                                        Giao dịch
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-700 leading-relaxed">
+                                        Mục tiêu kinh doanh,Vòng đời
+                                    </td>
+                                    <td class="py-3 px-3 text-slate-600 truncate max-w-xs leading-relaxed">
+                                        Báo cáo Mã giao dịch cho biết doanh thu liên quan đến từng mã giao dịch...
+                                    </td>
+                                    <td class="p-3 text-center">
+                                        <div class="relative report-dropdown-container">
+                                            <button type="button"
+                                                class="btn-report-more text-slate-400 hover:text-slate-600 p-1 cursor-pointer">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="5" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="19" r="1.5" />
+                                                </svg>
+                                            </button>
+                                            <div
+                                                class="report-dropdown-menu hidden absolute right-0 top-full mt-1 w-40 bg-white border border-slate-200 rounded-xl shadow-xl py-1.5 z-30 text-xs text-slate-700">
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Chỉnh
+                                                    sửa</button>
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-slate-50 cursor-pointer">Tạo
+                                                    bản sao</button>
+                                                <div class="border-t border-slate-100 my-1"></div>
+                                                <button type="button"
+                                                    class="w-full text-left px-3.5 py-1.5 hover:bg-red-50 text-red-600 cursor-pointer">Xóa</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Thanh phân trang dưới cùng bảng (Pagination Footer) -->
+                    <div
+                        class="px-6 py-3 border-t border-slate-200 flex flex-wrap items-center justify-end gap-6 text-xs text-slate-600 bg-white select-none">
+
+                        <!-- Bộ chọn số mục trên mỗi trang -->
+                        <div class="flex items-center gap-3">
+                            <span class="text-slate-500 font-normal">Số mục trên mỗi trang:</span>
+                            <div class="relative">
+                                <select id="pageSizeSelect"
+                                    class="bg-white border border-slate-300 hover:border-slate-400 rounded-md pl-3 pr-8 py-1.5 text-xs text-slate-800 outline-none cursor-pointer appearance-none focus:border-blue-500 transition-colors">
+                                    <option value="10">10</option>
+                                    <option value="15" selected>15</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                </select>
+                                <span
+                                    class="absolute inset-y-0 right-2.5 flex items-center pointer-events-none text-slate-500 text-[10px]">
+                                    ▼
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Chỉ số dòng hiển thị -->
+                        <div class="font-normal text-slate-700 font-mono tracking-tight" id="paginationInfo">
+                            1 – 15/31
+                        </div>
+
+                        <!-- 4 Nút điều hướng phân trang -->
+                        <div class="flex items-center gap-1 text-slate-600">
+                            <button type="button" id="btnFirstPage"
+                                class="w-8 h-8 rounded-full flex items-center justify-center text-slate-300 cursor-not-allowed transition-colors"
+                                disabled title="Trang đầu">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                                </svg>
+                            </button>
+
+                            <button type="button" id="btnPrevPage"
+                                class="w-8 h-8 rounded-full flex items-center justify-center text-slate-300 cursor-not-allowed transition-colors"
+                                disabled title="Trang trước">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+
+                            <button type="button" id="btnNextPage"
+                                class="w-8 h-8 rounded-full flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:text-slate-900 cursor-pointer transition-colors"
+                                title="Trang sau">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+
+                            <button type="button" id="btnLastPage"
+                                class="w-8 h-8 rounded-full flex items-center justify-center text-slate-600 hover:bg-slate-100 hover:text-slate-900 cursor-pointer transition-colors"
+                                title="Trang cuối">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= KHỐI COPY HTML 100% ĐẦY ĐỦ ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND (REPORTS LIBRARY
+                    TABLE)</span>
+                <button id="btnCopyHtml"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyHtml">Copy HTML</span>
+                </button>
+            </div>
+            <pre class="p-5 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-[600px]"
+                id="codeHtml">&lt;!-- Yêu cầu Tailwind CSS CDN v4 trong thẻ &lt;head&gt; --&gt;
+&lt;div class="w-full bg-white border border-slate-200 rounded-xl shadow-2xs font-sans select-none overflow-hidden"&gt;
+  &lt;!-- Toolbar bảng --&gt;
+  &lt;div class="p-4 flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 bg-white"&gt;
+    &lt;div class="flex items-center gap-1.5 text-slate-800"&gt;
+      &lt;h3 class="text-base font-normal tracking-tight"&gt;Báo cáo&lt;/h3&gt;
+    &lt;/div&gt;
+
+    &lt;div class="flex items-center gap-3"&gt;
+      &lt;button type="button" id="btnCreateReport" class="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-lg cursor-pointer shadow-2xs"&gt;
+        &lt;span class="text-base leading-none font-bold"&gt;+&lt;/span&gt;
+        &lt;span&gt;Tạo báo cáo mới&lt;/span&gt;
+      &lt;/button&gt;
+
+      &lt;div class="relative w-64"&gt;
+        &lt;span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400"&gt;
+          &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+        &lt;input type="text" id="reportSearchInput" placeholder="Tìm kiếm" class="w-full bg-white border border-slate-300 rounded-lg pl-9 pr-3 py-1.5 text-xs outline-none focus:border-blue-500"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Bảng dữ liệu --&gt;
+  &lt;div class="overflow-x-auto"&gt;
+    &lt;table class="w-full text-left text-xs text-slate-700 border-collapse"&gt;
+      &lt;thead class="bg-white text-[11px] font-medium text-slate-500 border-b border-slate-200"&gt;
+        &lt;tr&gt;
+          &lt;th scope="col" class="p-3.5 w-12 text-center"&gt;&lt;input type="checkbox" id="selectAllReports" class="w-4 h-4 rounded cursor-pointer"&gt;&lt;/th&gt;
+          &lt;th scope="col" class="py-3 px-3 w-14 font-medium"&gt;Loại&lt;/th&gt;
+          &lt;th scope="col" class="py-3 px-3 font-medium min-w-[200px]"&gt;Tên&lt;/th&gt;
+          &lt;th scope="col" class="py-3 px-3 font-medium w-24"&gt;Người tạo&lt;/th&gt;
+          &lt;th scope="col" class="py-3 px-3 font-medium w-40"&gt;Sửa đổi lần gần đây nhất ↓&lt;/th&gt;
+          &lt;th scope="col" class="py-3 px-3 font-medium min-w-[170px]"&gt;Mẫu&lt;/th&gt;
+          &lt;th scope="col" class="py-3 px-3 font-medium min-w-[150px]"&gt;Bộ sưu tập&lt;/th&gt;
+          &lt;th scope="col" class="py-3 px-3 font-medium min-w-[240px]"&gt;Mô tả&lt;/th&gt;
+          &lt;th scope="col" class="p-3 w-10 text-center"&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody class="divide-y divide-slate-100" id="reportTableBody"&gt;
+        &lt;tr class="hover:bg-slate-50/80 cursor-pointer report-row"&gt;
+          &lt;td class="p-3.5 text-center"&gt;&lt;input type="checkbox" class="report-checkbox w-4 h-4 rounded cursor-pointer"&gt;&lt;/td&gt;
+          &lt;td class="py-3 px-3 text-slate-600"&gt;📊&lt;/td&gt;
+          &lt;td class="py-3 px-3 font-normal text-slate-900 report-title"&gt;Tổng quan về mục tiêu tạo khách hàng tiềm năng&lt;/td&gt;
+          &lt;td class="py-3 px-3 text-slate-500 font-mono"&gt;-&lt;/td&gt;
+          &lt;td class="py-3 px-3 text-slate-500 font-mono"&gt;-&lt;/td&gt;
+          &lt;td class="py-3 px-3 text-slate-700"&gt;Tổng quan về mục tiêu tạo khách hàng tiềm năng&lt;/td&gt;
+          &lt;td class="py-3 px-3 text-slate-700"&gt;Mục tiêu kinh doanh&lt;/td&gt;
+          &lt;td class="py-3 px-3 text-slate-600 truncate max-w-xs"&gt;Báo cáo này trình bày bản phân tích các chỉ số về...&lt;/td&gt;
+          &lt;td class="p-3 text-center"&gt;⋮&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Thanh phân trang dưới cùng bảng --&gt;
+  &lt;div class="px-6 py-3 border-t border-slate-200 flex flex-wrap items-center justify-end gap-6 text-xs text-slate-600 bg-white select-none"&gt;
+    &lt;div class="flex items-center gap-3"&gt;
+      &lt;span class="text-slate-500"&gt;Số mục trên mỗi trang:&lt;/span&gt;
+      &lt;select id="pageSizeSelect" class="bg-white border border-slate-300 rounded px-2.5 py-1 text-xs outline-none cursor-pointer"&gt;
+        &lt;option value="10"&gt;10&lt;/option&gt;
+        &lt;option value="15" selected&gt;15&lt;/option&gt;
+        &lt;option value="25"&gt;25&lt;/option&gt;
+        &lt;option value="50"&gt;50&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class="font-mono text-slate-700" id="paginationInfo"&gt;1 – 15/31&lt;/div&gt;
+    &lt;div class="flex items-center gap-1 text-slate-600"&gt;
+      &lt;button type="button" id="btnFirstPage" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-300 cursor-not-allowed" disabled&gt;|‹&lt;/button&gt;
+      &lt;button type="button" id="btnPrevPage" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-300 cursor-not-allowed" disabled&gt;‹&lt;/button&gt;
+      &lt;button type="button" id="btnNextPage" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-600 hover:bg-slate-100 cursor-pointer"&gt;›&lt;/button&gt;
+      &lt;button type="button" id="btnLastPage" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-600 hover:bg-slate-100 cursor-pointer"&gt;›|&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- ================= KHỐI COPY JS 100% ĐẦY ĐỦ ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM)</span>
+                <button id="btnCopyJs"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyJs">Copy JS</span>
+                </button>
+            </div>
+            <pre class="p-5 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-[500px]" id="codeJs">// 1. TÌM KIẾM BÁO CÁO THEO TÊN
+const reportSearchInput = document.querySelector("#reportSearchInput");
+const reportRows = document.querySelectorAll(".report-row");
+
+if (reportSearchInput) {
+  reportSearchInput.addEventListener("input", function () {
+    const q = this.value.toLowerCase().trim();
+    reportRows.forEach(row => {
+      const title = row.querySelector(".report-title")?.innerText.toLowerCase() || "";
+      row.classList.toggle("hidden", !title.includes(q));
+    });
+  });
+}
+
+// 2. CHỌN TẤT CẢ DÒNG BÁO CÁO (SELECT ALL CHECKBOX)
+const selectAllReports = document.querySelector("#selectAllReports");
+const reportCheckboxes = document.querySelectorAll(".report-checkbox");
+
+if (selectAllReports) {
+  selectAllReports.addEventListener("change", function () {
+    reportCheckboxes.forEach(cb => {
+      cb.checked = this.checked;
+      cb.closest(".report-row").classList.toggle("bg-blue-50/40", this.checked);
+    });
+  });
+}
+
+reportCheckboxes.forEach(cb => {
+  cb.addEventListener("change", function () {
+    this.closest(".report-row").classList.toggle("bg-blue-50/40", this.checked);
+    if (selectAllReports) {
+      const allChecked = Array.from(reportCheckboxes).every(c => c.checked);
+      selectAllReports.checked = allChecked;
+    }
+  });
+});
+
+// 3. MENU TÙY CHỌN 3 CHẤM (⋮) TRÊN TỪNG DÒNG
+document.querySelectorAll(".btn-report-more").forEach(btn => {
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    const currentMenu = this.nextElementSibling;
+    document.querySelectorAll(".report-dropdown-menu").forEach(menu => {
+      if (menu !== currentMenu) menu.classList.add("hidden");
+    });
+    if (currentMenu) currentMenu.classList.toggle("hidden");
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".report-dropdown-container")) {
+    document.querySelectorAll(".report-dropdown-menu").forEach(menu => {
+      menu.classList.add("hidden");
+    });
+  }
+});
+
+// 4. LOGIC ĐIỀU KHIỂN PHÂN TRANG (PAGINATION)
+const pageSizeSelect = document.querySelector("#pageSizeSelect");
+const paginationInfo = document.querySelector("#paginationInfo");
+const btnFirstPage = document.querySelector("#btnFirstPage");
+const btnPrevPage = document.querySelector("#btnPrevPage");
+const btnNextPage = document.querySelector("#btnNextPage");
+const btnLastPage = document.querySelector("#btnLastPage");
+
+let currentPage = 1;
+const totalItems = 31;
+let pageSize = parseInt(pageSizeSelect?.value || 15);
+
+function updatePaginationUI() {
+  if (!paginationInfo) return;
+  const totalPages = Math.ceil(totalItems / pageSize);
+  const start = (currentPage - 1) * pageSize + 1;
+  const end = Math.min(currentPage * pageSize, totalItems);
+
+  paginationInfo.innerText = `${start} – ${end}/${totalItems}`;
+
+  const isFirst = currentPage === 1;
+  const isLast = currentPage === totalPages;
+
+  [btnFirstPage, btnPrevPage].forEach(btn => {
+    if (!btn) return;
+    btn.disabled = isFirst;
+    btn.classList.toggle("text-slate-300", isFirst);
+    btn.classList.toggle("cursor-not-allowed", isFirst);
+    btn.classList.toggle("text-slate-600", !isFirst);
+    btn.classList.toggle("hover:bg-slate-100", !isFirst);
+    btn.classList.toggle("cursor-pointer", !isFirst);
+  });
+
+  [btnNextPage, btnLastPage].forEach(btn => {
+    if (!btn) return;
+    btn.disabled = isLast;
+    btn.classList.toggle("text-slate-300", isLast);
+    btn.classList.toggle("cursor-not-allowed", isLast);
+    btn.classList.toggle("text-slate-600", !isLast);
+    btn.classList.toggle("hover:bg-slate-100", !isLast);
+    btn.classList.toggle("cursor-pointer", !isLast);
+  });
+}
+
+pageSizeSelect?.addEventListener("change", function () {
+  pageSize = parseInt(this.value);
+  currentPage = 1;
+  updatePaginationUI();
+});
+
+btnNextPage?.addEventListener("click", () => {
+  const totalPages = Math.ceil(totalItems / pageSize);
+  if (currentPage < totalPages) {
+    currentPage++;
+    updatePaginationUI();
+  }
+});
+
+btnPrevPage?.addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage--;
+    updatePaginationUI();
+  }
+});
+
+btnFirstPage?.addEventListener("click", () => {
+  currentPage = 1;
+  updatePaginationUI();
+});
+
+btnLastPage?.addEventListener("click", () => {
+  currentPage = Math.ceil(totalItems / pageSize);
+  updatePaginationUI();
+});</pre>
+        </div>
+
+    </main>
+
+    <!-- ================= SCRIPT THỰC THI TRANG ================= -->
+    <script src="script.js"></script>
+    <script>
+        // 1. Tìm kiếm báo cáo
+        const reportSearchInput = document.querySelector("#reportSearchInput");
+        const reportRows = document.querySelectorAll(".report-row");
+
+        if (reportSearchInput) {
+            reportSearchInput.addEventListener("input", function () {
+                const q = this.value.toLowerCase().trim();
+                reportRows.forEach(row => {
+                    const title = row.querySelector(".report-title")?.innerText.toLowerCase() || "";
+                    row.classList.toggle("hidden", !title.includes(q));
+                });
+            });
+        }
+
+        // 2. Select All Checkbox
+        const selectAllReports = document.querySelector("#selectAllReports");
+        const reportCheckboxes = document.querySelectorAll(".report-checkbox");
+
+        if (selectAllReports) {
+            selectAllReports.addEventListener("change", function () {
+                reportCheckboxes.forEach(cb => {
+                    cb.checked = this.checked;
+                    cb.closest(".report-row").classList.toggle("bg-blue-50/40", this.checked);
+                });
+            });
+        }
+
+        reportCheckboxes.forEach(cb => {
+            cb.addEventListener("change", function () {
+                this.closest(".report-row").classList.toggle("bg-blue-50/40", this.checked);
+                if (selectAllReports) {
+                    const allChecked = Array.from(reportCheckboxes).every(c => c.checked);
+                    selectAllReports.checked = allChecked;
+                }
+            });
+        });
+
+        // 3. Menu 3 chấm
+        document.querySelectorAll(".btn-report-more").forEach(btn => {
+            btn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                const currentMenu = this.nextElementSibling;
+                document.querySelectorAll(".report-dropdown-menu").forEach(menu => {
+                    if (menu !== currentMenu) menu.classList.add("hidden");
+                });
+                if (currentMenu) currentMenu.classList.toggle("hidden");
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!e.target.closest(".report-dropdown-container")) {
+                document.querySelectorAll(".report-dropdown-menu").forEach(menu => {
+                    menu.classList.add("hidden");
+                });
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                document.querySelectorAll(".report-dropdown-menu").forEach(menu => {
+                    menu.classList.add("hidden");
+                });
+            }
+        });
+
+        // 4. Nút tạo báo cáo
+        const btnCreateReport = document.querySelector("#btnCreateReport");
+        if (btnCreateReport) {
+            btnCreateReport.addEventListener("click", () => {
+                alert("Đang mở trình tạo báo cáo mới!");
+            });
+        }
+
+        // 5. Logic điều khiển phân trang (Pagination Footer)
+        const pageSizeSelect = document.querySelector("#pageSizeSelect");
+        const paginationInfo = document.querySelector("#paginationInfo");
+        const btnFirstPage = document.querySelector("#btnFirstPage");
+        const btnPrevPage = document.querySelector("#btnPrevPage");
+        const btnNextPage = document.querySelector("#btnNextPage");
+        const btnLastPage = document.querySelector("#btnLastPage");
+
+        let currentPage = 1;
+        const totalItems = 31;
+        let pageSize = parseInt(pageSizeSelect?.value || 15);
+
+        function updatePaginationUI() {
+            if (!paginationInfo) return;
+            const totalPages = Math.ceil(totalItems / pageSize);
+            const start = (currentPage - 1) * pageSize + 1;
+            const end = Math.min(currentPage * pageSize, totalItems);
+
+            paginationInfo.innerText = `${start} – ${end}/${totalItems}`;
+
+            const isFirst = currentPage === 1;
+            const isLast = currentPage === totalPages;
+
+            [btnFirstPage, btnPrevPage].forEach(btn => {
+                if (!btn) return;
+                btn.disabled = isFirst;
+                btn.classList.toggle("text-slate-300", isFirst);
+                btn.classList.toggle("cursor-not-allowed", isFirst);
+                btn.classList.toggle("text-slate-600", !isFirst);
+                btn.classList.toggle("hover:bg-slate-100", !isFirst);
+                btn.classList.toggle("cursor-pointer", !isFirst);
+            });
+
+            [btnNextPage, btnLastPage].forEach(btn => {
+                if (!btn) return;
+                btn.disabled = isLast;
+                btn.classList.toggle("text-slate-300", isLast);
+                btn.classList.toggle("cursor-not-allowed", isLast);
+                btn.classList.toggle("text-slate-600", !isLast);
+                btn.classList.toggle("hover:bg-slate-100", !isLast);
+                btn.classList.toggle("cursor-pointer", !isLast);
+            });
+        }
+
+        if (pageSizeSelect) {
+            pageSizeSelect.addEventListener("change", function () {
+                pageSize = parseInt(this.value);
+                currentPage = 1;
+                updatePaginationUI();
+            });
+        }
+
+        btnNextPage?.addEventListener("click", () => {
+            const totalPages = Math.ceil(totalItems / pageSize);
+            if (currentPage < totalPages) {
+                currentPage++;
+                updatePaginationUI();
+            }
+        });
+
+        btnPrevPage?.addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+                updatePaginationUI();
+            }
+        });
+
+        btnFirstPage?.addEventListener("click", () => {
+            currentPage = 1;
+            updatePaginationUI();
+        });
+
+        btnLastPage?.addEventListener("click", () => {
+            currentPage = Math.ceil(totalItems / pageSize);
+            updatePaginationUI();
+        });
+
+        // 6. Nút Copy Clipboard
+        const btnCopyHtml = document.querySelector("#btnCopyHtml");
+        const txtCopyHtml = document.querySelector("#txtCopyHtml");
+        const codeHtml = document.querySelector("#codeHtml");
+
+        if (btnCopyHtml && codeHtml) {
+            btnCopyHtml.addEventListener("click", () => {
+                navigator.clipboard.writeText(codeHtml.innerText).then(() => {
+                    txtCopyHtml.innerText = "Đã Copy!";
+                    btnCopyHtml.classList.replace("bg-slate-800", "bg-emerald-600");
+                    setTimeout(() => {
+                        txtCopyHtml.innerText = "Copy HTML";
+                        btnCopyHtml.classList.replace("bg-emerald-600", "bg-slate-800");
+                    }, 1800);
+                });
+            });
+        }
+
+        const btnCopyJs = document.querySelector("#btnCopyJs");
+        const txtCopyJs = document.querySelector("#txtCopyJs");
+        const codeJs = document.querySelector("#codeJs");
+
+        if (btnCopyJs && codeJs) {
+            btnCopyJs.addEventListener("click", () => {
+                navigator.clipboard.writeText(codeJs.innerText).then(() => {
+                    txtCopyJs.innerText = "Đã Copy!";
+                    btnCopyJs.classList.replace("bg-slate-800", "bg-emerald-600");
+                    setTimeout(() => {
+                        txtCopyJs.innerText = "Copy JS";
+                        btnCopyJs.classList.replace("bg-emerald-600", "bg-slate-800");
+                    }, 1800);
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
