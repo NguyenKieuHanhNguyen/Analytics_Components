@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding & Guide Cards - GA4 UI Kit</title>
+    <!-- Tailwind CSS CDN v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800 font-sans">
+
+    <!-- ================= SIDEBAR MENU BÊN TRÁI ================= -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+        <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+            <div
+                class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+                📊
+            </div>
+            <div>
+                <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+                <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+            </div>
+        </div>
+
+        <div class="p-3 overflow-y-auto flex-1">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+            <nav class="space-y-1">
+                <a href="index.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏠</span> Tổng quan UI Kit
+                </a>
+                <a href="accordion.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📂</span> Accordion Tasks
+                </a>
+                <a href="popup-picker.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🪟</span> Popup / Modal Picker
+                </a>
+                <a href="sidebar.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📑</span> Sidebar GA4
+                </a>
+                <a href="exploration-carousel.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🎠</span> Carousel Khám phá
+                </a>
+                <a href="account-settings.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚙️</span> Cài đặt Quản trị
+                </a>
+                <a href="data-streams.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🌊</span> Luồng Dữ Liệu
+                </a>
+                <a href="email-communications.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>✉️</span> Liên Lạc Qua Email
+                </a>
+                <a href="user-account-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>👤</span> Thông Tin Tài Khoản
+                </a>
+                <a href="property-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏢</span> Thông Tin Tài Sản
+                </a>
+                <a href="reports-library.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📋</span> Thư Viện Báo Cáo
+                </a>
+                <a href="onboarding-cards.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+                    <span>🧭</span> Thẻ Hướng Dẫn & Onboarding
+                </a>
+                <a href="advertising-hub.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📢</span> Bắt Đầu Quảng Cáo
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- ================= NỘI DUNG CHÍNH ================= -->
+    <main class="flex-1 p-8 max-w-6xl overflow-y-auto space-y-16">
+
+        <!-- ====================================================================== -->
+        <!-- PHẦN 1: MẪU 12.1 - BẮT ĐẦU SỬ DỤNG GOOGLE ANALYTICS 4                  -->
+        <!-- ====================================================================== -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 12.1</span>
+                <h2 class="text-xl font-bold text-slate-800">GA4 Getting Started Cards (Bắt đầu sử dụng Google Analytics
+                    4)</h2>
+            </div>
+
+            <!-- Khung xem trước Mẫu 12.1 -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                    <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước
+                        tương tác thực tế
+                    </span>
+                    <span
+                        class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+                </div>
+
+                <div class="p-8 bg-slate-100/60">
+                    <div class="w-full max-w-5xl mx-auto font-sans select-none space-y-5">
+                        <h2 class="text-xl font-normal text-slate-900 tracking-tight">
+                            Bắt đầu sử dụng Google Analytics 4
+                        </h2>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
+                            <!-- Card 1 -->
+                            <div
+                                class="bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-6 shadow-2xs flex flex-col justify-between transition-all group">
+                                <div class="space-y-4">
+                                    <div class="h-40 flex items-center justify-center relative">
+                                        <svg class="w-44 h-36" viewBox="0 0 160 130" fill="none">
+                                            <circle cx="95" cy="65" r="46" fill="#DBEAFE" />
+                                            <rect x="25" y="24" width="95" height="68" rx="2" fill="#FFFFFF"
+                                                stroke="#475569" stroke-width="1.8" />
+                                            <line x1="42" y1="36" x2="42" y2="78" stroke="#CBD5E1" stroke-width="1.6"
+                                                stroke-linecap="round" />
+                                            <line x1="62" y1="36" x2="62" y2="78" stroke="#CBD5E1" stroke-width="1.6"
+                                                stroke-linecap="round" />
+                                            <line x1="82" y1="36" x2="82" y2="78" stroke="#CBD5E1" stroke-width="1.6"
+                                                stroke-linecap="round" />
+                                            <line x1="102" y1="36" x2="102" y2="78" stroke="#CBD5E1" stroke-width="1.6"
+                                                stroke-linecap="round" />
+                                            <circle cx="42" cy="50" r="4.5" fill="#22C55E" />
+                                            <circle cx="62" cy="68" r="4.5" fill="#EF4444" />
+                                            <circle cx="82" cy="55" r="4.5" fill="#3B82F6" />
+                                            <circle cx="102" cy="45" r="4.5" fill="#E2E8F0" />
+                                            <path
+                                                d="M125 105C118 95 110 75 92 60C89 57.5 86 60 88 63C92 68 96 74 97 80L93 72C91 68 87 70 88 74L93 84L91 82C89 80 86 82 88 85L95 94L110 115H135L125 105Z"
+                                                fill="#FDBA74" stroke="#475569" stroke-width="1.4"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <h3
+                                            class="text-base font-medium text-slate-900 group-hover:text-blue-600 transition-colors">
+                                            Tiếp tục thiết lập tài sản
+                                        </h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed">
+                                            Một tài sản lưu giữ tất cả dữ liệu đo lường cho trang web, ứng dụng di động
+                                            của bạn hoặc cả hai. Hãy thiết lập tài sản để có thể thu thập dữ liệu, đo
+                                            lường hoạt động và làm nhiều việc khác.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="pt-6 text-right">
+                                    <a href="accordion.html"
+                                        class="text-xs font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors">
+                                        Chuyển đến Tasks
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div
+                                class="bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-6 shadow-2xs flex flex-col justify-between transition-all group">
+                                <div class="space-y-4">
+                                    <div class="h-40 flex items-center justify-center relative">
+                                        <svg class="w-48 h-36" viewBox="0 0 170 130" fill="none">
+                                            <path d="M22 100L30 30H145V100H22Z" fill="#FFFFFF" />
+                                            <path d="M22 100L28 30H30L24 100H22Z" fill="#334155" />
+                                            <rect x="28" y="30" width="120" height="70" rx="2" stroke="#334155"
+                                                stroke-width="1.8" fill="#FFFFFF" />
+                                            <line x1="28" y1="42" x2="148" y2="42" stroke="#334155"
+                                                stroke-width="1.5" />
+                                            <circle cx="37" cy="36" r="1.5" fill="#334155" />
+                                            <circle cx="43" cy="36" r="1.5" fill="#334155" />
+                                            <line x1="50" y1="78" x2="78" y2="90" stroke="#334155" stroke-width="1.8" />
+                                            <line x1="78" y1="90" x2="105" y2="58" stroke="#334155"
+                                                stroke-width="1.8" />
+                                            <line x1="105" y1="58" x2="132" y2="72" stroke="#334155"
+                                                stroke-width="1.8" />
+                                            <circle cx="50" cy="78" r="5" fill="#3B82F6" />
+                                            <circle cx="78" cy="90" r="5" fill="#EF4444" />
+                                            <circle cx="105" cy="58" r="5" fill="#EAB308" />
+                                            <circle cx="132" cy="72" r="5" fill="#22C55E" />
+                                        </svg>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <h3
+                                            class="text-base font-medium text-slate-900 group-hover:text-blue-600 transition-colors">
+                                            Dùng thử tài khoản Analytics minh họa
+                                        </h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed">
+                                            Tìm hiểu các tính năng của Google Analytics 4 bằng cách phân tích và thử
+                                            nghiệm với dữ liệu doanh nghiệp thực tế.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="pt-6 text-right">
+                                    <a href="https://support.google.com/analytics/answer/6367342" target="_blank"
+                                        class="text-xs font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors inline-flex items-center gap-1.5">
+                                        <span>Truy cập vào tài khoản này</span>
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                            stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div
+                                class="bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-6 shadow-2xs flex flex-col justify-between transition-all group">
+                                <div class="space-y-4">
+                                    <div class="h-40 flex items-center justify-center relative">
+                                        <svg class="w-48 h-36" viewBox="0 0 170 130" fill="none">
+                                            <rect x="25" y="24" width="95" height="58" rx="2" stroke="#475569"
+                                                stroke-width="1.8" fill="#FFFFFF" />
+                                            <line x1="25" y1="32" x2="120" y2="32" stroke="#CBD5E1"
+                                                stroke-width="1.2" />
+                                            <circle cx="31" cy="28" r="1.2" fill="#94A3B8" />
+                                            <circle cx="35" cy="28" r="1.2" fill="#94A3B8" />
+                                            <rect x="52" y="52" width="10" height="22" stroke="#475569"
+                                                stroke-width="1.2" fill="#FFFFFF" />
+                                            <rect x="64" y="42" width="10" height="32" stroke="#475569"
+                                                stroke-width="1.2" fill="#F59E0B" />
+                                            <rect x="76" y="36" width="10" height="38" stroke="#475569"
+                                                stroke-width="1.2" fill="#FFFFFF" />
+                                            <rect x="88" y="46" width="10" height="28" stroke="#475569"
+                                                stroke-width="1.2" fill="#FFFFFF" />
+                                            <path d="M72 82L66 100H87L81 82" stroke="#475569" stroke-width="1.5"
+                                                stroke-linejoin="round" fill="#E2E8F0" />
+                                            <line x1="50" y1="100" x2="105" y2="100" stroke="#475569" stroke-width="1.8"
+                                                stroke-linecap="round" />
+                                            <rect x="110" y="26" width="14" height="14" rx="1" fill="#F59E0B" />
+                                            <rect x="32" y="84" width="14" height="13" rx="1.5" fill="#3B82F6" />
+                                            <path d="M120 84C120 95 125 100 132 100C139 100 144 95 144 84H120Z"
+                                                fill="#DBEAFE" stroke="#475569" stroke-width="1.4" />
+                                            <path d="M144 88C147 88 149 90 149 93C149 96 146 98 143 98" stroke="#475569"
+                                                stroke-width="1.4" />
+                                            <path d="M130 80C128 76 132 72 130 68" stroke="#94A3B8" stroke-width="1.2"
+                                                stroke-linecap="round" />
+                                        </svg>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <h3
+                                            class="text-base font-medium text-slate-900 group-hover:text-blue-600 transition-colors">
+                                            Tìm hiểu về Analytics
+                                        </h3>
+                                        <p class="text-xs text-slate-600 leading-relaxed">
+                                            Khai thác tối đa Google Analytics nhờ khóa học miễn phí này.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="pt-6 text-left">
+                                    <a href="https://skillshop.exceedlms.com/student/catalog/list?category_ids=6434-google-analytics-4"
+                                        target="_blank"
+                                        class="text-xs font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors inline-flex items-center gap-1.5">
+                                        <span>Tham gia khóa học này trên Skillshop</span>
+                                        <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khung Copy HTML Mẫu 12.1 -->
+            <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+                <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                    <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND (MẪU 12.1)</span>
+                    <button id="btnCopyHtml1"
+                        class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                        <span>📋</span> <span id="txtCopyHtml1">Copy HTML</span>
+                    </button>
+                </div>
+                <pre class="p-5 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-[500px]"
+                    id="codeHtml1">&lt;div class="w-full max-w-5xl mx-auto font-sans select-none space-y-5"&gt;
+  &lt;h2 class="text-xl font-normal text-slate-900 tracking-tight"&gt;
+    Bắt đầu sử dụng Google Analytics 4
+  &lt;/h2&gt;
+
+  &lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch"&gt;
+    &lt;!-- Card 1 --&gt;
+    &lt;div class="bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-6 shadow-2xs flex flex-col justify-between group"&gt;
+      &lt;div class="space-y-4"&gt;
+        &lt;h3 class="text-base font-medium text-slate-900"&gt;Tiếp tục thiết lập tài sản&lt;/h3&gt;
+        &lt;p class="text-xs text-slate-600 leading-relaxed"&gt;Một tài sản lưu giữ tất cả dữ liệu đo lường cho trang web, ứng dụng di động của bạn hoặc cả hai.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="pt-6 text-right"&gt;
+        &lt;a href="accordion.html" class="text-xs font-medium text-blue-600 hover:underline"&gt;Chuyển đến Tasks&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Card 2 --&gt;
+    &lt;div class="bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-6 shadow-2xs flex flex-col justify-between group"&gt;
+      &lt;div class="space-y-4"&gt;
+        &lt;h3 class="text-base font-medium text-slate-900"&gt;Dùng thử tài khoản Analytics minh họa&lt;/h3&gt;
+        &lt;p class="text-xs text-slate-600 leading-relaxed"&gt;Tìm hiểu các tính năng của Google Analytics 4 bằng cách phân tích và thử nghiệm.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="pt-6 text-right"&gt;
+        &lt;a href="#" class="text-xs font-medium text-blue-600 hover:underline"&gt;Truy cập vào tài khoản này ↗&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Card 3 --&gt;
+    &lt;div class="bg-white border border-slate-200 hover:border-slate-300 rounded-xl p-6 shadow-2xs flex flex-col justify-between group"&gt;
+      &lt;div class="space-y-4"&gt;
+        &lt;h3 class="text-base font-medium text-slate-900"&gt;Tìm hiểu về Analytics&lt;/h3&gt;
+        &lt;p class="text-xs text-slate-600 leading-relaxed"&gt;Khai thác tối đa Google Analytics nhờ khóa học miễn phí này.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="pt-6 text-left"&gt;
+        &lt;a href="#" class="text-xs font-medium text-blue-600 hover:underline"&gt;Tham gia khóa học này trên Skillshop ↗&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <!-- Khung Copy JS Mẫu 12.1 -->
+            <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+                <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                    <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM) (MẪU 12.1)</span>
+                    <button id="btnCopyJs1"
+                        class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                        <span>📋</span> <span id="txtCopyJs1">Copy JS</span>
+                    </button>
+                </div>
+                <pre class="p-5 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-[300px]"
+                    id="codeJs1">// Theo dõi hành vi bấm vào các thẻ
+document.querySelectorAll(".group").forEach(card => {
+  card.addEventListener("click", function(e) {
+    if (e.target.closest("a")) return;
+    const cardTitle = this.querySelector("h3")?.innerText.trim();
+    console.log(`Đã chọn: ${cardTitle}`);
+  });
+});</pre>
+            </div>
+        </section>
+
+        <!-- Sau này bạn chỉ cần thêm tiếp:
+         <section class="space-y-6">Mẫu 12.2...</section>
+         <section class="space-y-6">Mẫu 12.3...</section>
+         vào ngay đây -->
+
+    </main>
+
+    <!-- ================= SCRIPT THỰC THI TRANG ================= -->
+    <script src="script.js"></script>
+    <script>
+        function setupCopyButton(btnId, txtId, codeId, defaultText) {
+            const btn = document.querySelector(btnId);
+            const txt = document.querySelector(txtId);
+            const code = document.querySelector(codeId);
+            if (!btn || !code) return;
+
+            btn.addEventListener("click", () => {
+                navigator.clipboard.writeText(code.innerText).then(() => {
+                    txt.innerText = "Đã Copy!";
+                    btn.classList.replace("bg-slate-800", "bg-emerald-600");
+                    setTimeout(() => {
+                        txt.innerText = defaultText;
+                        btn.classList.replace("bg-emerald-600", "bg-slate-800");
+                    }, 1800);
+                });
+            });
+        }
+
+        setupCopyButton("#btnCopyHtml1", "#txtCopyHtml1", "#codeHtml1", "Copy HTML");
+        setupCopyButton("#btnCopyJs1", "#txtCopyJs1", "#codeJs1", "Copy JS");
+    </script>
+</body>
+
+</html>

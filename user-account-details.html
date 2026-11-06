@@ -55,10 +55,6 @@
                     class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
                     <span>🌊</span> Luồng Dữ Liệu
                 </a>
-                <a href="realtime-overview.html"
-                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
-                    <span>⏱️</span> Thời Gian Thực
-                </a>
                 <a href="email-communications.html"
                     class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
                     <span>✉️</span> Liên Lạc Qua Email
@@ -74,6 +70,14 @@
                 <a href="reports-library.html"
                     class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
                     <span>📋</span> Thư Viện Báo Cáo
+                </a>
+                <a href="onboarding-cards.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🧭</span> Thẻ Hướng Dẫn & Onboarding
+                </a>
+                <a href="advertising-hub.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📢</span> Bắt Đầu Quảng Cáo
                 </a>
             </nav>
         </div>
@@ -469,6 +473,502 @@ document.addEventListener("click", (e) => {
   }
 });</pre>
         </div>
+        <!-- ====================================================================== -->
+        <!-- PHẦN 2: MẪU 2 - QUẢN LÝ QUYỀN TRUY CẬP VÀO TÀI KHOẢN                   -->
+        <!-- ====================================================================== -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu 2</span>
+                <h2 class="text-xl font-bold text-slate-800">GA4 Account Access Management (Quản lý quyền truy cập vào
+                    tài khoản)</h2>
+            </div>
+
+            <!-- Khung xem trước Mẫu 2 -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                    <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước
+                        tương tác (Tích checkbox để kích hoạt thanh công cụ đã chọn / xóa bỏ)
+                    </span>
+                    <span
+                        class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+                </div>
+
+                <div class="p-8 bg-slate-100/60">
+                    <div
+                        class="w-full bg-white border border-slate-200 rounded-xl shadow-2xs font-sans select-none overflow-hidden">
+
+                        <!-- Toolbar Mặc định -->
+                        <div id="defaultToolbar"
+                            class="px-6 py-4 border-b border-slate-200 flex flex-wrap items-center justify-between gap-4 bg-white transition-all">
+                            <div class="flex items-center gap-4">
+                                <button type="button" class="text-slate-500 hover:text-slate-800 p-1 cursor-pointer"
+                                    title="Đóng">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                                <div>
+                                    <p class="text-[11px] text-slate-500 font-normal">Default Account for Firebase</p>
+                                    <div class="flex items-center gap-2 mt-0.5">
+                                        <h3 class="text-base font-normal text-slate-900 tracking-tight">
+                                            Quản lý quyền truy cập vào tài khoản
+                                        </h3>
+                                        <span class="text-xs text-slate-500 font-normal" id="rowCountText">5 hàng</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Công cụ bên phải: Ô tìm kiếm + Lọc + Nút Thêm + Menu -->
+                            <div class="flex items-center gap-3">
+                                <div class="relative w-64">
+                                    <span
+                                        class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                            stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </span>
+                                    <input type="text" id="userSearchInput" placeholder="Tìm kiếm"
+                                        class="w-full bg-slate-100/70 hover:bg-slate-100 focus:bg-white border border-transparent focus:border-blue-500 rounded-lg pl-9 pr-3 py-1.5 text-xs text-slate-800 outline-none transition-colors">
+                                </div>
+
+                                <button type="button"
+                                    class="p-2 rounded-full hover:bg-slate-100 text-slate-600 transition-colors cursor-pointer"
+                                    title="Bộ lọc">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                                    </svg>
+                                </button>
+
+                                <button type="button" id="btnAddUser"
+                                    class="w-9 h-9 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center shadow-md cursor-pointer transition-colors"
+                                    title="Thêm người dùng">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                                    </svg>
+                                </button>
+
+                                <button type="button"
+                                    class="p-2 rounded-full hover:bg-slate-100 text-slate-600 transition-colors cursor-pointer"
+                                    title="Tùy chọn khác">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="5" r="1.5" />
+                                        <circle cx="12" cy="12" r="1.5" />
+                                        <circle cx="12" cy="19" r="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Toolbar Khi Đã Chọn Hàng -->
+                        <div id="selectionToolbar"
+                            class="hidden px-6 py-4 border-b border-blue-200 flex flex-wrap items-center justify-between gap-4 bg-blue-50/70 transition-all">
+                            <div class="flex items-center gap-4">
+                                <button type="button" id="btnClearSelection"
+                                    class="text-slate-600 hover:text-slate-900 p-1 cursor-pointer" title="Bỏ chọn">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                                <h3 id="selectedCountText" class="text-base font-medium text-blue-700 tracking-tight">
+                                    Đã chọn 1/5
+                                </h3>
+                            </div>
+
+                            <div class="flex items-center gap-4">
+                                <div class="relative w-64">
+                                    <span
+                                        class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                            stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </span>
+                                    <input type="text" id="userSearchInputActive" placeholder="Tìm kiếm"
+                                        class="w-full bg-white border border-slate-300 focus:border-blue-500 rounded-lg pl-9 pr-3 py-1.5 text-xs text-slate-800 outline-none transition-colors">
+                                </div>
+
+                                <button type="button"
+                                    class="p-2 rounded-full hover:bg-blue-100/60 text-slate-600 transition-colors cursor-pointer"
+                                    title="Bộ lọc">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                                    </svg>
+                                </button>
+
+                                <button type="button" id="btnDeleteSelected"
+                                    class="text-xs font-semibold text-red-600 hover:text-red-700 px-3 py-1.5 rounded-md hover:bg-red-50 cursor-pointer transition-colors">
+                                    Xóa bỏ
+                                </button>
+
+                                <button type="button"
+                                    class="p-2 rounded-full hover:bg-blue-100/60 text-slate-600 transition-colors cursor-pointer"
+                                    title="Tùy chọn khác">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="5" r="1.5" />
+                                        <circle cx="12" cy="12" r="1.5" />
+                                        <circle cx="12" cy="19" r="1.5" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- BẢNG PHÂN QUYỀN TRUY CẬP -->
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs text-slate-700 border-collapse">
+                                <thead
+                                    class="bg-white text-[11px] font-medium text-slate-500 border-b border-slate-200">
+                                    <tr>
+                                        <th scope="col" class="p-4 w-12 text-center">
+                                            <input type="checkbox" id="selectAllUsers"
+                                                class="w-4 h-4 rounded text-blue-600 border-slate-300 cursor-pointer accent-blue-600">
+                                        </th>
+                                        <th scope="col"
+                                            class="py-3 px-3 font-medium min-w-[280px] cursor-pointer hover:text-blue-600 transition-colors select-none"
+                                            id="sortNameBtn">
+                                            Tên <span class="inline-block text-[11px] font-bold" id="sortArrow">↑</span>
+                                        </th>
+                                        <th scope="col" class="py-3 px-3 font-medium min-w-[220px]">Email</th>
+                                        <th scope="col" class="py-3 px-3 font-medium min-w-[320px]">
+                                            <div class="flex items-center gap-1.5">
+                                                <span>Các quy định hạn chế về dữ liệu và vai trò</span>
+                                                <svg class="w-3.5 h-3.5 text-slate-400 hover:text-slate-600 cursor-pointer"
+                                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.8"
+                                                        d="M9.5 9a2.5 2.5 0 015 0c0 1.5-2 2-2 3.5m0 3v.5" />
+                                                </svg>
+                                            </div>
+                                        </th>
+                                        <th scope="col" class="p-3 w-10 text-center"></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100" id="userTableBody">
+
+                                    <!-- Dòng 1 -->
+                                    <tr class="hover:bg-slate-50/80 transition-colors cursor-pointer user-row">
+                                        <td class="p-4 text-center">
+                                            <input type="checkbox"
+                                                class="user-checkbox w-4 h-4 rounded text-blue-600 border-slate-300 cursor-pointer accent-blue-600">
+                                        </td>
+                                        <td class="py-3 px-3">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="w-7 h-7 rounded-full bg-slate-800 text-white flex items-center justify-center text-[10px] font-bold overflow-hidden shrink-0">
+                                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&crop=faces"
+                                                        alt="Avatar" class="w-full h-full object-cover"
+                                                        onerror="this.parentElement.innerText='NN'">
+                                                </div>
+                                                <span class="font-normal text-slate-900 user-name">Nguyễn Kiều Hạnh
+                                                    Nguyên</span>
+                                            </div>
+                                        </td>
+                                        <td class="py-3 px-3 font-mono text-slate-600 user-email">
+                                            nkieuhanhnguyen20@gmail.com</td>
+                                        <td class="py-3 px-3 font-normal text-slate-800">Quản trị viên</td>
+                                        <td class="p-3 text-center">
+                                            <button type="button"
+                                                class="text-slate-400 hover:text-slate-600 p-1 cursor-pointer">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="5" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="19" r="1.5" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Dòng 2 -->
+                                    <tr class="hover:bg-slate-50/80 transition-colors cursor-pointer user-row">
+                                        <td class="p-4 text-center">
+                                            <input type="checkbox"
+                                                class="user-checkbox w-4 h-4 rounded text-blue-600 border-slate-300 cursor-pointer accent-blue-600">
+                                        </td>
+                                        <td class="py-3 px-3">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="w-7 h-7 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center shrink-0">
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path
+                                                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="leading-tight">
+                                                    <span class="font-normal text-slate-900 user-name">Người chỉnh sửa
+                                                        dự án Firebase</span>
+                                                    <p class="text-[11px] text-slate-400 font-mono">288823190991</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="py-3 px-3 font-mono text-slate-500 user-email">-</td>
+                                        <td class="py-3 px-3 text-slate-600">Không có (người dùng có quyền ở một cấp
+                                            thấp hơn)</td>
+                                        <td class="p-3 text-center">
+                                            <button type="button"
+                                                class="text-slate-400 hover:text-slate-600 p-1 cursor-pointer">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="5" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="19" r="1.5" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Dòng 3 -->
+                                    <tr class="hover:bg-slate-50/80 transition-colors cursor-pointer user-row">
+                                        <td class="p-4 text-center">
+                                            <input type="checkbox"
+                                                class="user-checkbox w-4 h-4 rounded text-blue-600 border-slate-300 cursor-pointer accent-blue-600">
+                                        </td>
+                                        <td class="py-3 px-3">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="w-7 h-7 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center shrink-0">
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path
+                                                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="leading-tight">
+                                                    <span class="font-normal text-slate-900 user-name">Người xem dự án
+                                                        Firebase 288823190991</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="py-3 px-3 font-mono text-slate-500 user-email">-</td>
+                                        <td class="py-3 px-3 text-slate-600">Không có (người dùng có quyền ở một cấp
+                                            thấp hơn)</td>
+                                        <td class="p-3 text-center">
+                                            <button type="button"
+                                                class="text-slate-400 hover:text-slate-600 p-1 cursor-pointer">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="5" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="19" r="1.5" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Dòng 4 -->
+                                    <tr class="hover:bg-slate-50/80 transition-colors cursor-pointer user-row">
+                                        <td class="p-4 text-center">
+                                            <input type="checkbox"
+                                                class="user-checkbox w-4 h-4 rounded text-blue-600 border-slate-300 cursor-pointer accent-blue-600">
+                                        </td>
+                                        <td class="py-3 px-3">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="w-7 h-7 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center shrink-0">
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path
+                                                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="leading-tight">
+                                                    <span class="font-normal text-slate-900 user-name">Quyền truy cập bị
+                                                        hạn chế đối với dự án Firebase 288823190991</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="py-3 px-3 font-mono text-slate-500 user-email">-</td>
+                                        <td class="py-3 px-3 text-slate-600">Không có (người dùng có quyền ở một cấp
+                                            thấp hơn)</td>
+                                        <td class="p-3 text-center">
+                                            <button type="button"
+                                                class="text-slate-400 hover:text-slate-600 p-1 cursor-pointer">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="5" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="19" r="1.5" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Dòng 5 -->
+                                    <tr class="hover:bg-slate-50/80 transition-colors cursor-pointer user-row">
+                                        <td class="p-4 text-center">
+                                            <input type="checkbox"
+                                                class="user-checkbox w-4 h-4 rounded text-blue-600 border-slate-300 cursor-pointer accent-blue-600">
+                                        </td>
+                                        <td class="py-3 px-3">
+                                            <div class="flex items-center gap-3">
+                                                <div
+                                                    class="w-7 h-7 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center shrink-0">
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path
+                                                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="leading-tight">
+                                                    <span class="font-normal text-slate-900 user-name">Quyền truy cập bổ
+                                                        sung đối với dự án Firebase 288823190991</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="py-3 px-3 font-mono text-slate-500 user-email">-</td>
+                                        <td class="py-3 px-3 text-slate-600">Không có (người dùng có quyền ở một cấp
+                                            thấp hơn)</td>
+                                        <td class="p-3 text-center">
+                                            <button type="button"
+                                                class="text-slate-400 hover:text-slate-600 p-1 cursor-pointer">
+                                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                    <circle cx="12" cy="5" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="19" r="1.5" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khung Copy HTML Mẫu 2 -->
+            <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+                <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                    <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND (MẪU 2 - ACCESS
+                        MANAGEMENT)</span>
+                    <button id="btnCopyHtml2"
+                        class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                        <span>📋</span> <span id="txtCopyHtml2">Copy HTML</span>
+                    </button>
+                </div>
+                <pre class="p-5 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-[500px]"
+                    id="codeHtml2">&lt;div class="w-full bg-white border border-slate-200 rounded-xl shadow-2xs font-sans select-none overflow-hidden"&gt;
+  &lt;!-- Toolbar Mặc định --&gt;
+  &lt;div id="defaultToolbar" class="px-6 py-4 border-b border-slate-200 flex flex-wrap items-center justify-between gap-4 bg-white"&gt;
+    &lt;div class="flex items-center gap-4"&gt;
+      &lt;div&gt;
+        &lt;p class="text-[11px] text-slate-500"&gt;Default Account for Firebase&lt;/p&gt;
+        &lt;div class="flex items-center gap-2 mt-0.5"&gt;
+          &lt;h3 class="text-base font-normal text-slate-900"&gt;Quản lý quyền truy cập vào tài khoản&lt;/h3&gt;
+          &lt;span class="text-xs text-slate-500" id="rowCountText"&gt;5 hàng&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="flex items-center gap-3"&gt;
+      &lt;input type="text" id="userSearchInput" placeholder="Tìm kiếm" class="bg-slate-100 rounded-lg pl-9 pr-3 py-1.5 text-xs outline-none"&gt;
+      &lt;button type="button" id="btnAddUser" class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-md"&gt;+&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Toolbar Khi Đã Chọn Hàng --&gt;
+  &lt;div id="selectionToolbar" class="hidden px-6 py-4 border-b border-blue-200 flex flex-wrap items-center justify-between gap-4 bg-blue-50/70"&gt;
+    &lt;div class="flex items-center gap-4"&gt;
+      &lt;button type="button" id="btnClearSelection" class="text-slate-600 hover:text-slate-900"&gt;✕&lt;/button&gt;
+      &lt;h3 id="selectedCountText" class="text-base font-medium text-blue-700"&gt;Đã chọn 1/5&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;button type="button" id="btnDeleteSelected" class="text-xs font-semibold text-red-600 hover:bg-red-50 px-3 py-1.5 rounded"&gt;Xóa bỏ&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Bảng danh sách người dùng --&gt;
+  &lt;div class="overflow-x-auto"&gt;
+    &lt;table class="w-full text-left text-xs text-slate-700 border-collapse"&gt;
+      &lt;thead class="bg-white text-[11px] font-medium text-slate-500 border-b border-slate-200"&gt;
+        &lt;tr&gt;
+          &lt;th class="p-4 w-12 text-center"&gt;&lt;input type="checkbox" id="selectAllUsers" class="w-4 h-4 rounded text-blue-600"&gt;&lt;/th&gt;
+          &lt;th class="py-3 px-3 font-medium min-w-[280px]" id="sortNameBtn"&gt;Tên ↑&lt;/th&gt;
+          &lt;th class="py-3 px-3 font-medium min-w-[220px]"&gt;Email&lt;/th&gt;
+          &lt;th class="py-3 px-3 font-medium min-w-[320px]"&gt;Các quy định hạn chế về dữ liệu và vai trò&lt;/th&gt;
+          &lt;th class="p-3 w-10 text-center"&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody class="divide-y divide-slate-100" id="userTableBody"&gt;
+        &lt;!-- Các dòng người dùng... --&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <!-- Khung Copy JS Mẫu 2 -->
+            <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden">
+                <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                    <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM) (MẪU 2)</span>
+                    <button id="btnCopyJs2"
+                        class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                        <span>📋</span> <span id="txtCopyJs2">Copy JS</span>
+                    </button>
+                </div>
+                <pre class="p-5 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-[500px]"
+                    id="codeJs2">const defaultToolbar = document.querySelector("#defaultToolbar");
+const selectionToolbar = document.querySelector("#selectionToolbar");
+const selectedCountText = document.querySelector("#selectedCountText");
+const btnClearSelection = document.querySelector("#btnClearSelection");
+const selectAllUsers = document.querySelector("#selectAllUsers");
+const userCheckboxes = document.querySelectorAll(".user-checkbox");
+const userRows = document.querySelectorAll(".user-row");
+const userSearchInput = document.querySelector("#userSearchInput");
+
+function updateSelectionState() {
+  const checkedBoxes = Array.from(userCheckboxes).filter(cb => cb.checked);
+  const total = userCheckboxes.length;
+  const count = checkedBoxes.length;
+
+  if (count > 0) {
+    defaultToolbar?.classList.add("hidden");
+    selectionToolbar?.classList.remove("hidden");
+    if (selectedCountText) selectedCountText.innerText = `Đã chọn ${count}/${total}`;
+    if (selectAllUsers) selectAllUsers.checked = (count === total);
+  } else {
+    defaultToolbar?.classList.remove("hidden");
+    selectionToolbar?.classList.add("hidden");
+    if (selectAllUsers) selectAllUsers.checked = false;
+  }
+}
+
+userCheckboxes.forEach(cb => {
+  cb.addEventListener("change", function() {
+    this.closest(".user-row").classList.toggle("bg-blue-50/40", this.checked);
+    updateSelectionState();
+  });
+});
+
+selectAllUsers?.addEventListener("change", function() {
+  userCheckboxes.forEach(cb => {
+    cb.checked = this.checked;
+    cb.closest(".user-row").classList.toggle("bg-blue-50/40", this.checked);
+  });
+  updateSelectionState();
+});
+
+btnClearSelection?.addEventListener("click", () => {
+  userCheckboxes.forEach(cb => {
+    cb.checked = false;
+    cb.closest(".user-row").classList.remove("bg-blue-50/40");
+  });
+  updateSelectionState();
+});
+
+userSearchInput?.addEventListener("input", function() {
+  const query = this.value.toLowerCase().trim();
+  userRows.forEach(row => {
+    const name = row.querySelector(".user-name")?.innerText.toLowerCase() || "";
+    const email = row.querySelector(".user-email")?.innerText.toLowerCase() || "";
+    row.classList.toggle("hidden", !(name.includes(query) || email.includes(query)));
+  });
+});</pre>
+            </div>
+        </section>
 
     </main>
 
