@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự Kiện Đề Xuất - GA4 UI Kit</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800 font-sans">
+
+    <!-- ================= SIDEBAR MENU BÊN TRÁI ================= -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+        <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+            <div
+                class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+                📊
+            </div>
+            <div>
+                <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+                <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+            </div>
+        </div>
+
+        <div class="p-3 overflow-y-auto flex-1">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+            <nav class="space-y-1">
+                <a href="index.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏠</span> Tổng quan UI Kit
+                </a>
+                <a href="accordion.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📂</span> Accordion Tasks
+                </a>
+                <a href="popup-picker.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🪟</span> Popup / Modal Picker
+                </a>
+                <a href="sidebar.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📑</span> Sidebar GA4
+                </a>
+                <a href="exploration-carousel.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🎠</span> Carousel Khám phá
+                </a>
+                <a href="account-settings.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚙️</span> Cài đặt Tài khoản
+                </a>
+                <a href="data-streams.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🌊</span> Luồng Dữ Liệu
+                </a>
+                <a href="email-communications.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>✉️</span> Liên Lạc Qua Email
+                </a>
+                <a href="user-account-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>👤</span> Thông Tin Tài Khoản
+                </a>
+                <a href="property-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏢</span> Thông Tin Tài Sản
+                </a>
+                <a href="reports-library.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📋</span> Thư Viện Báo Cáo
+                </a>
+                <a href="onboarding-cards.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🧭</span> Thẻ Hướng Dẫn & Onboarding
+                </a>
+                <a href="advertising-hub.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📢</span> Bắt Đầu Quảng Cáo
+                </a>
+                <a href="data-retention.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⏳</span> Giữ Lại Dữ Liệu
+                </a>
+                <a href="events-management.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+                    <span>⚡</span> Sự Kiện Đề Xuất
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- ================= KHU VỰC CHÍNH ================= -->
+    <main class="flex-1 p-8 max-w-5xl overflow-y-auto">
+        <div class="flex items-center gap-3 mb-6">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Mẫu Events</span>
+            <h2 class="text-xl font-bold text-slate-800">Sự Kiện Được Đề Xuất & Code Snippets</h2>
+        </div>
+
+        <!-- ================= KHỐI GIAO DIỆN XEM TRƯỚC ================= -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước (Nhấp
+                    vào sự kiện để bung mở code)
+                </span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+            </div>
+
+            <div class="p-8 bg-slate-100/60 flex justify-center">
+                <!-- Vùng thành phần chính -->
+                <div class="w-full max-w-4xl space-y-4">
+
+                    <!-- 1. THANH CÔNG CỤ NÚT BẤM (TOOLBAR) -->
+                    <div class="flex flex-wrap items-center gap-3 select-none">
+                        <!-- Nút Tạo sự kiện -->
+                        <button
+                            class="bg-[#1a73e8] hover:bg-[#1557b0] active:scale-95 text-white text-sm font-medium px-4 py-2 rounded flex items-center gap-2 transition-all shadow-xs cursor-pointer">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M12 4v16m8-8H4"></path>
+                            </svg>
+                            <span>Tạo sự kiện</span>
+                        </button>
+
+                        <!-- Nút Cài đặt mô hình phân bổ -->
+                        <button
+                            class="bg-white hover:bg-slate-50 border border-slate-300 text-[#1a73e8] text-sm font-medium px-4 py-2 rounded transition-colors cursor-pointer shadow-2xs">
+                            Cài đặt mô hình phân bổ
+                        </button>
+
+                        <!-- Nút Split Dropdown: Cấu hình tuỳ chỉnh -->
+                        <div class="inline-flex rounded border border-slate-300 bg-white shadow-2xs relative"
+                            id="splitDropdownWrapper">
+                            <button
+                                class="px-4 py-2 text-sm font-medium text-[#1a73e8] hover:bg-slate-50 border-r border-slate-300 rounded-l cursor-pointer transition-colors">
+                                Cấu hình tuỳ chỉnh
+                            </button>
+                            <button id="btnToggleSplitMenu"
+                                class="px-2.5 py-2 text-slate-600 hover:bg-slate-50 rounded-r cursor-pointer transition-colors"
+                                title="Tuỳ chọn thêm">
+                                <svg class="w-4 h-4 text-slate-700" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+
+                            <!-- Dropdown menu ẩn -->
+                            <div id="splitDropdownMenu"
+                                class="hidden absolute left-0 top-full mt-1.5 w-48 bg-white border border-slate-200 rounded-lg shadow-lg py-1.5 z-20">
+                                <a href="#" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50">Định nghĩa
+                                    tuỳ chỉnh</a>
+                                <a href="#" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50">Kích thước
+                                    tuỳ chỉnh</a>
+                                <a href="#" class="block px-4 py-2 text-xs text-slate-700 hover:bg-slate-50">Số liệu tuỳ
+                                    chỉnh</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. BẢNG DANH SÁCH SỰ KIỆN ĐỀ XUẤT -->
+                    <div class="bg-white border border-slate-200 rounded-lg shadow-2xs overflow-hidden">
+                        <!-- Header Bảng -->
+                        <div class="bg-[#f8f9fa] border-b border-slate-200 px-5 py-3 flex items-center justify-between">
+                            <div class="flex items-center gap-1.5 text-xs font-semibold text-slate-600">
+                                <span>Sự kiện được đề xuất</span>
+                                <button type="button" class="text-slate-500 hover:text-slate-700 cursor-pointer"
+                                    title="Thông tin trợ giúp">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 16v-4m0-4h.01"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="flex items-center gap-4 text-slate-500">
+                                <button class="hover:text-slate-800 cursor-pointer" title="Sắp xếp thứ tự">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                                    </svg>
+                                </button>
+                                <button class="hover:text-slate-800 cursor-pointer" title="Xoá hoặc loại bỏ danh sách">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Danh sách các hàng sự kiện -->
+                        <div class="divide-y divide-slate-200">
+
+                            <!-- ITEM 1: sign_up (Có hỗ trợ bung code accordion) -->
+                            <div class="event-item">
+                                <div
+                                    class="event-header px-5 py-3.5 flex items-center gap-3 cursor-pointer hover:bg-slate-50/70 transition-colors">
+                                    <span class="text-sm font-mono text-slate-800 font-medium min-w-16">sign_up</span>
+                                    <span
+                                        class="bg-[#e8f0fe] text-[#1967d2] text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                        Sự kiện đề xuất (Chung)
+                                    </span>
+                                </div>
+
+                                <!-- Accordion Detail (Mặc định đang mở để xem code theo ảnh mẫu 2) -->
+                                <div class="event-content px-6 py-5 bg-white border-t border-slate-100 space-y-4">
+                                    <div>
+                                        <h3 class="text-base text-slate-900 font-normal">
+                                            Bắt đầu ghi nhật ký sự kiện <span class="font-semibold">sign_up</span>
+                                        </h3>
+                                        <p class="text-xs text-slate-500 mt-1">
+                                            Sao chép và dán mã này vào ứng dụng của bạn để bắt đầu ghi nhật ký sự kiện
+                                            này.
+                                        </p>
+                                    </div>
+
+                                    <!-- Tabs chọn ngôn ngữ lập trình -->
+                                    <div class="flex items-center gap-6 border-b border-slate-200 text-xs font-medium">
+                                        <button
+                                            class="code-tab pb-2.5 border-b-2 border-blue-600 text-blue-600 cursor-pointer font-semibold"
+                                            data-lang="java">Java</button>
+                                        <button
+                                            class="code-tab pb-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-800 cursor-pointer"
+                                            data-lang="kotlin">Kotlin</button>
+                                        <button
+                                            class="code-tab pb-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-800 cursor-pointer"
+                                            data-lang="objc">Objective-C</button>
+                                        <button
+                                            class="code-tab pb-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-800 cursor-pointer"
+                                            data-lang="swift">Swift</button>
+                                        <button
+                                            class="code-tab pb-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-800 cursor-pointer"
+                                            data-lang="unity">Unity</button>
+                                        <button
+                                            class="code-tab pb-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-800 cursor-pointer"
+                                            data-lang="cpp">C++</button>
+                                    </div>
+
+                                    <!-- Khung code snippet -->
+                                    <div class="bg-[#f1f3f4] border border-slate-200/80 rounded p-4 font-mono text-xs text-slate-800 leading-relaxed overflow-x-auto select-all"
+                                        id="codeSnippetBox">
+                                        Bundle bundle = new Bundle();
+                                        bundle.putString(FirebaseAnalytics.Param.METHOD, method);
+                                        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SIGN_UP, bundle);</div>
+
+                                    <!-- Nút hành động Đóng / Sao chép -->
+                                    <div class="flex items-center justify-end gap-3 pt-2">
+                                        <button
+                                            class="btn-close-detail px-4 py-1.5 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded cursor-pointer transition-colors font-medium">
+                                            Đóng
+                                        </button>
+                                        <button
+                                            class="btn-copy-code bg-[#1a73e8] hover:bg-[#1557b0] active:scale-95 text-white text-xs font-medium px-4 py-2 rounded cursor-pointer transition-all">
+                                            Sao chép
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ITEM 2: login -->
+                            <div class="event-item">
+                                <div
+                                    class="event-header px-5 py-3.5 flex items-center gap-3 cursor-pointer hover:bg-slate-50/70 transition-colors">
+                                    <span class="text-sm font-mono text-slate-800 font-medium min-w-16">login</span>
+                                    <span
+                                        class="bg-[#e8f0fe] text-[#1967d2] text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                        Sự kiện đề xuất (Chung)
+                                    </span>
+                                </div>
+                                <!-- Accordion Detail (Mặc định ẩn) -->
+                                <div
+                                    class="event-content hidden px-6 py-5 bg-white border-t border-slate-100 space-y-4">
+                                    <div>
+                                        <h3 class="text-base text-slate-900 font-normal">
+                                            Bắt đầu ghi nhật ký sự kiện <span class="font-semibold">login</span>
+                                        </h3>
+                                        <p class="text-xs text-slate-500 mt-1">Sao chép mã tích hợp sự kiện đăng nhập
+                                            tài khoản.</p>
+                                    </div>
+                                    <div
+                                        class="bg-[#f1f3f4] border border-slate-200/80 rounded p-4 font-mono text-xs text-slate-800 leading-relaxed overflow-x-auto select-all">
+                                        Bundle bundle = new Bundle();
+                                        bundle.putString(FirebaseAnalytics.Param.METHOD, "Google");
+                                        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN, bundle);</div>
+                                    <div class="flex items-center justify-end gap-3 pt-2">
+                                        <button
+                                            class="btn-close-detail px-4 py-1.5 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded cursor-pointer transition-colors">Đóng</button>
+                                        <button
+                                            class="btn-copy-code bg-[#1a73e8] hover:bg-[#1557b0] active:scale-95 text-white text-xs font-medium px-4 py-2 rounded cursor-pointer transition-all">Sao
+                                            chép</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ITEM 3: share -->
+                            <div class="event-item">
+                                <div
+                                    class="event-header px-5 py-3.5 flex items-center gap-3 cursor-pointer hover:bg-slate-50/70 transition-colors">
+                                    <span class="text-sm font-mono text-slate-800 font-medium min-w-16">share</span>
+                                    <span
+                                        class="bg-[#e8f0fe] text-[#1967d2] text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                        Sự kiện đề xuất (Chung)
+                                    </span>
+                                </div>
+                                <!-- Accordion Detail (Mặc định ẩn) -->
+                                <div
+                                    class="event-content hidden px-6 py-5 bg-white border-t border-slate-100 space-y-4">
+                                    <div>
+                                        <h3 class="text-base text-slate-900 font-normal">
+                                            Bắt đầu ghi nhật ký sự kiện <span class="font-semibold">share</span>
+                                        </h3>
+                                        <p class="text-xs text-slate-500 mt-1">Sao chép mã tích hợp ghi nhận lượt chia
+                                            sẻ nội dung.</p>
+                                    </div>
+                                    <div
+                                        class="bg-[#f1f3f4] border border-slate-200/80 rounded p-4 font-mono text-xs text-slate-800 leading-relaxed overflow-x-auto select-all">
+                                        Bundle bundle = new Bundle();
+                                        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+                                        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "p12345");
+                                        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SHARE, bundle);</div>
+                                    <div class="flex items-center justify-end gap-3 pt-2">
+                                        <button
+                                            class="btn-close-detail px-4 py-1.5 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded cursor-pointer transition-colors">Đóng</button>
+                                        <button
+                                            class="btn-copy-code bg-[#1a73e8] hover:bg-[#1557b0] active:scale-95 text-white text-xs font-medium px-4 py-2 rounded cursor-pointer transition-all">Sao
+                                            chép</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= KHỐI CODE HTML ĐỂ COPY ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND</span>
+                <button id="btnCopyHtml"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyHtml">Copy HTML</span>
+                </button>
+            </div>
+            <pre class="p-4 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-96" id="codeHtml">&lt;div class="w-full max-w-4xl space-y-4 font-sans select-none"&gt;
+  &lt;!-- 1. TOOLBAR --&gt;
+  &lt;div class="flex flex-wrap items-center gap-3"&gt;
+    &lt;button class="bg-[#1a73e8] hover:bg-[#1557b0] text-white text-sm font-medium px-4 py-2 rounded flex items-center gap-2 cursor-pointer shadow-xs"&gt;
+      &lt;svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/&gt;&lt;/svg&gt;
+      &lt;span&gt;Tạo sự kiện&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class="bg-white hover:bg-slate-50 border border-slate-300 text-[#1a73e8] text-sm font-medium px-4 py-2 rounded cursor-pointer shadow-2xs"&gt;
+      Cài đặt mô hình phân bổ
+    &lt;/button&gt;
+    &lt;div class="inline-flex rounded border border-slate-300 bg-white shadow-2xs relative"&gt;
+      &lt;button class="px-4 py-2 text-sm font-medium text-[#1a73e8] hover:bg-slate-50 border-r border-slate-300 rounded-l cursor-pointer"&gt;
+        Cấu hình tuỳ chỉnh
+      &lt;/button&gt;
+      &lt;button id="btnToggleSplitMenu" class="px-2.5 py-2 text-slate-600 hover:bg-slate-50 rounded-r cursor-pointer"&gt;
+        &lt;svg class="w-4 h-4 fill-current text-slate-700" viewBox="0 0 20 20"&gt;&lt;path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- 2. EVENT TABLE --&gt;
+  &lt;div class="bg-white border border-slate-200 rounded-lg shadow-2xs overflow-hidden"&gt;
+    &lt;div class="bg-[#f8f9fa] border-b border-slate-200 px-5 py-3 flex items-center justify-between"&gt;
+      &lt;div class="flex items-center gap-1.5 text-xs font-semibold text-slate-600"&gt;
+        &lt;span&gt;Sự kiện được đề xuất&lt;/span&gt;
+        &lt;svg class="w-4 h-4 text-slate-500 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+          &lt;circle cx="12" cy="12" r="9" stroke-width="2"/&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 16v-4m0-4h.01"/&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+      &lt;div class="flex items-center gap-4 text-slate-500"&gt;
+        &lt;svg class="w-4 h-4 cursor-pointer hover:text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/&gt;&lt;/svg&gt;
+        &lt;svg class="w-4 h-4 cursor-pointer hover:text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/&gt;&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="divide-y divide-slate-200"&gt;
+      &lt;!-- Item sign_up --&gt;
+      &lt;div class="event-item"&gt;
+        &lt;div class="event-header px-5 py-3.5 flex items-center gap-3 cursor-pointer hover:bg-slate-50 transition-colors"&gt;
+          &lt;span class="text-sm font-mono text-slate-800 font-medium min-w-16"&gt;sign_up&lt;/span&gt;
+          &lt;span class="bg-[#e8f0fe] text-[#1967d2] text-xs font-medium px-2.5 py-0.5 rounded-full"&gt;Sự kiện đề xuất (Chung)&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="event-content px-6 py-5 bg-white border-t border-slate-100 space-y-4"&gt;
+          &lt;div&gt;
+            &lt;h3 class="text-base text-slate-900 font-normal"&gt;Bắt đầu ghi nhật ký sự kiện &lt;span class="font-semibold"&gt;sign_up&lt;/span&gt;&lt;/h3&gt;
+            &lt;p class="text-xs text-slate-500 mt-1"&gt;Sao chép và dán mã này vào ứng dụng của bạn để bắt đầu ghi nhật ký sự kiện này.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="flex items-center gap-6 border-b border-slate-200 text-xs font-medium"&gt;
+            &lt;button class="code-tab pb-2.5 border-b-2 border-blue-600 text-blue-600 font-semibold cursor-pointer" data-lang="java"&gt;Java&lt;/button&gt;
+            &lt;button class="code-tab pb-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-800 cursor-pointer" data-lang="kotlin"&gt;Kotlin&lt;/button&gt;
+            &lt;button class="code-tab pb-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-800 cursor-pointer" data-lang="swift"&gt;Swift&lt;/button&gt;
+          &lt;/div&gt;
+          &lt;div class="bg-[#f1f3f4] border border-slate-200/80 rounded p-4 font-mono text-xs text-slate-800 leading-relaxed overflow-x-auto select-all" id="codeSnippetBox"&gt;
+Bundle bundle = new Bundle();
+bundle.putString(FirebaseAnalytics.Param.METHOD, method);
+mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SIGN_UP, bundle);&lt;/div&gt;
+          &lt;div class="flex items-center justify-end gap-3 pt-2"&gt;
+            &lt;button class="btn-close-detail px-4 py-1.5 text-xs text-slate-600 hover:text-slate-800 hover:bg-slate-100 rounded cursor-pointer"&gt;Đóng&lt;/button&gt;
+            &lt;button class="btn-copy-code bg-[#1a73e8] hover:bg-[#1557b0] text-white text-xs font-medium px-4 py-2 rounded cursor-pointer"&gt;Sao chép&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- ================= KHỐI CODE JS ĐỂ COPY ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM)</span>
+                <button id="btnCopyJs"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyJs">Copy JS</span>
+                </button>
+            </div>
+            <pre class="p-4 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-80" id="codeJs">// Mở/Đóng accordion khi click vào từng hàng sự kiện
+document.querySelectorAll('.event-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const content = header.nextElementSibling;
+    if (content) {
+      content.classList.toggle('hidden');
+    }
+  });
+});
+
+// Nút đóng chi tiết trong khung
+document.querySelectorAll('.btn-close-detail').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const content = e.target.closest('.event-content');
+    if (content) content.classList.add('hidden');
+  });
+});
+
+// Toggle dropdown cấu hình tuỳ chỉnh
+const btnToggleSplitMenu = document.querySelector('#btnToggleSplitMenu');
+const splitDropdownMenu = document.querySelector('#splitDropdownMenu');
+btnToggleSplitMenu?.addEventListener('click', () => {
+  splitDropdownMenu?.classList.toggle('hidden');
+});
+
+// Chuyển đổi mã theo Tab ngôn ngữ
+const snippetMap = {
+  java: `Bundle bundle = new Bundle();\nbundle.putString(FirebaseAnalytics.Param.METHOD, method);\nmFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SIGN_UP, bundle);`,
+  kotlin: `val bundle = Bundle()\nbundle.putString(FirebaseAnalytics.Param.METHOD, method)\nfirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SIGN_UP, bundle)`,
+  objc: `[FIRAnalytics logEventWithName:kFIREventSignUp parameters:@{\n  kFIRParameterMethod : method\n}];`,
+  swift: `Analytics.logEvent(AnalyticsEventSignUp, parameters: [\n  AnalyticsParameterMethod: method\n])`,
+  unity: `FirebaseAnalytics.LogEvent(\n  FirebaseAnalytics.EventSignUp,\n  new Parameter(FirebaseAnalytics.ParameterMethod, method)\n);`,
+  cpp: `firebase::analytics::Parameter params[] = {\n  firebase::analytics::Parameter(firebase::analytics::kParameterMethod, method)\n};\nfirebase::analytics::LogEvent(firebase::analytics::kEventSignUp, params, 1);`
+};
+
+document.querySelectorAll('.code-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.code-tab').forEach(t => {
+      t.classList.remove('border-blue-600', 'text-blue-600', 'font-semibold');
+      t.classList.add('border-transparent', 'text-slate-600');
+    });
+    tab.classList.add('border-blue-600', 'text-blue-600', 'font-semibold');
+    tab.classList.remove('border-transparent', 'text-slate-600');
+
+    const lang = tab.getAttribute('data-lang');
+    const snippetBox = document.querySelector('#codeSnippetBox');
+    if (snippetBox && snippetMap[lang]) {
+      snippetBox.innerText = snippetMap[lang];
+    }
+  });
+});
+
+// Nút sao chép mã sự kiện
+document.querySelectorAll('.btn-copy-code').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const box = e.target.closest('.event-content')?.querySelector('div[class*="font-mono"]');
+    if (box) {
+      navigator.clipboard.writeText(box.innerText).then(() => {
+        const originText = btn.innerText;
+        btn.innerText = 'Đã sao chép!';
+        setTimeout(() => { btn.innerText = originText; }, 1500);
+      });
+    }
+  });
+});</pre>
+        </div>
+
+    </main>
+
+    <!-- Script logic sao chép tổng của dự án -->
+    <script src="script.js"></script>
+    <script>
+        // 1. Click mở/đóng chi tiết sự kiện
+        document.querySelectorAll('.event-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                if (content) {
+                    content.classList.toggle('hidden');
+                }
+            });
+        });
+
+        // 2. Nút "Đóng" bên trong từng card chi tiết
+        document.querySelectorAll('.btn-close-detail').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const content = e.target.closest('.event-content');
+                if (content) content.classList.add('hidden');
+            });
+        });
+
+        // 3. Dropdown Menu Cấu hình tuỳ chỉnh
+        const btnToggleSplitMenu = document.querySelector('#btnToggleSplitMenu');
+        const splitDropdownMenu = document.querySelector('#splitDropdownMenu');
+        btnToggleSplitMenu?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            splitDropdownMenu?.classList.toggle('hidden');
+        });
+        document.addEventListener('click', () => {
+            splitDropdownMenu?.classList.add('hidden');
+        });
+
+        // 4. Tab Code Snippet theo ngôn ngữ
+        const snippetMap = {
+            java: `Bundle bundle = new Bundle();\nbundle.putString(FirebaseAnalytics.Param.METHOD, method);\nmFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SIGN_UP, bundle);`,
+            kotlin: `val bundle = Bundle()\nbundle.putString(FirebaseAnalytics.Param.METHOD, method)\nfirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SIGN_UP, bundle)`,
+            objc: `[FIRAnalytics logEventWithName:kFIREventSignUp parameters:@{\n  kFIRParameterMethod : method\n}];`,
+            swift: `Analytics.logEvent(AnalyticsEventSignUp, parameters: [\n  AnalyticsParameterMethod: method\n])`,
+            unity: `FirebaseAnalytics.LogEvent(\n  FirebaseAnalytics.EventSignUp,\n  new Parameter(FirebaseAnalytics.ParameterMethod, method)\n);`,
+            cpp: `firebase::analytics::Parameter params[] = {\n  firebase::analytics::Parameter(firebase::analytics::kParameterMethod, method)\n};\nfirebase::analytics::LogEvent(firebase::analytics::kEventSignUp, params, 1);`
+        };
+
+        document.querySelectorAll('.code-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.code-tab').forEach(t => {
+                    t.classList.remove('border-blue-600', 'text-blue-600', 'font-semibold');
+                    t.classList.add('border-transparent', 'text-slate-600');
+                });
+                tab.classList.add('border-blue-600', 'text-blue-600', 'font-semibold');
+                tab.classList.remove('border-transparent', 'text-slate-600');
+
+                const lang = tab.getAttribute('data-lang');
+                const snippetBox = document.querySelector('#codeSnippetBox');
+                if (snippetBox && snippetMap[lang]) {
+                    snippetBox.innerText = snippetMap[lang];
+                }
+            });
+        });
+
+        // 5. Nút Sao Chép Mã Snippet
+        document.querySelectorAll('.btn-copy-code').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const box = e.target.closest('.event-content')?.querySelector('#codeSnippetBox') || e.target.closest('.event-content')?.querySelector('div[class*="font-mono"]');
+                if (box) {
+                    navigator.clipboard.writeText(box.innerText).then(() => {
+                        const originText = btn.innerText;
+                        btn.innerText = 'Đã sao chép!';
+                        setTimeout(() => { btn.innerText = originText; }, 1500);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

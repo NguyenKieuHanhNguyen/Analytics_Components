@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giữ Lại Dữ Liệu - GA4 UI Kit</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800 font-sans">
+
+    <!-- ================= SIDEBAR MENU BÊN TRÁI ================= -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+        <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+            <div
+                class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+                📊
+            </div>
+            <div>
+                <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+                <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+            </div>
+        </div>
+
+        <div class="p-3 overflow-y-auto flex-1">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+            <nav class="space-y-1">
+                <a href="index.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏠</span> Tổng quan UI Kit
+                </a>
+                <a href="accordion.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📂</span> Accordion Tasks
+                </a>
+                <a href="popup-picker.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🪟</span> Popup / Modal Picker
+                </a>
+                <a href="sidebar.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📑</span> Sidebar GA4
+                </a>
+                <a href="exploration-carousel.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🎠</span> Carousel Khám phá
+                </a>
+                <a href="account-settings.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚙️</span> Cài đặt Tài khoản
+                </a>
+                <a href="data-streams.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🌊</span> Luồng Dữ Liệu
+                </a>
+                <a href="email-communications.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>✉️</span> Liên Lạc Qua Email
+                </a>
+                <a href="user-account-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>👤</span> Thông Tin Tài Khoản
+                </a>
+                <a href="property-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏢</span> Thông Tin Tài Sản
+                </a>
+                <a href="reports-library.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📋</span> Thư Viện Báo Cáo
+                </a>
+                <a href="onboarding-cards.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🧭</span> Thẻ Hướng Dẫn & Onboarding
+                </a>
+                <a href="advertising-hub.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📢</span> Bắt Đầu Quảng Cáo
+                </a>
+                <a href="data-retention.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+                    <span>⏳</span> Giữ Lại Dữ Liệu
+                </a>
+                <a href="events-management.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚡</span> Sự Kiện Đề Xuất
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- ================= KHU VỰC CHÍNH ================= -->
+    <main class="flex-1 p-8 max-w-5xl overflow-y-auto">
+        <div class="flex items-center gap-3 mb-6">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Form Settings</span>
+            <h2 class="text-xl font-bold text-slate-800">Giữ Lại Dữ Liệu (Data Retention Settings)</h2>
+        </div>
+
+        <!-- ================= KHỐI GIAO DIỆN XEM TRƯỚC ================= -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Giao diện xem trước
+                    (Interactive)
+                </span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Preview</span>
+            </div>
+
+            <div class="p-8 bg-slate-100/60 flex justify-center">
+                <!-- Main Form Component -->
+                <div class="w-full max-w-4xl space-y-6">
+                    <h1 class="text-2xl font-normal text-slate-800">Giữ lại dữ liệu</h1>
+
+                    <!-- Panel Card -->
+                    <div class="bg-white rounded-lg border border-slate-200 shadow-xs overflow-hidden">
+                        <!-- Header Card -->
+                        <div class="p-6 border-b border-slate-100">
+                            <h2 class="text-base font-medium text-slate-800">Lưu giữ dữ liệu người dùng và sự kiện</h2>
+                        </div>
+
+                        <!-- Body Card -->
+                        <div class="p-6 space-y-8">
+                            <!-- Description Text -->
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Bạn có thể thay đổi khoảng thời gian lưu giữ dữ liệu do bạn gửi được liên kết với
+                                cookie, giá trị nhận dạng người dùng hoặc mã nhận dạng cho quảng cáo. Các chế độ kiểm
+                                soát này không ảnh hưởng đến hầu hết báo cáo chuẩn dựa trên dữ liệu tổng hợp. Các thay
+                                đổi đối với các chế độ cài đặt này sẽ có hiệu lực sau 24 giờ.
+                                <a href="#" class="text-blue-600 hover:underline inline-flex items-center gap-0.5">
+                                    Tìm hiểu thêm về các chế độ cài đặt giữ lại dữ liệu
+                                </a>
+                            </p>
+
+                            <!-- Group 1: Dữ liệu sự kiện -->
+                            <div class="space-y-3">
+                                <h3 class="text-sm font-semibold text-slate-800">Dữ liệu sự kiện</h3>
+                                <div class="flex items-center gap-6">
+                                    <label class="text-sm text-slate-700 flex items-center gap-1.5 min-w-32">
+                                        Giữ lại dữ liệu
+                                        <button type="button" class="text-slate-500 hover:text-slate-700 cursor-pointer"
+                                            title="Thông tin trợ giúp">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 16v-4m0-4h.01"></path>
+                                            </svg>
+                                        </button>
+                                    </label>
+
+                                    <!-- Custom Styled Select Input -->
+                                    <div class="relative w-56">
+                                        <select id="eventRetentionSelect"
+                                            class="w-full appearance-none bg-white border border-blue-600 text-slate-800 text-sm rounded px-3.5 py-2 pr-9 focus:outline-none focus:ring-2 focus:ring-blue-500/20 cursor-pointer">
+                                            <option value="2">2 tháng</option>
+                                            <option value="14" selected>14 tháng</option>
+                                        </select>
+                                        <div
+                                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-blue-600">
+                                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                                <path
+                                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="border-slate-100" />
+
+                            <!-- Group 2: Dữ liệu người dùng -->
+                            <div class="space-y-6">
+                                <h3 class="text-sm font-semibold text-slate-800">Dữ liệu người dùng</h3>
+
+                                <div class="flex items-center gap-6">
+                                    <label class="text-sm text-slate-700 flex items-center gap-1.5 min-w-32">
+                                        Giữ lại dữ liệu
+                                        <button type="button" class="text-slate-500 hover:text-slate-700 cursor-pointer"
+                                            title="Thông tin trợ giúp">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 16v-4m0-4h.01"></path>
+                                            </svg>
+                                        </button>
+                                    </label>
+
+                                    <div class="relative w-56">
+                                        <select id="userRetentionSelect"
+                                            class="w-full appearance-none bg-white border border-slate-300 hover:border-slate-400 text-slate-800 text-sm rounded px-3.5 py-2 pr-9 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500/20 cursor-pointer">
+                                            <option value="2">2 tháng</option>
+                                            <option value="14" selected>14 tháng</option>
+                                        </select>
+                                        <div
+                                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-500">
+                                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                                <path
+                                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Toggle Switch -->
+                                <div class="flex items-center gap-6">
+                                    <span class="text-sm text-slate-700 flex items-center gap-1.5">
+                                        Đặt lại khi có hoạt động mới của người dùng
+                                        <button type="button" class="text-slate-500 hover:text-slate-700 cursor-pointer"
+                                            title="Thông tin trợ giúp">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <circle cx="12" cy="12" r="9" stroke-width="2"></circle>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 16v-4m0-4h.01"></path>
+                                            </svg>
+                                        </button>
+                                    </span>
+
+                                    <!-- Toggle Button -->
+                                    <button type="button" id="toggleResetOnActivity"
+                                        class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-blue-600 transition-colors duration-200 ease-in-out focus:outline-none"
+                                        role="switch" aria-checked="true">
+                                        <span id="toggleKnob"
+                                            class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out translate-x-5 flex items-center justify-center">
+                                            <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Actions -->
+                    <div class="flex items-center gap-4 pt-2">
+                        <button id="btnSave"
+                            class="bg-blue-600 hover:bg-blue-700 active:scale-95 text-white text-sm font-medium px-6 py-2 rounded cursor-pointer transition-all shadow-xs">
+                            Lưu
+                        </button>
+                        <button id="btnCancel"
+                            class="text-blue-600 hover:bg-blue-50/80 active:scale-95 text-sm font-medium px-4 py-2 rounded cursor-pointer transition-all">
+                            Huỷ
+                        </button>
+                        <span id="toastSave" class="text-xs text-emerald-600 font-medium hidden">✓ Đã lưu thay đổi thành
+                            công!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= KHỐI CODE HTML & TAILWIND ĐỂ COPY ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND</span>
+                <button id="btnCopyHtml"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyHtml">Copy HTML</span>
+                </button>
+            </div>
+            <pre class="p-4 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-96" id="codeHtml">&lt;div class="w-full max-w-4xl space-y-6 font-sans text-slate-800"&gt;
+  &lt;h1 class="text-2xl font-normal text-slate-800"&gt;Giữ lại dữ liệu&lt;/h1&gt;
+
+  &lt;!-- Box Cài đặt --&gt;
+  &lt;div class="bg-white rounded-lg border border-slate-200 shadow-xs overflow-hidden"&gt;
+    &lt;div class="p-6 border-b border-slate-100"&gt;
+      &lt;h2 class="text-base font-medium text-slate-800"&gt;Lưu giữ dữ liệu người dùng và sự kiện&lt;/h2&gt;
+    &lt;/div&gt;
+
+    &lt;div class="p-6 space-y-8"&gt;
+      &lt;p class="text-sm text-slate-600 leading-relaxed"&gt;
+        Bạn có thể thay đổi khoảng thời gian lưu giữ dữ liệu do bạn gửi được liên kết với cookie, giá trị nhận dạng người dùng hoặc mã nhận dạng cho quảng cáo. Các chế độ kiểm soát này không ảnh hưởng đến hầu hết báo cáo chuẩn dựa trên dữ liệu tổng hợp. Các thay đổi đối với các chế độ cài đặt này sẽ có hiệu lực sau 24 giờ.
+        &lt;a href="#" class="text-blue-600 hover:underline"&gt;Tìm hiểu thêm về các chế độ cài đặt giữ lại dữ liệu&lt;/a&gt;
+      &lt;/p&gt;
+
+      &lt;!-- Dữ liệu sự kiện --&gt;
+      &lt;div class="space-y-3"&gt;
+        &lt;h3 class="text-sm font-semibold text-slate-800"&gt;Dữ liệu sự kiện&lt;/h3&gt;
+        &lt;div class="flex items-center gap-6"&gt;
+          &lt;label class="text-sm text-slate-700 flex items-center gap-1.5 min-w-32"&gt;
+            Giữ lại dữ liệu
+            &lt;svg class="w-4 h-4 text-slate-500 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+              &lt;circle cx="12" cy="12" r="9" stroke-width="2"&gt;&lt;/circle&gt;
+              &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 16v-4m0-4h.01"&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/label&gt;
+          &lt;div class="relative w-56"&gt;
+            &lt;select id="eventRetentionSelect" class="w-full appearance-none bg-white border border-blue-600 text-slate-800 text-sm rounded px-3.5 py-2 pr-9 focus:outline-none"&gt;
+              &lt;option value="2"&gt;2 tháng&lt;/option&gt;
+              &lt;option value="14" selected&gt;14 tháng&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-blue-600"&gt;
+              &lt;svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"&gt;&lt;path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/&gt;&lt;/svg&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;hr class="border-slate-100" /&gt;
+
+      &lt;!-- Dữ liệu người dùng --&gt;
+      &lt;div class="space-y-6"&gt;
+        &lt;h3 class="text-sm font-semibold text-slate-800"&gt;Dữ liệu người dùng&lt;/h3&gt;
+        &lt;div class="flex items-center gap-6"&gt;
+          &lt;label class="text-sm text-slate-700 flex items-center gap-1.5 min-w-32"&gt;
+            Giữ lại dữ liệu
+            &lt;svg class="w-4 h-4 text-slate-500 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+              &lt;circle cx="12" cy="12" r="9" stroke-width="2"&gt;&lt;/circle&gt;
+              &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 16v-4m0-4h.01"&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/label&gt;
+          &lt;div class="relative w-56"&gt;
+            &lt;select id="userRetentionSelect" class="w-full appearance-none bg-white border border-slate-300 text-slate-800 text-sm rounded px-3.5 py-2 pr-9 focus:border-blue-600 focus:outline-none"&gt;
+              &lt;option value="2"&gt;2 tháng&lt;/option&gt;
+              &lt;option value="14" selected&gt;14 tháng&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-slate-500"&gt;
+              &lt;svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"&gt;&lt;path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/&gt;&lt;/svg&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Toggle Switch --&gt;
+        &lt;div class="flex items-center gap-6"&gt;
+          &lt;span class="text-sm text-slate-700 flex items-center gap-1.5"&gt;
+            Đặt lại khi có hoạt động mới của người dùng
+            &lt;svg class="w-4 h-4 text-slate-500 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+              &lt;circle cx="12" cy="12" r="9" stroke-width="2"&gt;&lt;/circle&gt;
+              &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 16v-4m0-4h.01"&gt;&lt;/path&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+          &lt;button type="button" id="toggleResetOnActivity" class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full bg-blue-600 transition-colors" role="switch" aria-checked="true"&gt;
+            &lt;span id="toggleKnob" class="inline-block h-5 w-5 transform rounded-full bg-white shadow-md translate-x-5 flex items-center justify-center transition-transform"&gt;
+              &lt;svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;
+                &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"&gt;&lt;/path&gt;
+              &lt;/svg&gt;
+            &lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Actions --&gt;
+  &lt;div class="flex items-center gap-4 pt-2"&gt;
+    &lt;button id="btnSave" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-6 py-2 rounded"&gt;Lưu&lt;/button&gt;
+    &lt;button id="btnCancel" class="text-blue-600 hover:bg-blue-50 text-sm font-medium px-4 py-2 rounded"&gt;Huỷ&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- ================= KHỐI CODE JAVASCRIPT ĐỂ COPY ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM)</span>
+                <button id="btnCopyJs"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyJs">Copy JS</span>
+                </button>
+            </div>
+            <pre class="p-4 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-80" id="codeJs">// Toggle bật / tắt chức năng đặt lại khi có hoạt động mới
+const toggleBtn = document.querySelector("#toggleResetOnActivity");
+const toggleKnob = document.querySelector("#toggleKnob");
+let isToggled = true;
+
+toggleBtn.addEventListener("click", () => {
+  isToggled = !isToggled;
+  if (isToggled) {
+    toggleBtn.classList.replace("bg-slate-300", "bg-blue-600");
+    toggleKnob.classList.add("translate-x-5");
+    toggleKnob.classList.remove("translate-x-0.5");
+    toggleKnob.innerHTML = `&lt;svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"&gt;&lt;/path&gt;&lt;/svg&gt;`;
+  } else {
+    toggleBtn.classList.replace("bg-blue-600", "bg-slate-300");
+    toggleKnob.classList.remove("translate-x-5");
+    toggleKnob.classList.add("translate-x-0.5");
+    toggleKnob.innerHTML = '';
+  }
+});
+
+// Nút lưu & huỷ
+const btnSave = document.querySelector("#btnSave");
+const toastSave = document.querySelector("#toastSave");
+btnSave.addEventListener("click", () => {
+  toastSave.classList.remove("hidden");
+  setTimeout(() => toastSave.classList.add("hidden"), 2500);
+});</pre>
+        </div>
+
+    </main>
+
+    <!-- Script sao chép chung từ file script.js của bạn -->
+    <script src="script.js"></script>
+    <script>
+        // Logic tương tác trên trang
+        const toggleBtn = document.querySelector("#toggleResetOnActivity");
+        const toggleKnob = document.querySelector("#toggleKnob");
+        let isToggled = true;
+
+        toggleBtn.addEventListener("click", () => {
+            isToggled = !isToggled;
+            if (isToggled) {
+                toggleBtn.classList.replace("bg-slate-300", "bg-blue-600");
+                toggleKnob.classList.add("translate-x-5");
+                toggleKnob.classList.remove("translate-x-0.5");
+                toggleKnob.innerHTML = `
+          <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+          </svg>
+        `;
+            } else {
+                toggleBtn.classList.replace("bg-blue-600", "bg-slate-300");
+                toggleKnob.classList.remove("translate-x-5");
+                toggleKnob.classList.add("translate-x-0.5");
+                toggleKnob.innerHTML = '';
+            }
+        });
+
+        const btnSave = document.querySelector("#btnSave");
+        const toastSave = document.querySelector("#toastSave");
+        btnSave.addEventListener("click", () => {
+            toastSave.classList.remove("hidden");
+            setTimeout(() => toastSave.classList.add("hidden"), 2500);
+        });
+    </script>
+</body>
+
+</html>
