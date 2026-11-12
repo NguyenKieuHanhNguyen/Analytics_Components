@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Header Utilities - GA4 UI Kit</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800 font-sans">
+
+    <!-- ================= SIDEBAR MENU BÊN TRÁI ================= -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+        <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+            <div
+                class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+                📊
+            </div>
+            <div>
+                <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+                <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+            </div>
+        </div>
+
+        <div class="p-3 overflow-y-auto flex-1">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+            <nav class="space-y-1">
+                <a href="index.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏠</span> Tổng quan UI Kit
+                </a>
+                <a href="accordion.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📂</span> Accordion Tasks
+                </a>
+                <a href="popup-picker.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🪟</span> Popup / Modal Picker
+                </a>
+                <a href="sidebar.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📑</span> Sidebar GA4
+                </a>
+                <a href="exploration-carousel.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🎠</span> Carousel Khám phá
+                </a>
+                <a href="account-settings.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚙️</span> Cài đặt Tài khoản
+                </a>
+                <a href="data-streams.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🌊</span> Luồng Dữ Liệu
+                </a>
+                <a href="email-communications.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>✉️</span> Liên Lạc Qua Email
+                </a>
+                <a href="user-account-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>👤</span> Thông Tin Tài Khoản
+                </a>
+                <a href="property-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏢</span> Thông Tin Tài Sản
+                </a>
+                <a href="reports-library.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📋</span> Thư Viện Báo Cáo
+                </a>
+                <a href="onboarding-cards.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🧭</span> Thẻ Hướng Dẫn & Onboarding
+                </a>
+                <a href="advertising-hub.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📢</span> Bắt Đầu Quảng Cáo
+                </a>
+                <a href="data-retention.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⏳</span> Giữ Lại Dữ Liệu
+                </a>
+                <a href="events-management.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚡</span> Sự Kiện Đề Xuất
+                </a>
+                <a href="new-contact.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📇</span> Liên Hệ Mới
+                </a>
+                <a href="header-utilities.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+                    <span>🧩</span> Tiện Ích Header GA4
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- ================= KHU VỰC CHÍNH ================= -->
+    <main class="flex-1 p-8 max-w-5xl overflow-y-auto">
+        <div class="flex items-center gap-3 mb-6">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Header Popovers</span>
+            <h2 class="text-xl font-bold text-slate-800">Cụm Tiện Ích Thanh Trên Cùng (Product Switcher, Help & Account)
+            </h2>
+        </div>
+
+        <!-- ================= KHỐI GIAO DIỆN XEM TRƯỚC ================= -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm mb-6">
+            <div
+                class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70 rounded-t-2xl">
+                <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Rê chuột để xem Tooltip, bấm
+                    vào từng icon để mở Menu Popover
+                </span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+            </div>
+
+            <!-- Khung mô phỏng góc phải thanh Topbar GA4 -->
+            <div class="bg-slate-100/70 min-h-[460px] flex flex-col">
+
+                <!-- Thanh Topbar trắng -->
+                <div class="bg-white border-b border-slate-200 px-6 py-2.5 flex items-center justify-end relative">
+
+                    <!-- CỤM 3 NÚT TIỆN ÍCH GÓC PHẢI -->
+                    <div class="flex items-center gap-2 select-none">
+
+                        <!-- 1. NÚT CHUYỂN ĐỔI SẢN PHẨM (4 Ô VUÔNG) -->
+                        <div class="relative group" data-popover-wrapper>
+                            <button type="button" data-popover-trigger="popoverProducts"
+                                class="w-10 h-10 rounded-full hover:bg-slate-100 focus:bg-slate-100 flex items-center justify-center text-[#5f6368] transition-colors cursor-pointer">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                    <path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z" />
+                                </svg>
+                            </button>
+
+                            <!-- Tooltip khi hover -->
+                            <div
+                                class="tooltip-box pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-150 absolute right-0 top-full mt-2 bg-[#3c4043] text-white text-xs font-medium px-3 py-1.5 rounded shadow-md whitespace-nowrap z-20">
+                                Chuyển đổi sản phẩm
+                            </div>
+
+                            <!-- POPOVER: GOOGLE MARKETING PLATFORM -->
+                            <div id="popoverProducts"
+                                class="popover-panel hidden absolute right-0 top-full mt-2 w-80 bg-white rounded-lg border border-slate-200 shadow-xl z-30 overflow-hidden">
+
+                                <!-- Header Logo GMP -->
+                                <div
+                                    class="py-6 px-5 flex flex-col items-center justify-center border-b border-slate-200">
+                                    <!-- Vòng tròn 4 màu Google Marketing Platform -->
+                                    <svg class="w-10 h-10 mb-3" viewBox="0 0 48 48">
+                                        <path fill="#4285F4" d="M24 6C14.06 6 6 14.06 6 24h6c0-6.63 5.37-12 12-12V6z" />
+                                        <path fill="#EA4335"
+                                            d="M42 24c0-9.94-8.06-18-18-18v6c6.63 0 12 5.37 12 12h6z" />
+                                        <path fill="#FBBC05"
+                                            d="M24 42c9.94 0 18-8.06 18-18h-6c0 6.63-5.37 12-12 12v6z" />
+                                        <path fill="#34A853"
+                                            d="M6 24c0 9.94 8.06 18 18 18v-6c-6.63 0-12-5.37-12-12H6z" />
+                                    </svg>
+                                    <div class="text-lg tracking-tight text-slate-600">
+                                        <span class="font-medium text-slate-700">Google</span> Marketing Platform
+                                    </div>
+                                </div>
+
+                                <!-- Danh sách sản phẩm chính -->
+                                <div class="divide-y divide-slate-200">
+                                    <a href="#"
+                                        class="flex items-center gap-4 px-5 py-3.5 hover:bg-slate-50 transition-colors">
+                                        <!-- Icon 4 chấm màu -->
+                                        <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24">
+                                            <circle cx="8" cy="8" r="2.5" fill="#4285F4" />
+                                            <circle cx="16" cy="8" r="2.5" fill="#EA4335" />
+                                            <circle cx="8" cy="16" r="2.5" fill="#34A853" />
+                                            <circle cx="16" cy="16" r="2.5" fill="#FBBC05" />
+                                        </svg>
+                                        <span class="text-sm text-slate-800">Trang chủ nền tảng</span>
+                                    </a>
+
+                                    <a href="#"
+                                        class="flex items-center gap-4 px-5 py-3.5 hover:bg-slate-50 transition-colors">
+                                        <!-- Icon Analytics -->
+                                        <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24">
+                                            <rect x="15" y="4" width="4" height="16" rx="2" fill="#F9AB00" />
+                                            <rect x="9.5" y="10" width="4" height="10" rx="2" fill="#E37400" />
+                                            <circle cx="6" cy="18" r="2" fill="#E37400" />
+                                        </svg>
+                                        <span class="text-sm text-slate-800">Analytics</span>
+                                    </a>
+                                </div>
+
+                                <!-- Accordion: Khám phá thêm các sản phẩm khác -->
+                                <div class="border-t border-slate-200">
+                                    <button type="button" id="btnMoreProducts"
+                                        class="w-full px-5 py-3.5 bg-[#f8f9fa] hover:bg-slate-100 flex items-center justify-between text-xs font-medium text-slate-700 transition-colors cursor-pointer">
+                                        <span>Khám phá thêm các sản phẩm khác</span>
+                                        <svg id="arrowMoreProducts"
+                                            class="w-4 h-4 text-slate-600 transition-transform duration-200" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- Danh sách sản phẩm mở rộng -->
+                                    <div id="moreProductsList"
+                                        class="hidden bg-white divide-y divide-slate-100 border-t border-slate-200">
+                                        <a href="#"
+                                            class="flex items-center gap-4 px-5 py-3 hover:bg-slate-50 transition-colors">
+                                            <svg class="w-5 h-5 shrink-0 text-[#34A853]" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path
+                                                    d="M15.5 5A4.5 4.5 0 0011 9.5c0 .65.14 1.27.39 1.83l-4.06 4.06A4.48 4.48 0 005.5 15 4.5 4.5 0 1010 19.5c0-.65-.14-1.27-.39-1.83l4.06-4.06c.56.25 1.18.39 1.83.39a4.5 4.5 0 100-9zm-10 16a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm10-10a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" />
+                                            </svg>
+                                            <span class="text-sm text-slate-800">Campaign Manager 360</span>
+                                        </a>
+
+                                        <a href="#"
+                                            class="flex items-center gap-4 px-5 py-3 hover:bg-slate-50 transition-colors">
+                                            <svg class="w-5 h-5 shrink-0 text-[#34A853]" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path
+                                                    d="M6 4.5v15a1.5 1.5 0 002.27 1.29l12.5-7.5a1.5 1.5 0 000-2.58l-12.5-7.5A1.5 1.5 0 006 4.5z" />
+                                            </svg>
+                                            <span class="text-sm text-slate-800">Hiển thị và Video 360</span>
+                                        </a>
+
+                                        <a href="#"
+                                            class="flex items-center gap-4 px-5 py-3 hover:bg-slate-50 transition-colors">
+                                            <svg class="w-5 h-5 shrink-0 text-[#4285F4]" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5">
+                                                <circle cx="10.5" cy="10.5" r="5.5" />
+                                                <path stroke-linecap="round" d="M15 15l5 5" />
+                                            </svg>
+                                            <span class="text-sm text-slate-800">Search Ads 360</span>
+                                        </a>
+
+                                        <a href="#"
+                                            class="flex items-center gap-4 px-5 py-3 hover:bg-slate-50 transition-colors">
+                                            <svg class="w-5 h-5 shrink-0 text-[#4285F4]" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path
+                                                    d="M12 2L3 11l9 9 9-9-9-9zm0 11.5L9.5 11 12 8.5 14.5 11 12 13.5z" />
+                                            </svg>
+                                            <span class="text-sm text-slate-800">Trình quản lý thẻ</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- 2. NÚT TRỢ GIÚP (DẤU CHẤM HỎI) -->
+                        <div class="relative group" data-popover-wrapper>
+                            <button type="button" data-popover-trigger="popoverHelp"
+                                class="w-10 h-10 rounded-full hover:bg-slate-100 focus:bg-slate-100 flex items-center justify-center transition-colors cursor-pointer">
+                                <span
+                                    class="w-6 h-6 rounded-full bg-[#5f6368] text-white text-sm font-bold flex items-center justify-center">
+                                    ?
+                                </span>
+                            </button>
+
+                            <!-- Tooltip khi hover -->
+                            <div
+                                class="tooltip-box pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-150 absolute right-0 top-full mt-2 bg-[#3c4043] text-white text-xs font-medium px-3 py-1.5 rounded shadow-md w-56 leading-snug z-20">
+                                Trình đơn mục nhập yêu cầu trợ giúp
+                            </div>
+
+                            <!-- POPOVER: MENU TRỢ GIÚP -->
+                            <div id="popoverHelp"
+                                class="popover-panel hidden absolute right-0 top-full mt-2 w-64 bg-white rounded-lg border border-slate-200 shadow-xl py-2 z-30">
+                                <a href="#"
+                                    class="flex items-center gap-4 px-5 py-3 hover:bg-slate-50 text-sm text-slate-800 transition-colors">
+                                    <svg class="w-5 h-5 text-[#5f6368]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                    </svg>
+                                    <span>Tìm hiểu về trang này</span>
+                                </a>
+
+                                <a href="#"
+                                    class="flex items-center gap-4 px-5 py-3 hover:bg-slate-50 text-sm text-slate-800 transition-colors">
+                                    <svg class="w-5 h-5 text-[#5f6368]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                                    </svg>
+                                    <span>Bắt đầu tìm hiểu</span>
+                                </a>
+
+                                <a href="#"
+                                    class="flex items-center gap-4 px-5 py-3 hover:bg-slate-50 text-sm text-slate-800 transition-colors">
+                                    <svg class="w-5 h-5 text-[#5f6368]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="1.8" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                            d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3m.08 4h.01" />
+                                    </svg>
+                                    <span>Yêu cầu trợ giúp thêm</span>
+                                </a>
+
+                                <a href="#"
+                                    class="flex items-center gap-4 px-5 py-3 hover:bg-slate-50 text-sm text-slate-800 transition-colors">
+                                    <svg class="w-5 h-5 text-[#5f6368]" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                            d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                                    </svg>
+                                    <span>Gửi phản hồi</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 3. NÚT TÀI KHOẢN GOOGLE (AVATAR) -->
+                        <div class="relative group" data-popover-wrapper>
+                            <button type="button" data-popover-trigger="popoverAccount"
+                                class="w-10 h-10 rounded-full hover:bg-slate-100 focus:bg-slate-100 flex items-center justify-center transition-colors cursor-pointer">
+                                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=100&h=100&fit=crop"
+                                    alt="Avatar" class="w-8 h-8 rounded-full object-cover border border-slate-200" />
+                            </button>
+
+                            <!-- Tooltip khi hover -->
+                            <div
+                                class="tooltip-box pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-150 absolute right-0 top-full mt-2 bg-[#3c4043] text-white text-xs font-medium px-3 py-2 rounded shadow-md w-60 leading-snug z-20">
+                                <div>Tài khoản Google:</div>
+                                <div class="text-slate-200 break-all">(nkieuhanhnguyen20@gmail.com)</div>
+                            </div>
+
+                            <!-- POPOVER: CHUYỂN ĐỔI TÀI KHOẢN GOOGLE -->
+                            <div id="popoverAccount"
+                                class="popover-panel hidden absolute right-0 top-full mt-2 w-80 bg-white rounded-lg border border-slate-200 shadow-xl z-30 overflow-hidden">
+
+                                <!-- Tài khoản hiện tại -->
+                                <div class="p-4 flex items-center gap-3.5 border-b border-slate-200">
+                                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=120&h=120&fit=crop"
+                                        alt="Current Avatar"
+                                        class="w-12 h-12 rounded-full object-cover shrink-0 border border-slate-200" />
+                                    <div class="min-w-0">
+                                        <p class="text-sm font-medium text-slate-800 truncate">nkieuhanhnguyen20@g...
+                                        </p>
+                                        <a href="#"
+                                            class="text-xs text-slate-500 underline hover:text-slate-700 mt-0.5 inline-block">
+                                            Chính sách quyền riêng tư
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Danh sách tài khoản phụ -->
+                                <div class="divide-y divide-slate-200">
+                                    <button type="button"
+                                        class="w-full px-4 py-3 hover:bg-slate-50 flex items-center gap-3.5 text-left transition-colors cursor-pointer">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-[#7b1fa2] text-white text-sm font-medium flex items-center justify-center shrink-0">
+                                            n
+                                        </div>
+                                        <div class="min-w-0">
+                                            <p class="text-sm text-slate-800 truncate">nhật long</p>
+                                            <p class="text-xs text-slate-500 truncate">modeptraivail19@gmail.com</p>
+                                        </div>
+                                    </button>
+
+                                    <button type="button"
+                                        class="w-full px-4 py-3 hover:bg-slate-50 flex items-center gap-3.5 text-left transition-colors cursor-pointer">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-[#8ab4f8] text-[#1a73e8] flex items-center justify-center shrink-0">
+                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                            </svg>
+                                        </div>
+                                        <div class="min-w-0">
+                                            <p class="text-sm text-slate-800 truncate">hahngn</p>
+                                            <p class="text-xs text-slate-500 truncate">hahngn215@gmail.com</p>
+                                        </div>
+                                    </button>
+
+                                    <!-- Các hành động quản lý tài khoản -->
+                                    <button type="button"
+                                        class="w-full px-5 py-3 hover:bg-slate-50 flex items-center gap-4 text-sm text-slate-700 transition-colors cursor-pointer">
+                                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 4v16m8-8H4" />
+                                        </svg>
+                                        <span>Thêm tài khoản</span>
+                                    </button>
+
+                                    <button type="button"
+                                        class="w-full px-5 py-3 hover:bg-slate-50 flex items-center gap-4 text-sm text-slate-700 transition-colors cursor-pointer">
+                                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M4 6h16M4 12h16M4 18h16" />
+                                        </svg>
+                                        <span>Manage account</span>
+                                    </button>
+
+                                    <button type="button"
+                                        class="w-full px-5 py-3 hover:bg-slate-50 flex items-center gap-4 text-sm text-slate-700 transition-colors cursor-pointer">
+                                        <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                        </svg>
+                                        <span>Đăng xuất</span>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Vùng trống bên dưới để hiển thị đầy đủ Popover khi bấm -->
+                <div class="flex-1 flex items-center justify-center p-6 text-xs text-slate-400">
+                    Nhấn vào 3 biểu tượng ở góc trên bên phải để kiểm tra các bảng Popover
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= KHỐI CODE HTML & TAILWIND ĐỂ COPY ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND</span>
+                <button id="btnCopyHtml"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyHtml">Copy HTML</span>
+                </button>
+            </div>
+            <pre class="p-4 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-96" id="codeHtml">&lt;div class="flex items-center gap-2 select-none font-sans"&gt;
+  &lt;!-- 1. CHUYỂN ĐỔI SẢN PHẨM --&gt;
+  &lt;div class="relative group" data-popover-wrapper&gt;
+    &lt;button type="button" data-popover-trigger="popoverProducts" class="w-10 h-10 rounded-full hover:bg-slate-100 flex items-center justify-center text-[#5f6368] cursor-pointer"&gt;
+      &lt;svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"&gt;&lt;path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z" /&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+    &lt;div class="tooltip-box pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity absolute right-0 top-full mt-2 bg-[#3c4043] text-white text-xs font-medium px-3 py-1.5 rounded shadow-md whitespace-nowrap z-20"&gt;
+      Chuyển đổi sản phẩm
+    &lt;/div&gt;
+    &lt;div id="popoverProducts" class="popover-panel hidden absolute right-0 top-full mt-2 w-80 bg-white rounded-lg border border-slate-200 shadow-xl z-30 overflow-hidden"&gt;
+      &lt;div class="py-6 px-5 flex flex-col items-center border-b border-slate-200"&gt;
+        &lt;div class="text-lg text-slate-600"&gt;&lt;span class="font-medium text-slate-700"&gt;Google&lt;/span&gt; Marketing Platform&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="divide-y divide-slate-200"&gt;
+        &lt;a href="#" class="flex items-center gap-4 px-5 py-3.5 hover:bg-slate-50 text-sm text-slate-800"&gt;Trang chủ nền tảng&lt;/a&gt;
+        &lt;a href="#" class="flex items-center gap-4 px-5 py-3.5 hover:bg-slate-50 text-sm text-slate-800"&gt;Analytics&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class="border-t border-slate-200"&gt;
+        &lt;button type="button" id="btnMoreProducts" class="w-full px-5 py-3.5 bg-[#f8f9fa] hover:bg-slate-100 flex items-center justify-between text-xs font-medium text-slate-700 cursor-pointer"&gt;
+          &lt;span&gt;Khám phá thêm các sản phẩm khác&lt;/span&gt;
+          &lt;svg id="arrowMoreProducts" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /&gt;&lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;div id="moreProductsList" class="hidden bg-white divide-y divide-slate-100 border-t border-slate-200"&gt;
+          &lt;a href="#" class="block px-5 py-3 hover:bg-slate-50 text-sm text-slate-800"&gt;Campaign Manager 360&lt;/a&gt;
+          &lt;a href="#" class="block px-5 py-3 hover:bg-slate-50 text-sm text-slate-800"&gt;Hiển thị và Video 360&lt;/a&gt;
+          &lt;a href="#" class="block px-5 py-3 hover:bg-slate-50 text-sm text-slate-800"&gt;Search Ads 360&lt;/a&gt;
+          &lt;a href="#" class="block px-5 py-3 hover:bg-slate-50 text-sm text-slate-800"&gt;Trình quản lý thẻ&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- 2. TRỢ GIÚP --&gt;
+  &lt;div class="relative group" data-popover-wrapper&gt;
+    &lt;button type="button" data-popover-trigger="popoverHelp" class="w-10 h-10 rounded-full hover:bg-slate-100 flex items-center justify-center cursor-pointer"&gt;
+      &lt;span class="w-6 h-6 rounded-full bg-[#5f6368] text-white text-sm font-bold flex items-center justify-center"&gt;?&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="tooltip-box pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity absolute right-0 top-full mt-2 bg-[#3c4043] text-white text-xs font-medium px-3 py-1.5 rounded shadow-md w-56 z-20"&gt;
+      Trình đơn mục nhập yêu cầu trợ giúp
+    &lt;/div&gt;
+    &lt;div id="popoverHelp" class="popover-panel hidden absolute right-0 top-full mt-2 w-64 bg-white rounded-lg border border-slate-200 shadow-xl py-2 z-30"&gt;
+      &lt;a href="#" class="block px-5 py-3 hover:bg-slate-50 text-sm text-slate-800"&gt;Tìm hiểu về trang này&lt;/a&gt;
+      &lt;a href="#" class="block px-5 py-3 hover:bg-slate-50 text-sm text-slate-800"&gt;Bắt đầu tìm hiểu&lt;/a&gt;
+      &lt;a href="#" class="block px-5 py-3 hover:bg-slate-50 text-sm text-slate-800"&gt;Yêu cầu trợ giúp thêm&lt;/a&gt;
+      &lt;a href="#" class="block px-5 py-3 hover:bg-slate-50 text-sm text-slate-800"&gt;Gửi phản hồi&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- 3. TÀI KHOẢN GOOGLE --&gt;
+  &lt;div class="relative group" data-popover-wrapper&gt;
+    &lt;button type="button" data-popover-trigger="popoverAccount" class="w-10 h-10 rounded-full hover:bg-slate-100 flex items-center justify-center cursor-pointer"&gt;
+      &lt;img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=100&amp;h=100&amp;fit=crop" alt="Avatar" class="w-8 h-8 rounded-full object-cover" /&gt;
+    &lt;/button&gt;
+    &lt;div class="tooltip-box pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity absolute right-0 top-full mt-2 bg-[#3c4043] text-white text-xs font-medium px-3 py-2 rounded shadow-md w-60 z-20"&gt;
+      Tài khoản Google: (nkieuhanhnguyen20@gmail.com)
+    &lt;/div&gt;
+    &lt;div id="popoverAccount" class="popover-panel hidden absolute right-0 top-full mt-2 w-80 bg-white rounded-lg border border-slate-200 shadow-xl z-30 overflow-hidden"&gt;
+      &lt;div class="p-4 border-b border-slate-200"&gt;
+        &lt;p class="text-sm font-medium text-slate-800"&gt;nkieuhanhnguyen20@g...&lt;/p&gt;
+        &lt;a href="#" class="text-xs text-slate-500 underline"&gt;Chính sách quyền riêng tư&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class="divide-y divide-slate-200 text-sm"&gt;
+        &lt;button type="button" class="w-full px-4 py-3 hover:bg-slate-50 text-left"&gt;nhật long (modeptraivail19@gmail.com)&lt;/button&gt;
+        &lt;button type="button" class="w-full px-4 py-3 hover:bg-slate-50 text-left"&gt;hahngn (hahngn215@gmail.com)&lt;/button&gt;
+        &lt;button type="button" class="w-full px-5 py-3 hover:bg-slate-50 text-left"&gt;+ Thêm tài khoản&lt;/button&gt;
+        &lt;button type="button" class="w-full px-5 py-3 hover:bg-slate-50 text-left"&gt;Manage account&lt;/button&gt;
+        &lt;button type="button" class="w-full px-5 py-3 hover:bg-slate-50 text-left"&gt;Đăng xuất&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- ================= KHỐI CODE JAVASCRIPT ĐỂ COPY ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM)</span>
+                <button id="btnCopyJs"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyJs">Copy JS</span>
+                </button>
+            </div>
+            <pre class="p-4 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-80" id="codeJs">// 1. Đóng/Mở từng Popover và tự ẩn Tooltip khi Popover đang mở
+const triggers = document.querySelectorAll('[data-popover-trigger]');
+const panels = document.querySelectorAll('.popover-panel');
+
+triggers.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const targetId = btn.getAttribute('data-popover-trigger');
+    const targetPanel = document.getElementById(targetId);
+    const isHidden = targetPanel.classList.contains('hidden');
+
+    // Đóng tất cả popover khác
+    panels.forEach(p => p.classList.add('hidden'));
+    document.querySelectorAll('.tooltip-box').forEach(t => t.classList.remove('!hidden'));
+
+    if (isHidden) {
+      targetPanel.classList.remove('hidden');
+      const tooltip = btn.parentElement.querySelector('.tooltip-box');
+      if (tooltip) tooltip.classList.add('!hidden');
+    }
+  });
+});
+
+// Ngăn click bên trong Popover làm đóng menu
+panels.forEach(panel => {
+  panel.addEventListener('click', (e) => e.stopPropagation());
+});
+
+// Click ra ngoài để đóng toàn bộ Popover
+document.addEventListener('click', () => {
+  panels.forEach(p => p.classList.add('hidden'));
+  document.querySelectorAll('.tooltip-box').forEach(t => t.classList.remove('!hidden'));
+});
+
+// 2. Accordion "Khám phá thêm các sản phẩm khác"
+const btnMoreProducts = document.getElementById('btnMoreProducts');
+const moreProductsList = document.getElementById('moreProductsList');
+const arrowMoreProducts = document.getElementById('arrowMoreProducts');
+
+btnMoreProducts?.addEventListener('click', () => {
+  moreProductsList.classList.toggle('hidden');
+  arrowMoreProducts.classList.toggle('rotate-180');
+});</pre>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        const triggers = document.querySelectorAll('[data-popover-trigger]');
+        const panels = document.querySelectorAll('.popover-panel');
+
+        triggers.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const targetId = btn.getAttribute('data-popover-trigger');
+                const targetPanel = document.getElementById(targetId);
+                const isHidden = targetPanel.classList.contains('hidden');
+
+                panels.forEach(p => p.classList.add('hidden'));
+                document.querySelectorAll('.tooltip-box').forEach(t => t.classList.remove('!hidden'));
+
+                if (isHidden) {
+                    targetPanel.classList.remove('hidden');
+                    const tooltip = btn.parentElement.querySelector('.tooltip-box');
+                    if (tooltip) tooltip.classList.add('!hidden');
+                }
+            });
+        });
+
+        panels.forEach(panel => {
+            panel.addEventListener('click', (e) => e.stopPropagation());
+        });
+
+        document.addEventListener('click', () => {
+            panels.forEach(p => p.classList.add('hidden'));
+            document.querySelectorAll('.tooltip-box').forEach(t => t.classList.remove('!hidden'));
+        });
+
+        const btnMoreProducts = document.getElementById('btnMoreProducts');
+        const moreProductsList = document.getElementById('moreProductsList');
+        const arrowMoreProducts = document.getElementById('arrowMoreProducts');
+
+        btnMoreProducts?.addEventListener('click', () => {
+            moreProductsList.classList.toggle('hidden');
+            arrowMoreProducts.classList.toggle('rotate-180');
+        });
+    </script>
+</body>
+
+</html>

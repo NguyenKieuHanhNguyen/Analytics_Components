@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ Mới - GA4 UI Kit</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800 font-sans">
+
+    <!-- ================= SIDEBAR MENU BÊN TRÁI ================= -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+        <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+            <div
+                class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+                📊
+            </div>
+            <div>
+                <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+                <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+            </div>
+        </div>
+
+        <div class="p-3 overflow-y-auto flex-1">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+            <nav class="space-y-1">
+                <a href="index.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏠</span> Tổng quan UI Kit
+                </a>
+                <a href="accordion.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📂</span> Accordion Tasks
+                </a>
+                <a href="popup-picker.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🪟</span> Popup / Modal Picker
+                </a>
+                <a href="sidebar.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📑</span> Sidebar GA4
+                </a>
+                <a href="exploration-carousel.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🎠</span> Carousel Khám phá
+                </a>
+                <a href="account-settings.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚙️</span> Cài đặt Tài khoản
+                </a>
+                <a href="data-streams.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🌊</span> Luồng Dữ Liệu
+                </a>
+                <a href="email-communications.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>✉️</span> Liên Lạc Qua Email
+                </a>
+                <a href="user-account-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>👤</span> Thông Tin Tài Khoản
+                </a>
+                <a href="property-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏢</span> Thông Tin Tài Sản
+                </a>
+                <a href="reports-library.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📋</span> Thư Viện Báo Cáo
+                </a>
+                <a href="onboarding-cards.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🧭</span> Thẻ Hướng Dẫn & Onboarding
+                </a>
+                <a href="advertising-hub.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📢</span> Bắt Đầu Quảng Cáo
+                </a>
+                <a href="data-retention.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⏳</span> Giữ Lại Dữ Liệu
+                </a>
+                <a href="events-management.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚡</span> Sự Kiện Đề Xuất
+                </a>
+                <a href="new-contact.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+                    <span>📇</span> Liên Hệ Mới
+                </a>
+                <a href="header-utilities.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🧩</span> Tiện Ích Header GA4
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- ================= KHU VỰC CHÍNH ================= -->
+    <main class="flex-1 p-8 max-w-5xl overflow-y-auto">
+        <div class="flex items-center gap-3 mb-6">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Modal Form</span>
+            <h2 class="text-xl font-bold text-slate-800">Thêm Liên Hệ Mới (Interactive Hover & Validation)</h2>
+        </div>
+
+        <!-- ================= KHỐI GIAO DIỆN XEM TRƯỚC ================= -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Rê chuột vào ô để chuyển
+                    xanh, click vào mà để trống sẽ báo đỏ
+                </span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+            </div>
+
+            <!-- Khung mô phỏng màn hình Full-page Dialog -->
+            <div class="bg-[#f8f9fa]">
+
+                <!-- 1. TOP APP BAR -->
+                <div class="bg-white border-b border-slate-200 px-5 py-3 flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <button type="button"
+                            class="p-2 rounded-full text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer"
+                            title="Đóng">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                        <div>
+                            <p class="text-[11px] text-slate-500 leading-tight">Default Account for Firebase</p>
+                            <h1 class="text-lg font-normal text-slate-800 leading-snug">Liên hệ mới</h1>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <button type="button" id="btnSubmitContact" disabled
+                            class="px-5 py-2 rounded text-sm font-medium bg-[#e8eaed] text-[#9aa0a6] cursor-not-allowed transition-all">
+                            Thêm
+                        </button>
+                        <button type="button"
+                            class="p-2 rounded-full text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer"
+                            title="Tuỳ chọn khác">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2. NỘI DUNG FORM BÊN TRONG -->
+                <div class="p-6 md:p-10 flex justify-center">
+                    <div
+                        class="w-full max-w-3xl bg-white border border-slate-200 rounded-lg shadow-2xs overflow-hidden">
+
+                        <!-- Card Header -->
+                        <div class="px-6 py-4 border-b border-slate-200">
+                            <h2 class="text-sm font-medium text-slate-800">Chi tiết liên hệ</h2>
+                        </div>
+
+                        <!-- Khu vực các trường nhập liệu (Mặc định tất cả đều màu xám) -->
+                        <div class="p-6 space-y-5 border-b border-slate-200">
+
+                            <!-- Hàng 1: Tên* & Họ* -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md">
+                                <!-- Input Tên* -->
+                                <div class="field-box relative">
+                                    <input type="text" id="inputFirstName" placeholder=" "
+                                        class="contact-input peer w-full bg-[#f1f3f4] text-slate-800 text-sm px-3.5 pt-5 pb-2 rounded-t border-b border-slate-400 focus:outline-none transition-colors" />
+                                    <label for="inputFirstName"
+                                        class="field-label pointer-events-none absolute left-3.5 top-2 text-[11px] text-slate-600 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-[11px]">
+                                        Tên*
+                                    </label>
+                                </div>
+
+                                <!-- Input Họ* -->
+                                <div class="field-box relative">
+                                    <input type="text" id="inputLastName" placeholder=" "
+                                        class="contact-input peer w-full bg-[#f1f3f4] text-slate-800 text-sm px-3.5 pt-5 pb-2 rounded-t border-b border-slate-400 focus:outline-none transition-colors" />
+                                    <label for="inputLastName"
+                                        class="field-label pointer-events-none absolute left-3.5 top-2 text-[11px] text-slate-600 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-[11px]">
+                                        Họ*
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Hàng 2: Email* -->
+                            <div class="max-w-md">
+                                <div class="field-box relative">
+                                    <input type="email" id="inputEmail" placeholder=" "
+                                        class="contact-input peer w-full bg-[#f1f3f4] text-slate-800 text-sm px-3.5 pt-5 pb-2 rounded-t border-b border-slate-400 focus:outline-none transition-colors" />
+                                    <label for="inputEmail"
+                                        class="field-label pointer-events-none absolute left-3.5 top-2 text-[11px] text-slate-600 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-[11px]">
+                                        Email*
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Hàng 3: Địa chỉ gửi thư* -->
+                            <div class="max-w-xl">
+                                <div class="field-box relative">
+                                    <input type="text" id="inputAddress" placeholder=" "
+                                        class="contact-input peer w-full bg-[#f1f3f4] text-slate-800 text-sm px-3.5 pt-5 pb-2 rounded-t border-b border-slate-400 focus:outline-none transition-colors" />
+                                    <label for="inputAddress"
+                                        class="field-label pointer-events-none absolute left-3.5 top-2 text-[11px] text-slate-600 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-[11px]">
+                                        Địa chỉ gửi thư*
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Khu vực chọn Vai trò -->
+                        <div class="p-6 space-y-4">
+                            <p class="text-xs font-medium text-slate-700">
+                                Tổ chức của bạn phải có ít nhất một địa chỉ liên hệ chính.
+                            </p>
+
+                            <div class="space-y-3">
+                                <h3 class="text-xs font-semibold text-slate-800">Vai trò</h3>
+
+                                <label class="flex items-center gap-3 cursor-pointer select-none group w-fit">
+                                    <input type="checkbox" checked class="peer sr-only" />
+                                    <span
+                                        class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center transition-colors">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </span>
+                                    <span class="text-xs text-slate-700 group-hover:text-slate-900">Địa chỉ liên hệ
+                                        chính</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 cursor-pointer select-none group w-fit">
+                                    <input type="checkbox" checked class="peer sr-only" />
+                                    <span
+                                        class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center transition-colors">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </span>
+                                    <span class="text-xs text-slate-700 group-hover:text-slate-900">Nhân viên bảo vệ dữ
+                                        liệu (DPO)</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 cursor-pointer select-none group w-fit">
+                                    <input type="checkbox" checked class="peer sr-only" />
+                                    <span
+                                        class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center transition-colors">
+                                        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                                d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </span>
+                                    <span class="text-xs text-slate-700 group-hover:text-slate-900">Đại diện tại Khu vực
+                                        kinh tế Châu Âu (EEA)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= KHỐI CODE HTML ĐỂ COPY (ĐÃ ĐỒNG BỘ ĐẦY ĐỦ) ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND</span>
+                <button id="btnCopyHtml"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyHtml">Copy HTML</span>
+                </button>
+            </div>
+            <pre class="p-4 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-96" id="codeHtml">&lt;div class="bg-[#f8f9fa] min-h-screen font-sans text-slate-800"&gt;
+  &lt;!-- 1. TOP APP BAR --&gt;
+  &lt;div class="bg-white border-b border-slate-200 px-5 py-3 flex items-center justify-between"&gt;
+    &lt;div class="flex items-center gap-4"&gt;
+      &lt;button type="button" class="p-2 rounded-full text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer"&gt;
+        &lt;svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;div&gt;
+        &lt;p class="text-[11px] text-slate-500 leading-tight"&gt;Default Account for Firebase&lt;/p&gt;
+        &lt;h1 class="text-lg font-normal text-slate-800 leading-snug"&gt;Liên hệ mới&lt;/h1&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="flex items-center gap-2"&gt;
+      &lt;button type="button" id="btnSubmitContact" disabled class="px-5 py-2 rounded text-sm font-medium bg-[#e8eaed] text-[#9aa0a6] cursor-not-allowed transition-all"&gt;Thêm&lt;/button&gt;
+      &lt;button type="button" class="p-2 rounded-full text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer"&gt;
+        &lt;svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"&gt;&lt;path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" /&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- 2. FORM CONTAINER --&gt;
+  &lt;div class="p-6 md:p-10 flex justify-center"&gt;
+    &lt;div class="w-full max-w-3xl bg-white border border-slate-200 rounded-lg shadow-2xs overflow-hidden"&gt;
+      &lt;div class="px-6 py-4 border-b border-slate-200"&gt;
+        &lt;h2 class="text-sm font-medium text-slate-800"&gt;Chi tiết liên hệ&lt;/h2&gt;
+      &lt;/div&gt;
+
+      &lt;div class="p-6 space-y-5 border-b border-slate-200"&gt;
+        &lt;div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md"&gt;
+          &lt;div class="field-box relative"&gt;
+            &lt;input type="text" id="inputFirstName" placeholder=" " class="contact-input peer w-full bg-[#f1f3f4] text-slate-800 text-sm px-3.5 pt-5 pb-2 rounded-t border-b border-slate-400 focus:outline-none transition-colors" /&gt;
+            &lt;label for="inputFirstName" class="field-label pointer-events-none absolute left-3.5 top-2 text-[11px] text-slate-600 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-[11px]"&gt;Tên*&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class="field-box relative"&gt;
+            &lt;input type="text" id="inputLastName" placeholder=" " class="contact-input peer w-full bg-[#f1f3f4] text-slate-800 text-sm px-3.5 pt-5 pb-2 rounded-t border-b border-slate-400 focus:outline-none transition-colors" /&gt;
+            &lt;label for="inputLastName" class="field-label pointer-events-none absolute left-3.5 top-2 text-[11px] text-slate-600 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-[11px]"&gt;Họ*&lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="max-w-md"&gt;
+          &lt;div class="field-box relative"&gt;
+            &lt;input type="email" id="inputEmail" placeholder=" " class="contact-input peer w-full bg-[#f1f3f4] text-slate-800 text-sm px-3.5 pt-5 pb-2 rounded-t border-b border-slate-400 focus:outline-none transition-colors" /&gt;
+            &lt;label for="inputEmail" class="field-label pointer-events-none absolute left-3.5 top-2 text-[11px] text-slate-600 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-[11px]"&gt;Email*&lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="max-w-xl"&gt;
+          &lt;div class="field-box relative"&gt;
+            &lt;input type="text" id="inputAddress" placeholder=" " class="contact-input peer w-full bg-[#f1f3f4] text-slate-800 text-sm px-3.5 pt-5 pb-2 rounded-t border-b border-slate-400 focus:outline-none transition-colors" /&gt;
+            &lt;label for="inputAddress" class="field-label pointer-events-none absolute left-3.5 top-2 text-[11px] text-slate-600 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-[11px]"&gt;Địa chỉ gửi thư*&lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="p-6 space-y-4"&gt;
+        &lt;p class="text-xs font-medium text-slate-700"&gt;Tổ chức của bạn phải có ít nhất một địa chỉ liên hệ chính.&lt;/p&gt;
+        &lt;div class="space-y-3"&gt;
+          &lt;h3 class="text-xs font-semibold text-slate-800"&gt;Vai trò&lt;/h3&gt;
+          &lt;label class="flex items-center gap-3 cursor-pointer select-none group w-fit"&gt;
+            &lt;input type="checkbox" checked class="peer sr-only" /&gt;
+            &lt;span class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center transition-colors"&gt;
+              &lt;svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /&gt;&lt;/svg&gt;
+            &lt;/span&gt;
+            &lt;span class="text-xs text-slate-700"&gt;Địa chỉ liên hệ chính&lt;/span&gt;
+          &lt;/label&gt;
+          &lt;label class="flex items-center gap-3 cursor-pointer select-none group w-fit"&gt;
+            &lt;input type="checkbox" checked class="peer sr-only" /&gt;
+            &lt;span class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center transition-colors"&gt;
+              &lt;svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /&gt;&lt;/svg&gt;
+            &lt;/span&gt;
+            &lt;span class="text-xs text-slate-700"&gt;Nhân viên bảo vệ dữ liệu (DPO)&lt;/span&gt;
+          &lt;/label&gt;
+          &lt;label class="flex items-center gap-3 cursor-pointer select-none group w-fit"&gt;
+            &lt;input type="checkbox" checked class="peer sr-only" /&gt;
+            &lt;span class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center transition-colors"&gt;
+              &lt;svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /&gt;&lt;/svg&gt;
+            &lt;/span&gt;
+            &lt;span class="text-xs text-slate-700"&gt;Đại diện tại Khu vực kinh tế Châu Âu (EEA)&lt;/span&gt;
+          &lt;/label&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- ================= KHỐI CODE JAVASCRIPT ĐỂ COPY (ĐÃ ĐỒNG BỘ ĐẦY ĐỦ) ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM)</span>
+                <button id="btnCopyJs"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyJs">Copy JS</span>
+                </button>
+            </div>
+            <pre class="p-4 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-80" id="codeJs">const fieldBoxes = document.querySelectorAll('.field-box');
+const btnSubmit = document.querySelector('#btnSubmitContact');
+
+function setFieldState(box, state) {
+  const input = box.querySelector('.contact-input');
+  const label = box.querySelector('.field-label');
+
+  input.classList.remove(
+    'border-[#d93025]', 'border-[#1a73e8]', 'border-slate-400',
+    'border-b', 'border-b-2',
+    'bg-[#e8eaed]', 'bg-[#f1f3f4]'
+  );
+  label.classList.remove('text-[#d93025]', 'text-[#1a73e8]', 'text-slate-600');
+
+  if (state === 'active') {
+    input.classList.add('border-b-2', 'border-[#1a73e8]', 'bg-[#e8eaed]');
+    label.classList.add('text-[#1a73e8]');
+  } else if (state === 'error') {
+    input.classList.add('border-b-2', 'border-[#d93025]', 'bg-[#f1f3f4]');
+    label.classList.add('text-[#d93025]');
+  } else {
+    input.classList.add('border-b', 'border-slate-400', 'bg-[#f1f3f4]');
+    label.classList.add('text-slate-600');
+  }
+}
+
+fieldBoxes.forEach(box => {
+  const input = box.querySelector('.contact-input');
+  let isTouched = false;
+
+  box.addEventListener('mouseenter', () => setFieldState(box, 'active'));
+  box.addEventListener('mouseleave', () => {
+    if (document.activeElement !== input) {
+      setFieldState(box, input.value.trim() ? 'normal' : (isTouched ? 'error' : 'normal'));
+    }
+  });
+  input.addEventListener('focus', () => {
+    isTouched = true;
+    setFieldState(box, 'active');
+  });
+  input.addEventListener('blur', () => {
+    setFieldState(box, input.value.trim() ? 'normal' : 'error');
+  });
+  input.addEventListener('input', checkFormValid);
+});
+
+function checkFormValid() {
+  const inputs = document.querySelectorAll('.contact-input');
+  const allFilled = Array.from(inputs).every(i => i.value.trim() !== '');
+  btnSubmit.disabled = !allFilled;
+  btnSubmit.className = allFilled
+    ? 'px-5 py-2 rounded text-sm font-medium bg-[#1a73e8] hover:bg-[#1557b0] text-white cursor-pointer transition-all shadow-xs'
+    : 'px-5 py-2 rounded text-sm font-medium bg-[#e8eaed] text-[#9aa0a6] cursor-not-allowed transition-all';
+}</pre>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        const fieldBoxes = document.querySelectorAll('.field-box');
+        const btnSubmit = document.querySelector('#btnSubmitContact');
+
+        function setFieldState(box, state) {
+            const input = box.querySelector('.contact-input');
+            const label = box.querySelector('.field-label');
+
+            input.classList.remove(
+                'border-[#d93025]', 'border-[#1a73e8]', 'border-slate-400',
+                'border-b', 'border-b-2',
+                'bg-[#e8eaed]', 'bg-[#f1f3f4]'
+            );
+            label.classList.remove('text-[#d93025]', 'text-[#1a73e8]', 'text-slate-600');
+
+            if (state === 'active') {
+                input.classList.add('border-b-2', 'border-[#1a73e8]', 'bg-[#e8eaed]');
+                label.classList.add('text-[#1a73e8]');
+            } else if (state === 'error') {
+                input.classList.add('border-b-2', 'border-[#d93025]', 'bg-[#f1f3f4]');
+                label.classList.add('text-[#d93025]');
+            } else {
+                input.classList.add('border-b', 'border-slate-400', 'bg-[#f1f3f4]');
+                label.classList.add('text-slate-600');
+            }
+        }
+
+        fieldBoxes.forEach(box => {
+            const input = box.querySelector('.contact-input');
+            let isTouched = false;
+
+            box.addEventListener('mouseenter', () => {
+                setFieldState(box, 'active');
+            });
+
+            box.addEventListener('mouseleave', () => {
+                if (document.activeElement !== input) {
+                    setFieldState(box, input.value.trim() ? 'normal' : (isTouched ? 'error' : 'normal'));
+                }
+            });
+
+            input.addEventListener('focus', () => {
+                isTouched = true;
+                setFieldState(box, 'active');
+            });
+
+            input.addEventListener('blur', () => {
+                setFieldState(box, input.value.trim() ? 'normal' : 'error');
+            });
+
+            input.addEventListener('input', checkFormValid);
+        });
+
+        function checkFormValid() {
+            const inputs = document.querySelectorAll('.contact-input');
+            const allFilled = Array.from(inputs).every(i => i.value.trim() !== '');
+            btnSubmit.disabled = !allFilled;
+            btnSubmit.className = allFilled
+                ? 'px-5 py-2 rounded text-sm font-medium bg-[#1a73e8] hover:bg-[#1557b0] text-white cursor-pointer transition-all shadow-xs'
+                : 'px-5 py-2 rounded text-sm font-medium bg-[#e8eaed] text-[#9aa0a6] cursor-not-allowed transition-all';
+        }
+
+        btnSubmit.addEventListener('click', () => {
+            if (!btnSubmit.disabled) {
+                btnSubmit.innerText = 'Đã thêm ✓';
+                btnSubmit.classList.replace('bg-[#1a73e8]', 'bg-emerald-600');
+                setTimeout(() => {
+                    btnSubmit.innerText = 'Thêm';
+                    btnSubmit.classList.replace('bg-emerald-600', 'bg-[#1a73e8]');
+                }, 1800);
+            }
+        });
+    </script>
+</body>
+
+</html>
