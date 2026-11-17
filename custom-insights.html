@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Chi Tiết Tuỳ Chỉnh - GA4 UI Kit</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen flex text-slate-800 font-sans">
+
+    <!-- ================= SIDEBAR MENU BÊN TRÁI ================= -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
+        <div class="p-4 border-b border-slate-100 flex items-center gap-3">
+            <div
+                class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-sm">
+                📊
+            </div>
+            <div>
+                <h1 class="text-sm font-bold text-slate-800">Analytics UI Kit</h1>
+                <p class="text-xs text-slate-400">Tailwind & Pure JS</p>
+            </div>
+        </div>
+
+        <div class="p-3 overflow-y-auto flex-1">
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">Danh sách Components</p>
+            <nav class="space-y-1">
+                <a href="index.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏠</span> Tổng quan UI Kit
+                </a>
+                <a href="accordion.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📂</span> Accordion Tasks
+                </a>
+                <a href="popup-picker.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🪟</span> Popup / Modal Picker
+                </a>
+                <a href="sidebar.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📑</span> Sidebar GA4
+                </a>
+                <a href="exploration-carousel.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🎠</span> Carousel Khám phá
+                </a>
+                <a href="account-settings.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚙️</span> Cài đặt Tài khoản
+                </a>
+                <a href="data-streams.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🌊</span> Luồng Dữ Liệu
+                </a>
+                <a href="email-communications.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>✉️</span> Liên Lạc Qua Email
+                </a>
+                <a href="user-account-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>👤</span> Thông Tin Tài Khoản
+                </a>
+                <a href="property-details.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🏢</span> Thông Tin Tài Sản
+                </a>
+                <a href="reports-library.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📋</span> Thư Viện Báo Cáo
+                </a>
+                <a href="onboarding-cards.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🧭</span> Thẻ Hướng Dẫn & Onboarding
+                </a>
+                <a href="advertising-hub.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📢</span> Bắt Đầu Quảng Cáo
+                </a>
+                <a href="data-retention.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⏳</span> Giữ Lại Dữ Liệu
+                </a>
+                <a href="events-management.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>⚡</span> Sự Kiện Đề Xuất
+                </a>
+                <a href="new-contact.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>📇</span> Liên Hệ Mới
+                </a>
+                <a href="header-utilities.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>🧩</span> Tiện Ích Header GA4
+                </a>
+                <a href="insights-drawer.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-600 hover:bg-slate-100 font-medium text-sm transition-colors">
+                    <span>✨</span> Chú Thích & Insights
+                </a>
+                <a href="custom-insights.html"
+                    class="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-blue-50 text-blue-600 font-semibold text-sm shadow-2xs">
+                    <span>🎯</span> Thông Tin Chi Tiết Tuỳ Chỉnh
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- ================= KHU VỰC CHÍNH ================= -->
+    <main class="flex-1 p-8 max-w-5xl overflow-y-auto">
+        <div class="flex items-center gap-3 mb-6">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded">Multi-Step Flow</span>
+            <h2 class="text-xl font-bold text-slate-800">Thông Tin Chi Tiết Tuỳ Chỉnh (Custom Insights Wizard)</h2>
+        </div>
+
+        <!-- ================= KHỐI GIAO DIỆN XEM TRƯỚC ================= -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm mb-6 overflow-hidden">
+            <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+                <span class="text-xs font-semibold text-slate-700 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Bấm "Tạo" &rarr; chọn đề
+                    xuất hoặc "Xem lại và tạo" / "Tạo mới" để trải nghiệm đủ 3 màn hình
+                </span>
+                <span class="text-[11px] font-medium px-2 py-0.5 rounded bg-blue-100 text-blue-700">Interactive</span>
+            </div>
+
+            <!-- Khung mô phỏng toàn màn hình GA4 -->
+            <div class="bg-[#f8f9fa] h-[680px] relative overflow-hidden flex flex-col">
+
+                <!-- ==================== BƯỚC 1: MÀN HÌNH TRỐNG (EMPTY STATE) ==================== -->
+                <div id="stepEmptyState" class="flex flex-col h-full">
+                    <!-- Header -->
+                    <div class="bg-white border-b border-slate-200 px-5 py-3.5 flex items-center gap-4 shrink-0">
+                        <button type="button"
+                            class="p-1.5 rounded-full text-slate-500 hover:bg-slate-100 cursor-pointer" title="Đóng">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                        <h1 class="text-lg font-normal text-slate-800">Thông tin chi tiết tuỳ chỉnh</h1>
+                    </div>
+
+                    <!-- Nội dung chính (Empty State hoặc Danh sách đã tạo) -->
+                    <div id="emptyContainer" class="flex-1 flex flex-col items-center justify-center p-6 text-center">
+                        <!-- Icon biểu đồ lấp lánh -->
+                        <div class="mb-4 text-[#3c4043]">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3 17l5-5 4 4 8-8M14 4h.01M18 8h.01M6 7h.01M6 5v4M4 7h4" />
+                            </svg>
+                        </div>
+                        <p class="text-xs text-slate-600 max-w-sm leading-relaxed mb-4">
+                            Thông tin chi tiết tuỳ chỉnh giúp bạn tự động theo dõi hiệu suất của tài sản.
+                        </p>
+                        <p class="text-xs font-semibold text-slate-800 mb-5">
+                            Chưa có thông tin chi tiết tuỳ chỉnh nào được tạo trong tài sản này.
+                        </p>
+                        <button type="button" id="btnOpenStep2"
+                            class="bg-[#1a73e8] hover:bg-[#1557b0] active:scale-95 text-white text-xs font-medium px-6 py-2.5 rounded transition-all cursor-pointer shadow-xs">
+                            Tạo
+                        </button>
+                    </div>
+
+                    <!-- Danh sách các thông tin chi tiết sau khi người dùng tạo xong -->
+                    <div id="createdInsightsContainer" class="hidden flex-1 p-6 md:p-10 overflow-y-auto">
+                        <div class="max-w-3xl mx-auto space-y-4">
+                            <div class="flex items-center justify-between">
+                                <h2 class="text-sm font-semibold text-slate-800">Danh sách thông tin chi tiết đang hoạt
+                                    động</h2>
+                                <button type="button" id="btnAddMoreInsight"
+                                    class="bg-[#1a73e8] hover:bg-[#1557b0] text-white text-xs font-medium px-4 py-2 rounded cursor-pointer">
+                                    + Tạo thêm
+                                </button>
+                            </div>
+                            <div id="createdInsightsList"
+                                class="bg-white border border-slate-200 rounded-lg divide-y divide-slate-200 overflow-hidden shadow-2xs">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== BƯỚC 2: DRAWER ĐỀ XUẤT & BẮT ĐẦU TỪ ĐẦU ==================== -->
+                <div id="stepDrawerOverlay" class="hidden absolute inset-0 bg-black/35 flex justify-end z-20">
+                    <div
+                        class="w-full max-w-[820px] bg-white h-full flex flex-col shadow-2xl border-l border-slate-200">
+
+                        <!-- Header Drawer -->
+                        <div class="px-5 py-3.5 border-b border-slate-200 flex items-center gap-4 shrink-0">
+                            <button type="button" id="btnCloseStep2"
+                                class="p-1.5 rounded-full text-slate-500 hover:bg-slate-100 cursor-pointer"
+                                title="Đóng">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                            <h2 class="text-lg font-normal text-slate-800">Tạo thông tin chi tiết tuỳ chỉnh</h2>
+                        </div>
+
+                        <!-- Body Drawer -->
+                        <div class="flex-1 overflow-y-auto p-6 md:p-8 space-y-6 bg-[#f8f9fa]/40">
+
+                            <!-- Card 1: Thông tin chi tiết tuỳ chỉnh đề xuất -->
+                            <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-2xs">
+                                <div class="px-6 py-4 border-b border-slate-200">
+                                    <h3 class="text-sm font-medium text-slate-800">Thông tin chi tiết tuỳ chỉnh đề xuất
+                                    </h3>
+                                    <p class="text-xs text-slate-600 mt-1">
+                                        Bạn nên tạo thông tin chi tiết sau cho tài sản của mình.
+                                        <a href="#" class="text-[#1a73e8] underline hover:text-blue-700">Tìm hiểu
+                                            thêm</a>
+                                    </p>
+                                </div>
+
+                                <div class="p-6 space-y-3.5" id="suggestedList">
+                                    <!-- Item 1 -->
+                                    <div
+                                        class="suggested-row border border-slate-200 rounded-lg px-5 py-4 flex items-center justify-between gap-4 hover:border-slate-300 transition-colors">
+                                        <label class="flex items-center gap-4 cursor-pointer flex-1 min-w-0">
+                                            <input type="checkbox" checked class="suggested-cb peer sr-only"
+                                                data-title="Bất thường trong số sự kiện hằng ngày"
+                                                data-metric="Số lượng sự kiện" />
+                                            <span
+                                                class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center shrink-0 transition-colors">
+                                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            </span>
+                                            <div class="min-w-0">
+                                                <p class="text-xs font-semibold text-slate-800">Bất thường trong số sự
+                                                    kiện hằng ngày</p>
+                                                <p class="text-xs text-slate-500 mt-0.5">Bạn sẽ nhận được email thông
+                                                    báo nếu có bất thường trong tổng số sự kiện hằng ngày</p>
+                                            </div>
+                                        </label>
+                                        <button type="button"
+                                            class="btn-review-create text-xs font-medium text-[#1a73e8] hover:bg-blue-50 px-3 py-1.5 rounded shrink-0 cursor-pointer transition-colors"
+                                            data-title="Bất thường trong số sự kiện hằng ngày"
+                                            data-metric="Số lượng sự kiện">
+                                            Xem lại và tạo
+                                        </button>
+                                    </div>
+
+                                    <!-- Item 2 -->
+                                    <div
+                                        class="suggested-row border border-slate-200 rounded-lg px-5 py-4 flex items-center justify-between gap-4 hover:border-slate-300 transition-colors">
+                                        <label class="flex items-center gap-4 cursor-pointer flex-1 min-w-0">
+                                            <input type="checkbox" checked class="suggested-cb peer sr-only"
+                                                data-title="Bất thường trong số người dùng hằng ngày"
+                                                data-metric="Tổng số người dùng" />
+                                            <span
+                                                class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center shrink-0 transition-colors">
+                                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            </span>
+                                            <div class="min-w-0">
+                                                <p class="text-xs font-semibold text-slate-800">Bất thường trong số
+                                                    người dùng hằng ngày</p>
+                                                <p class="text-xs text-slate-500 mt-0.5">Bạn sẽ nhận được email thông
+                                                    báo nếu có bất thường trong tổng số người dùng hằng ngày</p>
+                                            </div>
+                                        </label>
+                                        <button type="button"
+                                            class="btn-review-create text-xs font-medium text-[#1a73e8] hover:bg-blue-50 px-3 py-1.5 rounded shrink-0 cursor-pointer transition-colors"
+                                            data-title="Bất thường trong số người dùng hằng ngày"
+                                            data-metric="Tổng số người dùng">
+                                            Xem lại và tạo
+                                        </button>
+                                    </div>
+
+                                    <!-- Item 3 -->
+                                    <div
+                                        class="suggested-row border border-slate-200 rounded-lg px-5 py-4 flex items-center justify-between gap-4 hover:border-slate-300 transition-colors">
+                                        <label class="flex items-center gap-4 cursor-pointer flex-1 min-w-0">
+                                            <input type="checkbox" checked class="suggested-cb peer sr-only"
+                                                data-title="Bất thường trong số lượt xem hằng ngày"
+                                                data-metric="Số lượt xem" />
+                                            <span
+                                                class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center shrink-0 transition-colors">
+                                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            </span>
+                                            <div class="min-w-0">
+                                                <p class="text-xs font-semibold text-slate-800">Bất thường trong số lượt
+                                                    xem hằng ngày</p>
+                                                <p class="text-xs text-slate-500 mt-0.5">Bạn sẽ nhận được email thông
+                                                    báo nếu có bất thường trong tổng số lượt xem hằng ngày</p>
+                                            </div>
+                                        </label>
+                                        <button type="button"
+                                            class="btn-review-create text-xs font-medium text-[#1a73e8] hover:bg-blue-50 px-3 py-1.5 rounded shrink-0 cursor-pointer transition-colors"
+                                            data-title="Bất thường trong số lượt xem hằng ngày"
+                                            data-metric="Số lượt xem">
+                                            Xem lại và tạo
+                                        </button>
+                                    </div>
+
+                                    <!-- Item 4 -->
+                                    <div
+                                        class="suggested-row border border-slate-200 rounded-lg px-5 py-4 flex items-center justify-between gap-4 hover:border-slate-300 transition-colors">
+                                        <label class="flex items-center gap-4 cursor-pointer flex-1 min-w-0">
+                                            <input type="checkbox" checked class="suggested-cb peer sr-only"
+                                                data-title="Điểm bất thường về số sự kiện chính hằng ngày"
+                                                data-metric="Sự kiện chính" />
+                                            <span
+                                                class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center shrink-0 transition-colors">
+                                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            </span>
+                                            <div class="min-w-0">
+                                                <p class="text-xs font-semibold text-slate-800">Điểm bất thường về số sự
+                                                    kiện chính hằng ngày</p>
+                                                <p class="text-xs text-slate-500 mt-0.5">Bạn sẽ nhận được email thông
+                                                    báo nếu có điểm bất thường về tổng số sự kiện chính hằng ngày</p>
+                                            </div>
+                                        </label>
+                                        <button type="button"
+                                            class="btn-review-create text-xs font-medium text-[#1a73e8] hover:bg-blue-50 px-3 py-1.5 rounded shrink-0 cursor-pointer transition-colors"
+                                            data-title="Điểm bất thường về số sự kiện chính hằng ngày"
+                                            data-metric="Sự kiện chính">
+                                            Xem lại và tạo
+                                        </button>
+                                    </div>
+
+                                    <!-- Item 5 -->
+                                    <div
+                                        class="suggested-row border border-slate-200 rounded-lg px-5 py-4 flex items-center justify-between gap-4 hover:border-slate-300 transition-colors">
+                                        <label class="flex items-center gap-4 cursor-pointer flex-1 min-w-0">
+                                            <input type="checkbox" checked class="suggested-cb peer sr-only"
+                                                data-title="Bất thường trong ngân sách hằng ngày"
+                                                data-metric="Tổng doanh thu" />
+                                            <span
+                                                class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center shrink-0 transition-colors">
+                                                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            </span>
+                                            <div class="min-w-0">
+                                                <p class="text-xs font-semibold text-slate-800">Bất thường trong ngân
+                                                    sách hằng ngày</p>
+                                                <p class="text-xs text-slate-500 mt-0.5">Bạn sẽ nhận được email thông
+                                                    báo nếu có bất thường trong tổng doanh thu hằng ngày</p>
+                                            </div>
+                                        </label>
+                                        <button type="button"
+                                            class="btn-review-create text-xs font-medium text-[#1a73e8] hover:bg-blue-50 px-3 py-1.5 rounded shrink-0 cursor-pointer transition-colors"
+                                            data-title="Bất thường trong ngân sách hằng ngày"
+                                            data-metric="Tổng doanh thu">
+                                            Xem lại và tạo
+                                        </button>
+                                    </div>
+
+                                    <!-- Nút Tạo từ đề xuất đã chọn -->
+                                    <div class="pt-2">
+                                        <button type="button" id="btnCreateFromSelected"
+                                            class="bg-[#1a73e8] hover:bg-[#1557b0] active:scale-95 text-white text-xs font-medium px-5 py-2.5 rounded transition-all cursor-pointer shadow-2xs">
+                                            Tạo từ đề xuất đã chọn
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2: Bắt đầu từ đầu -->
+                            <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-2xs">
+                                <div class="px-6 py-4 border-b border-slate-200">
+                                    <h3 class="text-sm font-medium text-slate-800">Bắt đầu từ đầu</h3>
+                                    <p class="text-xs text-slate-600 mt-1">
+                                        Xác định các quy tắc của riêng bạn để tạo Thông tin chi tiết tuỳ chỉnh.
+                                    </p>
+                                </div>
+                                <div class="p-6">
+                                    <button type="button" id="btnStartFromScratch"
+                                        class="border border-slate-300 hover:bg-slate-50 text-[#1a73e8] text-xs font-medium px-5 py-2 rounded transition-colors cursor-pointer">
+                                        Tạo mới
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== BƯỚC 3: FORM CẤU HÌNH CHI TIẾT ==================== -->
+                <div id="stepCreateForm" class="hidden absolute inset-0 bg-[#f8f9fa] flex flex-col z-30">
+                    <!-- Header -->
+                    <div
+                        class="bg-white border-b border-slate-200 px-5 py-3 flex items-center justify-between shrink-0">
+                        <div class="flex items-center gap-4">
+                            <button type="button" id="btnCloseStep3"
+                                class="p-1.5 rounded-full text-slate-500 hover:bg-slate-100 cursor-pointer"
+                                title="Quay lại">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                            <h2 class="text-lg font-normal text-slate-800">Tạo thông tin chi tiết tuỳ chỉnh</h2>
+                        </div>
+
+                        <button type="button" id="btnSaveCustomInsight"
+                            class="bg-[#1a73e8] hover:bg-[#1557b0] active:scale-95 text-white text-xs font-medium px-5 py-2 rounded transition-all cursor-pointer shadow-2xs">
+                            Tạo
+                        </button>
+                    </div>
+
+                    <!-- Body Form -->
+                    <div class="flex-1 overflow-y-auto p-6 md:p-8">
+                        <div class="max-w-2xl mx-auto space-y-5">
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                Thông tin chi tiết tuỳ chỉnh cho phép bạn tự động theo dõi hiệu quả hoạt động của thuộc
+                                tính. Tất cả người dùng trong thuộc tính này đều có thể xem thông tin chi tiết trong
+                                trang tổng quan Thông tin chi tiết khi bạn kích hoạt các điều kiện. Người dùng cũng có
+                                thể đăng ký nhận những thông tin chi tiết này qua email.
+                            </p>
+
+                            <!-- Card 1: Đặt điều kiện -->
+                            <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-2xs">
+                                <div class="px-6 py-3.5 border-b border-slate-200">
+                                    <h3 class="text-sm font-medium text-slate-800">Đặt điều kiện</h3>
+                                </div>
+                                <div class="p-6 space-y-5">
+                                    <!-- Tần suất đánh giá -->
+                                    <div>
+                                        <label class="block text-xs text-slate-600 mb-1.5">Tần suất đánh giá</label>
+                                        <div class="relative w-44">
+                                            <select id="selectFrequency"
+                                                class="w-full appearance-none bg-white border border-slate-300 rounded px-3.5 py-2 pr-8 text-xs text-slate-800 focus:border-[#1a73e8] focus:outline-none cursor-pointer">
+                                                <option value="Hằng ngày" selected>Hằng ngày</option>
+                                                <option value="Hằng tuần">Hằng tuần</option>
+                                                <option value="Hằng tháng">Hằng tháng</option>
+                                                <option value="Hằng giờ">Hằng giờ</option>
+                                            </select>
+                                            <span
+                                                class="pointer-events-none absolute right-2.5 top-2.5 text-slate-500 text-xs">▾</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Phân đoạn -->
+                                    <div>
+                                        <label class="block text-xs text-slate-600 mb-2">Phân đoạn</label>
+                                        <div class="flex items-center gap-3">
+                                            <span
+                                                class="inline-flex items-center gap-2 bg-[#e8f0fe] text-[#1967d2] text-xs font-medium pl-1.5 pr-3 py-1 rounded-full">
+                                                <span
+                                                    class="w-4 h-4 rounded-full bg-[#1a73e8] text-white flex items-center justify-center text-[10px]">✓</span>
+                                                Tất cả người dùng
+                                            </span>
+                                            <button type="button"
+                                                class="text-xs font-medium text-[#1a73e8] hover:underline cursor-pointer">
+                                                Thay đổi
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Số liệu & Điều kiện -->
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md">
+                                        <div>
+                                            <label class="block text-xs text-slate-600 mb-1.5">Số liệu</label>
+                                            <div class="relative">
+                                                <select id="selectMetric"
+                                                    class="w-full appearance-none bg-white border border-slate-300 rounded px-3.5 py-2 pr-8 text-xs text-slate-800 focus:border-[#1a73e8] focus:outline-none cursor-pointer">
+                                                    <option value="Số lượng sự kiện" selected>Số lượng sự kiện</option>
+                                                    <option value="Tổng số người dùng">Tổng số người dùng</option>
+                                                    <option value="Số lượt xem">Số lượt xem</option>
+                                                    <option value="Sự kiện chính">Sự kiện chính</option>
+                                                    <option value="Tổng doanh thu">Tổng doanh thu</option>
+                                                </select>
+                                                <span
+                                                    class="pointer-events-none absolute right-2.5 top-2.5 text-slate-500 text-xs">▾</span>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-xs text-slate-600 mb-1.5">Điều kiện</label>
+                                            <div class="relative">
+                                                <select id="selectCondition"
+                                                    class="w-full appearance-none bg-white border border-slate-300 rounded px-3.5 py-2 pr-8 text-xs text-slate-800 focus:border-[#1a73e8] focus:outline-none cursor-pointer">
+                                                    <option value="Có điểm bất thường" selected>Có điểm bất thường
+                                                    </option>
+                                                    <option value="Lớn hơn">Lớn hơn</option>
+                                                    <option value="Nhỏ hơn">Nhỏ hơn</option>
+                                                    <option value="% tăng nhiều hơn">% tăng nhiều hơn</option>
+                                                    <option value="% giảm nhiều hơn">% giảm nhiều hơn</option>
+                                                </select>
+                                                <span
+                                                    class="pointer-events-none absolute right-2.5 top-2.5 text-slate-500 text-xs">▾</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2: Chọn tên thông tin chi tiết -->
+                            <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-2xs">
+                                <div class="px-6 py-3.5 border-b border-slate-200">
+                                    <h3 class="text-sm font-medium text-slate-800">Chọn tên thông tin chi tiết</h3>
+                                </div>
+                                <div class="p-6">
+                                    <label class="block text-xs text-slate-600 mb-2">
+                                        Bạn sẽ nhìn thấy tên này trong các thông báo, vì vậy, hãy sử dụng tên mang tính
+                                        mô tả.
+                                    </label>
+                                    <input type="text" id="inputInsightName" maxlength="100"
+                                        value="Bất thường trong số sự kiện hằng ngày"
+                                        class="w-full border border-slate-300 focus:border-2 focus:border-[#1a73e8] rounded px-3.5 py-2 text-xs text-slate-800 focus:outline-none" />
+                                    <div class="text-right text-[11px] text-slate-500 mt-1">
+                                        <span id="insightNameCount">37</span>/100
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3: Quản lý thông báo -->
+                            <div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-2xs">
+                                <div class="px-6 py-3.5 border-b border-slate-200">
+                                    <h3 class="text-sm font-medium text-slate-800">Quản lý thông báo</h3>
+                                </div>
+                                <div class="p-6 space-y-4">
+                                    <p class="text-xs text-slate-600 leading-relaxed">
+                                        Khi bạn kích hoạt thông tin chi tiết này, tất cả người dùng trong thuộc tính này
+                                        đều có thể xem thông tin chi tiết trong trang tổng quan Thông tin chi tiết.
+                                        Những người dùng mà bạn liệt kê bên dưới cũng sẽ nhận được thông báo qua email
+                                        nếu họ có quyền truy cập vào thuộc tính này.
+                                    </p>
+
+                                    <div>
+                                        <label class="block text-xs text-slate-600 mb-2">Danh sách người nhận</label>
+                                        <div
+                                            class="border border-slate-300 focus-within:border-[#1a73e8] rounded px-3 py-2 flex flex-wrap items-center gap-2 bg-white">
+                                            <svg class="w-4 h-4 text-slate-500 shrink-0" fill="none"
+                                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                <circle cx="11" cy="11" r="7" />
+                                                <path stroke-linecap="round" d="M20 20l-3.5-3.5" />
+                                            </svg>
+
+                                            <!-- Container chứa các Chip người nhận -->
+                                            <div id="recipientChips" class="flex flex-wrap items-center gap-1.5">
+                                                <span
+                                                    class="recipient-chip inline-flex items-center gap-1.5 bg-white border border-slate-300 rounded-full pl-1 pr-2 py-0.5 text-xs text-slate-700">
+                                                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=60&h=60&fit=crop"
+                                                        alt="User" class="w-4 h-4 rounded-full object-cover" />
+                                                    <span>Nguyễn Kiều Hạnh Nguyên</span>
+                                                    <button type="button"
+                                                        class="btn-remove-chip text-slate-400 hover:text-slate-700 cursor-pointer ml-0.5">✕</button>
+                                                </span>
+                                            </div>
+
+                                            <input type="text" id="inputAddRecipient"
+                                                placeholder="Nhập tên hoặc địa chỉ email"
+                                                class="flex-1 min-w-[160px] text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none py-1" />
+                                        </div>
+                                        <div class="text-right text-[11px] text-slate-500 mt-1">
+                                            <span id="recipientCount">1</span>/50 người nhận
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= KHỐI CODE HTML & TAILWIND ĐỂ COPY (ĐẦY ĐỦ 100%) ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG HTML & TAILWIND (TRỌN BỘ 3 MÀN
+                    HÌNH)</span>
+                <button id="btnCopyHtml"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyHtml">Copy HTML</span>
+                </button>
+            </div>
+            <pre class="p-4 text-xs font-mono text-emerald-400 overflow-x-auto leading-relaxed max-h-96" id="codeHtml">&lt;div class="bg-[#f8f9fa] h-[680px] relative overflow-hidden flex flex-col font-sans text-slate-800"&gt;
+
+  &lt;!-- ==================== BƯỚC 1: MÀN HÌNH TRỐNG (EMPTY STATE) ==================== --&gt;
+  &lt;div id="stepEmptyState" class="flex flex-col h-full"&gt;
+    &lt;div class="bg-white border-b border-slate-200 px-5 py-3.5 flex items-center gap-4 shrink-0"&gt;
+      &lt;button type="button" class="p-1.5 rounded-full text-slate-500 hover:bg-slate-100 cursor-pointer" title="Đóng"&gt;
+        &lt;svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;h1 class="text-lg font-normal text-slate-800"&gt;Thông tin chi tiết tuỳ chỉnh&lt;/h1&gt;
+    &lt;/div&gt;
+
+    &lt;div id="emptyContainer" class="flex-1 flex flex-col items-center justify-center p-6 text-center"&gt;
+      &lt;div class="mb-4 text-[#3c4043]"&gt;
+        &lt;svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M3 17l5-5 4 4 8-8M14 4h.01M18 8h.01M6 7h.01M6 5v4M4 7h4" /&gt;&lt;/svg&gt;
+      &lt;/div&gt;
+      &lt;p class="text-xs text-slate-600 max-w-sm leading-relaxed mb-4"&gt;Thông tin chi tiết tuỳ chỉnh giúp bạn tự động theo dõi hiệu suất của tài sản.&lt;/p&gt;
+      &lt;p class="text-xs font-semibold text-slate-800 mb-5"&gt;Chưa có thông tin chi tiết tuỳ chỉnh nào được tạo trong tài sản này.&lt;/p&gt;
+      &lt;button type="button" id="btnOpenStep2" class="bg-[#1a73e8] hover:bg-[#1557b0] active:scale-95 text-white text-xs font-medium px-6 py-2.5 rounded transition-all cursor-pointer shadow-xs"&gt;Tạo&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div id="createdInsightsContainer" class="hidden flex-1 p-6 md:p-10 overflow-y-auto"&gt;
+      &lt;div class="max-w-3xl mx-auto space-y-4"&gt;
+        &lt;div class="flex items-center justify-between"&gt;
+          &lt;h2 class="text-sm font-semibold text-slate-800"&gt;Danh sách thông tin chi tiết đang hoạt động&lt;/h2&gt;
+          &lt;button type="button" id="btnAddMoreInsight" class="bg-[#1a73e8] hover:bg-[#1557b0] text-white text-xs font-medium px-4 py-2 rounded cursor-pointer"&gt;+ Tạo thêm&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div id="createdInsightsList" class="bg-white border border-slate-200 rounded-lg divide-y divide-slate-200 overflow-hidden shadow-2xs"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- ==================== BƯỚC 2: DRAWER ĐỀ XUẤT &amp; BẮT ĐẦU TỪ ĐẦU ==================== --&gt;
+  &lt;div id="stepDrawerOverlay" class="hidden absolute inset-0 bg-black/35 flex justify-end z-20"&gt;
+    &lt;div class="w-full max-w-[820px] bg-white h-full flex flex-col shadow-2xl border-l border-slate-200"&gt;
+      &lt;div class="px-5 py-3.5 border-b border-slate-200 flex items-center gap-4 shrink-0"&gt;
+        &lt;button type="button" id="btnCloseStep2" class="p-1.5 rounded-full text-slate-500 hover:bg-slate-100 cursor-pointer"&gt;
+          &lt;svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /&gt;&lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;h2 class="text-lg font-normal text-slate-800"&gt;Tạo thông tin chi tiết tuỳ chỉnh&lt;/h2&gt;
+      &lt;/div&gt;
+
+      &lt;div class="flex-1 overflow-y-auto p-6 md:p-8 space-y-6 bg-[#f8f9fa]/40"&gt;
+        &lt;!-- Card 1: 5 Đề xuất --&gt;
+        &lt;div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-2xs"&gt;
+          &lt;div class="px-6 py-4 border-b border-slate-200"&gt;
+            &lt;h3 class="text-sm font-medium text-slate-800"&gt;Thông tin chi tiết tuỳ chỉnh đề xuất&lt;/h3&gt;
+            &lt;p class="text-xs text-slate-600 mt-1"&gt;Bạn nên tạo thông tin chi tiết sau cho tài sản của mình. &lt;a href="#" class="text-[#1a73e8] underline"&gt;Tìm hiểu thêm&lt;/a&gt;&lt;/p&gt;
+          &lt;/div&gt;
+
+          &lt;div class="p-6 space-y-3.5" id="suggestedList"&gt;
+            &lt;!-- Đề xuất 1 --&gt;
+            &lt;div class="suggested-row border border-slate-200 rounded-lg px-5 py-4 flex items-center justify-between gap-4 hover:border-slate-300"&gt;
+              &lt;label class="flex items-center gap-4 cursor-pointer flex-1 min-w-0"&gt;
+                &lt;input type="checkbox" checked class="suggested-cb peer sr-only" data-title="Bất thường trong số sự kiện hằng ngày" data-metric="Số lượng sự kiện" /&gt;
+                &lt;span class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center shrink-0"&gt;
+                  &lt;svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /&gt;&lt;/svg&gt;
+                &lt;/span&gt;
+                &lt;div class="min-w-0"&gt;
+                  &lt;p class="text-xs font-semibold text-slate-800"&gt;Bất thường trong số sự kiện hằng ngày&lt;/p&gt;
+                  &lt;p class="text-xs text-slate-500 mt-0.5"&gt;Bạn sẽ nhận được email thông báo nếu có bất thường trong tổng số sự kiện hằng ngày&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/label&gt;
+              &lt;button type="button" class="btn-review-create text-xs font-medium text-[#1a73e8] hover:bg-blue-50 px-3 py-1.5 rounded shrink-0 cursor-pointer" data-title="Bất thường trong số sự kiện hằng ngày" data-metric="Số lượng sự kiện"&gt;Xem lại và tạo&lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Đề xuất 2 --&gt;
+            &lt;div class="suggested-row border border-slate-200 rounded-lg px-5 py-4 flex items-center justify-between gap-4 hover:border-slate-300"&gt;
+              &lt;label class="flex items-center gap-4 cursor-pointer flex-1 min-w-0"&gt;
+                &lt;input type="checkbox" checked class="suggested-cb peer sr-only" data-title="Bất thường trong số người dùng hằng ngày" data-metric="Tổng số người dùng" /&gt;
+                &lt;span class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center shrink-0"&gt;
+                  &lt;svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /&gt;&lt;/svg&gt;
+                &lt;/span&gt;
+                &lt;div class="min-w-0"&gt;
+                  &lt;p class="text-xs font-semibold text-slate-800"&gt;Bất thường trong số người dùng hằng ngày&lt;/p&gt;
+                  &lt;p class="text-xs text-slate-500 mt-0.5"&gt;Bạn sẽ nhận được email thông báo nếu có bất thường trong tổng số người dùng hằng ngày&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/label&gt;
+              &lt;button type="button" class="btn-review-create text-xs font-medium text-[#1a73e8] hover:bg-blue-50 px-3 py-1.5 rounded shrink-0 cursor-pointer" data-title="Bất thường trong số người dùng hằng ngày" data-metric="Tổng số người dùng"&gt;Xem lại và tạo&lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Đề xuất 3 --&gt;
+            &lt;div class="suggested-row border border-slate-200 rounded-lg px-5 py-4 flex items-center justify-between gap-4 hover:border-slate-300"&gt;
+              &lt;label class="flex items-center gap-4 cursor-pointer flex-1 min-w-0"&gt;
+                &lt;input type="checkbox" checked class="suggested-cb peer sr-only" data-title="Bất thường trong số lượt xem hằng ngày" data-metric="Số lượt xem" /&gt;
+                &lt;span class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center shrink-0"&gt;
+                  &lt;svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /&gt;&lt;/svg&gt;
+                &lt;/span&gt;
+                &lt;div class="min-w-0"&gt;
+                  &lt;p class="text-xs font-semibold text-slate-800"&gt;Bất thường trong số lượt xem hằng ngày&lt;/p&gt;
+                  &lt;p class="text-xs text-slate-500 mt-0.5"&gt;Bạn sẽ nhận được email thông báo nếu có bất thường trong tổng số lượt xem hằng ngày&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/label&gt;
+              &lt;button type="button" class="btn-review-create text-xs font-medium text-[#1a73e8] hover:bg-blue-50 px-3 py-1.5 rounded shrink-0 cursor-pointer" data-title="Bất thường trong số lượt xem hằng ngày" data-metric="Số lượt xem"&gt;Xem lại và tạo&lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Đề xuất 4 --&gt;
+            &lt;div class="suggested-row border border-slate-200 rounded-lg px-5 py-4 flex items-center justify-between gap-4 hover:border-slate-300"&gt;
+              &lt;label class="flex items-center gap-4 cursor-pointer flex-1 min-w-0"&gt;
+                &lt;input type="checkbox" checked class="suggested-cb peer sr-only" data-title="Điểm bất thường về số sự kiện chính hằng ngày" data-metric="Sự kiện chính" /&gt;
+                &lt;span class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center shrink-0"&gt;
+                  &lt;svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /&gt;&lt;/svg&gt;
+                &lt;/span&gt;
+                &lt;div class="min-w-0"&gt;
+                  &lt;p class="text-xs font-semibold text-slate-800"&gt;Điểm bất thường về số sự kiện chính hằng ngày&lt;/p&gt;
+                  &lt;p class="text-xs text-slate-500 mt-0.5"&gt;Bạn sẽ nhận được email thông báo nếu có điểm bất thường về tổng số sự kiện chính hằng ngày&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/label&gt;
+              &lt;button type="button" class="btn-review-create text-xs font-medium text-[#1a73e8] hover:bg-blue-50 px-3 py-1.5 rounded shrink-0 cursor-pointer" data-title="Điểm bất thường về số sự kiện chính hằng ngày" data-metric="Sự kiện chính"&gt;Xem lại và tạo&lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Đề xuất 5 --&gt;
+            &lt;div class="suggested-row border border-slate-200 rounded-lg px-5 py-4 flex items-center justify-between gap-4 hover:border-slate-300"&gt;
+              &lt;label class="flex items-center gap-4 cursor-pointer flex-1 min-w-0"&gt;
+                &lt;input type="checkbox" checked class="suggested-cb peer sr-only" data-title="Bất thường trong ngân sách hằng ngày" data-metric="Tổng doanh thu" /&gt;
+                &lt;span class="w-4 h-4 rounded-[3px] border-2 border-slate-500 peer-checked:bg-[#1a73e8] peer-checked:border-[#1a73e8] flex items-center justify-center shrink-0"&gt;
+                  &lt;svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /&gt;&lt;/svg&gt;
+                &lt;/span&gt;
+                &lt;div class="min-w-0"&gt;
+                  &lt;p class="text-xs font-semibold text-slate-800"&gt;Bất thường trong ngân sách hằng ngày&lt;/p&gt;
+                  &lt;p class="text-xs text-slate-500 mt-0.5"&gt;Bạn sẽ nhận được email thông báo nếu có bất thường trong tổng doanh thu hằng ngày&lt;/p&gt;
+                &lt;/div&gt;
+              &lt;/label&gt;
+              &lt;button type="button" class="btn-review-create text-xs font-medium text-[#1a73e8] hover:bg-blue-50 px-3 py-1.5 rounded shrink-0 cursor-pointer" data-title="Bất thường trong ngân sách hằng ngày" data-metric="Tổng doanh thu"&gt;Xem lại và tạo&lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;div class="pt-2"&gt;
+              &lt;button type="button" id="btnCreateFromSelected" class="bg-[#1a73e8] hover:bg-[#1557b0] text-white text-xs font-medium px-5 py-2.5 rounded cursor-pointer shadow-2xs"&gt;Tạo từ đề xuất đã chọn&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Card 2: Bắt đầu từ đầu --&gt;
+        &lt;div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-2xs"&gt;
+          &lt;div class="px-6 py-4 border-b border-slate-200"&gt;
+            &lt;h3 class="text-sm font-medium text-slate-800"&gt;Bắt đầu từ đầu&lt;/h3&gt;
+            &lt;p class="text-xs text-slate-600 mt-1"&gt;Xác định các quy tắc của riêng bạn để tạo Thông tin chi tiết tuỳ chỉnh.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="p-6"&gt;
+            &lt;button type="button" id="btnStartFromScratch" class="border border-slate-300 hover:bg-slate-50 text-[#1a73e8] text-xs font-medium px-5 py-2 rounded cursor-pointer"&gt;Tạo mới&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- ==================== BƯỚC 3: FORM CẤU HÌNH CHI TIẾT ==================== --&gt;
+  &lt;div id="stepCreateForm" class="hidden absolute inset-0 bg-[#f8f9fa] flex flex-col z-30"&gt;
+    &lt;div class="bg-white border-b border-slate-200 px-5 py-3 flex items-center justify-between shrink-0"&gt;
+      &lt;div class="flex items-center gap-4"&gt;
+        &lt;button type="button" id="btnCloseStep3" class="p-1.5 rounded-full text-slate-500 hover:bg-slate-100 cursor-pointer"&gt;
+          &lt;svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /&gt;&lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;h2 class="text-lg font-normal text-slate-800"&gt;Tạo thông tin chi tiết tuỳ chỉnh&lt;/h2&gt;
+      &lt;/div&gt;
+      &lt;button type="button" id="btnSaveCustomInsight" class="bg-[#1a73e8] hover:bg-[#1557b0] text-white text-xs font-medium px-5 py-2 rounded cursor-pointer"&gt;Tạo&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="flex-1 overflow-y-auto p-6 md:p-8"&gt;
+      &lt;div class="max-w-2xl mx-auto space-y-5"&gt;
+        &lt;p class="text-xs text-slate-600 leading-relaxed"&gt;Thông tin chi tiết tuỳ chỉnh cho phép bạn tự động theo dõi hiệu quả hoạt động của thuộc tính. Tất cả người dùng trong thuộc tính này đều có thể xem thông tin chi tiết trong trang tổng quan Thông tin chi tiết khi bạn kích hoạt các điều kiện. Người dùng cũng có thể đăng ký nhận những thông tin chi tiết này qua email.&lt;/p&gt;
+
+        &lt;!-- Card 1: Đặt điều kiện --&gt;
+        &lt;div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-2xs"&gt;
+          &lt;div class="px-6 py-3.5 border-b border-slate-200"&gt;
+            &lt;h3 class="text-sm font-medium text-slate-800"&gt;Đặt điều kiện&lt;/h3&gt;
+          &lt;/div&gt;
+          &lt;div class="p-6 space-y-5"&gt;
+            &lt;div&gt;
+              &lt;label class="block text-xs text-slate-600 mb-1.5"&gt;Tần suất đánh giá&lt;/label&gt;
+              &lt;select id="selectFrequency" class="w-44 bg-white border border-slate-300 rounded px-3.5 py-2 text-xs text-slate-800"&gt;
+                &lt;option value="Hằng ngày" selected&gt;Hằng ngày&lt;/option&gt;
+                &lt;option value="Hằng tuần"&gt;Hằng tuần&lt;/option&gt;
+                &lt;option value="Hằng tháng"&gt;Hằng tháng&lt;/option&gt;
+              &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label class="block text-xs text-slate-600 mb-2"&gt;Phân đoạn&lt;/label&gt;
+              &lt;div class="flex items-center gap-3"&gt;
+                &lt;span class="inline-flex items-center gap-2 bg-[#e8f0fe] text-[#1967d2] text-xs font-medium pl-1.5 pr-3 py-1 rounded-full"&gt;
+                  &lt;span class="w-4 h-4 rounded-full bg-[#1a73e8] text-white flex items-center justify-center text-[10px]"&gt;✓&lt;/span&gt;
+                  Tất cả người dùng
+                &lt;/span&gt;
+                &lt;button type="button" class="text-xs font-medium text-[#1a73e8] hover:underline cursor-pointer"&gt;Thay đổi&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md"&gt;
+              &lt;div&gt;
+                &lt;label class="block text-xs text-slate-600 mb-1.5"&gt;Số liệu&lt;/label&gt;
+                &lt;select id="selectMetric" class="w-full bg-white border border-slate-300 rounded px-3.5 py-2 text-xs text-slate-800"&gt;
+                  &lt;option value="Số lượng sự kiện"&gt;Số lượng sự kiện&lt;/option&gt;
+                  &lt;option value="Tổng số người dùng"&gt;Tổng số người dùng&lt;/option&gt;
+                  &lt;option value="Số lượt xem"&gt;Số lượt xem&lt;/option&gt;
+                  &lt;option value="Sự kiện chính"&gt;Sự kiện chính&lt;/option&gt;
+                  &lt;option value="Tổng doanh thu"&gt;Tổng doanh thu&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+              &lt;div&gt;
+                &lt;label class="block text-xs text-slate-600 mb-1.5"&gt;Điều kiện&lt;/label&gt;
+                &lt;select id="selectCondition" class="w-full bg-white border border-slate-300 rounded px-3.5 py-2 text-xs text-slate-800"&gt;
+                  &lt;option value="Có điểm bất thường"&gt;Có điểm bất thường&lt;/option&gt;
+                  &lt;option value="Lớn hơn"&gt;Lớn hơn&lt;/option&gt;
+                  &lt;option value="Nhỏ hơn"&gt;Nhỏ hơn&lt;/option&gt;
+                &lt;/select&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Card 2: Chọn tên thông tin chi tiết --&gt;
+        &lt;div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-2xs"&gt;
+          &lt;div class="px-6 py-3.5 border-b border-slate-200"&gt;
+            &lt;h3 class="text-sm font-medium text-slate-800"&gt;Chọn tên thông tin chi tiết&lt;/h3&gt;
+          &lt;/div&gt;
+          &lt;div class="p-6"&gt;
+            &lt;label class="block text-xs text-slate-600 mb-2"&gt;Bạn sẽ nhìn thấy tên này trong các thông báo, vì vậy, hãy sử dụng tên mang tính mô tả.&lt;/label&gt;
+            &lt;input type="text" id="inputInsightName" maxlength="100" value="Bất thường trong số sự kiện hằng ngày" class="w-full border border-slate-300 rounded px-3.5 py-2 text-xs text-slate-800 focus:outline-none" /&gt;
+            &lt;div class="text-right text-[11px] text-slate-500 mt-1"&gt;&lt;span id="insightNameCount"&gt;37&lt;/span&gt;/100&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Card 3: Quản lý thông báo --&gt;
+        &lt;div class="bg-white border border-slate-200 rounded-lg overflow-hidden shadow-2xs"&gt;
+          &lt;div class="px-6 py-3.5 border-b border-slate-200"&gt;
+            &lt;h3 class="text-sm font-medium text-slate-800"&gt;Quản lý thông báo&lt;/h3&gt;
+          &lt;/div&gt;
+          &lt;div class="p-6 space-y-4"&gt;
+            &lt;p class="text-xs text-slate-600 leading-relaxed"&gt;Khi bạn kích hoạt thông tin chi tiết này, tất cả người dùng trong thuộc tính này đều có thể xem thông tin chi tiết trong trang tổng quan Thông tin chi tiết. Những người dùng mà bạn liệt kê bên dưới cũng sẽ nhận được thông báo qua email nếu họ có quyền truy cập vào thuộc tính này.&lt;/p&gt;
+            &lt;div&gt;
+              &lt;label class="block text-xs text-slate-600 mb-2"&gt;Danh sách người nhận&lt;/label&gt;
+              &lt;div class="border border-slate-300 rounded px-3 py-2 flex flex-wrap items-center gap-2 bg-white"&gt;
+                &lt;div id="recipientChips" class="flex flex-wrap items-center gap-1.5"&gt;
+                  &lt;span class="recipient-chip inline-flex items-center gap-1.5 bg-white border border-slate-300 rounded-full pl-1 pr-2 py-0.5 text-xs text-slate-700"&gt;
+                    &lt;img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=60&amp;h=60&amp;fit=crop" alt="User" class="w-4 h-4 rounded-full object-cover" /&gt;
+                    &lt;span&gt;Nguyễn Kiều Hạnh Nguyên&lt;/span&gt;
+                    &lt;button type="button" class="btn-remove-chip text-slate-400 hover:text-slate-700 cursor-pointer ml-0.5"&gt;✕&lt;/button&gt;
+                  &lt;/span&gt;
+                &lt;/div&gt;
+                &lt;input type="text" id="inputAddRecipient" placeholder="Nhập tên hoặc địa chỉ email" class="flex-1 min-w-[160px] text-xs text-slate-800 focus:outline-none py-1" /&gt;
+              &lt;/div&gt;
+              &lt;div class="text-right text-[11px] text-slate-500 mt-1"&gt;&lt;span id="recipientCount"&gt;1&lt;/span&gt;/50 người nhận&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- ================= KHỐI CODE JAVASCRIPT ĐỂ COPY (TRỌN BỘ) ================= -->
+        <div class="bg-slate-900 rounded-2xl border border-slate-800 shadow-sm overflow-hidden mb-6">
+            <div class="px-5 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <span class="text-xs font-mono font-bold text-slate-300">NỘI DUNG JAVASCRIPT (DOM - TRỌN BỘ)</span>
+                <button id="btnCopyJs"
+                    class="text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
+                    <span>📋</span> <span id="txtCopyJs">Copy JS</span>
+                </button>
+            </div>
+            <pre class="p-4 text-xs font-mono text-amber-300 overflow-x-auto leading-relaxed max-h-80" id="codeJs">const stepDrawerOverlay = document.getElementById('stepDrawerOverlay');
+const stepCreateForm = document.getElementById('stepCreateForm');
+const checkboxes = document.querySelectorAll('.suggested-cb');
+const btnCreateFromSelected = document.getElementById('btnCreateFromSelected');
+
+// Mở / Đóng Drawer Bước 2
+document.getElementById('btnOpenStep2').addEventListener('click', () => stepDrawerOverlay.classList.remove('hidden'));
+document.getElementById('btnAddMoreInsight')?.addEventListener('click', () => stepDrawerOverlay.classList.remove('hidden'));
+document.getElementById('btnCloseStep2').addEventListener('click', () => stepDrawerOverlay.classList.add('hidden'));
+
+// Bật/tắt nút "Tạo từ đề xuất đã chọn" dựa theo số checkbox được tích
+function updateSelectedButton() {
+  const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+  btnCreateFromSelected.disabled = checkedCount === 0;
+  btnCreateFromSelected.className = checkedCount > 0
+    ? 'bg-[#1a73e8] hover:bg-[#1557b0] active:scale-95 text-white text-xs font-medium px-5 py-2.5 rounded transition-all cursor-pointer shadow-2xs'
+    : 'bg-[#e8eaed] text-[#9aa0a6] text-xs font-medium px-5 py-2.5 rounded cursor-not-allowed transition-all';
+}
+checkboxes.forEach(cb => cb.addEventListener('change', updateSelectedButton));
+
+// Mở Form Bước 3 từ "Xem lại và tạo" hoặc "Tạo mới"
+const inputInsightName = document.getElementById('inputInsightName');
+const insightNameCount = document.getElementById('insightNameCount');
+const selectMetric = document.getElementById('selectMetric');
+
+document.querySelectorAll('.btn-review-create').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const title = btn.getAttribute('data-title');
+    const metric = btn.getAttribute('data-metric');
+    inputInsightName.value = title;
+    insightNameCount.innerText = title.length;
+    selectMetric.value = metric;
+    stepCreateForm.classList.remove('hidden');
+  });
+});
+
+document.getElementById('btnStartFromScratch').addEventListener('click', () => {
+  inputInsightName.value = '';
+  insightNameCount.innerText = '0';
+  stepCreateForm.classList.remove('hidden');
+});
+
+document.getElementById('btnCloseStep3').addEventListener('click', () => stepCreateForm.classList.add('hidden'));
+
+// Đếm ký tự tên thông tin chi tiết
+inputInsightName.addEventListener('input', () => {
+  insightNameCount.innerText = inputInsightName.value.length;
+});
+
+// Thêm / Xóa Chip người nhận email
+const recipientChips = document.getElementById('recipientChips');
+const inputAddRecipient = document.getElementById('inputAddRecipient');
+const recipientCount = document.getElementById('recipientCount');
+
+function updateRecipientCount() {
+  recipientCount.innerText = recipientChips.querySelectorAll('.recipient-chip').length;
+}
+
+recipientChips.addEventListener('click', (e) => {
+  if (e.target.classList.contains('btn-remove-chip')) {
+    e.target.closest('.recipient-chip').remove();
+    updateRecipientCount();
+  }
+});
+
+inputAddRecipient.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && inputAddRecipient.value.trim()) {
+    e.preventDefault();
+    const chip = document.createElement('span');
+    chip.className = 'recipient-chip inline-flex items-center gap-1.5 bg-white border border-slate-300 rounded-full px-2.5 py-0.5 text-xs text-slate-700';
+    chip.innerHTML = `&lt;span&gt;${inputAddRecipient.value.trim()}&lt;/span&gt;&lt;button type="button" class="btn-remove-chip text-slate-400 hover:text-slate-700 cursor-pointer ml-0.5"&gt;✕&lt;/button&gt;`;
+    recipientChips.appendChild(chip);
+    inputAddRecipient.value = '';
+    updateRecipientCount();
+  }
+});
+
+// Lưu kết quả và hiển thị ra màn hình chính
+function renderCreatedItem(title, metric) {
+  document.getElementById('emptyContainer').classList.add('hidden');
+  document.getElementById('createdInsightsContainer').classList.remove('hidden');
+  const row = document.createElement('div');
+  row.className = 'px-5 py-3.5 flex items-center justify-between text-xs';
+  row.innerHTML = `&lt;div&gt;&lt;p class="font-semibold text-slate-800"&gt;${title || 'Thông tin chi tiết mới'}&lt;/p&gt;&lt;p class="text-slate-500 mt-0.5"&gt;Số liệu: ${metric} • Hằng ngày&lt;/p&gt;&lt;/div&gt;&lt;span class="bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full font-medium"&gt;Đang bật&lt;/span&gt;`;
+  document.getElementById('createdInsightsList').prepend(row);
+}
+
+btnCreateFromSelected.addEventListener('click', () => {
+  if (btnCreateFromSelected.disabled) return;
+  checkboxes.forEach(cb => {
+    if (cb.checked) renderCreatedItem(cb.getAttribute('data-title'), cb.getAttribute('data-metric'));
+  });
+  stepDrawerOverlay.classList.add('hidden');
+});
+
+document.getElementById('btnSaveCustomInsight').addEventListener('click', () => {
+  renderCreatedItem(inputInsightName.value.trim(), selectMetric.value);
+  stepCreateForm.classList.add('hidden');
+  stepDrawerOverlay.classList.add('hidden');
+});</pre>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        const stepDrawerOverlay = document.getElementById('stepDrawerOverlay');
+        const stepCreateForm = document.getElementById('stepCreateForm');
+        const checkboxes = document.querySelectorAll('.suggested-cb');
+        const btnCreateFromSelected = document.getElementById('btnCreateFromSelected');
+
+        document.getElementById('btnOpenStep2').addEventListener('click', () => stepDrawerOverlay.classList.remove('hidden'));
+        document.getElementById('btnAddMoreInsight')?.addEventListener('click', () => stepDrawerOverlay.classList.remove('hidden'));
+        document.getElementById('btnCloseStep2').addEventListener('click', () => stepDrawerOverlay.classList.add('hidden'));
+
+        function updateSelectedButton() {
+            const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+            btnCreateFromSelected.disabled = checkedCount === 0;
+            btnCreateFromSelected.className = checkedCount > 0
+                ? 'bg-[#1a73e8] hover:bg-[#1557b0] active:scale-95 text-white text-xs font-medium px-5 py-2.5 rounded transition-all cursor-pointer shadow-2xs'
+                : 'bg-[#e8eaed] text-[#9aa0a6] text-xs font-medium px-5 py-2.5 rounded cursor-not-allowed transition-all';
+        }
+        checkboxes.forEach(cb => cb.addEventListener('change', updateSelectedButton));
+
+        const inputInsightName = document.getElementById('inputInsightName');
+        const insightNameCount = document.getElementById('insightNameCount');
+        const selectMetric = document.getElementById('selectMetric');
+
+        document.querySelectorAll('.btn-review-create').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const title = btn.getAttribute('data-title');
+                const metric = btn.getAttribute('data-metric');
+                inputInsightName.value = title;
+                insightNameCount.innerText = title.length;
+                selectMetric.value = metric;
+                stepCreateForm.classList.remove('hidden');
+            });
+        });
+
+        document.getElementById('btnStartFromScratch').addEventListener('click', () => {
+            inputInsightName.value = '';
+            insightNameCount.innerText = '0';
+            stepCreateForm.classList.remove('hidden');
+        });
+
+        document.getElementById('btnCloseStep3').addEventListener('click', () => stepCreateForm.classList.add('hidden'));
+
+        inputInsightName.addEventListener('input', () => {
+            insightNameCount.innerText = inputInsightName.value.length;
+        });
+
+        const recipientChips = document.getElementById('recipientChips');
+        const inputAddRecipient = document.getElementById('inputAddRecipient');
+        const recipientCount = document.getElementById('recipientCount');
+
+        function updateRecipientCount() {
+            recipientCount.innerText = recipientChips.querySelectorAll('.recipient-chip').length;
+        }
+
+        recipientChips.addEventListener('click', (e) => {
+            if (e.target.classList.contains('btn-remove-chip')) {
+                e.target.closest('.recipient-chip').remove();
+                updateRecipientCount();
+            }
+        });
+
+        inputAddRecipient.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && inputAddRecipient.value.trim()) {
+                e.preventDefault();
+                const chip = document.createElement('span');
+                chip.className = 'recipient-chip inline-flex items-center gap-1.5 bg-white border border-slate-300 rounded-full px-2.5 py-0.5 text-xs text-slate-700';
+                chip.innerHTML = `<span>${inputAddRecipient.value.trim()}</span><button type="button" class="btn-remove-chip text-slate-400 hover:text-slate-700 cursor-pointer ml-0.5">✕</button>`;
+                recipientChips.appendChild(chip);
+                inputAddRecipient.value = '';
+                updateRecipientCount();
+            }
+        });
+
+        function renderCreatedItem(title, metric) {
+            document.getElementById('emptyContainer').classList.add('hidden');
+            document.getElementById('createdInsightsContainer').classList.remove('hidden');
+            const row = document.createElement('div');
+            row.className = 'px-5 py-3.5 flex items-center justify-between text-xs';
+            row.innerHTML = `<div><p class="font-semibold text-slate-800">${title || 'Thông tin chi tiết mới'}</p><p class="text-slate-500 mt-0.5">Số liệu: ${metric} • Hằng ngày</p></div><span class="bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full font-medium">Đang bật</span>`;
+            document.getElementById('createdInsightsList').prepend(row);
+        }
+
+        btnCreateFromSelected.addEventListener('click', () => {
+            if (btnCreateFromSelected.disabled) return;
+            checkboxes.forEach(cb => {
+                if (cb.checked) renderCreatedItem(cb.getAttribute('data-title'), cb.getAttribute('data-metric'));
+            });
+            stepDrawerOverlay.classList.add('hidden');
+        });
+
+        document.getElementById('btnSaveCustomInsight').addEventListener('click', () => {
+            renderCreatedItem(inputInsightName.value.trim(), selectMetric.value);
+            stepCreateForm.classList.add('hidden');
+            stepDrawerOverlay.classList.add('hidden');
+        });
+    </script>
+</body>
+
+</html>
